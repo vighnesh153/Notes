@@ -12,7 +12,6 @@ WORKING: If the expression evaluates to true, the element will be rendered. Else
 
 
 
-
 ADDING ELSE PART:
 	1. Easiest way is to:
 		<p *ngIf="someElement"> If part</p>
