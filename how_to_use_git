@@ -1,11 +1,9 @@
+CREATING A GIT REPOSITORY
+
 1. Create a repository on git.
-
 2. Create a folder with same name as the repository.
-
 3. Open terminal from within the folder or in the terminal, head to inside the created folder.
-
 4. Run the generated git commands from github.
-
 
 
 
@@ -17,6 +15,14 @@ NOW TO ADD TO GITHUB REPOSITORY
 
 
 
+CLONING THE REPOSITORY
+
+1. Create folder for pulling.
+2. Run "git clone clone_url"
+3. Done. Clone created.
+
+
+
 TO PULL FROM THE GIT REPOSITORY
 
-
+1. Run "git pull" from within the folder.
