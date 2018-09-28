@@ -1,0 +1,22 @@
+1. Create a repository on git.
+
+2. Create a folder with same name as the repository.
+
+3. Open terminal from within the folder or in the terminal, head to inside the created folder.
+
+4. Run the generated git commands from github.
+
+
+
+
+NOW TO ADD TO GITHUB REPOSITORY
+
+1. Run "git add filename". If have multiple files, then run "git add .".
+2. Then run, 'git commit -m "commit message" '.
+3. Then, "git push -o origin master".
+
+
+
+TO PULL FROM THE GIT REPOSITORY
+
+
