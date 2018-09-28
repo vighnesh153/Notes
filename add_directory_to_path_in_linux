@@ -1,0 +1,3 @@
+gedit ~/.bashrc
+
+edit this line to 'export PATH="/path/to/dir:$PATH"'
