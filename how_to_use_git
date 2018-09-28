@@ -1,3 +1,11 @@
+SET UP GIT ON LINUX
+
+1. Run "apt install git"
+2. Set username: git config --global user.name "vighnesh153"
+3. Set email: git config --global user.email "vighnesh.raut13@gmail.com"
+
+
+
 CREATING A GIT REPOSITORY
 
 1. Create a repository on git.
