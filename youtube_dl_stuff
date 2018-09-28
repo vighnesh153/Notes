@@ -1,0 +1,27 @@
+TO SEE AVAILABE VIDEO FORMATS
+youtube-dl -F <video_url>
+
+
+
+TO DOWNLOAD THE VIDEO USING SELECTED FORMAT NUMBER OR ID
+youtube-dl -f ID <video_url>
+
+
+
+TO DOWNLOAD ONLY SUBTITLES
+youtube-dl --all-subs --skip-download <video_url>
+
+
+
+TO SEE AVAILABLE FORMATS FOR PLAYLISTS
+youtube-dl -cit -F <playlist_url>
+
+
+
+TO DOWNLOAD AUDIO DROM A SINGLE VIDEO
+youtube-dl -x --audio-format mp3 <video_url>
+
+
+
+TO DOWNLOAD AUDIO DROM ENTIRE PLAYLIST
+youtube-dl -x -cit --audio-format mp3 <video_url>
