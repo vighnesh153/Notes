@@ -1,0 +1,8 @@
+1. First download xampp from here byt selecting appropriate platform: https://www.apachefriends.org/download.html
+2. Rename the downloaded file to "myXampp.run" for simplicity.
+3. Then run these set of commands:
+
+    chmod 755 myXampp.run
+    sudo ./myXampp.run
+   
+4. Then use xampp_start and xampp_stop for starting stopping xampp which are already there in MyScripts.
