@@ -13,6 +13,9 @@ CREATING A GIT REPOSITORY
 3. Open terminal from within the folder or in the terminal, head to inside the created folder.
 4. Run the generated git commands from github.
 
+       (OR)
+   Run "git init; git remote add origin https://github.com/vighnesh153/REPOSITORYname.git"
+
 
 
 NOW TO ADD TO GITHUB REPOSITORY
