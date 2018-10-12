@@ -1,0 +1,47 @@
+BASIC PHP SYNTAX
+1. A PHP script can be placed anywhere in the document.
+2. A PHP script starts with <?php and ends with ?>
+
+eg. 
+		<!DOCTYPE html>
+		<html>
+		<body>
+
+		<h1>My first PHP page</h1>
+
+		<?php
+			echo "Hello World!";
+		?>
+
+		</body>
+		</html>
+
+
+COMMENTs
+1. Single line: //This is a single line comment
+2. Single line: #This is also a single line comment
+3. Multiline : /* This is 
+					a multi-line comment */
+
+
+
+
+PHP CASE SENSITIVITY
+In PHP, all keywords (e.g. if, else, while, echo, etc.), classes, functions, and user-defined functions are NOT case-sensitive.
+
+eg. Below example is legal:
+
+			<!DOCTYPE html>
+			<html>
+			<body>
+
+			<?php
+				ECHO "Hello World!<br>";
+				echo "Hello World!<br>";
+				EcHo "Hello World!<br>";
+			?>
+
+			</body>
+			</html>
+
+However; all variable names are case-sensitive.

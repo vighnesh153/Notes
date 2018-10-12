@@ -1,0 +1,24 @@
+WHAT IS PHP?
+1. PHP is an acronym for "PHP: Hypertext Preprocessor"
+2. PHP is a widely-used, open source scripting language
+3. PHP code are executed on the server, and the result is returned to the browser as plain HTML
+4. PHP is free to download and use
+5. PHP files can contain text, HTML, CSS, JavaScript, and PHP code
+6. PHP files have extension ".php"
+
+WHAT CAN PHP DO?
+1. PHP can generate dynamic page content
+2. PHP can create, open, read, write, delete, and close files on the server
+3. PHP can collect form data
+4. PHP can send and receive cookies
+5. PHP can add, delete, modify data in your database
+6. PHP can be used to control user-access
+7. PHP can encrypt data
+
+
+WHY PHP
+1. PHP runs on various platforms (Windows, Linux, Unix, Mac OS X, etc.)
+2. PHP is compatible with almost all servers used today (Apache, IIS, etc.)
+3. PHP supports a wide range of databases
+4. PHP is free. Download it from the official PHP resource: www.php.net
+5. PHP is easy to learn and runs efficiently on the server side

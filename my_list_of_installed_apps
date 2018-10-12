@@ -1,23 +1,55 @@
 1. youtube-dl
+
 2. chrome
+
 3. tor
+
 4. sublime
+
 5. vlc
+
 6. g++
+
 7. pip3
+
 8. pip3 install sqlalchemy
+
 9. pip3 install pysqlite3
+
 10. git
+
 11. qbittorent
+
 12. sudo apt-get install idle3
+
 13. sudo apt-get install clementine (music player)
+
 14. Jetbrains Toolbox
+
 15. PyCharm Professional, IntelliJ Ultimate, CLion. All through Toolbox
+
 16. Java SDK using Tim Buchalka's video
+
 17. xampp
+
 18. postman (https://www.getpostman.com/)  [Folder should be in: ~/NotInstalledApps and change the downloaded folder name to mongo]
+
 19. mongodb (OPTIONAL: Comes in MEAN Stack installation, Make/Edit scripts accordingly: mongodb_enable, mongodb_start) 
    (https://www.mongodb.com/download-center/v2/community)  [Folder should be in: ~/NotInstalledApps and change the downloaded folder name to Postman]
+
 20. nodejs (OPTIONAL: Comes in MEAN Stack installation) [Download from here: https://nodejs.org/en/download/package-manager/]
+
 21. npm install -g express  (OPTIONAL: Comes in MEAN Stack installation)
+
 22. angular   (OPTIONAL: Comes in MEAN Stack installation)  download from official website.
+
+23. Installing PHP:
+	sudo apt-get update
+	sudo apt-get upgrade
+	sudo apt-get install php
+	// Check for version: php -v
+	sudo apt-get install php7.2-cgi     // if version is 7.2
+
+	Configuring PHPStorm:
+	set path in php interpreter: /usr/bin/php7.2   if version is 7.2
+	Select appropriate interpreters
