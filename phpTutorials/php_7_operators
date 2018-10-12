@@ -1,0 +1,66 @@
+OPERATORS
+	1. Operators are used to perform operations on variables and values.
+	2. PHP divides the operators in the following groups:
+
+			Arithmetic operators
+			Assignment operators
+			Comparison operators
+			Increment/Decrement operators
+			Logical operators
+			String operators
+			Array operators
+
+ARITHMETIC OPERATORS
+	Add: +
+	Subtract: -
+	Multiply: *
+	Divide: /
+	Modulus: %
+	Power: **    eg., $a ** $b  implies  ($a)^($b)
+
+
+ASSIGNMENT OPERATORS
+	=
+	+=
+	-=
+	*=
+	/=
+	%=
+
+
+COMPARISON OPERATORS
+	Equal: ==
+	Identical: ===
+	Not equal: !=   or  <>
+	Not identical: !==
+	Greater than: >
+	Greater than equal to: >=
+	Lesser than: <
+	Lesser than equal to: <=
+
+
+INCREMENT/DECREMENT OPERATORS
+	++
+	--
+
+
+LOGICAL OPERATORS
+	and        AND
+	or         OR
+	xor        EX-OR
+	&&         AND
+	||		   OR
+	!		   NOT
+
+
+STRING OPERATIONS
+	Concatenation:  .
+	Concatenation assignment:  .=
+
+
+ARRAY OPERATORS
+	Union:  +
+	Equality: ==
+	Identity: ===
+	Inequality: !=  or  <>
+	Non-Identity:  !==
