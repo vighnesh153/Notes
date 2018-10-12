@@ -1,0 +1,32 @@
+1. WHILE
+	while (condition is true) {
+	    code to be executed;
+	}
+
+2. Do WHILE
+	do {
+	    code to be executed;
+	} while (condition is true);
+
+3. FOR
+	for (init counter; test counter; increment counter) {
+	    code to be executed;
+	}
+
+	eg.,
+		for ($x = 0; $x <= 10; $x++) {
+		    echo "The number is: $x <br>";
+		} 
+
+4. FOR EACH
+	foreach ($array as $value) {
+	    code to be executed;
+	}
+	eg.,
+		<?php 
+		$colors = array("red", "green", "blue", "yellow"); 
+
+		foreach ($colors as $value) {
+		    echo "$value <br>";
+		}
+		?>
