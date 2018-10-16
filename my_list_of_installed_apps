@@ -32,10 +32,10 @@
 
 17. xampp
 
-18. postman (https://www.getpostman.com/)  [Folder should be in: ~/NotInstalledApps and change the downloaded folder name to mongo]
+18. postman (https://www.getpostman.com/)  [Folder should be in: ~/NotInstalledApps and change the downloaded folder name to Postman]
 
-19. mongodb (OPTIONAL: Comes in MEAN Stack installation, Make/Edit scripts accordingly: mongodb_enable, mongodb_start) 
-   (https://www.mongodb.com/download-center/v2/community)  [Folder should be in: ~/NotInstalledApps and change the downloaded folder name to Postman]
+19. mongodb (OPTIONAL: Comes in MEAN Stack installation(bookmarked), Make/Edit scripts accordingly: mongodb_enable, mongodb_start) 
+   (https://www.mongodb.com/download-center/v2/community)  [Folder should be in: ~/NotInstalledApps and change the downloaded folder name to mongo]
 
 20. nodejs (OPTIONAL: Comes in MEAN Stack installation) [Download from here: https://nodejs.org/en/download/package-manager/]
 
