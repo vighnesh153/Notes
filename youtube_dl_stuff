@@ -25,3 +25,8 @@ youtube-dl -x --audio-format mp3 <video_url>
 
 TO DOWNLOAD AUDIO DROM ENTIRE PLAYLIST
 youtube-dl -x -cit --audio-format mp3 <video_url>
+
+
+
+TO UPDATE YOUTUBE DL
+sudo pip3 install -U youtube-dl
