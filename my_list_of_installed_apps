@@ -53,3 +53,5 @@
 	Configuring PHPStorm:
 	set path in php interpreter: /usr/bin/php7.2   if version is 7.2
 	Select appropriate interpreters
+
+24. Blender, download and paste in ~/NotInsatlledApps : To run it- open the "blender" execuatable
