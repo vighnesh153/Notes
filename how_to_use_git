@@ -17,11 +17,20 @@ CREATING A GIT REPOSITORY
    Run "git init; git remote add origin https://github.com/vighnesh153/REPOSITORYname.git"
 
 
+   // git init : initialize git in a repository. It basically tells git to start tracking contents of the folder for changes.
+
+
 
 NOW TO ADD TO GITHUB REPOSITORY
 
 1. Run "git add filename". If have multiple files, then run "git add .".
+   
+   // git add file : tells git to track what files
+
 2. Then run, 'git commit -m "commit message" '.
+
+   It saves the changes made to files, added to be tracked, in the log file in .git/ folder as commit id, author, date and message
+
 3. Then, "git push -u origin master".
 
 
@@ -37,3 +46,56 @@ CLONING THE REPOSITORY
 TO PULL FROM THE GIT REPOSITORY
 
 1. Run "git pull" from within the folder.
+
+
+
+BASICS GIT COMMANDS
+
+1. git status : shows status of files, whether they are being tracked or not.
+2. git log : Shows all the commits from the time they were made. 
+   
+	FORMAT: commit 234bsjkdhbfkj4225e4lkjnlkj23n4
+		author: Vighnesh(vighnesh.raut13@gmail.com)
+		Date: 24th Oct, 2018   10:46am  +530
+			
+			message_1
+
+		commit asf3242fdsfkj4225e4lkjnlkj23n4
+		author: Vighnesh(vighnesh.raut13@gmail.com)
+		Date: 24th Oct, 2018   10:46am  +530
+			
+			message_2
+		
+3. git checkout commit-id : eg., git checkout 24jbn24i3b23kjbnn324
+	Changes the current files to that commit which matches the commit ID. Files, not existing in that version, will also be removed.
+
+	ORIGINAL	
+		
+					      HEAD
+		0 -> 0 -> 0 -> 0 -> 0 -> 0 -> 0
+					      MASTER
+
+	AFTER CHECKOUT
+
+
+		     HEAD
+		0 -> 0 -> 0 -> 0 -> 0 -> 0 -> 0
+					      MASTER
+
+	// HEAD is the timeline or version pointer
+	// MASTER is the ponter to the version that is being used by the owner. It usually points to the most recent commit.
+
+4. git checkout master : Make the HEAD point back to the master.
+5. git revert --no-commit commitID..HEAD : eg., git revert --no-commit 13kjn3kjb42jkln4mlkmklsdfdsfsfd..HEAD
+
+	// Removes all the commits from where the HEAD is pointing till the commit id provided. In the above eg., 
+		from commit: 13kjn3kjb42jkln4mlkmklsdfdsfsfd
+		to commit: HEAD
+	// It basically reverts back to a previous version														
+	// After reverting back to a version, we must save the changes.
+		git commit -m "Reverting to a previous version"
+
+	
+	// git log : has all the commits saved.
+	// So, even if we revert to some other version, we still can have all our data from a next version, from where we reverted back, 
+	    through git checkout, as before reverting, we committed that version.
