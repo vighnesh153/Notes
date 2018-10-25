@@ -1,0 +1,5 @@
+1. sudo gedit /etc/paths
+
+2. Add directory path at the end of the file
+
+3. Restart terminal
