@@ -130,11 +130,21 @@ BASICS GIT COMMANDS
 	     => Select the branch you made, readme-edits, to compare with master (the original).  (Check the order as new versions have diff. order)
 	     => Look over your changes in the diffs on the Compare page, make sure they’re what you want to submit.
 	     => When you’re satisfied that these are the changes you want to submit, click the big green Create Pull Request button.
+	     => By using GitHub's @mention system in your Pull Request message, 
+		you can ask for feedback from specific people or teams, whether they're down the hall or ten time zones away.
 	     => Give your pull request a title and write a brief description of your changes.
 	     => When you’re done with your message, click Create pull request!
+	-> Two different types of Pulls:
+	     => Fork & Pull Model
+	     => Shared repository model
+
+4. Deploy:
+	-> With GitHub, you can deploy from a branch for final testing in production before merging to master.
+	-> Once your pull request has been reviewed and the branch passes your tests, you can deploy your changes to verify them in production. 
+	-> If your branch causes issues, you can roll it back by deploying the existing master into production.
 
 
-4. Merging a pull request:
+5. Merging a pull request:
 	-> In this final step, it’s time to bring your changes together – merging your readme-edits branch into the master branch.
 	-> Click the green Merge pull request button to merge the changes into master.
 	-> Click Confirm merge.
