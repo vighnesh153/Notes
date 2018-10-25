@@ -29,7 +29,9 @@ NOW TO ADD TO GITHUB REPOSITORY
 
 2. Then run, 'git commit -m "commit message" '.
 
-   It saves the changes made to files, added to be tracked, in the log file in .git/ folder as commit id, author, date and message
+   -> It saves the changes made to files, added to be tracked, in the log file in .git/ folder as commit id, author, date and message.
+   -> On GitHub, saved changes are called commits. Each commit has an associated commit message, which is a description explaining why a particular change was made. 
+   -> Commit messages capture the history of your changes, so other contributors can understand what you’ve done and why.
 
 3. Then, "git push -u origin master".
 
@@ -67,7 +69,7 @@ BASICS GIT COMMANDS
 			message_2
 		
 3. git checkout commit-id : eg., git checkout 24jbn24i3b23kjbnn324
-	Changes the current files to that commit which matches the commit ID. Files, not existing in that version, will also be removed.
+	-> Changes the current files to that commit which matches the commit ID. Files, not existing in that version, will also be removed.
 
 	ORIGINAL	
 		
@@ -99,3 +101,43 @@ BASICS GIT COMMANDS
 	// git log : has all the commits saved.
 	// So, even if we revert to some other version, we still can have all our data from a next version, from where we reverted back, 
 	    through git checkout, as before reverting, we committed that version.
+
+
+// GITHUB knowledge
+1. Branch : Branching is the way to work on different versions of a repository at one time. 
+            -> By default your repository has one branch named master which is considered to be the definitive branch. 
+            -> We use branches to experiment and make edits before committing them to master.
+	    -> When you create a branch off the master branch, you’re making a copy, or snapshot, of master as it was at that point in time. 
+	    -> If someone else made changes to the master branch while you were working on your branch, you could pull in those updates using "git pull"
+
+2. Create a Branch:
+	-> Go to your new repository hello-world.
+	-> Click the drop down at the top of the file list that says branch: master.
+	-> Type a branch name, readme-edits, into the new branch text box.
+	-> Select the blue Create branch box or hit “Enter” on your keyboard.
+	
+	Now you have two branches, master and readme-edits. 
+	They look exactly the same, but not for long! Next we’ll add our changes to the new branch.
+
+
+3. Opening a Pull Request:
+	-> When you open a pull request,
+	   you’re proposing your changes and requesting that someone review and pull in your contribution and merge them into their branch.
+	-> Pull requests show diffs, or differences, of the content from both branches.
+	-> The changes, additions, and subtractions are shown in green and red.
+	-> Steps:
+	     => Click the Pull Request tab, then from the Pull Request page, click the green New pull request button.
+	     => Select the branch you made, readme-edits, to compare with master (the original).  (Check the order as new versions have diff. order)
+	     => Look over your changes in the diffs on the Compare page, make sure they’re what you want to submit.
+	     => When you’re satisfied that these are the changes you want to submit, click the big green Create Pull Request button.
+	     => Give your pull request a title and write a brief description of your changes.
+	     => When you’re done with your message, click Create pull request!
+
+
+4. Merging a pull request:
+	-> In this final step, it’s time to bring your changes together – merging your readme-edits branch into the master branch.
+	-> Click the green Merge pull request button to merge the changes into master.
+	-> Click Confirm merge.
+	-> Go ahead and delete the branch, since its changes have been incorporated, with the Delete branch button in the purple box.
+
+	
