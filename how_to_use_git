@@ -150,4 +150,10 @@ BASICS GIT COMMANDS
 	-> Click Confirm merge.
 	-> Go ahead and delete the branch, since its changes have been incorporated, with the Delete branch button in the purple box.
 
+
+6. Pushing to another branch:
+	-> git push -u origin myBranch
+	       // In some cases -u showed as invalid argument, so use this
+	->> git push origin myBranch
+
 	
