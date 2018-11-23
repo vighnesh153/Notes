@@ -47,7 +47,7 @@ CLONING THE REPOSITORY
 
 TO PULL FROM THE GIT REPOSITORY
 
-1. Run "git pull" from within the folder.
+1. Run "git pull origin master" from within the folder.
 
 
 
