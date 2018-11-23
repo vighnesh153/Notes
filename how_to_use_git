@@ -45,7 +45,7 @@ CLONING THE REPOSITORY
 
 
 
-TO PULL FROM THE GIT REPOSITORY
+TO PULL FROM THE GIT REPOSITORY (to the master branch)
 
 1. Run "git pull origin master" from within the folder.
 
@@ -101,6 +101,12 @@ BASICS GIT COMMANDS
 	// git log : has all the commits saved.
 	// So, even if we revert to some other version, we still can have all our data from a next version, from where we reverted back, 
 	    through git checkout, as before reverting, we committed that version.
+6. git checkout -b branch-name
+
+	// -b for new branch
+	// creates new branch with given name and starts to use it for current modifications to the project.
+	// we use "git push origin branch-name"
+	// and "git pull origin branch-name" for pushing and pulling to a specific branch
 
 
 // GITHUB knowledge
@@ -152,8 +158,18 @@ BASICS GIT COMMANDS
 
 
 6. Pushing to another branch:
-	-> git push -u origin myBranch
+	-> git push -u origin BranchName
 	       // In some cases -u showed as invalid argument, so use this
-	->> git push origin myBranch
+	-> git push origin BranchName
 
+
+7. Creating an organization:
+	-> It is like creating a new github account where you can add different repositories, projects.
+	-> The owner can add members to the organization.
+	-> The owner can set previledges for different members for each repo or project in that organization.
+	-> Teams: they are a group of members. The owner can set previledges for teams to grant them permissions for various tasks.
+	-> Using Teams made it easy for the owner to set the permissions for members. Before teams, owner had to set permissions for every user.
+	   Now, he can just create a Team, add members to it, and then set permissions for the Team. Those permissions apply for every Team member of that Team.
+
+	-> Creating an organizations is similar to creating a repository. Head over to the + symbol, then select "New Organization", then follow the rest GUI.
 	
