@@ -109,6 +109,16 @@ BASICS GIT COMMANDS
 	// and "git pull origin branch-name" for pushing and pulling to a specific branch
 
 
+
+GITIGNORE file
+	-> We create a .gitignore file.
+	-> In the file, we write the names of the files we don't want git to keep track of, or upload/update on github.
+	-> We do this so that we can easily add files using "git add ." without keeping track of files, not to add.
+	-> The file names should be on individual lines without any quotes.
+	-> We can add comments to that file using '#' just like Python.
+
+
+
 // GITHUB knowledge
 1. Branch : Branching is the way to work on different versions of a repository at one time. 
             -> By default your repository has one branch named master which is considered to be the definitive branch. 
