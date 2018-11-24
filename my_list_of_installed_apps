@@ -42,6 +42,7 @@
    (https://www.mongodb.com/download-center/v2/community)  [Folder should be in: ~/NotInstalledApps and change the downloaded folder name to mongo]
 
 20. nodejs (OPTIONAL: Comes in MEAN Stack installation) [Download from here: https://nodejs.org/en/download/package-manager/]
+	// For MAC: brew install node
 
 21. npm install -g express  (OPTIONAL: Comes in MEAN Stack installation)
 
