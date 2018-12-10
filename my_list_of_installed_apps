@@ -68,3 +68,5 @@
 27. Docker: Sort of a virtual box image.  https://www.howtoforge.com/tutorial/ubuntu-docker/
 
 28. Unarchiver (Mac) : for extracting raw files in Mac
+
+29. VS Code for Mac: Download and unzip the file. Then move the extracted file to Applications mannually 	 else it will have errors saying (unable to update due to setup is present in a read-only location).s
