@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Euler's Totient Function Proof</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <h id="Top-Heading">Euler's Totient Function's Proof</h>
+    <hr>
+    <h1>Euler's Totient Function:   </h1>
+    <h2>It states that all positive integers, n, have a prime factorization as follows:</h2>
+    <img src="images/natural_number_in_terms_of_its_primes.png" alt="Please open the page in Chrome Browser">
+    <h2>then, the number of positive integers less than 'n' that are co-prime to 'n' is given
+        by phi(n) where phi(n) is defined as follows:</h2>
+    <img src="images/EulersTotientFunctionFormula.png" alt="Please open the page in Chrome Browser">
+    <h2>To prove the formula above, we use the help of 3 following lemmas:</h2>
+    <hr>
+    <h1>Lemma 1:</h1>
+    <h2>Let G be the set as follows</h2>
+    <img src="images/lemma1_if.png" alt="Please open the page in Chrome Browser">
+    <h2>then, </h2>
+    <img src="images/lemma1_then.png" alt="Please open the page in Chrome Browser">
+    <h2>where, &nbsp;|A|&nbsp; is the number of elements in set A.</h2>
+    <h1>Proof:</h1>
+    <h2>We may use an example to prove the lemma instead of a variable but it is for simplicity purpose. For actual proof,
+        just substitute in some variable in-place of the example number.</h2>
+    <h3>Let n = 10.</h3>
+    <h3>Number of positive integers co-prime to 10, and less than 10, are 4. Namely 1, 3, 7, 9.</h3>
+    <h3>Now, if we add 10 to all the numbers of the above set, we get 11, 13, 17, 19.</h3>
+    <h3>Or, we can write them as (10 + 1), (10 + 3), (10 + 7), (10 + 9).</h3>
+    <h3>For all numbers in the above set, any prime factor, p, of 10 will not divide (10 + i) for i in (1, 3, 7, 9)
+        as p divides 10 evenly but p is co-prime to all numbers in (1, 3, 7, 9) as all numbers in (1, 3, 7, 9) are
+        co-prime to 10. So, (10 + i), for i in (1, 3, 7, 9), when divided by p, will always yield a remainder (can be proved
+        by modular arithmetic). No matter how many times we add 10 to i, for i in (1, 3, 7, 9), (10x + i) will never be divisible
+        by any prime factor of 10. So, in every interval of 10, there are 4 numbers, that are co-prime to 10.
+        Hence, the total number of co-prime numbers to 10, and less than 10k, will be k times 4 (or phi(10)),
+        which is 4k.</h3>
+    <hr>
+    <h1>Lemma 2:</h1>
+    <h2>Let 'p' be a prime and 'p' divides 'n', then </h2>
+    <img src="images/lemma2.png" alt="Please open the page in Chrome Browser">
+    <h1>Proof:</h1>
+    <h2>We may use an example to prove the lemma instead of a variable but it is for simplicity purpose. For actual proof,
+        just substitute in some variable in-place of the example number.</h2>
+    <h3>Let n = 10.</h3>
+    <h3>Notice that all numbers that are co-prime to '10p' are also co-prime to '10' for obvious reasons.
+        There are 'p' intervals, each with phi(10) numbers, relatively prime to '10p' or '10'. Hence, by lemma 1,
+        phi(10p) = p*phi(10), for p in prime factors of 10 (2, 5).</h3>
+    <hr>
+    <h1>Lemma 3:</h1>
+    <h2>Let 'p' be a prime and 'p' does not divide 'n', then </h2>
+    <img src="images/lemma3.png" alt="Please open the page in Chrome Browser">
+    <h1>Proof:</h1>
+    <h2>We may use an example to prove the lemma instead of a variable but it is for simplicity purpose. For actual proof,
+        just substitute in some variable in-place of the example number.</h2>
+    <h3>Let n = 10.</h3>
+    <h3>By lemma 2, we know that there are p*phi(10) number of elements, co-prime to '10' and less than '10p'.
+        Notice that all the multiples of 'p' whose factors are co-prime to 10 are also counted for obvious reasons(don't proceed
+        until this sinks in. It may take some time if you are reading this proof for the first time). To find those numbers,
+        check the following statements: </h3>
+    <h4>'p' is co-prime to 10</h4>
+    <h4>(1, 3, 7, 9) are co-prime to 10.</h4>
+    <h4>So, the product of 'i', for i in (1, 3, 7, 9), and 'p', will also be co-prime to 10.</h4>
+    <h3>(p, 3p, 7p, 9p) are the only numbers, in the set of p*phi(10) numbers, that are co-prime to '10' but are not co-prime to
+        '10p'. There are a total of phi(10) numbers, that are co-prime to 10 but not to '10p' because of the immediate previous
+        statement. So, phi(10p) = p*phi(10) - phi(10)
+        Hence, phi(10p) = (p-1)*phi(10), when p is not a prime factor of 10.</h3>
+    <hr>
+    <h1>Now, we are ready to prove the function with the help of lemma 3 and lemma 2.</h1>
+    <h2>Step 1:</h2>
+    <img src="images/actualProof_part1.png" alt="Please open the page in Chrome Browser">
+    <h2>Step 2: Using lemma 2 repeatedly:</h2>
+    <img src="images/actualProof_part2.png" alt="Please open the page in Chrome Browser">
+    <h2>Step 3: Now, using lemma 3, we get:</h2>
+    <img src="images/actualProof_part3.png" alt="Please open the page in Chrome Browser">
+    <h2>Repeatedly applying the above 3 steps until we eliminate 'phi' function from the RHS, we get the following result:</h2>
+    <img src="images/actualProof_finalPart.png" alt="Please open the page in Chrome Browser">
+    <h2>This completes the proof.
+        Thanks.</h2>
+    <hr>
+    <hh2>By: Vighnesh Raut</hh2>
+    <hh2>LinkedIn: https://www.linkedin.com/in/vighnesh-raut-b6299114b/</hh2>
+    <hh2>Github: https://github.com/vighnesh153</hh2>
+    <hh2>Contact me: vighnesh.raut13@gmail.com</hh2>
+    <hr>
+    <h2>Reference:</h2>
+    <hh2>Proof of Euler’s φ (Phi) Function Formula - RoseHulman Undergraduate Mathematics Journal - by</hh2>
+    <hh2>Shashank Chorge, Mumbai University, chorgeshashank@yahoo.co.in</hh2>
+    <hh2>Juan Vargas, UNC Charlotte, jvargas9@uncc.edu</hh2>
+    <h4>link to paper: https://scholar.rose-hulman.edu/cgi/viewcontent.cgi?article=1081&context=rhumj</h4>
+</body>
+</html>
