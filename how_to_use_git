@@ -48,6 +48,7 @@ CLONING THE REPOSITORY
 TO PULL FROM THE GIT REPOSITORY (to the master branch)
 
 1. Run "git pull origin master" from within the folder.
+2. Run "git pull origin master --allow-unrelated-histories" for merging a new git repo and an existing project.
 
 
 
