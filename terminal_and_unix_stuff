@@ -10,6 +10,12 @@
 9. ls : list. Its lists all the files of the present working directory. -l -> detailed info, -a -> hidden files as well
    -h -> When used with the -l option, use unit suffixes: Byte, Kilobyte, Megabyte, Gigabyte, Terabyte and Petabyte in order to reduce the number of digits to three or less using
              base 2 for sizes.
+
+             // Beter way to get the size of a folder 
+             first install coreutils using brew: brew install coreutils
+             then: du -sh path/to/folder 
+             du -sh * : this will print size of all folders and files from the current folder
+
 10. cat file_name : To display the contents of the file in the terminal.
 11. > : redirect. redirects the output of the command on the left to the file on the write. eg. ls > file1 : all the file names of the pwd will be written on the file1 file.
 	>> : same as above but this appends the output of the command on the left to the file on the write.
