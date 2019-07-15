@@ -1,0 +1,8 @@
+Installation of C++ coding Environment:
+
+1. Windows:
+	The Cherno Project: https://www.youtube.com/watch?v=1OsGXuNA5cc&list=PLlrATfBNZ98dudnM48yfGUldqGD0S4FFb&index=3&t=0s
+2. Mac:
+	The Cherno Project: https://www.youtube.com/watch?v=1E_kBSka_ec&list=PLlrATfBNZ98dudnM48yfGUldqGD0S4FFb&index=4&t=0s
+3. Linux:
+	The Cherno Project: https://www.youtube.com/watch?v=LKLuvoY6U0I&list=PLlrATfBNZ98dudnM48yfGUldqGD0S4FFb&index=5&t=0s
