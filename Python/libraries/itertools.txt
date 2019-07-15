@@ -1,0 +1,54 @@
+import itertools
+
+
+itertools.premutations(iterable, of_how_much_length)
+// Returns iterable of items where each item is a specific permutation of iterable 
+// with lenght = of_how_much_length
+
+
+itertools.combinations(iterable, of_how_much_length)
+// Returns iterable of items where each item is a specific combination of iterable 
+// with lenght = of_how_much_length
+
+
+itertools.combinations_with_replacement(iterable, of_how_much_length)
+// Same as combinations but here replacements are allowed
+
+
+itertools.product(iterable1, iterable2, ...)
+// cartesion product
+// Explanation with example:
+// 
+// 		import itertools
+//		s1, s2, s3 = 'ABC', 'abc', 'XYZ'
+//		for i in itertools.product(s1, s2, s3):
+//	    	print(i)
+//
+// Output:
+// ('A', 'a', 'X')
+// ('A', 'a', 'Y')
+// ('A', 'a', 'Z')
+// ('A', 'b', 'X')
+// ('A', 'b', 'Y')
+// ('A', 'b', 'Z')
+// ('A', 'c', 'X')
+// ('A', 'c', 'Y')
+// ('A', 'c', 'Z')
+// ('B', 'a', 'X')
+// ('B', 'a', 'Y')
+// ('B', 'a', 'Z')
+// ('B', 'b', 'X')
+// ('B', 'b', 'Y')
+// ('B', 'b', 'Z')
+// ('B', 'c', 'X')
+// ('B', 'c', 'Y')
+// ('B', 'c', 'Z')
+// ('C', 'a', 'X')
+// ('C', 'a', 'Y')
+// ('C', 'a', 'Z')
+// ('C', 'b', 'X')
+// ('C', 'b', 'Y')
+// ('C', 'b', 'Z')
+// ('C', 'c', 'X')
+// ('C', 'c', 'Y')
+// ('C', 'c', 'Z')
