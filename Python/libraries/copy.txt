@@ -1,0 +1,8 @@
+import copy
+
+
+copy.copy(x)
+# returns shallow copy of x
+
+copy.deepcopy(x)
+# returns deep copy of x
