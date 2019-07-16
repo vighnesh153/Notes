@@ -1,0 +1,20 @@
+import fractions
+
+
+a = fractions.Fraction(3, 4)  => 3/4
+b = fractions.Fraction(2, 4)  => 1/2
+c = fractions.Fraction(0.7)  => 7/10
+d = fractions.Fraction("0.1")  => 1/10
+
+
+print(a.numerator) => 3
+print(a.denominator) => 4
+
+
+from math import cos, PI
+
+
+a = fractions.Fraction(cos(PI/3))
+#	a =>  45035996...... / 900719.....
+a.limit_denominator()   # takes an optional parameter specifying the length of denominator
+#	a => 1 / 2
