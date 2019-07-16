@@ -1,0 +1,11 @@
+import statistics as s
+
+
+s.mean()
+s.median()
+s.harmonic_mean()
+s.median_low()
+s.median_high()
+s.mode()
+s.stdev()
+s.variance()
