@@ -1,0 +1,125 @@
+import datetime as dt
+
+
+d = dt.date(2019, 5, 13)
+print(d)
+# 2019-05-13
+
+
+d = dt.date.today()
+# todays date in above format
+
+
+# attributes and properties and common methods of Date object
+d.day
+d.month
+d.year
+d.weekday()   # Monday-0, Sunday-6
+d.isoweekday()   # Sunday-0, Saturday-6
+
+
+# Time Delta object(Time span)
+t_delta = dt.timedelta(weeks=3,
+						days=12,
+						seconds=...,
+						microseconds=...,
+						milliseconds=...,
+						minutes=...,
+						hours=..., etc)
+# We can use time delta to add/subtract to/from the dates.
+# If we subtract 2 date objects, we get a time delta object
+
+
+# attributes and properties and common methods of Time Delta object
+t_delta.days
+t_delta.min
+t_delta.seconds
+t_delta.total_seconds()  # From the epoch(1970)
+t_delta.resolution  -> smallest possible difference between 2 non-equal TimeDelta objects
+
+
+
+t = dt.time(23, 59, 59, 10000)
+		   # h, m, s, micro-sec
+
+
+date_time = dt.datetime(2019, 1, 26, 23, 59, 59, 1092)
+					# year, month, day, hr, min, sec, micro-sec
+date_time.date()	=> 		2019-1-26
+date_time.time()	=> 		23:59:59.1092
+
+
+dt.datetime.today()
+# returns date and timeof current timezonw without the timezone info
+
+
+dt.datetime.now()
+# If no param is passed: now() == today()
+# else, it accepts a tzinfo(timezone info) object and returns datetime of that timezone.
+# eg. dt.datetime.now(tz=pytz.UTC) returns date and time of UTC
+## NOTE: WE SHOULD USE pytz FOR OUR TIMEZONE DETAILS. MORE ON IT AHEAD.
+
+# CHANGE TO DIFFERENT TIMEZONE.
+tz = pytz.timezonne("Asia/Kolkata")
+# then pass this tz's value to the now() method
+# For other timezone info., check this thread:
+# https://stackoverflow.com/questions/13866926/is-there-a-list-of-pytz-timezones
+# or just do:
+#	TO CHECK ALL TIMEZONES
+# 	for tz in pytz.all_timezones:
+#   	 print(tz)
+
+
+dt.datetime.utcnow()  => short for dt.datetime.now(tz=pytz.UTC)
+
+
+dt_of_other_tz = dt_of_some_tz.astimezone(pytz.timezone("Asia/Kolkata"))
+
+
+dt.datetime.fromtimestamp(13321321321313)
+# returns datetime object: 13321321321313 after epoch(1970)
+
+
+# TO CONVERT A NAIVE DATETIME OBJECT (dt object that has no info. of tz), TO A 
+# TIMEZONE AWARE DATETIME OBJECT:
+dt_obj.localize(pytz.timezone("some timezone"))
+
+
+# TO GET DATE IN A PARTICULAR STRING FORMAT
+dt_obj.strftime('%Y, %m, %d')
+# returns string of that format
+
+
+# To get datetime obj from a string:
+dt_obj = dt.datetime.strptime(string, "%B, %d, %Y")
+
+
+# BASIC LIST OF DATE AND TIME FORMATTING
+%a 		Sun, Mon, Tue,...
+%A 		Sunday, Monday, Tuesday,....
+%w 		0 - 6, weekdays
+%d 		01 - 31, month day
+%b 		Jan, Feb, Mar,....
+%B 		January, February, March,...
+%m 		01 - 12, month number
+%y 		year without centuary: 00, 01, ...., 98, 99
+%Y 		year with centuary: 0000, 0001, ...., 1998, 1999, ...., 9999
+%H 		00, 01, ...., 23: 24-hour clock Hours count
+%I 		01, 02, ..., 12: 12-hour clock Hours count
+%p  	AM, PM
+%M 		0, 1, ...., 59: minutes
+%s 		0, 1, ...., 59: seconds
+%f 		microseconds in decimal
+%z 		UTC offset: +0530, +0000, ....
+%Z 		Timezone name: IST, UTC, ...
+%j 		day of the year: 1 - 366
+%U 		week of the year: 0 - 53 (All days preceding 1st Sunday are in 
+		week 0 and Sunday is the first day of the week)
+%W 		week of the year: 0 - 53 (All days preceding 1st Monday are in 
+		week 0 and Monday is the first day of the week)
+%c 		locale's appropriate DATE and TIME representation
+		eg.: Tue Aug 16 19:30:00 1998
+%x		locale's appropriate DATE representation
+		eg.: 08/16/1991
+%X		locale's appropriate TIME representation
+		eg.: 21:30:00
