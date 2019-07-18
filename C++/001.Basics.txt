@@ -1,0 +1,12 @@
+# include <iostream>
+
+int main()
+{
+	std::cout << "Hello";
+	std::cout << std::endl;
+	std::cout << 1 + 2;
+	return 0;    //  OPTIONAL: ONLY FOR MAIN FUNCTION
+}
+
+NOTE: THE MAIN IS THE ONLY FUNCTION THAT IF IT'S RETURN TYPE IS
+	  INT, EVEN THEN IT IS OPTIONAL TO RETURN ANYTHING.
