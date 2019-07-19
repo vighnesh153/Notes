@@ -10,3 +10,20 @@ int main()
 
 NOTE: THE MAIN FUNCTION IS THE ONLY FUNCTION THAT DOESN'T NEED TO
 	  RETURN ANYTHING EVEN IF THE RETURN TYPE IS NOT VOID
+
+
+std: It is a standard namespace that has many standard user-defined types like 'cout', 'cin'
+cout: It is a user-defined type of 'ostream' class. It has an operator overload for left shift (<<)
+cin : It is a user-defined type of 'istream' class. It has an operator overload for right shift (>>)
+
+NOTE: 'cout' AND 'cin' OBJECTS ARE DECLARED AND INITIALIZED IN THE IOSTREAM LIBRARY. SO, 
+	  IF WE DON'T INCLUDE IT, IT WILL THROW A COMPILE TIME ERROR
+
+#include: It is a pre-processor directive. This one of the many pre-processors, that gets compiled 
+		  at the beginning of the compilation.
+
+endl: It refers to a newline character
+
+
+using namespace std; => Adding this statement to the top makes our life easier by not needing to 
+						to add 'std::' at the start of each object that belongs to the 'std' namespace.
