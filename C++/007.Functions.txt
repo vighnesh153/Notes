@@ -10,7 +10,7 @@ same number of parameters but different types corresponding
 
 
 FUNCTION DECLATATION:
-if function is defined after when it is being used in the code, the compiler 
-won't be able to know if the function exits or not. So, we add a function declaration 
+if function is defined after when it is being used in the code, or is in other source file, 
+the compiler won't be able to know if the function exits or not. So, we add a function declaration 
 before calling it.
 Syntax: return_type		name_of_func (types_of_corresponding_parameters)
