@@ -1,0 +1,14 @@
+if
+// obvious
+
+if-else
+// obvious
+
+while
+// obvious
+
+for
+// obvious
+
+do while
+// obvious
