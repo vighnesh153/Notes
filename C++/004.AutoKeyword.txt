@@ -1,0 +1,4 @@
+auto a = 12;			// a is int
+auto b = 12.2;			// b is float
+// 'auto' is same as 'var' keyword of C#. It leaves it to the compiler, 
+// infer the type of the variable.
