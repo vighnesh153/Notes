@@ -6,3 +6,14 @@ Installation of C++ coding Environment:
 	The Cherno Project: https://www.youtube.com/watch?v=1E_kBSka_ec&list=PLlrATfBNZ98dudnM48yfGUldqGD0S4FFb&index=4&t=0s
 3. Linux:
 	The Cherno Project: https://www.youtube.com/watch?v=LKLuvoY6U0I&list=PLlrATfBNZ98dudnM48yfGUldqGD0S4FFb&index=5&t=0s
+
+
+To add a cpp file, 
+	Right click on 'Source Files' folder in the solution's explorer, 
+	then add cpp file.
+
+A project needs to have exactly 1 main function across all the cpp files.
+
+
+To add a header file, right click on the Header files folder in the solution explorer 
+and follow similar procedure.	
