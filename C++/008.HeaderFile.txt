@@ -1,0 +1,11 @@
+A file, that conventionally contains declarations and other 'library' include statements.
+Whatever we add to a header, is directly copy/pasted to the source code on the line where 
+it is included during compile time.
+
+To include a custom header file, in a source file:
+# include "header_file_name.h"
+
+At the top of the header file, we add '#pragma once'.
+It means that, if we are including same libraries in different headers, 
+and if be include those headers in a single source file, it won't cause conflicts 
+because of including same library or header more than once.
