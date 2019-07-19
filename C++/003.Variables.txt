@@ -1,0 +1,20 @@
+int a;
+a = 12;
+// OR
+int b = 13;
+
+
+
+float c = 12.3f;
+// 12.3 is by default double
+// So, explicitely specify that it is float by suffixing 'f'
+
+int d = 4 / 3;  					// = 1
+float e = 4 / 3;					// = 1
+float f = 4.0 / 3;					// = 1.333...
+float g = (float)4 / 3;				// = 1.333...
+
+
+
+char ch1 = 'a';			// character in single quotes
+char ch2 = 97;			// stores character that has ASCII 97
