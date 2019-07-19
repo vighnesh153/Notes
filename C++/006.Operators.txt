@@ -1,0 +1,24 @@
+>		greater than
+<		less than
+!		not
+=		assignment
+>=		greater than or equal to
+<=		less than or equal to
+==		exactly equal to 
+!=		not equal to
+
+
++		add
+-		subtract
+*		multiply
+/		divide
+
+++		increment by 1
+--		decrement by 1
+
++=		add to self
+-=		subtract from self
+*=		multiply to self
+/=		divide from self
+
+%		get remainder (modulus)
