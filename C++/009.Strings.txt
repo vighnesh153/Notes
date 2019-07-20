@@ -1,0 +1,22 @@
+String: A class defined in the 'std' namespace that can allow us to create 
+		objects of type string or char[] (character array: discussed later).
+
+
+Syntax:
+	std::string s = "Ok";
+
+	// string concatenation
+	s = s + " hello";
+
+	cout << s;
+	// prints: Ok hello
+
+	// string comparision
+	cout << ("a" < "b");	// 1 => for true
+	cout << ("a" > "b");	// 0 => for false
+	>=, <=, ==, !=
+
+	// methods: string member functions
+	.length()
+	.find(string_obj) or .find(char_obj) 
+	.substr(start_ind) or .substr(start_ind, number_of_characters_from_start_index)
