@@ -12,3 +12,9 @@ for
 
 do while
 // obvious
+
+
+for (auto item: iterable_object)
+{
+	// For each or ranged for
+}
