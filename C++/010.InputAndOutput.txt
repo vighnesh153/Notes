@@ -1,0 +1,30 @@
+INPUT:
+
+int a;
+cin >> a;
+// takes the number given as an input to the console.
+
+char ch;
+cin >> ch;
+// takes the first character of the input provided.
+
+string s;
+cin >> s;
+// takes the first word into the string.
+
+#include <string>
+string s;
+getline(cin, s);
+// Feeds the entire line of the console to the 's' variable.
+
+
+
+OUTPUT:
+
+
+cout << "asdasdd";
+// outputs anything to the console.
+// 'cout << sa' returns a 'cout' object. So, we can chain multiple 
+// data by adding '<<'
+// eg.: cout << "My date of birth is " << 13 << "th May, " << 1998;
+// output: My date of birth is 13th May, 1998
