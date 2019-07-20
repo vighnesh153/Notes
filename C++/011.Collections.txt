@@ -1,0 +1,46 @@
+VECTOR:
+
+#include <vector>
+
+Syntax:
+	vector<T> vec;
+	// vector of type T
+
+
+	vec.push_back(T_obj);
+	// append, or push at the end
+
+
+	unsigned int length = vec.size();
+	// returns number, of type (unsigned int), of elements in vec
+
+
+	vec[2] = T_obj;
+	// indexing is allowed
+
+
+	// The following can be used inside loops
+	auto i = begin(vec);
+	// i is now an iterator, that points to the first value of vec
+	cout << *i;
+	// prints value at that location
+	i++;
+	// point to the next element of the vector
+	i != end(vec)
+	// checks if we are still pointing to the elements inside the vector
+
+
+	vec.insert(vec.begin() + index, value);
+	// insert's element(value) at index position.
+
+
+	vec.erase(vec.begin() + index);
+	// remove's element at specified index
+
+
+	vec.clear();
+	// removes all the elements of the vector
+
+
+	vec.empty();
+	// true, if vector is empty, else, false
