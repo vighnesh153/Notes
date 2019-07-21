@@ -1,0 +1,5 @@
+DEFINITION: A type of polymorphism
+
+In simple words, it is the technique where we make operators available to our own 
+classes. We can perform arithmetic, logical, and many other sorts of operations 
+on the objects of the classes that we created.
