@@ -7,6 +7,7 @@ Syntax:
 
 	// string concatenation
 	s = s + " hello";
+	s = s + to_string(10); 	// Function present in <string>
 
 	cout << s;
 	// prints: Ok hello
