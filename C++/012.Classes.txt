@@ -1,12 +1,20 @@
 Classes:
 
-Keywords:
+# Keywords:
 	class -> 
 		Syntax:
 			class
 			{
-				// Body
-			};			// Semi-colon is important at the end of the class
+				public:
+					// Content
+				private:
+					// Content
+				protected:
+					// Content
+			};			
+			// Semi-colon is important at the end of the class
+
+			// We can have multiple private/public/protected blocks.
 
 
 	public ->
@@ -101,11 +109,35 @@ Keywords:
 
 
 
-TO DEFINE FUNCTIONS OF THE CLASS OUTSIDE ITS BODY:
+# TO DEFINE FUNCTIONS OF THE CLASS OUTSIDE ITS BODY:
 
 return_type   class_name :: FuncName (params)
 {
-}	
+}
 
 
 
+# CONSTRUCTORS (should be in the public field)
+// A constructor that takes no parameters is called a default constructor.
+
+ClassName (parameters)
+{
+	// Initialization
+}
+
+// Shortcut to initialize data members in a constructors
+
+ClassName(int _x, int _y)						ClassName(int _x, int _y): x(_x), y(_y)
+{								 =>				{
+	x = _x;										}
+	y = _y;
+}
+
+
+# INSTANTIATING A CLASS
+
+// instantiating a default constructor
+ClassName obj;
+
+// instantiating a constructor with parameters
+ClassName obj(arg1, arg2, ...);
