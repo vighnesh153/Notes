@@ -1,6 +1,20 @@
 Classes:
 
-# Keywords:
+# ABSTRACTION:
+	1. It solves the problem at the design level.
+	2. It is used for hiding the unwanted data and giving only the relevant data.
+	3. It lets you focus on what the object does instead of how it does it.
+	In simple words, think of abstraction as an interface which tells what a object 
+	can do.
+
+# ENCAPSULATION:
+	1. It solves the problem at the implementation level.
+	2. It means encapsulating the code and data into a single unit to protect it from 
+	   the outside world like methods, getters, setters.
+	3. In simple words, it means hiding the internal details or mechanics of how an object does
+	   something.
+
+# KEYWORDS:
 	class -> 
 		Syntax:
 			class
