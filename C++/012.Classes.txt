@@ -1,0 +1,111 @@
+Classes:
+
+Keywords:
+	class -> 
+		Syntax:
+			class
+			{
+				// Body
+			};			// Semi-colon is important at the end of the class
+
+
+	public ->
+		All the class members declared under public will be available to everyone. The data members and member functions declared public can be accessed by other classes too. The public members of a class can be accessed from anywhere in the program using the direct member access operator (.) with the object of that class.
+
+
+	private ->
+		The class members declared as private can be accessed only by the functions inside the class. They are not allowed to be accessed directly by any object or function outside the class. Only the member functions or the friend functions are allowed to access the private data members of a class.
+
+
+	protected ->
+		Protected access modifier is similar to that of private access modifiers, the difference is that the class member declared as Protected are inaccessible outside the class but they can be accessed by any subclass(derived class) of that class.
+
+	Scope resolution operator (::) ->
+		1. To access a global variable when there is a local variable with same name:
+			#include<iostream>  
+			using namespace std; 
+			int x;  // Global x 
+			int main() 
+			{ 
+			  int x = 10; // Local x 
+			  cout << "Value of global x is " << ::x; 
+			  cout << "\nValue of local x is " << x;   
+			  return 0; 
+			} 
+		2. To define a function outside a class:
+			#include<iostream>  
+			using namespace std; 
+			class A  
+			{ 
+			public:  
+			   // Only declaration 
+			   void fun(); 
+			}; 
+			// Definition outside class using :: 
+			void A::fun() 
+			{ cout << "fun() called"; } 
+			int main() 
+			{ 
+			   A a; 
+			   a.fun(); 
+			   return 0; 
+			} 
+
+		3. To access a class’s static variables:
+			#include<iostream> 
+			using namespace std; 
+			class Test 
+			{ 
+			    static int x;   
+			public: 
+			    static int y;    
+			    // Local parameter 'a' hides class member 
+			    // 'a', but we can access it using :: 
+			    void func(int x)   
+			    {  
+			       // We can access class's static variable 
+			       // even if there is a local variable 
+			       cout << "Value of static x is " << Test::x; 
+			       cout << "\nValue of local x is " << x;   
+			    } 
+			}; 
+
+		4. In case of multiple Inheritance:
+			If same variable name exists in two ancestor classes, we can use scope resolution operator to distinguish.
+
+			#include<iostream> 
+			using namespace std; 
+			class A 
+			{ 
+			protected: 
+			    int x; 
+			public: 
+			    A() { x = 10; } 
+			};   
+			class B 
+			{ 
+			protected: 
+			    int x; 
+			public: 
+			    B() { x = 20; } 
+			}; 
+			class C: public A, public B 
+			{ 
+			public: 
+			   void fun() 
+			   { 
+			      cout << "A's x is " << A::x; 
+			      cout << "\nB's x is " << B::x; 
+			   } 
+			}; 
+
+
+
+TO DEFINE FUNCTIONS OF THE CLASS OUTSIDE ITS BODY:
+
+return_type   class_name :: FuncName (params)
+{
+}	
+
+
+
