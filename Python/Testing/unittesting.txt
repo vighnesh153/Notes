@@ -1,0 +1,73 @@
+import unittest
+
+
+
+# Suppose we have a Calculator.py file that is as follows:
+	def add(x, y):
+		return x + y
+	def subtract(x, y):
+		return x - y
+	def multiply(x, y):
+		return x * y
+	def divide(x, y):
+		return x / y
+
+
+# To test the above code, we writhe the following test:
+import Calculator as app
+class TestCalculator(unittest.TestCase):
+	# conventionally, name of test class is Test<App's name>
+
+	def test_add(self):
+		# only methods beginning with 'test_' will be tested
+		result = app.add(10, 5)
+		self.assertEqual(result, 15)
+	# and we can do many tests like above by just adding 'test_' at the beginning of the method
+
+
+
+
+
+# NOTE: Each test method is a single test, no matter how many asserts we add in them
+
+
+
+
+
+# some other useful methods to avoid initializing same variable with same value in all methods
+
+def setUp(self):
+	# runs at the beginning of each test
+
+def tearDown(self):
+	# runs at the end of each test
+
+@classmethod
+def setUpClass(self):
+	# runs at the start of testing
+
+@classmethod
+def tearDownClass(self):
+	# runs at the end of testing
+
+
+
+
+
+
+# Other assertions:
+self.assertRaises(Exception): func() 					=> check if func() raises Exception		
+														# below is an alternate way for above.
+self.assertRaises(Exception, func, arg1, arg2, ...)		=> check if func(arg1, arg2, ...) raises Exception
+self.assertEqual(a, b)									=> check if a == b
+self.assertNotEqual(a, b)								=> check if a != b
+self.assertTrue(x)										=> check if bool(x) is True
+self.assertFalse(x)										=> check if bool(x) is False
+self.assertIs(a, b)										=> check if a is b
+self.assertNotIs(a, b)									=> check if (a is b) == False
+self.assertIsNone(x)									=> check if x is None
+self.assertIsNotNone(x)									=> check if (x is None) == False
+self.assertIn(a, b)										=> check if a in b
+self.assertNotIn(a, b)									=> check if a not in b
+self.assertIsInstance(a, b)								=> check if isinstance(a, b)
+self.assertNotIsInstance(a, b)							=> check if isinstance(a, b) == False
