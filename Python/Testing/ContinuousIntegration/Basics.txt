@@ -1,0 +1,11 @@
+# Continuous Integration (CI) is a way to do automated testing on a remote environment.
+# It helps us in following way:
+#	1. It doesn't waste our developer time.
+#	2. There is no bias in running the code. eg. no developer's system defaults that maybe made the code run.
+
+# To do continuous integration using TravisCI, add the repo in the TravisCI's website
+
+# Run =>  'pip freeze > requirements.txt'.
+# Modify the test file's name in the .travis.yml sample, attached, according to the used test file.
+# Then add the .travis.yml file in the repo.
+# Then push to the repo
