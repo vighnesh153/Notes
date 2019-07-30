@@ -1,0 +1,22 @@
+import threading as th
+
+
+
+t1 = th.Thread(target=callback1, args=(1,))
+# If the 'callback1' accept args, then assign it to 'args' param as a tuple.
+
+
+# Similarlly, we can create many threads.
+t2 = th.Thread(target=callback2, args=(1,))
+
+
+
+t1.start()
+t2.start()
+# Start executing threads
+
+
+
+t1.join()
+t2.join()
+# Wait for the thread to complete its execution
