@@ -1,0 +1,11 @@
+Differences:
+	Multi-Threading: (Isn't actually parallism but pretends to be)
+		1. Defines threads of a process, and execute them when the CPU is idle, one at a time.
+		2. Acts on same global address space of parent.
+		3. Economical in both, sense of time as well as resource consumption.
+	Multi-Processing:(Actual parallellism)
+		1. Processes different processes on different CPU cores.
+		2. Different memory address space of each process
+		   (Makes copies of globals and doesn't affect the originals)
+		3. Time consuming and intense resource consumption.
+		
