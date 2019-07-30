@@ -1,0 +1,76 @@
+-> File extension => .pyx
+
+
+-> Installation: pip install cython
+
+
+-> Function definitions using:
+	1. def:
+		regular python function
+	2. cdef:
+		Cython only functions. No 'C' translations to 'Python'
+	3. cpdef:
+		C and Python. It will create a C function and a wrapper to that function in Python.
+		Can't be used always as we have many C features that have no equivalent in Python. eg. pointer array
+
+
+-> To make Cython convert Python to C++ instead of C, we add the following lone at the type of .pyx file.
+# distutils: language=c++
+
+
+-> Declarations of variables
+	# We can use either cdef or cpdef
+	eg.
+		cdef int x = 0
+		cdef int y
+		cdef float a
+		cdef double b     # double precision than float
+
+
+-> Create a setup.py file and add the following contents to it.
+	from distutils.core import setup
+	from Cython.Build import cythonize
+
+	setup(ext_modules=cythonize("file.pyx"))
+
+
+-> To cythozie the file, in terminal, run:
+	$ python setup.py build_ext --inplace
+	# This will create the .c version of the .pyx file passed, and also it will generate some shared object files(.so files)
+
+
+-> Move the .pyx file to some other location so that it doesn't get imported while using the C version.
+
+
+-> Create a normal Python file, where we will use the C optimized functions or classes.
+
+
+-> Import the file inside the Python file.
+	eg. If file.pyx was the file that was optimized to file.c, then in the pure Python file, do 'import file'
+
+
+-> Doing the above will show errors in IDEs because we moved the .pyx file to some other location, 
+   but when we run it, there won't be any errors, as the compiler, with the help of Cython, 
+   will use the .c version of the file. (Numpy and many other C-optimized libraries work in a similar way)
+
+
+-> Using C's functions 
+	from libc.math cimport sin
+	# libc.math -> header file
+	# sin -> function
+
+
+-> External declarations
+	If we want to access C code for which, Cython doesn't provide a ready to use declaration, we
+	can declare manually:
+	eg.
+	cdef extern from "math.h":
+		double sin(double x)
+
+	And then, we can use the sin() function
+
+
+-> Importing other Cython code
+	1. Suppose file1.pyx needs a Cython code from file2, then the extension of file2 should be .pxd
+	2. .pxd files are like C++ headers. They, conventionally, have external declarations
+	3. They can be imported in .pyx file using cimport
