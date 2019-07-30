@@ -1,0 +1,33 @@
+import multiprocessing as mp
+
+
+
+p1 = mp.Process(target=func1, args=(1,))
+# same format as thread (Check ./MultiThreading.txt)
+
+p2 = mp.Process(target=func2, args=(1,))
+
+
+
+p1.start()
+p2.start()
+# start the process's execution
+
+
+p1.join()
+p2.join()
+# wait for p1 and p2's execution to complete
+
+
+
+
+# MULTIPROCESSING POOL	
+
+pool = mp.Pool()
+
+
+result = pool.map(func, iterable)
+# applies func on each item of iterable, parallelly, instead of sequentically.
+
+pool.close()
+pool.join()
