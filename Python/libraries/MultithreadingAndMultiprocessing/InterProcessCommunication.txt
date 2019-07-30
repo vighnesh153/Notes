@@ -1,0 +1,52 @@
+import multiprocessing as mp
+
+
+
+1. Using multi-processing arrays:
+	
+	array = mp.Array('i', 3)
+	# Create a multi-processing array.
+	# i -> int, d -> double
+	# 3 -> size
+
+	# This 'array' can be used by the parent as well as the child processes.
+	# This way, we can create a shared memory.
+	# 'array' doesn't have append or pop methods.
+	# It can only be indexed, to modify or get the value at that index.
+
+
+2. Using single valued variable:
+	
+	v = mp.Value('d', 0.0)
+	# d -> double, i -> int
+	# 0.0 -> initialization
+
+
+	# To modify:
+	v.value = 2.0
+
+	# To get:
+	a = v.value
+
+
+3. Using files:
+	
+	Share values by constantly reading and writing to a file [by using locks(discussed later), to avoid concurrency issues].
+
+
+4. Using Queue:
+	
+	q = mp.Queue()
+
+	# To push item (at the end):
+	q.put(3123)
+
+	# To get item (from the beginning):
+	item = q.get()
+
+
+	# To get all items:
+		result = []
+		while q.empty() == False:
+			result.append(q.get())
+
