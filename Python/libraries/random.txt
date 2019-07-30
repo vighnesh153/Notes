@@ -1,0 +1,31 @@
+import random as rd
+
+
+
+rd.seed(number)
+# set random number's generator's initial state(seed)
+
+
+
+rd.randrange(start, end[, step])
+# returns a random integer from the specified range
+
+
+
+rd.randint(a, b)
+# returns random integer between a & b inclusive
+
+
+
+rd.uniform(a, b)
+# returns random floating point number between a & b inclusive
+
+
+
+rd.shuffle(sequence)
+# returns a random permutation of the sequence specified
+
+
+
+rd.random()
+# random floating point number from [0, 1)
