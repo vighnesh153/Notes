@@ -31,3 +31,19 @@ result = pool.map(func, iterable)
 
 pool.close()
 pool.join()
+
+
+
+
+# LOCKS
+
+	# To maintain integrity of values in variables.
+
+
+	lock = mp.Lock()
+	# create lock object
+
+
+	lock.acquire()  # restrict other processes to access the following block until current block releases the lock
+	# do updation
+	lock.release()
