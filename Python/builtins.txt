@@ -1,0 +1,19 @@
+# enumerate()
+	1. Takes an iterable as an argument and attaches index to the iterable
+
+	eg.
+	for ind, item in enumerate("abc"):
+		print (ind, item)
+	# Output: 
+	# 	0 a
+	# 	1 b
+	#	2 c
+
+	Second way is providing a start index:
+	eg.
+	for ind, item in enumerate("abc", 5):
+		print (ind, item)
+	# Output: 
+	# 	5 a
+	# 	6 b
+	#	7 c
