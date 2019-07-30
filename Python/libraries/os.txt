@@ -1,0 +1,110 @@
+import os
+
+
+os.getcwd() 
+# get current working directory's full path as string
+
+
+
+os.chdir(path) 
+# cd to path. path can be relative or absolute
+
+
+
+os.listdir(path)
+# lists all the contents of the path specified. If no path is specified, then
+# it lists the contents of the current working directory.
+
+
+
+os.mkdir(directory_name_with_path) 
+# newdir => for directory in the current folder
+# ../newdir => for directory in the parent folder
+# If path doesn't exist, then throws error
+
+
+
+os.mkdirs(directory_name_with_path) 
+# same as above but if the directory in which we want to create
+# the new directory doesn't exist, then it creates all the required
+# directories for the path to exist, and then, creates the new dir
+# in the specified path.
+
+
+
+
+os.rmdir(path_to_dir_or_just_dir_name)
+# same as '$rmdir dir' in shell.
+# removes the directory only if the directory is empty
+
+
+
+os.removedis(path_to_dir_or_just_dir_name)
+# same as '$rm -rf dir' in shell.
+
+
+
+os.rename(file_name_with_path_or_otherwise, new_file_name_with_path_if_old_file_was_with_path)
+# changes name of file or folders
+
+
+
+os.stat(path)
+# returns the stats of the file/dir at that path
+
+
+
+os.walk(path)
+# It gives a generator object that has 3 things in each of its yield:
+#	1. Current Directory
+#	2. List of directories in current directory
+#	3. List of other non-directory files in current directory
+#
+# When we loop over os.walk(path), it first prints the current directory and its contents.
+# Then, it calls os.walk() on each of the directories in the list of 'directories in current directory'
+
+
+
+os.environ
+# environ object of dictionary type, that has all the env variables of current session as key-value pairs
+
+
+
+os.environ.get("environ_variable_name")
+# gets the value of an env variable
+
+
+
+os.path.join(path1, path2)
+# joins/concatenates 2 paths. It helps us with platform independent path joins and many things
+
+
+
+a = '/Users/apple/Pycharm/First'
+os.path.basename(a) => returns base file or dir name
+# outputs => First
+os.path.dirname(a) => returns immediate parent dir name with full path
+# outputs => /Users/apple/Pycharm
+os.path.split(a) => splits base file name from the path and returns a tuple of result of split
+# ('/Users/apple/Pycharm', 'First')
+
+
+
+os.path.exists(path)
+# returns true is path exists, else, false
+
+
+
+os.path.isdir(path_to_a_file_or_dir)
+# returns true if path is of a dir, else, false
+
+
+
+os.path.isfile(path_to_a_file_or_dir)
+# returns true if path is of a file, else, false
+
+
+
+os.path.splitext(path)
+# splits the extension from the path and returns the file and extension as items of tuple
+# os.path.splitext("/ok/file.txt")  =>  ("/ok/file", ".txt")
