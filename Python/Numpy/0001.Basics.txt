@@ -1,0 +1,26 @@
+Numpy is an array manipulation library that is C-optimized for using in Python.
+It has many functionalities that are readily not available in Python.
+
+
+import numpy as np
+
+
+np.set_printoptions(threshold=sys.maxsize)   # To avoid truncation of large arrays while printing
+                                             # import sys first.
+
+a = np.empty((2, 3))
+# empty array with 2 rows and 3 columns
+# each of its index will have garbage float values as the array is not initialized.
+
+
+
+a = np.arange(0, 10, 1.5)
+# similar to the Python's 'range' function, except that this also accepts floating steps.
+
+
+
+# Math Functions
+a = np.pi  # 3.1415926535...
+a = np.sin(x)   # x => radians
+a = np.sin([x1, x2, ...])  => returns array of values, where each value is sin(xi)    # xi => radians
+a = np.nan  # similar to float('nan')
