@@ -1,0 +1,31 @@
+1. Module: Tells the page to use user defined controllers on the page.
+
+To create a module: make a new JS file (conventional to keep core-JS code in different file)
+
+var myApp = angular.module("nameOfModule", []);
+// The 2nd arg is an array of other modules. (More on this later)
+
+
+
+2. Controller: Binds some data to the scope where it is used
+
+myApp.controller("nameOfController", function($scope) {
+    $scope.someVariable = someValue;
+});
+// $scope is the object that is passed to the above controller when called.
+// It is the scope of the html element in which it is used.
+
+
+
+
+USAGE:
+
+<body ng-app="nameOfModule">
+// Binds 'myApp' module with body
+
+    <div ng-controller="nameOfController">
+        {{ someVariable }}
+    </div>
+    // someVariable is only available in the above div's scope as it is binded with 'nameOfController'
+    
+</body>
