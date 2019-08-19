@@ -1,0 +1,25 @@
+We can even chain controllers directly to the module object like following:
+
+var myApp = angular
+                .module("nameOfModule", [])
+                .controller("nameOfController", function($scope) {
+                    let employee = {
+                        Name: "Vighnesh",
+                        Age: 404
+                    }
+                    $scope.employee = employee;
+                });
+
+
+USAGE:
+
+<body ng-app="nameOfModule">
+// Binds 'myApp' module with body
+
+    <div ng-controller="nameOfController">
+        <h1>Name: {{ employee.Name }} </h1>
+        <h1>Age: {{ employee.Age }} </h1>
+    </div>
+    // someVariable is only available in the above div's scope as it is binded with 'nameOfController'
+
+</body>
