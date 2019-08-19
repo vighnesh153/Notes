@@ -1,0 +1,24 @@
+Consider a controller as follows:
+
+let app = angular
+                .module("nameOfModule", [])
+                .controller("nameOfController", function($scope) {
+                    let flag = "images/ok.png"
+                    $scope.flag = flag;
+                });
+
+
+Now, if we use it as follows:
+
+<body ng-app="nameOfModule">
+    <div ng-controller="nameOfController">
+        <img src="{{ flag }}" />
+    </div>
+</body>
+
+Then, the image loads, but we have a '404 error' in the console as well. This is because,
+when the DOM parses the HTML page, it sends a request to the "{{ flag }}" URL which is not a
+valid path. Parsing occurs before the evaluation of the Angular modules and controllers.
+
+But as soon as they are evaluated, again a request is made to the valid URL which was passed to
+the flag variable. But because of this, 2 requests were made and a
