@@ -18,7 +18,20 @@ Now, if we use it as follows:
 
 Then, the image loads, but we have a '404 error' in the console as well. This is because,
 when the DOM parses the HTML page, it sends a request to the "{{ flag }}" URL which is not a
-valid path. Parsing occurs before the evaluation of the Angular modules and controllers.
+valid path as flag is not evaluated until the script is parsed. Parsing of DOM, occurs before the
+evaluation of the Angular modules and controllers.
 
 But as soon as they are evaluated, again a request is made to the valid URL which was passed to
-the flag variable. But because of this, 2 requests were made and a
+the flag variable.
+
+But because of this, 2 requests were made and an error was thrown for the failure of first request.
+To avoid 2 requests and failure, we use 'ng-src' attribute instead of 'src' so that the image from the URL
+is requested only after the script is parsed and 'ng' components are available.
+
+eg.
+
+<body ng-app="nameOfModule">
+    <div ng-controller="nameOfController">
+        <img ng-src="{{ flag }}" />
+    </div>
+</body>
