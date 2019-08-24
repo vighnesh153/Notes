@@ -1,0 +1,35 @@
+Two way data binding: It is the concept where, models and views are kept in sync at all times.
+An update in the view, updates the model and an update in the model, updates the view.
+
+To achieve this, we use the 'ng-model' directive or attribute. It can be used with
+'input', 'select' and 'textarea'.
+
+
+Usage:
+
+<body ng-app="nameOfModule">
+
+<div ng-controller="nameOfController">
+    <input type="text" ng-model="message">
+    <h1>{{ message }}</h1>
+
+    <input type="text" ng-model="lol">
+    <h1>{{ lol }}</h1>
+</div>
+
+<script type="text/javascript">
+        let myApp = angular
+                .module("nameOfModule", [])
+                .controller("nameOfController", function($scope) {
+                    $scope.message = "Hello world";
+                    $scope.lol = "LOL";
+                });
+</script>
+</body>
+
+
+Whenever we update the 'input' element, it also updates the corresponding variable
+specified in its 'ng-model' attribute.
+
+Also, if the name specified in the 'ng-model' doesn't exists in the controller, then
+angular creates a variable and binds it to the controller, and it behaves in the same way.
