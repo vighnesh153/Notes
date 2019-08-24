@@ -1,0 +1,24 @@
+Sorting in angularJS is also a type of filter.
+
+
+ng-repeat="emp in employees | orderBy:certainPropertyOfEmployee:reverse"
+
+// 'certainPropertyOfEmployee' needs to be a property of all 'emp' object in employees.
+// reverse can be either true or false.
+
+eg.
+
+        ng-repeat="emp in employees | orderBy:name:true"  // if 'reverse' not specified, defaults to false
+
+        ng-repeat="emp in employees | orderBy:name:false"
+        => same as =>  ng-repeat="emp in employees | orderBy:name"
+
+
+        We can even use '+'/'-' for ascending and descending ordering.
+
+        ng-repeat="emp in employees | orderBy:name:false"
+        => same as =>  ng-repeat="emp in employees | orderBy:+name"
+        => same as =>  ng-repeat="emp in employees | orderBy:name"
+
+        ng-repeat="emp in employees | orderBy:name:true"
+        => same as =>  ng-repeat="emp in employees | orderBy:-name"
