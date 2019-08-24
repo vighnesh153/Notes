@@ -1,0 +1,51 @@
+It is similar to a for-each loop. We can iterate over iterables using it in the
+binding expression.
+
+NOTE: Even if we are iterating over array, we use the 'in' keyword in the 'ng-repeat'
+attribute. It is because it is not the pure javascript's 'in'. It is the keyword made
+by angualar to be used only in its interface.
+
+We can also access the index of the iteration element. To access it, use '$index' variable.
+
+
+To get the index of the parent loop/repetition, use '$parent.$index'
+Another way, to initialize the index of the parent repetition, we can use the 'ng-init' attribute.
+eg.
+<li ng-repeat="employee in employees" ng-init="parentIndex=$index">
+</li>
+The variable 'parentIndex' will be available only within the 'li' in which it was initialized.
+
+
+
+Jumping right into the syntax:
+
+        <body ng-app="nameOfModule">
+        <div ng-controller="nameOfController">
+            <ul>
+                <li ng-repeat="employee in employees">
+                    Name: {{ employee.name }}
+                    <ul>
+                        <li ng-repeat="place in employee.placesLivedIn">
+                            {{ place }}, Index: {{ $index }}, Parent-Index: {{ $parent.$index }}
+                        </li>
+                    </ul>
+                </li>
+            </ul>
+        </div>
+
+        <script type="text/javascript">
+                let myApp = angular
+                        .module("nameOfModule", [])
+                        .controller("nameOfController", function($scope) {
+                            $scope.employees = [
+                              {
+                                name: "Vighnesh",
+                                placesLivedIn: ["Mumbai", "Bengaluru", "Pune", "Goa"]
+                              },
+                              {
+                                name: "Please",
+                                placesLivedIn: ["Don't know", "Nope", "XD", "U suck"]
+                              }
+                            ];
+                        });
+        </script>
