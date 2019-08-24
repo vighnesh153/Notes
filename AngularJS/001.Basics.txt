@@ -11,6 +11,8 @@ eg.
 
 will print out: 10 + 20 = 30
 
+
+{{  }} is called a binding expression.
 Anything inside {{ }} is evaluated as javascript.
 {{ }} can only evaluate if the containing element has the 'ng-app' attribute.
 
