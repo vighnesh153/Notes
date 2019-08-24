@@ -1,0 +1,31 @@
+Filters in Angular stand for different concept from the Filter functions from the
+programming languages which selects some elements based on some condition.
+
+
+Here, filters basically modify the data that is used from the 'models' or variables
+that are attached to the '$scope' object.
+
+They can be applied to the 'model' using the '|' pipe operator
+
+Different types of filters:
+
+{{ emp.name   | uppercase }}          // converts 'name' to uppercase
+{{ emp.name   | lowercase }}          // converts 'name' to lowercase
+{{ emp.dob    | date:"dd/MM/yyyy" }}  // date in the specified formats.
+                                      // Formats available on the official documentation
+{{ emp.salary | number:2 }}           // converts "1234567.2321" => "1,234,567.23"
+                                      // adds 'commas' for readability
+                                      // '2' at the end specifies the number of decimal points (rounding).
+{{ emp.salary | currency:"Rs.":1 }}   // '$'   => currency character that would appear before the number.
+                                      // '1'   => up to 1 decimal place (rounding).
+                                      // if 'currency character' not specified, it defaults to '$' (USD).
+
+ng-repeat="emp in employees | limitTo:certainNumber:startIndex"
+                                      // By doing this, only 'certainNumber' of iterations will be done
+                                      // 'startIndex' specifies from which index to start looping/repetition (0-based indexing)
+                                      // If startIndex not specified, defaults to 0.
+                      eg. limitTo:10  => first 10 iterations
+                      eg. limitTo:5:2 => from index=2 to index=6 iterations.
+
+                      We can even attach the 'certainNumber' variable as a model to an input or select or textarea
+                      and modify it dynamically.
