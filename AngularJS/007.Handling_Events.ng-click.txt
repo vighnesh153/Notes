@@ -1,0 +1,6 @@
+'ng-click' works in the similar way as the 'onclick' attribute of HTML.
+The advantage of use ng-click is that we can use variables/functions that are
+attached to the 'scope' of the controller. But we can't access those in the 'onclick'
+HTML attribute.
+
+Syntax is same to the 'onclick' attribute of HTML element.
