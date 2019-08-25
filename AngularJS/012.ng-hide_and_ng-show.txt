@@ -1,0 +1,19 @@
+'ng-hide' and 'ng-show' attributes are used to control the visibility of HTML elements in
+which they are used.
+
+
+eg.
+
+<h1 ng-hide="true">Hello</h1>  // hidden
+<h1 ng-hide="false">Hello</h1>  // not-hidden
+
+<h1 ng-show="true">Hello</h1>  // not-hidden
+<h1 ng-show="false">Hello</h1>  // hidden
+
+
+We can even use the input checkboxes for dynamic hiding and showing:
+
+<label> Show
+    <input type="checkbox" ng-model="checked" />  // 'checked' will be undefined at first which is a falsy value
+</label>
+<h1 ng-show="checked">Hello</h1>
