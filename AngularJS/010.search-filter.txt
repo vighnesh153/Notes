@@ -1,0 +1,83 @@
+This filter is used to filter out the data that will have the search-text in all
+of their properties.
+
+
+<input type="text" ng-model="searchText"/>
+<li ng-repeat="employee in employees | filter:searchText">...</li>
+
+
+If employee is an object and we want to search, based on only 1 property, in the 'ng-model' attribute,
+we append the property name to be searched in, like the following:
+
+        <body ng-app="nameOfModule">
+        <div ng-controller="nameOfController">
+          <input type="text" ng-model="search.placesLivedIn">
+            <ul>
+                <li ng-repeat="employee in employees | filter:search">
+                    Name: {{ employee.name }}
+                    <ul>
+                        <li ng-repeat="place in employee.placesLivedIn">
+                            {{ place }}
+                        </li>
+                    </ul>
+                </li>
+            </ul>
+        </div>
+        <script type="text/javascript">
+                let myApp = angular
+                        .module("nameOfModule", [])
+                        .controller("nameOfController", function($scope) {
+                            $scope.employees = [
+                              {
+                                name: "Vighnesh",
+                                placesLivedIn: ["Mumbai", "Bengaluru", "Pune", "Goa"]
+                              },
+                              {
+                                name: "Please",
+                                placesLivedIn: ["Don't know", "Nope", "XD", "U suck"]
+                              }
+                            ];
+                        });
+        </script>
+        </body>
+
+
+
+To search on all properties: we just remove the '.city' from the 'ng-model' attribute.
+
+
+To search on multiple properties, we can do the following:
+
+            <div ng-controller="nameOfController">
+              <input type="text" ng-model="search.placesLivedIn">
+              <input type="text" ng-model="search.name">
+                <ul>
+                    <li ng-repeat="employee in employees | filter:search">
+                        Name: {{ employee.name }}
+                        <ul>
+                            <li ng-repeat="place in employee.placesLivedIn">
+                                {{ place }}
+                            </li>
+                        </ul>
+                    </li>
+                </ul>
+            </div>
+
+
+But the above search will have more than 1 input boxes for searching. To search for more than 1 properties
+in same input search box: we do the following:
+
+The input box becomes one:
+        <input type="text" ng-model="searchText">
+We add a function in the scope:
+        $scope.searchFunction = function(item) {
+            if ($scope.searchText === undefined)  // search is empty
+                return true;
+
+            if ($scope.searchText in item.name ||
+                $scope.searchText in item.blabla) // add as many columns as you need
+                return true;
+            return false;
+        }
+Use this function as 'search' filter:
+        ng-repeat="employee in employees | filter:searchFunction"
