@@ -1,4 +1,4 @@
-It is similar to a for-each loop. We can iterate over iterables using it in the
+It is similar to a for-each loop. We can iterate over collections using it in the
 binding expression.
 
 NOTE: Even if we are iterating over array, we use the 'in' keyword in the 'ng-repeat'
@@ -49,3 +49,14 @@ Jumping right into the syntax:
                             ];
                         });
         </script>
+
+
+
+Some special properties:
+
+$index: gives index of the iteration (0-based)
+$first: 'true' if the current iteration is the first iteration.
+$last: 'true' if the current iteration is the last iteration.
+$middle: 'true' if the current iteration is not 'first' and not 'last'
+$even: 'true' if '$index' is even
+$odd: 'true' if '$index' is odd
