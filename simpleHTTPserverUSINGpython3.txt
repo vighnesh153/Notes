@@ -1,8 +1,0 @@
-STEPS
-
-1. To turn the server on, go to the project directory and open terminal from within. 
-2. Run: "python3 -m http.server" without quotes
-3. If you create a server from a directory, and the file requires a file which is present in the parent directory,
-   then it won't be accessible on the server. Instead, close the server and create the server through the parent directory
-   by following step 1 and 2.
-4 .To shut a server: "ctrl + c"
