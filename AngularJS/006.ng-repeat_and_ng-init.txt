@@ -60,3 +60,12 @@ $last: 'true' if the current iteration is the last iteration.
 $middle: 'true' if the current iteration is not 'first' and not 'last'
 $even: 'true' if '$index' is even
 $odd: 'true' if '$index' is odd
+
+
+
+Stop re-rendering and re-parsing of DOM due to changes in angular-components by using:
+
+ng-repeat="item in items track by item.id" if 'items' is a collection of objects that have an 'id' property.
+Should you reload your data later, 'ng-repeat' will not have to rebuild the DOM elements for items it has already rendered, 
+even if the JavaScript objects in the collection have been substituted for new ones.
+For large collections, this significantly improves rendering performance.
