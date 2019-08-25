@@ -1,0 +1,21 @@
+To create custom filters, we use the 'filter' property function of the module:
+
+
+let myApp = angular
+        .module("nameOfModule", [])
+        .filter("filterName", function() {
+            return function(item) {
+                //some filtering/transformation logic
+            }
+        })
+        .controller("nameOfController", function($scope) {
+            // some controller logic
+        });
+
+
+Usage:
+
+<td>{{ employee.name }}</td>
+<td>{{ employee.gender | filterName }}</td>
+<td>{{ employee.age }}</td>
+<td>{{ employee.salary }}</td>
