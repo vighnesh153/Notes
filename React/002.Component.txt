@@ -1,0 +1,41 @@
+To create a component:
+
+
+// Function name should start with capital letter
+// 'props' argument will hold the key-value pairs passed in the element
+function Person(props) {
+	return (
+	<div className="person">
+		// 'className' is used instead of 'class' because 'class' is a keyword.
+		<h1>Name: {props.name}</h1>
+		<p>Age: {props.age}</p>
+	</div>
+	);
+}
+
+
+Usage:
+// wrap all components in a container parent
+let appContents = (
+	<div>
+		<Person name="Max" age="28" />
+		<Person name="Manu" age="29" />
+	</div>
+);
+
+// Fills the element, with id='app', with the contents of 'appContents'
+ReactDOM.render(app, document.querySelector('#app'));
+
+
+HTML file:
+<div id="app"></div>
+<style>
+	.person {
+		display: inline-block;
+		margin: 10px;
+		border: 1px solid #eee;
+		box-shadow: 0 2px 2px #ccc;
+		width: 200px;
+		padding: 20px;
+	}
+</style>
