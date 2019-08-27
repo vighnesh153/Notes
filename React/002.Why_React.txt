@@ -1,0 +1,10 @@
+1. UI state becomes difficult to handle with Vanilla JavaScript.
+2. Focus on business logic, not on preventing our app from exploding.
+3. Huge ecosystem, active community, high performance.
+
+
+Other alternatives:
+Angular		// Boring
+Vue			// Boring
+Backbone	// Not much popular
+Ember		// Not much popular
