@@ -1,0 +1,14 @@
+'ng-include' directive is used to embed/render an HTML page into another HTML page.
+
+This technique is extremely useful when we want to reuse a specific view in multiple
+pages in our application.
+
+The value for the 'ng-include' directive will be the name of the HTML page that we
+want to embed/render within another HTML page. It can also be passed as a '$scope'
+property from the controller.
+
+eg.
+
+<div ng-include="'index.html'"></div>
+OR
+<div ng-include="homePage"></div>  // $scope.homePage should be defined in the controller.

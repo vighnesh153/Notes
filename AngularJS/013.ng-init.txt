@@ -1,0 +1,17 @@
+'ng-init' directive is basically used to initialize variables in the HTML (view) file.
+
+eg.
+
+<div ng-init="employee = {
+                            name: 'Vighnesh',
+                            age: 21
+                         }">
+        // 'employee' is now available to be used inside any binding expression
+        // only in this block.
+</div>
+
+
+It is not a good practice to initialize variables in the 'views' file. Initialization should be
+done in the 'controller'.
+
+'ng-init' should only be used for aliasing special properties of 'ng-repeat' directive.
