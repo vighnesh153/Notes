@@ -1,0 +1,30 @@
+The main idea of asymptotic analysis is to have a measure of efficiency of
+algorithms that doesn’t depend on machine specific constants,
+and doesn’t require algorithms to be implemented and time taken by programs to be compared.
+Asymptotic notations are mathematical tools to represent time complexity of
+algorithms for asymptotic analysis. The following 3 asymptotic notations are
+mostly used to represent time complexity of algorithms:
+
+
+
+
+1) Θ Notation: The theta notation bounds a functions from above and below,
+               so it defines exact asymptotic behavior. Can be used for Merge-sort,
+               as the average case and worst case is same.
+
+2) Big O Notation: The Big O notation defines an upper bound of an algorithm,
+                   it bounds a function only from above.
+
+
+3) Ω Notation: Just as Big O notation provides an asymptotic upper bound on a function,
+               Ω notation provides an asymptotic lower bound.
+
+
+
+
+We should drop low order terms and ignore leading constants while calculating complexity of
+an algorithm. It is because we are interested in order of growth and constants don't affect
+the growth. And for lower order terms, there is no point in considering them, if the higher order
+terms are present, because for larger 'n', they won't affect the overall complexity.
+For example, consider the following expression.
+    3n^3 + 6n^2 + 6000 = Θ(n^3)
