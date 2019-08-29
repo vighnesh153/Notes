@@ -1,0 +1,51 @@
+CREDITS: Geeks-For-Geeks
+
+Why performance analysis?
+
+There are many important things that should be taken care of,
+like user friendliness, modularity, security, maintainability, etc.
+Why to worry about performance? The answer to this is simple,
+we can have all the above things only if we have performance.
+So performance is like currency through which we can buy all the above things.
+Another reason for studying performance is – speed is fun!
+To summarize, performance == scale. Imagine a text editor that can load 1000 pages,
+but can spell check 1 page per minute OR an image editor that takes 1 hour
+to rotate your image 90 degrees left OR … you get it.
+If a software feature can not cope with the scale of tasks users need
+to perform – it is as good as dead.
+
+
+
+
+Given two algorithms for a task, how do we find out which one is better?
+
+One naïve way of doing this is – implement both the algorithms and run the two
+programs on your computer for different inputs and see which one takes less time.
+There are many problems with this approach for analysis of algorithms.
+1) It might be possible that for some inputs, first algorithm performs better than the second.
+   And for some inputs second performs better.
+2) It might also be possible that for some inputs, first algorithm perform better
+   on one machine and the second works better on other machine for some other inputs.
+
+
+
+
+
+What is Asymptotic Analysis?
+
+Asymptotic Analysis is the big idea that handles above issues in analyzing algorithms.
+In Asymptotic Analysis, we evaluate the performance of an algorithm in terms of
+input size (we don’t measure the actual running time). We calculate,
+how does the time (or space) taken by an algorithm increases with the input size.
+For e.g., let us consider the search problem (searching a given item) in a sorted array.
+One way to search is Linear Search (order of growth is linear) and other way is
+Binary Search (order of growth is logarithmic). To understand how Asymptotic Analysis
+solves the above mentioned problems in analyzing algorithms, let us say we run
+the Linear Search on a fast computer and Binary Search on a slow computer.
+For small values of input array size n, the fast computer may take less time.
+But, after certain value of input array size, the Binary Search will definitely
+start taking less time compared to the Linear Search even though the
+Binary Search is being run on a slow machine. The reason is the order of
+growth of Binary Search with respect to input size logarithmic while the order
+of growth of Linear Search is linear. So the machine dependent constants
+can always be ignored after certain values of input size.
