@@ -1,0 +1,32 @@
+Peak (1-D array):
+A peak for a 1-D array is defined as the element which is >= to its left neighbor and right neighbor.
+For the first element, we just have to check if it is >= the element to its right.
+For the last element, we just have to check if it is >= the element to its left.
+
+
+Task: Find a (not all) peak in the 1-D array.
+1. Brute-Force way: Iterate over all elements until a peak is found.
+	Worst-case => O(n)
+	Average-case => O(n)
+2. Bisection/Binary search method:
+	Algorithm:  Find the middle most element of the array.
+				If its a peak, return it.
+				Else if left neighbor is bigger than the element, repeat the process recursively
+						on the left half of the array.
+				Else (right neighbor is bigger than the element), repeat the process recursively
+						on the right half of the array.
+
+
+
+Peak (2-D array):
+A peak for a 2-D array is defined as the element which is >= to its left neighbor and right neighbor
+and top and bottom neighbor.
+For edge and corner cases, just check if the element is bigger than whichever neighbor of top, bottom,
+right and left neighbors is available/applicable. (e.g., top-left element will have only right and
+bottom neighbor so just check with it.)
+
+
+Task: Find a (not all) peak in the 1-D array.
+1. Brute-Force way: Iterate over all elements until a peak is found.
+	Worst-case => O(n)
+	Average-case => O(n)
