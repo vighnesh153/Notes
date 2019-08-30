@@ -1,0 +1,5 @@
+What are memory leaks?
+
+Just like the memory suggests, memory leaks are pieces of memory that the
+application have used in the past but is not needed any longer but has not
+yet been return back to the OS or the pool of free memory.
