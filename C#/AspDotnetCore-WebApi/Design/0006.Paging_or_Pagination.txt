@@ -1,0 +1,18 @@
+Pagination(Paging): It is a way in which we only display limited data to the client/requester to avoid
+cluttering the client-side with tons and tons of data.
+
+
+So, if a user has to view his transactions made by him in his bank account, we can display, 10 at a time,
+to the user, and if he clicks next/previous, we can show him his transactions accordingly.
+
+
+So, to do pagination in REST APIs, we usually pass the following 2 URL parameters:
+	page=121
+	page_size=10
+The purpose of this is that if there are, let's say, 1 million records, and the user is on the 1st page,
+and he wishes to view his oldest records, we don't want him to repeatedly click on 'next' to reach the end.
+It will take him forever to reach the last page.
+
+So, REST demands us to create the pagination in such a way that the above 2 URL parameters are present,
+and user/client can access any page and with any size, by just modifying them and sending a request to
+that URI.
