@@ -1,0 +1,38 @@
+Entity Tag (ETag): It is a parameter that is sent to the client in the Response Header.
+
+It is a tag number that is used to identify the cache age.
+
+When we make a request, the server sends this entity tag in the response.
+		ETag: "237467283468237462387"
+
+When we make the same request, we send this tag as well, by adding it to the request header as:
+		If-None-Match: "237467283468237462387"
+
+The server gets this tag and checks if tag has been updated. If not, then the server sends just
+the following 'GET 304 Not Modified' back to the client, so no data is sent again as the client
+already has that data.
+
+But if the data at server-side is modified, its tag at the server-side is also modified. And if
+the client makes a request, server notices that the client has stale/ancient data. So, the server
+sends the new data to the client and also the new ETag.
+
+In REST API, if the client sends an update by modifying an old record, then the server should reject
+the modification and respond with error.
+
+
+There are two types of Caching:
+
+1. Strong caching
+2. Weak caching
+
+
+Strong Caching: Data that doesn't get modified for a long time. For e.g., YouTube container/template
+				of homepage.
+
+Weak Caching: Data that may get modified frequently. Contents displayed on the YouTube Homepage or
+			  on the Subscriptions page.
+
+
+By default, all ETags are strong. To make an ETag weak (which would mean that the data sent may get
+modified soon), server appends the tag with 'W/'
+e.g., ETag: W/"237467283468237462387"
