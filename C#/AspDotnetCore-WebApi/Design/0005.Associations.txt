@@ -1,0 +1,20 @@
+Associations: Deep nesting of data. For e.g., looking up for users gives us many user objects,
+			  and in each user object, lets say, we have a list of friends object/array,
+			  and each user in the friends list, internally has its own list of friends, and so on.
+
+			  This is one type of association. Because of this, we can do something like:
+			  www.examle.com/api/user/1/friend/1/friend/1.....
+
+			  This type of allowance creates a lot of association in the data(association: same
+			  meaning as that of the association in 'association rules in Machine Learning').
+
+			  Another type of association is as follows:
+			  www.examle.com/api/user/1/friend/1/city/1/school/1/student/1/.....
+
+So, to avoid this kind of associations, we can either break this single API into multiple 'smaller'/
+'sort of atomic' APIs and then request them individually to get data.
+
+Or, we can use query string (URL parameters) to filter specific data. But this can get very ugly if we
+have a lot of URL parameters and will be hard to debug.
+
+So, to take care of Associations, we usually split into multiple APIs. (Still dependent on situation)
