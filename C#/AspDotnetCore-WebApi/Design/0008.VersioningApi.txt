@@ -1,0 +1,25 @@
+REST API or basically any API is very different from a Web App.
+
+When we make an API and publish it in the wild, there will be many client-devs that will be using
+the API. So, we should carefully design the API so that the changes wouldn't break the existing client-devs
+product.
+
+So, here comes the need for versioning. If we update(make a major change) our API, we can release it under
+different version and keep the previous version alive as well. This way, the dev the select the version
+based on his requirement.
+
+Different ways of versioning:
+1. www.example.com/api/v2/users            (cons: may get ugly)
+2. www.example.com/api/users?version=2	   (cons: easy to forget)
+3. Create new Parameter in the HTTP request header:
+		X-Version: 2.0
+	(cons: may need a more sophisticated developer to modify headers)
+4. Add it to the existing 'Accept' Header parameter:
+		Accept: application/json;version=2.0
+5. Using content-type:
+		Content-Type: application/vnd.yourapp.camp.v1+json
+		OR
+		Accept: application/vnd.yourapp.camp.v1+json
+	(cons: requires a lot more development maturity to create and maintain)
+	(by far the best way for versioning but used only if the underlying API requires it)
+	(if used for not very complex APIs, it will just be an overkill)
