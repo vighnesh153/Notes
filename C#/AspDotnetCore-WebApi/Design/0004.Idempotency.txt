@@ -1,0 +1,7 @@
+Idempotent: Operations should result in same side effect.
+
+REST APIs should have Idempotency in the following types of requests:
+	GET, PUT, PATCH, DELETE
+
+However, POST should not be Idempotent in nature. For e.g., if a user is posted earlier, posting the same 
+user again should result in an error or some warning or indication.
