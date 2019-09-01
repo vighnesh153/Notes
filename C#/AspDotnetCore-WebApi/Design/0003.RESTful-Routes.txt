@@ -1,0 +1,23 @@
+URI -> Universal resource identifier
+
+URI should have 'nouns' instead of verbs
+
+
+eg.
+www.example.com/getCustomers
+www.example.com/getCustomersById
+www.example.com/getCustomersByName
+
+should all be avoided and the following should be used instead:
+
+www.example.com/customers
+www.example.com/products
+www.example.com/employees
+
+
+To look up for a specific data, use '/id' instead of URL parameters:
+
+eg.
+www.example.com/customer/5
+www.example.com/product/1
+www.example.com/employee/987
