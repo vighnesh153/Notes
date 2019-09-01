@@ -1,0 +1,14 @@
+GET
+Retrieve a resource
+
+POST
+Add a new resource
+
+PUT
+Update an existing resource(entire object is sent)
+
+PATCH
+Update a resource with changes(only the changes are sent)
+
+DELETE
+Remove the existing resource
