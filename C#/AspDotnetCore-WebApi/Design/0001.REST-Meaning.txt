@@ -1,0 +1,18 @@
+REST -> REpresentational State Transfer
+
+
+REST Api:
+	1. Separate client and server
+	2. Server should be stateless
+	3. Caching capability (Cacheable requests)
+	4. Uniform interface
+
+
+REST Api vs RESTful Api:
+	1. RESTful Api is the one that has all the above mentioned 4 behaviors whereas,
+	   REST Api is the one that tries to incorporate all the above behaviors but it
+	   doesn't matter if all the behaviors are not included/supported.
+	2. RESTful Api are very difficult to make.
+
+People often use RESTful and REST Api interchangeably but when they do, they often mean
+REST Api rather than RESTful.
