@@ -1,0 +1,23 @@
+Locking down the API:
+	1. APIs and Security
+	2. Cross Domain Security
+	3. Authentication/Authorization
+	4. Security considerations during design
+	5. Types of API Security
+
+
+APIs and Security:
+	When to use security for an API:
+		1. when using private and personalized data
+		2. when sending sensitive data across the 'wire'
+		3. when using credentials of any kind
+		4. when trying to protect against overuse of our servers
+	Protect our API:
+		1. Server Infrastructure Security(Hardware and all)
+			- Should be taken care by the Web Service provider
+		2. Secure In-Transit
+			- SSL is almost always appropriate
+			- Cost of SSL is worth the expense
+		3. Secure the API itself
+			- Cross Origin Security
+			- Authentication/Authorization
