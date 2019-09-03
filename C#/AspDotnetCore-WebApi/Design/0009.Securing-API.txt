@@ -21,3 +21,18 @@ APIs and Security:
 		3. Secure the API itself
 			- Cross Origin Security
 			- Authentication/Authorization
+
+
+Cross Domain Security:
+	CORS => Cross-origin resource sharing
+	This is something that is done by the browser.
+
+	Whenever a resource is being accessed by the browser(like bootstrap CDN, etc., etc.),
+	it requests access from the server that is serving it. Then server replies with some
+	rules. Those rules have some Access-Control-Allow-Methods like GET, POST, OPTIONS, etc.
+
+	If whatever we are requesting, has a Request-Method-Type that is allowed in the rules,
+	then the browser issues request to the server with CORS header which has the Access-type or
+	Request-Method-Type. If the Request-Method-Type is not in the allowed rules, then the
+	browser issues a CORS error in the JavaScript console and doesn't make a request to the
+	server.
