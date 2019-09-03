@@ -36,3 +36,22 @@ Cross Domain Security:
 	Request-Method-Type. If the Request-Method-Type is not in the allowed rules, then the
 	browser issues a CORS error in the JavaScript console and doesn't make a request to the
 	server.
+
+
+
+Authentication versus Authorization:
+	Authentication:
+		Who you are
+		Information to determine identity
+		Credentials/Claims
+
+	Authorization:
+		What you can do
+		Roles, Rights
+
+	Authentication types:
+		Using Cookies (request-forgery possibility)(very insecure)
+		Basic Authentication(sends credentials on every request -> increases area of attacks) (very insecure)
+		Token Authentication (should expire faster than cookies, max 20 min)(secure and simple and common)
+			examples: JSON Web Token (JWTs)
+		OAuth (Uses third party to identify)
