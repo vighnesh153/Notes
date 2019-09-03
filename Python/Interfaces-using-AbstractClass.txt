@@ -1,0 +1,39 @@
+# Fairly obvious example below to follow the syntax
+
+
+import abc
+# abstract base class
+
+
+class MyAbstractBaseClass(metaclass=abc.ABCMeta):
+
+    @abc.abstractmethod
+    def do_something(self):
+        """Required method"""
+
+    @property
+    @abc.abstractmethod
+    def some_property(self):
+        """Required property"""
+
+
+class DerivedClass(MyAbstractBaseClass):
+    def __init__(self):
+        self._some_value = None
+
+    def do_something(self):
+        print("Doing something")
+
+    @property
+    def some_property(self):
+        return self._some_value
+
+    @some_property.setter
+    def some_property(self, value):
+        self._some_value = value
+
+
+obj = DerivedClass()
+obj.do_something()
+obj.some_property = "Lol, this works"
+print(obj.some_property)
