@@ -1,0 +1,7 @@
+S -> Single Responsibility Principle (SRP)
+O -> Open-Closed: Open for extensibility (by inheritance), Closed for modification
+L -> Liskov Substitution Principle (LSP): Derived class object should be able to
+                                          be assigned to a base class variable
+                                          without breaking anything.
+I -> Interface integration (Many specific interfaces are better than one do-it-all interface)
+D -> Dependency Inversion (Program towards abstraction, not implementation)
