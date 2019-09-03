@@ -1,0 +1,6 @@
+Patterns that occur in our day-to-day life.
+
+We as engineers don't want to re-invent the wheel for designing solutions for
+similar problems.
+So, some most common design patterns have been identified by the Gang-Of-Four
+that can applied to almost all the problems.
