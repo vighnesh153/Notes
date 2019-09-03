@@ -1,0 +1,6 @@
+Classification: Behavioral
+    Takes family of algorithms
+    Encapsulate each one
+    Make them interchangeable with each other
+    Algorithms are allowed to vary independently
+    A.K.A. -> Policy pattern
