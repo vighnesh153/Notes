@@ -1,0 +1,5 @@
+Classification: Behavioral
+    One-to-many relationships between a set of objects so that when a state of one object is changed,
+                all its dependents are notified
+    A.K.A. -> Dependents pattern   (OR)
+              Publish-Subscribe pattern
