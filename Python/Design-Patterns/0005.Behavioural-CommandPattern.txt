@@ -1,0 +1,9 @@
+Classification: Behavioral
+    Encapsulates a request as an object
+    Allows to parameterize the objects with requests
+    Provides a simple way to perform queues and log
+                    operations(perhaps for updating a DB or updating a trail of requests)
+    We can add support for undoable operations and macros
+
+    A.K.A. -> Action pattern (OR)
+              Transaction pattern
