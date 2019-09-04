@@ -1,0 +1,7 @@
+Classification: Creational
+    Close cousin of Factory Method Pattern.
+    Factory creates one product, whereas abstract factory creates families.
+    Abstract factory also enforces dependencies between classes.
+    It defers creation of objects to concrete subclasses.
+
+    AKA -> Kit Pattern
