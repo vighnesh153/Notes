@@ -1,0 +1,9 @@
+Classification: Creational
+    Ensures a class only has one instance
+    Useful to control access to limited
+                resource (like device access, buffer pools, Web/DB connection pools)
+    Helps to provide a global point of access
+    Lazy instantiation
+
+    A.K.A. -> Action pattern (OR)
+              Transaction pattern
