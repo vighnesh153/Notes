@@ -3,6 +3,3 @@ Classification: Creational
     Encapsulates object construction.
     Multistep construction process.
     Implementations can vary (without letting the developer know)
-
-    A.K.A. -> Action pattern (OR)
-              Transaction pattern
