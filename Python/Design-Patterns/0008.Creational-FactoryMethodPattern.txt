@@ -1,0 +1,7 @@
+Classification: Creational
+    Define interface for creating an object
+    Lets subclasses decide which object to create
+
+    Factory Method lets to defer instantiation to subclasses
+
+    AKA -> Virtual constructor
