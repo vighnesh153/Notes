@@ -1,0 +1,12 @@
+The Parallel.Invoke method provides a convenient way to run any number of
+arbitrary statements concurrently. Just pass in an Action delegate for each item of work.
+The easiest way to create these delegates is to use lambda expressions.
+The lambda expression can either call a named method or provide the code inline.
+
+
+Parallel.Invoke(() => DoSomeWork(), () => DoSomeOtherWork());
+
+
+NOTE: The number of Task instances that are created behind the scenes by Invoke is not necessarily
+	  equal to the number of delegates that are provided. The TPL may employ various optimizations,
+	  especially with large numbers of delegates.
