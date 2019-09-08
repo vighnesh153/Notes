@@ -8,3 +8,4 @@ Scroll up and down to zoom in and out.
 
 
 To focus on a far away object, click on it and then hit the 'period' button of the numpad.
+or click '~', that will populate with different options, among those is the 'View selected' option.
