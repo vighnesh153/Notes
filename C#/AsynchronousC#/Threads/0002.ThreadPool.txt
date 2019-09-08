@@ -1,0 +1,39 @@
+Provides a pool of threads that can be used to execute tasks,
+post work items, process asynchronous I/O, wait on behalf of other threads, and process timers.
+
+
+Many applications create threads that spend a great deal of time in the sleeping state,
+waiting for an event to occur. Other threads might enter a sleeping state only
+to be awakened periodically to poll for a change or update status information.
+The thread pool enables you to use threads more efficiently by providing your application
+with a pool of worker threads that are managed by the system.
+
+
+
+// SIMPLE AND SELF EXPLANATORY EXAMPLE (WITH COMMENTS FOR HELP)
+using System;
+using System.Threading;
+
+public class Example
+{
+    public static void Main()
+    {
+        // Queue the task.
+        ThreadPool.QueueUserWorkItem(ThreadProc);
+        Console.WriteLine("Main thread does some work, then sleeps.");
+        Thread.Sleep(1000);
+
+        Console.WriteLine("Main thread exits.");
+    }
+
+    // This thread procedure performs the task.
+    static void ThreadProc(Object stateInfo)
+    {
+        // No state object was passed to QueueUserWorkItem, so stateInfo is null.
+        Console.WriteLine("Hello from the thread pool.");
+    }
+}
+// The example displays output like the following:
+//       Main thread does some work, then sleeps.
+//       Hello from the thread pool.
+//       Main thread exits.
