@@ -1,0 +1,22 @@
+g -> grab and attach to cursor movement.
+
+After g, any of (x, y, z) => move the object in that axis based on cursor movement.
+After g, onKeyDown middle mouse button to choose direction and onKeyUp middle mouse button
+			confirms the direction of movement.
+
+
+r -> rotate attach to cursor movement.
+
+After r, any of (x, y, z) => rotate the object in that axis based on cursor movement.
+After r, onKeyDown middle mouse button to choose direction and onKeyUp middle mouse button
+			confirms the direction of rotation.
+
+
+s -> scaling attach to cursor movement.
+
+After s, any of (x, y, z) => scale the object in that axis based on cursor movement.
+After s, onKeyDown middle mouse button to choose direction and onKeyUp middle mouse button
+			confirms the direction of scaling.
+
+Left click to confirm position.
+Right click / Escape to discard the current change.
