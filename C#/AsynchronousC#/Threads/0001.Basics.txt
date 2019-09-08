@@ -1,0 +1,35 @@
+Creates and controls a thread, sets its priority, and gets its status.
+
+
+
+// SIMPLE EXAMPLE ON THREADS
+
+using System;
+using System.Threading;
+
+public class ThreadExample {
+    public static void ThreadProc() {
+        for (int i = 0; i < 10; i++) {
+            Console.WriteLine("ThreadProc: {0}", i);
+            // Yield the rest of the time slice.
+            Thread.Sleep(0);
+        }
+    }
+    public static void Main() {
+        Console.WriteLine("Main thread: Start a second thread.");
+        Thread t = new Thread(new ThreadStart(ThreadProc));
+		//or Thread t = new Thread(ThreadProc);
+
+        t.Start();
+		// if ThreadProc accepted arguments, then pass it in t.Start(arg1, arg2, ...)
+
+        for (int i = 0; i < 4; i++) {
+            Console.WriteLine("Main thread: Do some work.");
+            Thread.Sleep(0);
+        }
+        Console.WriteLine("Main thread: Call Join(), to wait until ThreadProc ends.");
+        t.Join();
+        Console.WriteLine("Main thread: ThreadProc.Join has returned.  Press Enter to end program.");
+        Console.ReadLine();
+    }
+}
