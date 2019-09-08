@@ -7,6 +7,6 @@ The lambda expression can either call a named method or provide the code inline.
 Parallel.Invoke(() => DoSomeWork(), () => DoSomeOtherWork());
 
 
-NOTE: The number of Task instances that are created behind the scenes by Invoke is not necessarily
-	  equal to the number of delegates that are provided. The TPL may employ various optimizations,
-	  especially with large numbers of delegates.
+NOTE: THE NUMBER OF TASK INSTANCES THAT ARE CREATED BEHIND THE SCENES BY INVOKE IS NOT NECESSARILY
+	  EQUAL TO THE NUMBER OF DELEGATES THAT ARE PROVIDED. THE TPL MAY EMPLOY VARIOUS OPTIMIZATIONS,
+	  ESPECIALLY WITH LARGE NUMBERS OF DELEGATES.
