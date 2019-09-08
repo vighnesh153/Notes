@@ -1,0 +1,10 @@
+Hold middle mouse button and move cursor for orbiting/rotating the viewport.
+
+
+Hold Shift + middle mouse button to move the viewport.
+
+
+Scroll up and down to zoom in and out.
+
+
+To focus on a far away object, click on it and then hit the 'period' button of the numpad.
