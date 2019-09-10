@@ -1,0 +1,20 @@
+Open Graphics Library is a cross-language, cross-platform application
+programming interface for rendering 2D and 3D vector graphics.
+
+It is just a specification.
+Basically, it just lists what functions should be implemented and
+what they should do or what their behavior should be.
+
+Graphics card manufacturers are the ones that implement these specifications
+when developing their graphics card drivers.
+
+The API is typically used to interact with a graphics processing unit,
+to achieve hardware-accelerated rendering.
+
+OpenGL is cross-platform. It means that code written using it on any platform
+would run on any other platform as well.
+
+Other alternatives of OpenGL are:
+    DirectX => Windows-specific
+    Vulkan => cross-platform
+    Metal => Apple products specific
