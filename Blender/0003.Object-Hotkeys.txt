@@ -1,0 +1,4 @@
+Duplicate an object: Click on the object and the click 'Shift + d'.
+
+
+Loads of objects available: 'shift + a'
