@@ -18,3 +18,27 @@ Other alternatives of OpenGL are:
     DirectX => Windows-specific
     Vulkan => cross-platform
     Metal => Apple products specific
+
+
+We can directly use the OpenGL functions inside our code but some of its functions are too low level.
+So, people have created some libraries that makes our lives easier.
+
+Some of the popular ones are GLUT(Graphics Library Utility Toolkit) and GLFW(Graphics Library Framework)
+
+GLUT is used for learning purposes(It has little more abstraction and is comparatively easier to use)
+GLFW is preferred to be used in production, if they want to use OpenGL despite the fact that there are other alternatives
+	of OpenGL which are far more superior than it.
+
+GLUT:
+	Based on the GLUT API.
+	GLUT has been around for about as long as OpenGL itself.
+	Many tutorials and examples out there use GLUT.
+	Takes care of implementing the event loop and works through callbacks (good for simple stuff, makes things like precisely timed animation loops and low latency input much harder though).
+
+GLFW:
+	Designed from scratch with the experiences of other frameworks in mind.
+	Gives much finer control over context creation and window attributes.
+	GLFW-2 Provides basic threading support functions (thread creation, synchronization). –– removed from GLFW-3
+	GLFW-2 Provides basic image file loading support. –– removed from GLFW-3
+	Gives very detailed access to input devices.
+	Event loop is in control of the programmer which allows for much precise timing and lower latency.
