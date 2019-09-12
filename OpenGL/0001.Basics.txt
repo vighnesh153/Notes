@@ -21,7 +21,9 @@ Other alternatives of OpenGL are:
 
 
 We can directly use the OpenGL functions inside our code but some of its functions are too low level.
-So, people have created some libraries that makes our lives easier.
+So, people have created some libraries that makes our lives easier. These libraries also have some
+extra functionalities, like interacting with keyboard, handling mouse events, etc., which is not
+provided by OpenGL.
 
 Some of the popular ones are GLUT(Graphics Library Utility Toolkit) and GLFW(Graphics Library Framework)
 
