@@ -1,0 +1,61 @@
+STEPS:
+
+(Below all steps are Windows specific: until Microsoft implements Visual C++ for *nix)
+1. In Visual Studio,
+		-> Create an empty C++ project (which will create it by default inside a solution)
+		-> Inside the project, create an empty source filed directory named 'src'.
+		-> All the C++ files, ending with .cpp, .c++, etc., will be stored inside the 'src' directory.
+		-> If you plan to make header files, make a 'header' folder for them and store them in there.
+
+2. In the 'src' directory, make an entry point file(file that will have the 'main' function), name that
+   file anything (eg., Application.cpp).
+
+3. Go to https://www.glfw.org/documentation.html and copy the example code from there.
+   (We will use this for our reference to check if OpenGL (with GLFW) is configured correctly)
+
+4. Head over to => https://www.glfw.org/download.html
+5. Download the 32/64 bit Windows pre-compiled binaries
+
+6. Go to the solutions directory. In that, create a 'Dependencies' directory that will be on the same
+   level as the project.
+7. Inside that, create a 'GLFW' directory.
+8. From the downloaded binaries of GLFW, copy the 'include' directory and 'lib-vc20xx' directories, and
+   paste them into 'Dependencies/GLFW' directory which lies inside the solution directory.
+   (xx corresponds to the Visual Studio version you are using. For example, if you are using Visual Studio 2019,
+    then the directory you should be choosing is 'lib-vc2019' or lower, along with 'include')
+
+9. Head over to the project in Visual Studio.
+10. Right-click on the project in the solution explorer, and select Properties.
+
+11. First, at the top, set Configuration option to 'All configurations'.
+12. In the left side bar, select C/C++ -> General
+13. A bunch of Properties will show up on the right side. Select 'Additional Include Directories'.
+14. Set '$(SolutionDir)Dependencies\GLFW\include' as its value (without quotes).
+
+15. Then, again in the left side bar, select Linker -> General.
+16. Again a bunch of Properties will show up on the right side. Select 'Additional Library Directories'.
+17. Set '$(SolutionDir)Dependencies\GLFW\lib-vc20xx' as its value (without quotes).
+
+18. Then, again in the left side bar, select Linker -> Input.
+19. Again a bunch of Properties will show up on the right side. Select 'Additional Dependencies'.
+
+	For beginners:
+			1. Just append ';glfw3.lib' at the end of its existing value.
+	For intermediate users:
+			1. Clear the value of 'Additional Dependencies'.
+			2. Just add 'glfw3.lib' as its value.
+			3. Build the solution.
+			4. Many errors will show up.
+			5. Most of them will just be linking errors as all the functions used by 'glfw' have dependencies
+			   on the Windows API functions and we have to reference their libraries.
+			6. Search the name of the function it is trying to access/link, on Google. Head over to
+			   article by MSDN(Microsoft Developer Network) for that function. Go to bottom of the page,
+			   and copy the name of the library that has the compiled version of this function.
+			7. Paste/Append the name of the library to the Linker -> Input: Additional Dependencies value tab
+			   separating it from other libraries using semicolon.
+			8. Rebuild the solution to look for more remaining errors and if any errors found, fix them in the
+			   same way.
+			NOTE: Doing this makes our application a bit lighter as we are only including those lib files that
+				  are needed.
+
+20. Now the OpenGL and GLFW are configured and now you can program your graphics.
