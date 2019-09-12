@@ -1,0 +1,58 @@
+When we use opengl32.lib directly, it gives us only the OpenGL 1.1 functions that were released in
+around 1997. Those functions are now considered very old.
+
+But OpenGL 3.0+ has new specifications. And our graphics manufacturers have implemented it. But we
+don't get to use it directly. We need to extract them(figuratively) from their implementation, and
+add pointers to those functions to use them.
+(OpenGL 3.0+ is considered as Modern OpenGL.)
+
+But there are tons and tons of functions. To sit and write all the extractors is very boring and
+time consuming task.
+
+So, there exists some libraries that do all the extraction work and give us access to those later functions.
+
+Popular and widely used of which is GLEW (Graphics Library Extension Wrangler).
+
+The OpenGL Extension Wrangler (GLEW) is used to access the modern OpenGL API
+functions(version 3.2 up to latest version). If we use an ancient version of OpenGL then we
+can access the OpenGL functions simply including as #include <GL/gl.h>.
+But in modern OpenGL, the API functions are determined at run time, not compile time.
+GLEW will handle the run time loading of the OpenGL API.
+
+GLFW will allow us to create a window, and receive mouse and keyboard input in a cross-platform way.
+OpenGL does not handle window creation or input, so we have to use these library for handling window,
+keyboard, mouse, joysticks, input and other purpose.
+
+GLFW and GLUT are alternatives for us to add some extra functionality but GLEW is different from them
+which is used for run time loading of the OpenGL API.
+
+(Windows specific)
+To download and configure GLEW, follow the steps below:
+1. Head over to http://glew.sourceforge.net/
+2. Download the pre-compiled Windows binaries
+3. Extract the zip and paste the directory entirely in the 'Dependencies' directory in the Solution directory.
+4. Append '$(SolutionDir)Dependencies\glew-2.1.0\include' without quotes in the Project Properties => C/C++ =>
+   General => Additional Include directories.
+5. Append '$(SolutionDir)Dependencies\glew-2.1.0\lib\Release\Win32' without quotes in the Project Properties =>
+   Linker => General => Additional library directories.
+6. Append 'glew32s.lib' without quotes in the Project Properties =>
+   Linker => Input => Additional Dependencies.
+   ('s' in 'glew32s.lib' means static. We are using static here)
+7. NOTE: Append 'GLEW_STATIC' in the Project Properties =>
+   C/C++ => Preprocessor => Preprocessor definitions.
+   (We need to do this because before calling glewInit, GLEW checks if we are using static or .dll files.
+    It does so by checking if 'GLEW_STATIC' Preprocessor has been defined or not. If not defined, it will
+	fall into the else statement and select .dll file for running. So, we need to either define 'GLEW_STATIC'
+	Preprocessor manually in the code, else, let Visual Studio do it by adding the name of the Preprocessor
+	to its Preprocessor's list.)
+8. NOTE: Add '#include <GL/glew.h>' without quotes at the top of the code,
+   before including any other GL header files.
+9. To initialize GLEW, do:
+		if (glewInit() != GLEW_OK)
+			return -1;
+	So, if initialization fails, our code exits with a status of -1.
+	NOTE: Add the initialization code after valid context has been created. In our example case, we
+		  add it after: 'glfwMakeContextCurrent(window);'
+
+To print the version of OpenGL being used, do the following after all the above is done:
+		std::cout << glGetString(GL_VERSION) << std::endl;
