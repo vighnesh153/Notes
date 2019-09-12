@@ -59,3 +59,14 @@ STEPS:
 				  are needed.
 
 20. Now the OpenGL and GLFW are configured and now you can program your graphics.
+
+
+
+To test is everything is working, in the while loop at the bottom, after glClear(GL_COLOR_BUFFER_BIT),
+add the following lines:
+			glBegin(GL_TRIANGLES);                           // OpenGL 1.1 (old) code
+				glVertex2f(-0.5f, 0.0f);
+				glVertex2f(0.5f, 0.0f);
+				glVertex2f(0.0f, 1.0f);
+			glEnd();
+It should draw a white triangle on the BLACK Background window.
