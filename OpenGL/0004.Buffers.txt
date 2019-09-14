@@ -1,0 +1,52 @@
+BUFFER
+
+In OpenGL, a buffer means a collection or a blob of memory that is located on the GPU.
+
+When we create a normal buffer, for example,
+		int arr[] = { 1, 2, 3, 4 ,5 };
+it gets stored on the RAM in the CPU.
+
+But OpenGL buffers are stored on the GPU.
+
+
+To create an OpenGL buffer: (example)
+			float positions[6] = {
+				-0.5f, 0.0f,
+				0.5f, 0.0f,
+				0.0f, 1.0f
+			};
+
+			unsigned int buffer;
+			glGenBuffers(1, &buffer); // Id for that buffer is stored in buffer
+			glBindBuffer(GL_ARRAY_BUFFER, buffer);// Type of buffer
+			glBufferData(GL_ARRAY_BUFFER, 6 * sizeof(float), positions, GL_STATIC_DRAW);
+
+Line-by-line explanation:
+	1. First we create a positions array. The values correspond to X1, Y1, X2, Y2, X3, Y3 where
+	   Xi, Yi is a vertex of a triangle.
+	2. Then we create a buffer's ID holder, named 'buffer'. Whatever buffer we create or gets created,
+	   its ID will be stored in this variable.
+	3. Create the buffer using => glGenBuffers(n, &variable);
+							variable = ID of the buffer should be stored in this variable.
+							       n = number of buffers
+	4. Select/Bind the buffer so that whatever operations we do further, are operated on the bound buffer.
+			glBindBuffer(enum_type_buffer, buffer_id)
+	5. Store data inside the buffer.
+			glBufferData(enum_type_buffer, size_to_be_allocated_in_buffer,
+						 data_pointer, usage)
+						 usage => GL_XX_YY
+								 		XX =>
+												1. STATIC - data won't be modified
+												2. DYNAMIC - data may be modified each frame
+										YY =>
+												1. DRAW - data will be used only for drawing
+												2. READ - data may be read from user
+												3. COPY - something
+	6. Store and/or create the vertex buffer outside the 'while' loop to avoid creating the buffer again
+	   again. Only store value inside the 'while' loop if it is going to be updated, but usually declare
+	   it outside of the loop.
+	7. To draw the triangle, in the 'while' loop, after the glClear(GL_COLOR_BUFFER_BIT);
+			=>  glDrawArrays(GL_TRIANGLES, start_index, number_of_index_per_figure)
+			=> example => glDrawArrays(GL_TRIANGLES, 0, 3);
+				 0 => start from the 0th index
+				 3 => each vertex of the triangle has 2 vertices. So, choose 3 pairs from the start_index.
