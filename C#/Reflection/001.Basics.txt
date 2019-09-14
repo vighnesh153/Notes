@@ -1,0 +1,18 @@
+Reflection: It is the ability of inspecting an assembly's metadata at runtime.
+			It is used to find all types in an assembly and/or dynamically invoke methods in an
+				assembly.
+			It can also be used to instantiate a class whose definition/assembly is not available
+				at compile time. 
+
+Real-life Use-cases:
+	1. In dotnet winforms applications, we have many widgets. When we use a widget, and then after
+	   we click on it, we can see a lot of properties pop-up in the 'Properties' window. Those
+	   properties of each widget are found by using Reflection.
+	2. Late binding can be achieved by using Reflection. Reflection can be used to dynamically
+	   create an instance of a type, about which we don't have any information at compile time. So,
+	   Reflection enables us to use code that is not available at runtime.
+	3. Consider an example where we have two alternate implementations of an interface and we want
+	   to allow the user to pick one or the other using a config file. With Reflection, we can
+	   simply read the name of the class whose implementation we want to use from the config file,
+	   and instantiate an instance of that class. This is another example of Late Binding using
+	   Reflection.
