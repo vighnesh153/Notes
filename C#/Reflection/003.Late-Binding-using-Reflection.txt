@@ -1,0 +1,51 @@
+NOTE: Late binding has performance issues. So, try to use early binding over late bindings.
+
+using System;
+using System.Reflection;
+
+
+namespace TestTestTest
+{
+	public class Customer
+	{
+		public string GetFullName(string firstName, string lastName)
+		{
+			string fullName = $"{firstName} {lastName}";
+			return $"Full Name: {fullName}";
+		}
+	}
+
+	class Program
+	{
+		static void Main()
+		{
+			// System.Reflection.Assembly
+			Assembly executingAssembly = Assembly.GetExecutingAssembly();
+			// Load that Assembly that has got the class that we need.
+			// Suppose the class that we want to instantiate is present in another Assembly
+			// which is already compiled. Now, if we instantiate the class and the class definition
+			// is not present, then our code will not compile. So, we use the Assembly.GetExecutingAssembly()
+			// method to tell the runtime to refer the class from the some Assembly.
+
+			Type customerType = executingAssembly.GetType("TestTestTest.Customer");
+
+			var customerInstance = Activator.CreateInstance(customerType);
+			// It will be of object type at compile time. So, we cannot directly invoke GetFullName() on it.
+
+			MethodInfo getFullNameMethod = customerType.GetMethod("GetFullName");
+			// For this method to run, we need an instance of Customer because this is not a static
+			// method.
+
+			string[] parameters = new string[2];
+			parameters[0] = "Vighnesh";
+			parameters[1] = "Raut";
+			// If the method expects arguments of different types, then we can create an object
+			// array and store any type of parameters in that array and directly pass that to Invoke().
+
+			string fullName = (string)getFullNameMethod.Invoke(customerInstance, parameters);
+			// first arg is the instance and second arg is the array of parameters
+
+			Console.WriteLine(fullName);
+		}
+	}
+}
