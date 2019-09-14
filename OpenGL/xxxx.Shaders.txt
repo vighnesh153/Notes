@@ -1,0 +1,1 @@
+SHADER: A program or a piece of code that runs on GPU.
