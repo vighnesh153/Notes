@@ -1,0 +1,86 @@
+using System;
+using System.Reflection;
+
+namespace TestTestTest
+{
+	public class Customer
+	{
+		public int Id { get; set; }
+		public int Name { get; set; }
+
+		public Customer ()
+		{
+			this.Id = -1;
+			this.Name = string.Empty;
+		}
+
+		public Customer (int Id, string Name)
+		{
+			this.Id = Id;
+			this.Name = Name;
+		}
+
+		public void PrintId()
+		{
+			Console.WriteLine(Id);
+		}
+
+		public void PrintName()
+		{
+			Console.WriteLine(Name);
+		}
+	}
+
+	class Program
+	{
+		static void Main()
+		{
+			// Type or System.Type
+			Type T = Type.GetType("TestTestTest.Customer");
+			// OR
+			Type T = typeof(Customer);  // Can only be used when we know about class at compile time
+			// gets the type of the 'Customer' class
+
+			Console.WriteLine($"{T.FullName}");    // TestTestTest.Customer
+			Console.WriteLine($"{T.Name}");        // Customer
+			Console.WriteLine($"{T.Namespace}");   // TestTestTest
+
+			// PropertyInfo or System.Reflection.PropertyInfo
+			PropertyInfo[] properties = T.GetProperties();        // Id and Name
+			// Gets all the properties of 'Customer' class as a 'PropertyInfo' array
+
+			foreach (var property in properties)
+			{
+				Console.WriteLine($"{property.Name}");               // Name of the property
+				Console.WriteLine($"{property.PropertyType.Name}");  // Returns the
+																	 // type of the property.
+			}
+
+			// MethodInfo or System.Reflection.MethodInfo
+			MethodInfo[] methods = T.GetMethods();        // PrintId and PrintName
+			// Gets all the methods of 'Customer' class as a 'MethodInfo' array
+
+			foreach (var method in methods)
+			{
+				Console.WriteLine($"{method.Name}");  			 // Name of the method
+				Console.WriteLine($"{method.ReturnType.Name}");  // Returns the return-type of the method
+			}
+
+			// ConstructorInfo or System.Reflection.ConstructorInfo
+			ConstructorInfo[] constructors = T.GetConstructors();        // PrintId and PrintName
+			// Gets all the constructors of 'Customer' class as a 'ConstructorInfo' array
+
+			foreach (var constructor in constructors)
+			{
+				Console.WriteLine($"{constructor.Name}");  			 // prints '.ctor' => as its
+																	 // name is the same as the class
+				Console.WriteLine($"{constructor.ToString()}");      // prints '.ctor<parameters_signature>'
+
+				// we can do .GetParameters() to get info about the parameters that the constructor
+				// takes by storing it in ParamenterInfo[].
+			}
+
+			// Similarly, we can do T.GetFields() to get info about the fields
+		}
+	}
+}
