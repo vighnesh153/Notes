@@ -24,3 +24,12 @@ If we want our free function to be accessed by members of the same file, then we
 Making a function static means that other source files will not be able to access this function.
 
 Syntax:  static int add(int a, int b) return a + b;
+
+
+INLINE FUNCTIONS
+Functions that are just one line or two, can be marked as inline. What this does it when we call the
+function, the code from the function is brought to the call. So, no jumping happens and this increases
+performance. But this can be done only with really small functions. If we use inline with large,
+functions, it won't work.
+
+Syntax: inline int add(int a, int b) return a + b;
