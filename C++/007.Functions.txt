@@ -3,14 +3,24 @@ return_type		name_of_func (optional_parameters_with_type_for_each_parameter)
 	// Body
 }
 
+FREE FUNCTION
+Function defined freely. It doesn't have an enclosing class.
+
 
 FUNCTION OVERLOADING:
-fucntions with same name but different number parameters and/or if both have
+Functions with same name but different number parameters and/or if both have
 same number of parameters but different types corresponding
 
 
 FUNCTION DECLATATION:
-if function is defined after when it is being used in the code, or is in other source file, 
-the compiler won't be able to know if the function exits or not. So, we add a function declaration 
+if function is defined after when it is being used in the code, or is in other source file,
+the compiler won't be able to know if the function exits or not. So, we add a function declaration
 before calling it.
-Syntax: return_type		name_of_func (types_of_corresponding_parameters)
+Syntax: return_type		name_of_func (types_of_corresponding_parameters);
+
+
+STATIC FUNCTIONS
+If we want our free function to be accessed by members of the same file, then we make it static.
+Making a function static means that other source files will not be able to access this function.
+
+Syntax:  static int add(int a, int b) return a + b;
