@@ -1,0 +1,47 @@
+A pre-processor directive is a statement that is processed before the actual compilation of the code
+begins.
+
+A pre-processor directive starts with a '#', without quotes.
+
+Commonly used pre-processor directives:
+#include, #define, #undef, #if, #endif, #pragma
+
+
+1. #include <header>  OR  #include "user-defined-header"
+
+		It is a pre-processor directive. What it does is that it finds the header file specified,
+		copy's the contents of the file, and pastes it directly where the '#include <file>'
+		statement is. It basically replaces the '#include <file>' with the exact contents
+		of the file.
+
+2. #define
+
+		It is used to define a macro. Whatever we define using it, it substitutes directly where it
+		is used.
+		For example:
+			#define INTEGER int
+			INTEGER main() {}
+
+			will be converted to:
+
+			int main() {}
+
+3. #undef
+
+		It is used to undefine a defined macro.
+
+		#define INT int
+		INT a = 10;
+		#undef INT
+		INT b = 10;  // throws identifier INT is not defined
+
+4. #if-#endif
+
+		It is used to choose between a piece of code
+
+		#if 1
+		int add(int a, int b) return a + b;
+		#endif
+
+		As one evaluates to true, the code will be compiled.
+		But if it were 0 instead of 1, the ode would not have been considered for compilation.
