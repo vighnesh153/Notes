@@ -1,0 +1,39 @@
+At a broad/high level,
+	1. You write C++ code in any text editor or IDE.
+	2. Pass that code through the compiler.
+	3. Compiler compiles the code and converts it to the native machine code executable binaries.
+		(For Windows, .exe file)
+		(For *nix, a file without an extension but with +x permission)
+	4. At run-time, code from that executable is executed by the OS.
+
+The Main function is the entry point of the application.
+
+NOTE: THE MAIN FUNCTION IS THE ONLY FUNCTION THAT DOESN'T NEED TO
+	  RETURN ANYTHING EVEN IF THE RETURN TYPE IS 'int'. IF WE DON'T
+	  RETURN ANYTHING FROM THE MAIN FUNTION AND THE RETURN TYPE IS 'int'
+	  THEN IT IS ASSUMED BY THE COMPILER THAT IT IS RETURNING '0'.
+	  THIS ONLY APPLIES TO THE 'MAIN' FUNCTION.
+
+NOTE: Header files don't get compiled individually. When a source(.cpp) file includes them and their
+	  contents are copied into it, that's when the contents are compiled because they are now a part
+	  of the source file. If none of the source files include the header file, it won't get compiled
+	  as it is not the part of any source file. Compiler ignores header files. It is the 'include'
+	  statement in the source files that checks for their existence.
+
+When we have multiple source files in our project and when we build(compile and link) the project,
+each of the source files are compiled individually into object files. Then, it is the job of the
+linker to take all the object files from the project, and link/stitch them together into an executable,
+or static library(.lib), or dynamic library(.dll).
+
+The source files are compiled individually. If the class instance that we are using in a source file,
+if the class of that instance is not defined in the same source file, then the compiler throws a
+compilation error. For that, we declare(more on this later) the functions at the top of the source file.
+It will be a tedious task to declare functions at the top of every source file. So, here comes the need of
+header files. In header files, we declare all the functions that we are going to use and include them
+at the top of the cpp source files. It also helps with maintenance of the project(if change occurs in
+the function, we just have to modify the header file and not all source files that need the function).
+
+NOTE: File extensions have no meaning in C++. By default, the compiler treats a '.cpp' file as a 'C++' file,
+	  '.c' file as a 'C' file and '.h' as a Header file. But, no one is stopping us from writing 'C++' code into
+	  a '.vighnesh' file. But then, I will hav to tell the compiler that when you encounter a '.vighnesh'
+	  file, treat it like a C++ file. We will have to configure the compiler accordingly.
