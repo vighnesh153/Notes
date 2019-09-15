@@ -5,25 +5,29 @@ int main()
 	std::cout << "Hello";
 	std::cout << std::endl;
 	std::cout << 1 + 2;
+	std::cin.get();
 	return 0;    //  OPTIONAL: ONLY FOR MAIN FUNCTION
 }
 
-NOTE: THE MAIN FUNCTION IS THE ONLY FUNCTION THAT DOESN'T NEED TO
-	  RETURN ANYTHING EVEN IF THE RETURN TYPE IS NOT VOID
 
-
-std: It is a standard namespace that has many standard user-defined types like 'cout', 'cin'
+std: It is a standard namespace that is used for defining many standard user-defined
+	 types like 'cout', 'cin'
 cout: It is a user-defined type of 'ostream' class. It has an operator overload for left shift (<<)
 cin : It is a user-defined type of 'istream' class. It has an operator overload for right shift (>>)
 
-NOTE: 'cout' AND 'cin' OBJECTS ARE DECLARED AND INITIALIZED IN THE IOSTREAM LIBRARY. SO, 
+NOTE: 'cout' AND 'cin' OBJECTS ARE DECLARED AND INITIALIZED IN THE IOSTREAM LIBRARY. SO,
 	  IF WE DON'T INCLUDE IT, IT WILL THROW A COMPILE TIME ERROR
-
-#include: It is a pre-processor directive. This one of the many pre-processors, that gets compiled 
-		  at the beginning of the compilation.
 
 endl: It refers to a newline character
 
 
-using namespace std; => Adding this statement to the top makes our life easier by not needing to 
+cin.get(); => If we don't pass any variable to the 'get' method to store the input from the console,
+			  it usually means that we are just waiting for the user to hit 'ENTER' key.
+			  // It is done to avoid termination of an application after its execution is complete.
+			  // Usually done in DEBUG mode.
+
+using namespace std; => Adding this statement to the top makes our life easier by not needing to
 						to add 'std::' at the start of each object that belongs to the 'std' namespace.
+						But it is not a good practice to do so because if we have many namespaces and
+						if we do 'use namespace NAMESPACE_NAME' on all of them, it will be very
+						difficult to know, to which namespace, the function or class belongs to.
