@@ -1,0 +1,16 @@
+There are 3 types of errors:
+
+1. Compile time error: Error that occurs during the Compile time.
+					   These errors start with letter 'C' followed by a bunch of digits.
+					   For example: C3211
+
+2. Linking error: Error that occurs during linking of the object files(compiled files). If a
+				  function is declared and used in a source file, but during the linking, no
+				  source file has a definition for that function, then it throws a linking error.
+				  These errors start with letter 'LNK' followed by a bunch of digits.
+				  For example: LNK2561: entry point must be defined  => this error will be thrown
+				  						when the main method is not defined.
+
+3. Run-time errors: These errors occur during the execution phase of the application. For example,
+					if a input was expecting integer, but string was specified, then it will throw
+					a run-time error.
