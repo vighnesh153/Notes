@@ -15,6 +15,9 @@ float f = 4.0 / 3;					// = 1.333...
 float g = (float)4 / 3;				// = 1.333...
 
 
+double x = 1.32;		// 'double' has double precision than float. If 'float' can display
+						// 8 values after decimal, 'double' can store 16 values after decimal.
+
 
 char ch1 = 'a';			// character in single quotes
 char ch2 = 97;			// stores character that has ASCII 97
