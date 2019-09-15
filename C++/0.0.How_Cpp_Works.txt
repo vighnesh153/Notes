@@ -33,6 +33,11 @@ header files. In header files, we declare all the functions that we are going to
 at the top of the cpp source files. It also helps with maintenance of the project(if change occurs in
 the function, we just have to modify the header file and not all source files that need the function).
 
+NOTE: The entry point doesn't necessarily have to be the 'main' function. It can be
+	  anything (default is 'main'). If we choose a custom entry point, it has to be told
+	  the linker. Go to 'Project properties => Linker => Advanced : Entry Point' and set its value
+	  to the function that you want to be your entry point. But it usually is not a good practice.
+
 NOTE: File extensions have no meaning in C++. By default, the compiler treats a '.cpp' file as a 'C++' file,
 	  '.c' file as a 'C' file and '.h' as a Header file. But, no one is stopping us from writing 'C++' code into
 	  a '.vighnesh' file. But then, I will hav to tell the compiler that when you encounter a '.vighnesh'
