@@ -1,0 +1,35 @@
+JSX -> JavaScript Extended
+
+It is basically used for components creation inside the React-DOM.
+
+It looks just like HTML but it is not HTML. It is just a syntactic sugar for
+creating components using objects.
+
+For example,
+
+let component = (
+    <div>
+        <h1>Hello</h1>
+        <h1 id="okok">Hello</h1>
+        <h1 class="okok">Hello</h1>
+    </div>
+);
+
+Following is the equivalent of the above JSX. Basically when compiling, the
+above code is converted to the following code anyway.
+
+let component = React.createElement(
+    'div', null, React.createElement('h1', null, "Hello"),
+                 React.createElement('h1', {id: "okok"}, null, "Hello"),
+                 React.createElement('h1', {class="okok"}, "Hello")
+);
+
+
+React.createElement() : Can take infinite elements
+    arguments =>
+        1. First argument: Element name. If an HTML element, enclose in quotes.
+                           If JSX component, use without quotes
+        2. Second argument: JavaScript object, where each key in the object will
+                            correspond to an HTML/JSX attribute of the first argument.
+        3. All other arguments: They are children of the first argument and siblings
+                                of each other.
