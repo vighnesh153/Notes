@@ -9,15 +9,15 @@ Commonly used pre-processor directives:
 
 1. #include <header>  OR  #include "user-defined-header-file"
 
-		NOTE: We usually and conventionally use quotes for relative paths and non-builtin.
-			  But quotes can be used everywhere. For example, #include "iostream" will work.
-			  Whereas, angular brackets can only be used with 'include'(can have any name, just
-			  has to be configured as an 'include' directory) directories. Like, the
+		NOTE: We usually and conventionally use quotes for relative path headers and non-standard
+			  library headers. But quotes can be used everywhere. For example, #include "iostream"
+			  will work. Whereas, angular brackets can only be used with 'include'(can have any
+			  name, just has to be configured as an 'include' directory) directories. Like, the
 			  directory that we want to make as an include base, we have to add it to configuration
 			  file and then we can use whatever header file is in that 'include' directory with
 			  angular brackets. We can use quotes for both, relative path header files, and include
-			  directory paths. But conventionally, we use builtin header files in angular brackets
-			  and all others in quotes.
+			  directory paths. But conventionally, we use standard library header files in
+			  angular brackets and all others in quotes.
 
 		It is a pre-processor directive. What it does is that it finds the header file specified,
 		copy's the contents of the file, and pastes it directly where the '#include <file>'
