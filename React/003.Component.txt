@@ -4,7 +4,6 @@ DISCLAIMER: NO NEED TO TRY THIS.THIS IS JUST TO SEE HOW EASY IT IS TO CREATE BAS
 To create a component:
 
 1.
-// Function name should start with capital letter
 // 'props' argument will hold the key-value pairs passed in the element
 import React from 'react';
 // We need 'React' to render or understand jsx (html-like code)
