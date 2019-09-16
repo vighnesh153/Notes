@@ -4,7 +4,7 @@ begins.
 A pre-processor directive starts with a '#', without quotes.
 
 Commonly used pre-processor directives:
-#include, #define, #undef, #if, #endif, #pragma
+#include, #define, #undef, #if, #endif, #pragma, #ifndef
 
 
 1. #include <header>  OR  #include "user-defined-header-file"
@@ -45,3 +45,27 @@ Commonly used pre-processor directives:
 
 		As one evaluates to true, the code will be compiled.
 		But if it were 0 instead of 1, the ode would not have been considered for compilation.
+
+5. #pragma once
+
+		It is present at the top of a header file. It is a header guard. It makes sure that even
+		if the header file was included multiple times in a single CPP file, it will just include it
+		once, thus avoiding code duplicate errors.
+
+6. #ifndef :
+
+		Checks if a symbol is defined or not. If defined, returns true, else false. This can be
+		used with #endif.
+
+		NOTE: Traditional way (and a very un-clean way) of '#pragma once'.
+			#ifndef _SOME_SYMBOL
+			#define _SOME_SYMBOL
+				//contents of the header file
+			#endif
+
+			So, if the header file is included, at first, the symbol '_SOME_SYMBOL' is not defined.
+			So, '#ifndef' returns true and executes code inside it. Also, it defines the symbol
+			'_SOME_SYMBOL'(if the same header file is included again, then that time, the
+			'_SOME_SYMBOL' will be defined and #ifndef will return false, and code jumps to #endif)
+
+			But this is very tedious way to do it. So now, we use '#pragma once'
