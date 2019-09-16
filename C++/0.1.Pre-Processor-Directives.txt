@@ -7,7 +7,7 @@ Commonly used pre-processor directives:
 #include, #define, #undef, #if, #endif, #pragma
 
 
-1. #include <header>  OR  #include "user-defined-header"
+1. #include <header>  OR  #include "user-defined-header-file"
 
 		It is a pre-processor directive. What it does is that it finds the header file specified,
 		copy's the contents of the file, and pastes it directly where the '#include <file>'
