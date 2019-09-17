@@ -1,0 +1,23 @@
+If we pass something in the opening and closing tag of out component, then that
+will be saved under {props.children}.
+
+For example:
+    <Person name='Vighnesh' age='21' >I am a child </Person>
+
+    function Person(props) {
+        return (
+            <div>
+                <h1>Name: { props.name }</h1>
+                <p>Age: { props.age }</p>
+                <p>Children: {props.children} </p>
+            </div>
+        );
+    }
+
+    NOTE: The above function uses the 'props.children' property. If we create
+          a JSX tag of it, and not pass anything as children, or use it as a
+          self-closing tag, then the 'props.children' will have null or empty
+          value.
+
+    NOTE: If we pass other JSX component tag as a child to another JSX tag, it
+          will call its respective component handler, nothing special.
