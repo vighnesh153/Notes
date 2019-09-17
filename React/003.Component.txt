@@ -11,8 +11,8 @@ function Person(props) {
 	return (
 	<div className="person">
 		// 'className' is used instead of 'class' because 'class' is a keyword.
-		<h1>Name: {props.name}</h1>
-		<p>Age: {props.age}</p>
+		<h1>Name: { props.name }</h1>
+		<p>Age: { props.age }</p>
 	</div>
 	);
 }
@@ -24,8 +24,8 @@ class Person extends Component {
   render() {
     return (
       <div className="person">
-		  <h1>Name: {props.name}</h1>
-		  <p>Age: {props.age}</p>
+		  <h1>Name: { this.props.name }</h1>
+		  <p>Age: { this.props.age }</p>
 	  </div>
     );
   }
