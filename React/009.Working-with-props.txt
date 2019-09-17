@@ -1,0 +1,38 @@
+'props' is a conventional name given to property-attributes of JSX.
+
+For example,
+
+If we pass some attributes in a component, it is passed to its function-based or
+class-based component definition. In the function-based component definition,
+it is passed as a property of an object which is passed to the function.
+In the class-based component definition, it is gets stored as a key of 'this.props'
+object.
+
+Following usage will clear things up.
+
+
+<Person name='Vighnesh' age='21' />
+
+
+In function-based component definition:
+    function Person(props) {
+        return (
+            <div>
+                <h1>Name: { props.name }</h1>
+                <p>Age: { props.age }</p>
+            </div>
+        );
+    }
+
+In class-based component definition:
+    class Person extends Component {
+        render()
+        {
+            return (
+              <div>
+                  <h1>Name: { this.props.name }</h1>
+                  <p>Age: { this.props.age }</p>
+              </div>
+            );
+        }
+    }
