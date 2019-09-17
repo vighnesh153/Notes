@@ -1,0 +1,20 @@
+To use JavaScript variables inside JSX, we simply wrap them in single curly braces.
+We can even call functions inside them.
+
+For example:
+
+ex.1:
+let age = 21;
+let component = (
+    <p>I am a person. My age is { age }.</p>
+);
+
+ex.2
+function calculateAge()
+{
+    // Some calculation
+    return 21;
+}
+let component = (
+    <p>I am a person. My age is { calculateAge() }.</p>
+);
