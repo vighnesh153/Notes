@@ -1,5 +1,6 @@
 DISCLAIMER: NO NEED TO TRY THIS.THIS IS JUST TO SEE HOW EASY IT IS TO CREATE BASIC COMPONENTS.
 
+NOTE: We capitalize custom components to differentiate them from regular HTML elements.
 
 To create a component:
 
