@@ -1,6 +1,17 @@
 DISCLAIMER: NO NEED TO TRY THIS.THIS IS JUST TO SEE HOW EASY IT IS TO CREATE BASIC COMPONENTS.
 
-NOTE: We capitalize custom components to differentiate them from regular HTML elements.
+NOTE: We capitalize custom components to differentiate them from regular HTML
+	  elements.
+NOTE: Components created using functions are simple component. They don't need
+	  power of classes because they have simple functionality. So, if you need
+	  a component that doesn't need 'state' or complex functionality, you may
+	  prefer function Component for that case (Because using class would be an
+	  overkill).
+NOTE: Create function-based components using ES6 arrow syntax to avoid binding
+	  'this' to the function (Because, if we use 'this' inside a function declared
+	  using the 'function' keyword, then 'this' will be bound to itself.
+	  Whereas, if we use 'this' inside a function declared using the arrow syntax,
+	  then the 'this' will be bound to the enclosing entity).
 
 To create a component:
 
