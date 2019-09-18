@@ -1,0 +1,27 @@
+Special thing about 'state' variable is that if we modify it, then that
+component instance, whose 'state' is modified, get's re-rendered. Updating the
+'state' calls the 'render' method of the instance.
+
+How to modify 'state' variable?
+
+class Person extends Component {
+    state = {
+        number: 123
+    }
+
+    changeNumber() {
+        this.state.number = 321;   // This is not allowed.
+
+        // state should only be modified by using 'setState' method which was
+        // inherited from 'Component'. If we try to modify the state using the
+        // above procedure, then it won't work. Use the below procedure:
+
+        this.setState(
+            {
+                number: 321
+            }
+        );
+        // NOTE: Only object should be passed to 'setState' method because
+        // whatever object we pass to it will be merged with the 'state' object.
+    }
+}
