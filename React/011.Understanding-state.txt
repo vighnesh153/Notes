@@ -1,0 +1,24 @@
+Class based components have a special instance variable called 'state'. It is
+inherited from the 'Component' class.
+
+We can override it by assigning it values as an object.
+
+For example:
+
+    class App extends Component {
+        state = {
+            persons: [
+                { name: "Vighnesh", age: 21},
+                { name: "llod", age: 21},
+            ]
+        };
+
+        render() {
+            return (
+                  <div>
+                    <Person name={this.state.persons[0].name} age={this.state.persons[0].age} />
+                    <Person name={this.state.persons[1].name} age={this.state.persons[1].age} />
+                  </div>
+            );
+        }
+    }
