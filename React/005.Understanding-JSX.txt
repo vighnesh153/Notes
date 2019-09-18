@@ -1,4 +1,4 @@
-JSX -> JavaScript Extended
+JSX -> JavaScript + XML
 
 It is basically used for components creation inside the React-DOM.
 
