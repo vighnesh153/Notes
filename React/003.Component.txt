@@ -16,6 +16,14 @@ NOTE: Create function-based components using ES6 arrow syntax to avoid binding
 	  Whereas, if we use 'this' inside a function declared using the arrow syntax,
 	  then the 'this' will be bound to the enclosing entity).
 
+NOTE: Pure functions are those that don't change their inputs, and always
+	  return the same result for the same inputs. All React components must act
+	  like pure functions with respect to their props. Of course, application
+	  UIs are dynamic and change over time. Here comes the need for "state".
+	  State allows React components to change their output over time in
+	  response to user actions, network responses, and anything else, without
+	  violating this rule.
+
 To create a component:
 
 1.
