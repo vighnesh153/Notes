@@ -1,0 +1,60 @@
+1. Only one parent/root component is allowed.
+
+    For example:
+        The following is allowed:
+        let component = (
+            <div>
+                <h1>Hello</h1>
+                <h1 id="okok">Hello</h1>
+                <h1 class="okok">Hello</h1>
+            </div>
+        );
+        However, the following is not allowed, because it has multiple root/parent
+        elements:
+        let component = (
+            <div>
+                <h1>Hello</h1>
+                <h1 id="okok">Hello</h1>
+                <h1 class="okok">Hello</h1>
+            </div>
+            <div></div>
+            <h1></h1>
+        );
+
+2. Since JSX is closer to JavaScript than to HTML, React DOM uses camelCase
+   property naming convention instead of HTML attribute names. For example,
+   'class' becomes 'className' in JSX, and 'tabindex' becomes 'tabIndex'.
+
+3. If a tag is empty, you may close it immediately with />, like XML.
+    For example, const element = <img src={this.state.user.avatarUrl} />;
+
+4. JSX PREVENTS INJECTION ATTACKS
+        It is safe to embed user input in JSX. By default, React DOM escapes
+        any values embedded in JSX before rendering them. Thus it ensures that
+        you can never inject anything that’s not explicitly written in your
+        application. Everything is converted to a string before being rendered.
+        This helps prevent XSS (cross-site-scripting) attacks.
+
+        For example:
+                     const title = response.potentiallyMaliciousInput;
+                     // This is safe:
+                     const element = <h1>{title}</h1>;
+
+5. JSX REPRESENTS OBJECTS
+        Babel compiles JSX down to React.createElement() calls.
+
+        const element = (
+          <h1 className="greeting">
+            Hello, world!
+          </h1>
+        );
+
+        is equivalent to
+
+        const element = React.createElement(
+          'h1',
+          {className: 'greeting'},
+          'Hello, world!'
+        );
+
+        (Discussed in detail, later: in children property -> 010)
