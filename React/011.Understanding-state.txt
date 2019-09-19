@@ -1,7 +1,8 @@
 Class based components have a special instance variable called 'state'. It is
 inherited from the 'Component' class.
 
-We can override it by assigning it values as an object.
+We can override it by assigning it values as an object (only once: either in
+constructor or as a free property outside any function -> discussed below).
 NOTE: It should only be assigned an object. (As per React. Why? Discussed later)
 
 For example:
