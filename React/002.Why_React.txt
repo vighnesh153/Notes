@@ -14,6 +14,9 @@ NOTE: React doesn’t require using JSX (what JSX is, is discussed in file with
       working with UI inside the JavaScript code. It also allows React to
       show more useful error and warning messages.
 
+NOTE: In practice, most React apps only call ReactDOM.render() once. Such
+      type of code gets encapsulated into stateful components.
+
 Other alternatives:
 Angular		// Boring
 Vue			// Boring
