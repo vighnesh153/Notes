@@ -43,18 +43,30 @@
 5. JSX REPRESENTS OBJECTS
         Babel compiles JSX down to React.createElement() calls.
 
-        const element = (
-          <h1 className="greeting">
-            Hello, world!
-          </h1>
-        );
+                const element = (
+                  <h1 className="greeting">
+                    Hello, world!
+                  </h1>
+                );
 
         is equivalent to
 
-        const element = React.createElement(
-          'h1',
-          {className: 'greeting'},
-          'Hello, world!'
-        );
+                const element = React.createElement(
+                  'h1',
+                  {className: 'greeting'},
+                  'Hello, world!'
+                );
 
         (Discussed in detail, later: in children property -> 010)
+
+        React.createElement() performs a few checks to help you write bug-free
+        code but essentially it creates an object like this:
+
+                // Note: this structure is simplified
+                const element = {
+                    type: 'h1',
+                    props: {
+                        className: 'greeting',
+                        children: 'Hello, world!'
+                    }
+                };
