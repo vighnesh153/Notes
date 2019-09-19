@@ -2,6 +2,8 @@ Special thing about 'state' variable is that if we modify it, then that
 component instance, whose 'state' is modified, get's re-rendered. Updating the
 'state' calls the 'render' method of the instance.
 
+NOTE: STATE UPDATES ARE MERGED
+
 How to modify 'state' variable?
 
 class Person extends Component {
@@ -25,3 +27,27 @@ class Person extends Component {
         // whatever object we pass to it will be merged with the 'state' object.
     }
 }
+
+
+
+NOTE: STATE UPDATES MAY BE ASYNCHRONOUS
+
+React may batch multiple setState() calls into a single update for performance.
+Because this.props and this.state may be updated asynchronously, you should not
+rely on their values for calculating the next state.
+
+For example, this code may fail to update the counter:
+
+    // Wrong
+    this.setState({
+    counter: this.state.counter + this.props.increment,
+    });
+
+To fix it, use a second form of setState() that accepts a function rather than
+an object. That function will receive the previous state as the first argument,
+and the props at the time the update is applied as the second argument:
+
+    // Correct
+    this.setState((state, props) => ({
+    counter: state.counter + props.increment
+    }));
