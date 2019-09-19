@@ -2,6 +2,17 @@
 2. Focus on business logic, not on preventing our app from exploding.
 3. Huge ecosystem, active community, high performance.
 
+NOTE: React embraces the fact that rendering logic is inherently coupled with
+      other UI logic: how events are handled, how the state changes over time,
+      and how the data is prepared for display. Instead of artificially
+      separating technologies by putting markup and logic in separate files,
+      React separates concerns with loosely coupled units called “components”
+      that contain both.
+
+NOTE: React doesn’t require using JSX (what JSX is, is discussed in file with
+      index == 005), but most people find it helpful as a visual aid when
+      working with UI inside the JavaScript code. It also allows React to
+      show more useful error and warning messages.
 
 Other alternatives:
 Angular		// Boring
