@@ -1,7 +1,10 @@
 DISCLAIMER: NO NEED TO TRY THIS.THIS IS JUST TO SEE HOW EASY IT IS TO CREATE BASIC COMPONENTS.
 
-NOTE: We capitalize custom components to differentiate them from regular HTML
-	  elements.
+NOTE: Always start component names with a capital letter. React treats
+	  components starting with lowercase letters as DOM tags. For example, <div />
+	  represents an HTML div tag, but <Welcome /> represents a component and requires
+	  'Welcome' to be in scope.
+
 NOTE: Components created using functions are simple component. They don't need
 	  power of classes because they have simple functionality. So, if you need
 	  a component that doesn't need 'state' or complex functionality, you may
