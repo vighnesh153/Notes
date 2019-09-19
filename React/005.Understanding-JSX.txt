@@ -1,9 +1,15 @@
-JSX -> JavaScript + XML  or JavaScript Xtended
+JSX -> JavaScript + XML  or JavaScript Extended
 
 It is basically used for components creation inside the React-DOM.
 
 It looks just like HTML but it is not HTML. It is just a syntactic sugar for
 creating components using objects.
+
+NOTE: JSX IS AN EXPRESSION TOO
+      After compilation, JSX expressions become regular JavaScript function
+      calls and evaluate to JavaScript objects. This means that you can use JSX
+      inside of if statements and for loops, assign it to variables, accept it
+      as arguments, and return it from functions.
 
 For example,
 
