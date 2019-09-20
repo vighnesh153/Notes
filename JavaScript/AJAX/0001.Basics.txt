@@ -1,0 +1,39 @@
+AJAX stands for Asynchronous JavaScript And XML.
+AJAX is not a programming language.
+AJAX is a technique for accessing web servers from a web page.
+
+NOTE: AJAX is a misleading name. AJAX applications might use XML to transport
+      data, but it is equally common to transport data as plain text or JSON text.
+
+Uses:
+    1. Read data from a web server - after the page has loaded
+    2. Update a web page without reloading the page
+    3. Send data to a web server - in the background
+
+
+AJAX just uses a combination of:
+    1. A browser built-in XMLHttpRequest object (to request data from a web server)
+    2. JavaScript and HTML DOM (to display or use the data)
+
+
+SAMPLE HTTPREQUEST TO AN URL
+
+<h1 id="something" onclick="changeContent()">Hello, I am not Vighnesh </h1>
+<script>
+    let headerIntro = document.getElementById("something");
+
+    // URL hosted on a server. I used this text file because, WebStorm launches
+    // the html file by hosting the containing folder/Project on localhost.
+    // And the relative path to the file will issue a GET request on the server.
+    let file_url = "/Test/temporary_vighnesh.txt";
+
+    let changeContent = () => {
+        let xmlHttpRequest = new XMLHttpRequest();
+        xmlHttpRequest.open('GET', file_url, true);
+        xmlHttpRequest.setRequestHeader('Access-Control-Allow-Origin', '*');
+        xmlHttpRequest.onload = () => {
+            headerIntro.innerText = xmlHttpRequest.responseText;
+        };
+        xmlHttpRequest.send();
+    };
+</script>
