@@ -1,0 +1,40 @@
+1. new XMLHttpRequest() =>  creates a new XMLHttpRequest object.
+
+2. abort() => The XMLHttpRequest.abort() method aborts the request if it has
+              already been sent. When a request is aborted, its readyState is
+              changed to XMLHttpRequest.UNSENT (0) and the request's status
+              code is set to 0.
+
+              For example:
+
+              var xhr = new XMLHttpRequest(),
+              method = "GET",
+              url = "https://developer.mozilla.org/";
+              xhr.open(method, url, true);
+
+              xhr.send();
+
+              if (OH_NOES_WE_NEED_TO_CANCEL_RIGHT_NOW_OR_ELSE) {
+                  xhr.abort();
+              }
+
+3. getAllResponseHeaders()  => Returns header information
+
+4. getResponseHeader() =>	Returns specific header information
+
+5. open(method, url, async, user, psw)  =>	Specifies the request
+
+                                            method: the request type GET or POST
+                                            url: the file location
+                                            async: true (asynchronous) or false (synchronous)
+                                            user: optional user name
+                                            psw: optional password
+
+6. send() => Sends the request to the server
+             Used for GET requests
+
+7. send(string)	 => Sends the request to the server.
+                    Used for POST requests
+
+8. setRequestHeader('label', 'value') =>	Adds a label/value pair to
+                                            the header to be sent
