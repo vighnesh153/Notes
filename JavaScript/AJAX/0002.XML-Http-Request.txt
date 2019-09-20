@@ -1,0 +1,21 @@
+The keystone of AJAX is the XMLHttpRequest object.
+
+NOTE: All modern browsers built-in support for XMLHttpRequest object.
+
+SYNTAX:
+    let xhttp = new XMLHttpRequest();
+
+
+NOTE: Some old browsers don't support XMLHttpRequest. So, we use ActiveXObject.
+      Example shown below.
+
+
+OLD BROWSER SUPPORT:
+    let xmlhttp;
+    if (window.XMLHttpRequest) {
+        // code for modern browsers
+        xmlhttp = new XMLHttpRequest();
+    } else {
+        // code for old IE browsers
+        xmlhttp = new ActiveXObject("Microsoft.XMLHTTP");
+    }
