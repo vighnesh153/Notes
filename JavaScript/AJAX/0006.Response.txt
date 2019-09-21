@@ -1,0 +1,22 @@
+THE ONREADYSTATECHANGE PROPERTY
+	The readyState property holds the status of the XMLHttpRequest.
+	The onreadystatechange property defines a function to be executed when the readyState changes.
+	The status property and the statusText property holds the status of the XMLHttpRequest object.
+
+
+NOTE: THE ONREADYSTATECHANGE FUNCTION IS CALLED EVERY TIME THE READYSTATE CHANGES.
+
+
+THE RESPONSEXML PROPERTY
+	The XMLHttpRequest object has an in-built XML parser.
+	The responseXML property returns the server response as an XML DOM object.
+	Using this property you can parse the response as an XML DOM object
+
+	For example:
+	let xmlDoc = xhttp.responseXML;
+	let txt = "";
+	x = xmlDoc.getElementsByTagName("ARTIST");
+	for (let i = 0; i < x.length; i++) {
+	  txt += x[i].childNodes[0].nodeValue + "<br>";
+	}
+	document.getElementById("demo").innerHTML = txt;
