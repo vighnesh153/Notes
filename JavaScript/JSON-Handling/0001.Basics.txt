@@ -1,0 +1,15 @@
+JSON: JavaScript Object Notation.
+JSON is a syntax for storing and exchanging data.
+JSON is a lightweight data-interchange format
+JSON is text, written with JavaScript object notation.
+
+
+Why use JSON?
+	1. Since the JSON format is text only, it can easily be sent to and from a server, and used as a
+	   data format by any programming language.
+	2. JavaScript has a built in function to convert a string, written in JSON format, into native
+	   JavaScript objects: JSON.parse(). So, if you receive data from a server, in JSON format, you
+	   can use it like any other JavaScript object.
+
+NOTE: Using JSON allows us to work with the data as JavaScript objects, with no complicated parsing
+and translations.
