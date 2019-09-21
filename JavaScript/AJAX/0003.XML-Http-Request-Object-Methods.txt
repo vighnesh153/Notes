@@ -27,6 +27,15 @@
                                             method: the request type GET or POST
                                             url: the file location
                                             async: true (asynchronous) or false (synchronous)
+												   (SHOULD ALWAYS BE SET TO TRUE)
+												   By sending asynchronously, the JavaScript does
+												   not have to wait for the server response, but
+												   can instead:
+														1. execute other scripts while waiting for
+														   server response
+														2. deal with the response after the
+														   response is ready
+
                                             user: optional user name
                                             psw: optional password
 
