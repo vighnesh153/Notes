@@ -36,5 +36,5 @@
 7. send(string)	 => Sends the request to the server.
                     Used for POST requests
 
-8. setRequestHeader('label', 'value') =>	Adds a label/value pair to
-                                            the header to be sent
+8. setRequestHeader('header_name', 'value') =>	Adds a header_name/value pair to
+                                            	the header to be sent
