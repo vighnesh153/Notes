@@ -1,4 +1,12 @@
 1. onreadystatechange: Defines a function to be called when the readyState property changes
+	For example:
+			xhttp.onreadystatechange = function() {
+				if (this.readyState == 4 && this.status == 200) {
+					document.getElementById("demo").innerHTML = this.responseText;
+				}
+			};
+			xhttp.open("GET", "ajax_info.txt", true);
+			xhttp.send();
 
 2. readyState:	Holds the status of the XMLHttpRequest.
 						0: request not initialized
