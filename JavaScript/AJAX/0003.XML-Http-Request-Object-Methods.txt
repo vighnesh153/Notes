@@ -36,6 +36,13 @@
 														2. deal with the response after the
 														   response is ready
 
+												   Sometimes async = false are used for quick
+												   testing. You will also find synchronous requests
+												   in older JavaScript code. Since the code will
+												   wait for server completion, there is no need for
+												   an onreadystatechange function. We can directly
+												   use xmlHttpRequestObject.response.
+
                                             user: optional user name
                                             psw: optional password
 
