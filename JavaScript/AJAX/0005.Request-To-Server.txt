@@ -1,0 +1,43 @@
+To send a request to a server, we use the open() and send() methods of the XMLHttpRequest object:
+
+	xhttp.open("GET", "some_url", true);
+	xhttp.send();
+
+
+NOTE: REQUESTS CAN BE MADE TO ANY WEBSITE, WEB-API, OR A FILE ON SERVER. (Basically, requests can
+	  be made to anything, that is hosted)
+
+
+GET OR POST?
+	GET is simpler and faster than POST, and can be used in most cases.
+
+	However, always use POST requests when:
+		1. A cached file is not an option (update a file or database on the server).
+		2. Sending a large amount of data to the server (POST has no size limitations).
+		3. Sending user input (which can contain unknown characters), POST is more robust and
+		   secure than GET.
+
+
+GET Requests:
+		xhttp.open("GET", "www.some_url.com/demo_get2.asp?fname=Henry&lname=Ford", true);
+	OR  xhttp.open("GET", "www.some_url.com/demo_get.asp?t=" + Math.random(), true);
+	OR  xhttp.open("GET", "www.some_url.com/demo_get.asp", true);  // We may get a cached result
+																   // using this. So use the
+																   // immediate URL above to
+																   // generate an unique URL, so we
+																   // don't get the cached result.
+
+	xhttp.send();
+
+
+POST Requests:
+		xhttp.open("POST", "demo_post.asp", true);
+		xhttp.send();
+
+
+		To POST data like an HTML form, add an HTTP header with setRequestHeader(). Specify the
+		data you want to send in the send() method:
+
+			xhttp.open("POST", "ajax_test.asp", t`rue);
+			xhttp.setRequestHeader("Content-type", "application/x-www-form-urlencoded");
+			xhttp.send("fname=Henry&lname=Ford");`
