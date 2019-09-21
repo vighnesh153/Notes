@@ -1,0 +1,7 @@
+Lifecycle methods are special methods on the Component class that run some
+code when a component mounts or unmounts.
+
+1. componentDidMount() { } => This method runs after the component output has
+                              been rendered to the DOM.
+
+2. componentWillUnmount() { } => This method will run when the component
