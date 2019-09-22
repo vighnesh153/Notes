@@ -1,0 +1,57 @@
+document.getElementById("myBtn").addEventListener("click", displayDate);
+
+
+NOTE: You can easily remove an event listener by using
+	  the element.removeEventListener("mousemove", myFunction); method.
+
+
+example:
+	window.addEventListener("resize", function(){
+	  document.getElementById("demo").innerHTML = sometext;
+	});
+
+
+SYNTAX:
+	element.addEventListener(event, function, useCapture);
+
+		1. The first parameter is the type of the event (like "click" or "mousedown" or any other HTML DOM
+			Event.)
+		2. The second parameter is the function we want to call when the event occurs.
+		3. The third parameter is a boolean value specifying whether to use event bubbling or event
+			capturing. This parameter is optional. Default value is false.
+
+		EVENT BUBBLING OR EVENT CAPTURING
+		There are two ways of event propagation in the HTML DOM, bubbling and capturing. Event
+		propagation is a way of defining the element order when an event occurs. If you have a <p>
+		element inside a <div> element, and the user clicks on the <p> element, which element's
+		"click" event should be handled first? In bubbling the inner most element's event is
+		handled first and then the outer: the <p> element's click event is handled first, then
+		the <div> element's click event. In capturing the outer most element's event is handled
+		first and then the inner: the <div> element's click event will be handled first, then
+		the <p> element's click event.
+
+		Check the 'accepted answer' to understand about 'useCapture'
+		https://stackoverflow.com/questions/7398290/unable-to-understand-usecapture-parameter-in-addeventlistener
+		to understa
+
+	NOTE: Note that you don't use the "on" prefix for the event; use "click" instead of "onclick" in
+		  the addEventListener's first argument.
+
+
+NOTE: The addEventListener() and removeEventListener() methods are not supported in IE 8 and
+	  earlier versions. However, for these specific browser versions, you can use the attachEvent()
+	  method to attach an event handlers to the element, and the detachEvent() method to remove it:
+		  element.attachEvent(event, function);
+		  element.detachEvent(event, function);
+
+
+The addEventListener() method allows you to add many events to the same element, without
+overwriting existing events:
+	element.addEventListener("click", myFunction);
+	element.addEventListener("click", mySecondFunction);
+
+
+You can add events of different types to the same element:
+	element.addEventListener("mouseover", myFunction);
+	element.addEventListener("click", mySecondFunction);
+	element.addEventListener("mouseout", myThirdFunction);
