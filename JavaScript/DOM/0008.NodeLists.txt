@@ -1,0 +1,31 @@
+THE HTML DOM NODELIST OBJECT
+	A NodeList object is a list (collection) of nodes extracted from a document.
+	A NodeList object is almost the same as an HTMLCollection object.
+	Some (older) browsers return a NodeList object instead of an HTMLCollection for methods like getElementsByClassName().
+	All browsers return a NodeList object for the property childNodes.
+	Most browsers return a NodeList object for the method querySelectorAll().
+
+
+NOTE: BOTH HAVE THE SAME PROPERTIES LIKE 'length' AND INDEXING IS ALSO THE SAME.
+
+
+THE DIFFERENCE BETWEEN AN HTMLCOLLECTION AND A NODELIST
+	1. An HTMLCollection (previous chapter) is a collection of HTML elements.
+	   A NodeList is a collection of document nodes.
+
+	2. A NodeList and an HTML collection is very much the same thing.
+	   Both an HTMLCollection object and a NodeList object is an array-like list (collection) of objects.
+
+	3. Both have a length property defining the number of items in the list (collection).
+	   Both provide an index (0, 1, 2, 3, 4, ...) to access each item like an array.
+
+	4. HTMLCollection items can be accessed by their name, id, or index number.
+	   NodeList items can only be accessed by their index number.
+
+	Only the NodeList object can contain attribute nodes and text nodes.
+
+
+NOTE: A node list is not an array!
+		A node list may look like an array, but it is not.
+		You can loop through the node list and refer to its nodes like an array.
+		However, you cannot use Array Methods, like valueOf(), push(), pop(), or join() on a node list.
