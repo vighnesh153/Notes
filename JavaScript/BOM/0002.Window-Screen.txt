@@ -1,0 +1,27 @@
+The window.screen object contains information about the user's screen.
+
+Properties:
+	screen.width
+	// The screen.width property returns the width of the visitor's screen in pixels.
+	screen.height
+	// The screen.height property returns the height of the visitor's screen in pixels.
+
+	screen.availWidth
+	// The screen.availWidth property returns the width of the visitor's screen, in pixels,
+	// minus interface features like the Windows Taskbar.
+	screen.availHeight
+	// The screen.availHeight property returns the height of the visitor's screen, in pixels,
+	// minus interface features like the Windows Taskbar.
+
+	screen.colorDepth
+		The screen.colorDepth property returns the number of bits used to display one color.
+		All modern computers use 24 bit or 32 bit hardware for color resolution:
+			24 bits =      16,777,216 different "True Colors"
+			32 bits = 4,294,967,296 different "Deep Colors"
+		Older computers used 16 bits: 65,536 different "High Colors" resolution.
+		Very old computers, and old cell phones used 8 bits: 256 different "VGA colors".
+	NOTE: The #rrggbb (rgb) values used in HTML represents "True Colors" (16,777,216 different colors)
+
+	screen.pixelDepth
+	// The screen.pixelDepth property returns the pixel depth of the screen.
+	NOTE: For modern computers, Color Depth and Pixel Depth are equal.
