@@ -13,3 +13,23 @@ Why use JSON?
 
 NOTE: Using JSON allows us to work with the data as JavaScript objects, with no complicated parsing
 and translations.
+
+
+JSON data is written as name/value pairs.
+A name/value pair consists of a field name (in double quotes), followed by a colon, followed by a
+value:
+	{ "name":"John" }
+
+NOTE: JSON NAMES REQUIRE DOUBLE QUOTES. JAVASCRIPT NAMES DON'T.
+
+In JSON, values must be one of the following data types:
+	a string
+	a number
+	an object (JSON object)
+	an array
+	a boolean
+	null
+
+JSON Files
+	1. The file type for JSON files is ".json"
+	2. The MIME type for JSON text is "application/json"
