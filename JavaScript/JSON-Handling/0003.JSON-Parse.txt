@@ -1,0 +1,5 @@
+var obj = JSON.parse('{ "name":"John", "age":30, "city":"New York"}');
+
+console.log(obj.name);  // outputs: John
+console.log(obj.age);  	// outputs: 30
+console.log(obj.city);  // outputs: New York
