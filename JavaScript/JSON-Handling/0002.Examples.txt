@@ -1,0 +1,15 @@
+1. { "name":"John" }
+
+2. { "age":30 }
+
+3. 	{
+	"employee":{ "name":"John", "age":30, "city":"New York" }
+	}
+
+4. 	{
+	"employees":[ "John", "Anna", "Peter" ]
+	}
+
+5. { "sale":true }
+
+6. { "middlename":null }
