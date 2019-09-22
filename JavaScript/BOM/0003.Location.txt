@@ -1,0 +1,18 @@
+The window.location object can be used to get the current page address (URL) and to redirect the
+browser to a new page.
+
+
+
+WINDOW LOCATION
+	The window.location object can be written without the window prefix.
+
+	Some examples:
+		window.location.href 				returns the href (URL) of the current page
+		window.location.hostname 			returns the domain name of the web host
+		window.location.pathname 			returns the path and filename of the current page
+		window.location.protocol 			returns the web protocol used (http: or https:)
+
+		window.location.port				returns the number of the internet host port (of the current page)
+		NOTE: Most browsers will not display default port numbers (80 for http and 443 for https)
+
+		window.location.assign() 			loads a new document
