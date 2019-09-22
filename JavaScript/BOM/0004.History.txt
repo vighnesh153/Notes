@@ -1,0 +1,12 @@
+The window.history object contains the browsers history.
+
+NOTE: To protect the privacy of the users, there are limitations to how JavaScript can access this
+	  object.
+
+
+Some methods:
+	history.back() - same as clicking back in the browser
+	// loads the previous URL in the history list.
+
+	history.forward() - same as clicking forward in the browser
+	// loads the next URL in the history list.
