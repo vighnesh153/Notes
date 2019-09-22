@@ -1,0 +1,36 @@
+The window.navigator object contains information about the visitor's browser.
+
+
+NOTE: The information from the navigator object can often be misleading, and should not be used to
+	  detect browser versions because:
+			1. Different browsers can use the same name
+			2. The navigator data can be changed by the browser owner
+			3. Some browsers misidentify themselves to bypass site tests
+			4. Browsers cannot report new operating systems, released later than the browser
+
+
+METHODS:
+	navigator.cookieEnabled
+	// returns true if cookies are enabled, otherwise false
+
+	navigator.product
+	// returns the product name of the browser engine
+	NOTE: Do not rely on this. Most browsers returns "Gecko" as product name !!
+
+	navigator.appVersion
+	// returns version information about the browser
+
+	navigator.userAgent
+	// returns the user-agent header sent by the browser to the server
+
+	navigator.platform
+	// returns the browser platform (operating system)
+
+	navigator.language
+	// returns the browser's language
+
+	navigator.onLine
+	// returns true if the browser is online else false
+
+	navigator.javaEnabled()
+	// returns true if Java is enabled else false
