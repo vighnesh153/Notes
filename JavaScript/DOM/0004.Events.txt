@@ -1,0 +1,31 @@
+<h1 onclick="this.innerHTML = 'Ooops!'">Click on this text!</h1>
+
+
+<h1 onclick="changeText(this)">Click on this text!</h1>
+<script>
+	function changeText(id) {
+	  	id.innerHTML = "Ooops!";
+	}
+</script>
+
+
+<script>
+	document.getElementById("myBtn").onclick = displayDate;
+</script>
+
+
+<body onload="checkCookies()">
+
+
+<input type="text" id="fname" onchange="upperCase()">
+
+
+NOTE: Other events:
+	onmouseover
+	onmouseout
+	onmousedown
+	onmouseup
+	onclick
+	onload
+	onfocus
+	etc.
