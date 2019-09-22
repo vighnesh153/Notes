@@ -1,0 +1,22 @@
+THE HTMLCOLLECTION OBJECT
+	The getElementsByTagName() method returns an HTMLCollection object.
+	An HTMLCollection object is an array-like list (collection) of HTML elements.
+
+	The following code selects all <p> elements in a document:
+		var x = document.getElementsByTagName("p");
+
+	The elements in the collection can be accessed by an index number.
+	To access the second <p> element you can write:
+		y = x[1];
+		(index starts with 0)
+
+
+HTMLCOLLECTION LENGTH
+	document.getElementsByTagName("p").length
+	// number of elements in the HTMLCollection
+
+
+NOTE: AN HTMLCOLLECTION IS NOT AN ARRAY!
+	An HTMLCollection may look like an array, but it is not.
+	You can loop through the list and refer to the elements with a number (just like an array).
+	However, you cannot use array methods like valueOf(), pop(), push(), or join() on an HTMLCollection.
