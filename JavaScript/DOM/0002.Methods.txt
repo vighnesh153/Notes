@@ -1,0 +1,42 @@
+'document' is the object that has the tree of the HTML.
+
+Whenever we load a HTML page, browser creates a tree of the HTML tags from the page in the 'document'
+object and all the tags also have many properties that can be accessed through the 'document' object.
+
+
+document.getElementById(id)						Find an element by element id
+document.getElementsByTagName(name)				Find elements by tag name
+document.getElementsByClassName(name)			Find elements by class name
+
+
+element.innerHTML =  new html content			Change the inner HTML of an element
+element.attribute = new value					Change the attribute value of an HTML element
+element.style.property = new style				Change the style of an HTML element
+element.setAttribute(attribute, value)			Change the attribute value of an HTML element
+												// Used for usually assigning methods
+
+document.createElement(element)					Create an HTML element
+document.removeChild(element)					Remove an HTML element
+document.appendChild(element)					Add an HTML element
+document.replaceChild(new, old)					Replace an HTML element
+document.write(text)							Write into the HTML output stream
+
+
+element.onclick = function() 					Adding event handler code to an onclick event
+				  {code}
+
+
+document.anchors								Returns all <a> elements that have a name attribute
+document.baseURI								Returns the absolute base URI of the document
+document.body									Returns the <body> element
+document.cookie									Returns the document's cookie
+document.doctype								Returns the document's doctype
+document.documentElement						Returns the <html> element
+document.domain									Returns the domain name of the document server
+document.forms									Returns all <form> elements
+document.head									Returns the <head> element
+document.images									Returns all <img> elements
+document.links									Returns all <area> and <a> elements that have a href attribute
+document.scripts								Returns all <script> elements
+document.title									Returns the <title> element
+document.URL									Returns the complete URL of the document
