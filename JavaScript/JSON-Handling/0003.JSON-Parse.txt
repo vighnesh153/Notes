@@ -3,3 +3,7 @@ var obj = JSON.parse('{ "name":"John", "age":30, "city":"New York"}');
 console.log(obj.name);  // outputs: John
 console.log(obj.age);  	// outputs: 30
 console.log(obj.city);  // outputs: New York
+
+NOTE: If any of the values is a date, then it won't be parsed as a 'Date' object, but as a string.
+	  We have to manually convert it to a 'Date' object by passing its value as follows:
+	  		let today = new Date(obj.date);  // obj.date is the string representation of 'Date'
