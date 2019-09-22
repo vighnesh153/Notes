@@ -7,6 +7,8 @@ object and all the tags also have many properties that can be accessed through t
 document.getElementById(id)						Find an element by element id
 document.getElementsByTagName(name)				Find elements by tag name
 document.getElementsByClassName(name)			Find elements by class name
+document.querySelector(css_selector)			Return first match of the css-selector
+document.querySelectorAll(css_selector)			Return all matches of the css-selector
 
 
 element.innerHTML =  new html content			Change the inner HTML of an element
