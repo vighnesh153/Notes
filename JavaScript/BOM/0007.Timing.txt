@@ -1,0 +1,18 @@
+JavaScript can be executed in time-intervals.
+This is called timing events.
+
+NOTE: ALL THE BELOW METHODS BELONG TO THE WINDOW OBJECT. BUT AS ALWAYS, IT IS NOT NECESSARY TO USE
+	  THE 'window.' PREFIX FOR GLOBALS.
+
+let timeoutVariable = setTimeout(function, milliseconds);
+// Executes a function, after waiting a specified number of milliseconds.
+
+let intervalVariable = setInterval(function, milliseconds)
+// Executes the function after every 'milliseconds' number of milliseconds
+
+
+clearTimeout(timeoutVariable);
+// stops the execution of the function specified in setTimeout()
+
+clearInterval(intervalVariable)
+// stops the executions of the function specified in the setInterval() method
