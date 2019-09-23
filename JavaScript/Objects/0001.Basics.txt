@@ -1,0 +1,81 @@
+In JavaScript, almost "everything" is an object.
+	Booleans can be objects (if defined with the new keyword)
+	Numbers can be objects (if defined with the new keyword)
+	Strings can be objects (if defined with the new keyword)
+	Dates are always objects
+	Maths are always objects
+	Regular expressions are always objects
+	Arrays are always objects
+	Functions are always objects
+	Objects are always objects
+
+NOTE: ALL JAVASCRIPT VALUES, EXCEPT PRIMITIVES, ARE OBJECTS.
+
+
+JAVASCRIPT PRIMITIVES
+	A primitive value is a value that has no properties or methods.
+	A primitive data type is data that has a primitive value.
+	JavaScript defines 5 types of primitive data types:
+		string
+		number
+		boolean
+		null
+		undefined
+
+NOTE: PRIMITIVE VALUES ARE IMMUTABLE (THEY ARE HARDCODED AND THEREFORE CANNOT BE CHANGED).
+Example:
+	5 = 12 is invalid,
+	true = 45 is invalid, etc.
+
+
+OBJECTS ARE VARIABLES
+	JavaScript variables can contain single values:
+		eg. let person = "John Doe";
+
+	Objects are variables too. But objects can contain many values.
+	The values are written as name : value pairs (name and value separated by a colon).
+		let person = {firstName:"John", lastName:"Doe", age:50, eyeColor:"blue"};
+
+	A JAVASCRIPT OBJECT IS A COLLECTION OF NAMED VALUES
+
+
+OBJECT PROPERTIES
+	The named values, in JavaScript objects, are called properties.
+		Property	Value
+		firstName	John
+		lastName	Doe
+		age			50
+		eyeColor	blue
+
+
+	Objects written as name value pairs are similar to:
+		Associative arrays in PHP
+		Dictionaries in Python
+		Hash tables in C
+		Hash maps in Java
+		Hashes in Ruby and Perl
+
+
+OBJECT METHODS
+	An object method is an object property containing a function definition.
+
+
+CREATING A JAVASCRIPT OBJECT
+	1. var person = {
+		  firstName: "John",
+		  lastName: "Doe",
+		  age: 50,
+		  eyeColor: "blue"
+		};
+	2. var person = new Object();
+	   person.firstName = "John";
+	   person.lastName = "Doe";
+	   person.age = 50;
+	   person.eyeColor = "blue";
+
+
+NOTE: OBJECTS ARE MUTABLE: THEY ARE ADDRESSED BY REFERENCE, NOT BY VALUE.
+	Example:
+	var person = {firstName:"John", lastName:"Doe", age:50, eyeColor:"blue"}
+	var x = person;
+	x.age = 10;           // This will change both x.age and person.age
