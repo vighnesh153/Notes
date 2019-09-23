@@ -1,0 +1,44 @@
+JavaScript Accessors (Getters and Setters)
+	ECMAScript 5 (2009) introduced Getter and Setters.
+	Getters and setters allow you to define Object Accessors (Computed Properties).
+
+
+WHY GETTERS AND SETTERS?
+	It gives simpler syntax
+	It allows equal syntax for properties and methods
+	It can secure better data quality
+	It is useful for doing things behind-the-scenes
+
+	NOTE: JavaScript can secure better data quality when using getters and setters.
+
+
+EXAMPLE:
+	let abc = {
+		_firstName: 'Vighnesh',		// We start with underscore to indicate that it should be
+									// treated as private (Just a hint. No one is stopping us from
+									// using it though)
+		_lastName: 'Raut',
+		get fullName() {
+			return this._firstName + "-" + this._lastName;
+		},
+		age: 21
+	};
+	console.log(abc.age);
+	console.log(abc.fullName);
+
+
+
+Object.defineProperty()
+	The Object.defineProperty() method can also be used to add Getters and Setters.
+
+	let obj = {counter : 0};
+	Object.defineProperty(obj, "decrement", {
+		get : function () {this.counter--;}
+	});
+	Object.defineProperty(obj, "add", {
+		get: function () { return "Adds a value to the counter"; },
+		set : function (value) {this.counter += value;}
+	});
+	Object.defineProperty(obj, "subtract", {
+		set : function (value) {this.counter -= value;}
+	});
