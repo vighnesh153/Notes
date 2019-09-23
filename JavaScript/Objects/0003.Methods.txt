@@ -1,0 +1,33 @@
+var person = {
+	firstName: "John",
+	lastName : "Doe",
+	id       : 5566,
+	fullName : function() {
+		return this.firstName + " " + this.lastName;
+	}
+};
+
+
+NOTE: In a function definition, this refers to the "owner" of the function.
+NOTE: In the example above, this is the person object that "owns" the fullName function.
+
+
+
+ACCESSING OBJECT METHODS
+	name = person.fullName();
+			OR
+	fullNameFunction = person.fullName;
+	name = fullNameFunction();
+
+
+
+BUILTIN OBJECT METHODS
+	var message = "Hello world!";
+	var x = message.toUpperCase();
+
+
+
+ADDING A METHOD TO AN OBJECT
+	person.name = function () {
+		return this.firstName + " " + this.lastName;
+	};
