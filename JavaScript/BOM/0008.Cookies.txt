@@ -1,0 +1,67 @@
+Cookies let you store user information in web pages.
+Cookies are data, stored in small text files, on your computer.
+When a web server has sent a web page to a browser, the connection is shut down, and the server
+	forgets everything about the user.
+Cookies were invented to solve the problem "how to remember information about the user":
+	When a user visits a web page, his/her name can be stored in a cookie.
+	Next time the user visits the page, the cookie "remembers" his/her name.
+
+
+When a browser requests a web page from a server, cookies belonging to the page are added to the
+request. This way the server gets the necessary data to "remember" information about users.
+
+
+NOTE: This won't work if the browser has local cookies support turned off.
+
+
+
+CREATE A COOKIE WITH JAVASCRIPT
+	JavaScript can create, read, and delete cookies with the document.cookie property.
+
+	With JavaScript, a cookie can be created like this:
+		document.cookie = "username=John Doe";
+
+	You can also add an expiry date (in UTC time). By default, the cookie is deleted when the
+	browser is closed:
+		document.cookie = "username=John Doe; expires=Thu, 18 Dec 2013 12:00:00 UTC";
+
+	With a path parameter, you can tell the browser what path the cookie belongs to. By default,
+	the cookie belongs to the current page.
+		document.cookie = "username=John Doe; expires=Thu, 18 Dec 2013 12:00:00 UTC; path=/";
+
+
+
+READ A COOKIE WITH JAVASCRIPT
+	With JavaScript, cookies can be read like this:
+		var x = document.cookie;
+
+	NOTE: document.cookie will return all cookies in one
+		  string much like: cookie1=value; cookie2=value; cookie3=value;
+
+
+
+CHANGE A COOKIE WITH JAVASCRIPT
+	With JavaScript, you can change a cookie the same way as you create it:
+		document.cookie = "username=John Smith; expires=Thu, 18 Dec 2013 12:00:00 UTC; path=/";
+
+	NOTE: The old cookie is overwritten if path is specified. Else, appended.
+
+
+
+DELETE A COOKIE WITH JAVASCRIPT
+	Just set the expires parameter to a passed date:
+		document.cookie = "username=; expires=Thu, 01 Jan 1970 00:00:00 UTC; path=/;";
+
+	NOTE: You should define the cookie path to ensure that you delete the right cookie. Some
+		  browsers will not let you delete a cookie if you don't specify the path.
+
+
+
+The Cookie String
+	The document.cookie property looks like a normal text string. But it is not. Even if you write
+	a whole cookie string to document.cookie, when you read it out again, you can only see the
+	name-value pair of it. If you set a new cookie, older cookies are not overwritten. The new
+	cookie is added to document.cookie.
+
+	NOTE: If you want to find the value of one specified cookie, you must write a JavaScript
+		  function that searches for the cookie value in the cookie string.
