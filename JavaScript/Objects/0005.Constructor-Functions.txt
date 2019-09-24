@@ -1,0 +1,54 @@
+Any function invoked using the 'new' keyword, can be considered as a Constructor Function.
+Constructor function always returns 'this' from its scope.
+
+NOTE: Arrow functions cannot be used as a Constructor function as they don't have their own 'this'.
+
+EXAMPLE:
+	function Test() {
+		this.name = "Vighnesh";
+	};
+
+	let obj = new Test();
+	console.log(obj.names);
+
+
+If a function is invoked using the 'new' keyword, then its inner scope or 'this' from within, is
+returned. Even if we explicitly return something from within the function, it will be lost if
+invoked with 'new'. To catch the return, we can invoke the function without using 'new'.
+
+EXAMPLE:
+	function Test() {
+		this.name = "Vighnesh";
+		return "It can return if invoked without using the 'new' keyword";
+	}
+
+	let obj = Test();	// 'this' from within the function
+	console.log(obj);
+
+	let string = Test();	// "It can return if invoked without using the 'new' keyword"
+	console.log(string);
+
+NOTE: When a function's name is capital, then it is a hint that it is a Constructor function and
+	  we should not return anything explicitly, conventionally. It, by default, returns its inner
+	  scope or 'this'.
+
+
+EXAMPLE 2:
+	function Person(first, last, age, eyecolor) {
+		this.firstName = first;
+		this.lastName = last;
+		this.age = age;
+		this.eyeColor = eyecolor;
+		this.name = function() {return this.firstName + " " + this.lastName;};
+	}
+
+
+BUILTIN JAVASCRIPT CONSTRUCTOR
+	let x1 = new Object();    // A new Object object
+	let x2 = new String();    // A new String object
+	let x3 = new Number();    // A new Number object
+	let x4 = new Boolean();   // A new Boolean object
+	let x5 = new Array();     // A new Array object
+	let x6 = new RegExp();    // A new RegExp object
+	let x7 = new Function();  // A new Function object
+	let x8 = new Date();      // A new Date object
