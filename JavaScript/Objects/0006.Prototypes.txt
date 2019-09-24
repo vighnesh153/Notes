@@ -1,0 +1,64 @@
+When a function is created in JavaScript, the JavaScript engine adds a prototype property to the
+function. This prototype property is an object (called as prototype object) which has a constructor
+property by default.
+
+So, assume a function named 'Test', then 'Test.prototype.constructor' will point back to
+'Test'. Even 'Test.prototype.constructor.prototype.constructor.prototype.constructor' is valid.
+So, we can call a function by 'Test.prototype.constructor()'.
+
+
+All JavaScript objects inherit properties and methods from a prototype.
+
+PROTOTYPE INHERITANCE
+	All JavaScript objects inherit properties and methods from a prototype:
+		Date objects inherit from Date.prototype
+		Array objects inherit from Array.prototype
+		Person objects inherit from Person.prototype
+
+	The Object.prototype is on the top of the prototype inheritance chain:
+		Date objects, Array objects, and Person objects inherit from Object.prototype.
+
+
+
+ADDING PROPERTIES AND METHODS TO OBJECTS
+
+	Using the prototype Property
+
+			function Person(first, last, age, eyecolor) {
+				this.firstName = first;
+				this.lastName = last;
+				this.age = age;
+				this.eyeColor = eyecolor;
+			}
+
+			Person.prototype.nationality = "English";
+			Person.prototype.name = function() {
+			  	return this.firstName + " " + this.lastName;
+			};
+
+			NOTE: Only modify your own prototypes. Never modify the prototypes of standard
+				  JavaScript objects.
+
+
+WHAT HAPPENS WHEN WE USE THE PROTOTYPE PROPERTY?
+	When we use the prototype property to add a property to the constructor function, example
+		Person.prototype.nationality = "English";
+	the property actually doesn't get copied to the object created from the constructor function,
+	but it gets copied to the function's prototype object.
+
+	When we create an object from that constructor function, that object has a property called
+	'__proto__' which will have that property defined externally. In our case, 'nationality'.
+
+	But, if we try to access that property using the object, it will be valid.
+		For example, we don't have to do obj.__proto__.nationality. We can instead do,
+		obj.nationality.
+
+	When we modify obj.nationality, it doesn't affect the the prototype of the function. It instead
+	creates a property named 'nationality' in the object, and sets its value to the assigned value.
+	Now, when we try to access the value, we get the value from the object and not the __proto__.
+
+	If we look for an object's property, then by default, it first looks for it in the object's
+	properties. If not found, then it looks for that property in the __proto__ of the object function
+	prototype. If not found there, then it looks for it in the __proto__ inside the __proto__, which
+	belongs to its parents function. This goes on until we reach the Object's prototype. (Object is
+	the parent of all objects.)
