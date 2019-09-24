@@ -42,9 +42,18 @@ EXAMPLE 2:
 		this.name = function() {return this.firstName + " " + this.lastName;};
 	}
 
-	NOTE: We cannot assign properties to Constructor functions.
+	NOTE: We cannot assign properties to the 'this' of Constructor functions.
 		  Example: Person.nationality = "Indian";
 		  // This should be done INSIDE the Constructor function.
+
+		  	function Test() {
+			    this.name = "Default";
+			}
+			Test.age = 21;
+			
+			let obj = new Test();
+			console.log(obj.age);
+			// Prints 'undefined'
 
 
 BUILTIN JAVASCRIPT CONSTRUCTOR
