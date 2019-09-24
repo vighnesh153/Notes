@@ -55,10 +55,15 @@ WHAT HAPPENS WHEN WE USE THE PROTOTYPE PROPERTY?
 
 	When we modify obj.nationality, it doesn't affect the the prototype of the function. It instead
 	creates a property named 'nationality' in the object, and sets its value to the assigned value.
-	Now, when we try to access the value, we get the value from the object and not the __proto__.
+	Now, when we try to access the value, we get the value from the object and not from the
+	__proto__
 
 	If we look for an object's property, then by default, it first looks for it in the object's
 	properties. If not found, then it looks for that property in the __proto__ of the object function
 	prototype. If not found there, then it looks for it in the __proto__ inside the __proto__, which
 	belongs to its parents function. This goes on until we reach the Object's prototype. (Object is
-	the parent of all objects.)
+	the parent of all objects)
+
+	If we delete the modified property from the object, and then if we try to access that property
+	from the object, then the property will again be searched in the __proto__ property object of our
+	object.
