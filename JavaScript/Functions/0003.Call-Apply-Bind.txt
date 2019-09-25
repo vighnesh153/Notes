@@ -1,0 +1,49 @@
+Call:
+    We use 'call' method when we want to invoke a function with a particular 'this'.
+
+    Syntax:
+        obj.method.call(some_object, arg1, arg2, ...)
+            instead of
+        obj.method(arg1, arg2, ....)
+
+    Example:
+        let person = {
+            fullName: function() {
+                return this.firstName + " " + this.lastName;
+            }
+        }
+        let person1 = {
+            firstName:"John",
+            lastName: "Doe"
+        }
+        let person2 = {
+            firstName:"Mary",
+            lastName: "Doe"
+        }
+        person.fullName.call(person2);  // Will return "Mary Doe"
+
+
+
+Apply:
+    Same as 'call' but it expects arguments of the method's arguments in the form of an array.
+
+    Syntax:
+        obj.method.call(some_object, [arg1, arg2, ...])
+            instead of
+        obj.method(arg1, arg2, ....)
+
+
+
+Bind:
+    The concept of 'bind' is similar to 'call' and 'apply'. But the difference is that, it just
+    binds the object to the function's 'this' and returns that function. It doesn't invoke that
+    function.
+
+    In addition to that, we can even pass some parameters and bind them together with the funtion.
+
+    EXAMPLE:
+    function adder(a, b) {
+        return a + b;
+    }
+    let add2 = adder.bind(null, 2);
+    console.log(add2(5))    // logs 7
