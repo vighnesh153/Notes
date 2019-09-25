@@ -1,0 +1,27 @@
+JavaScript is one of the 3 languages all web developers must learn:
+   1. HTML to define the content of web pages
+   2. CSS to specify the layout of web pages
+   3. JavaScript to program the behavior of web pages
+Web pages are not the only place where JavaScript is used. Many desktop and server programs use
+JavaScript. Node.js is the best known. Some databases, like MongoDB and CouchDB, also use
+JavaScript as their programming language.
+
+
+Two popular ways to add JavaScript:
+    1. In script tag (<script></script>)
+    2. In external .js file, whose path is fed to 'src' attribute of the 'script' tag.
+
+
+External JavaScript Advantages:
+    Placing scripts in external files has some advantages:
+        1. It separates HTML and code
+        2. It makes HTML and JavaScript easier to read and maintain
+        3. Cached JavaScript files can speed up page loads
+        4. To add several script files to one page  - use several script tags:
+                <script src="myScript1.js"></script>
+                <script src="myScript2.js"></script>
+
+
+Output:
+    1. console.log("something");
+    2. window.alert("something");
