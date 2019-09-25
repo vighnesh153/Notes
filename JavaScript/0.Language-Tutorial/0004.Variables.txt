@@ -1,0 +1,11 @@
+let a = 12;
+let b = 13;
+let c = a + b;
+
+
+let x = "Hello";
+let y = "World";
+let z = x + " " + y;
+
+
+let add = (a, b) => a + b;
