@@ -1,0 +1,27 @@
+A closure is a function having access to the parent scope, even after the parent function has closed.
+
+
+EXAMPLE:
+
+    function CounterInitializer() {
+        let count = 0;
+        return function () {
+            return ++count;
+        }
+    }
+    let getId = CounterInitializer();
+    console.log(getId());
+    console.log(getId());
+    console.log(getId());
+    console.log(getId());
+    console.log(getId());
+
+
+It is basically one way to achieve encapsulation. We don't have access to 'count' but it still is
+being accesses by the inner function, that was in the same scope as the scope in which, 'count' was.
+
+Lexical environment or scope variables:
+    Lexical Environment : it's the internal JS engine construct that holds identifier-variable
+    mapping. (here identifier refers to the name of variables/functions, and variable is the 
+    reference to actual object [including function type object] or primitive value). A lexical
+    environment also holds a reference to a parent lexical environment.
