@@ -1,0 +1,36 @@
+A JavaScript function does not perform any checking on parameter values (arguments).
+
+
+
+PARAMETER RULES
+	JavaScript function definitions do not specify data types for parameters.
+	JavaScript functions do not perform type checking on the passed arguments.
+	JavaScript functions do not check the number of arguments received.
+
+
+
+PARAMETER DEFAULTS
+	If a function is called with missing arguments (less than declared), the missing values are
+	set to: undefined. Sometimes this is acceptable, but sometimes it is better to assign a default
+	value to the parameter.
+
+
+
+NOTE: ECMAScript 2015 allows default parameter values in the function declaration:
+
+		function (a=1, b=1) {
+			// function code
+		}
+
+
+
+THE ARGUMENTS OBJECT
+	JavaScript functions have a built-in object called the arguments object.
+	The argument object contains an array of the arguments used when the function was called (invoked).
+
+NOTE: If a function is called with too many arguments (more than declared), these arguments can be
+	  reached using the arguments object.
+
+
+NOTE: PRIMITIVE TYPES ARE PASSED BY VALUE.
+	  OBJECTS ARE PASSED BY REFERENCE.
