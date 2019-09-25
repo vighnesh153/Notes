@@ -1,0 +1,31 @@
+JavaScript functions are defined with the function keyword.
+You can use a function declaration or a function as an expression.
+
+
+SYNTAX
+	// Declaration
+	function functionName(parameters) {
+		// code to be executed
+	}
+
+	// Expression
+	const x = function (a, b) {return a * b};
+		OR
+	const x = (a, b) => a * b;
+		// Arrow functions do not have their own this. They are not well suited for defining object methods.
+		// Arrow functions are not hoisted. They must be defined before they are used.
+		// Using const is safer than using var, because a function expression is always constant value.
+		// You can only omit the return keyword and the curly brackets if the function is a single statement.
+	NOTE: Arrow functions are not supported in IE11 or earlier.
+
+	// Function() Constructor
+	let function1 = new Function("a", "b", "return a * b");
+
+
+SELF-INVOKING FUNCTIONS
+	(() => console.log("Hello World.") )();
+
+
+ARGUMENTS
+	All the arguments passed to the function are stored in the 'arguments' object. We can iterate
+	over all of them as well.
