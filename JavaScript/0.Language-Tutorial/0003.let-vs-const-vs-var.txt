@@ -1,0 +1,19 @@
+'let' => Defines a block level context. When the scope goes out of context, then the variable
+         declared using 'let', get garbage collected.
+
+         Variables/Function expressions declared using the 'let' keyword, don't get hoisted.
+
+
+HOISTING: If a function or variable is hoisted, it means that, before beginning the execution of
+          the script file, all the declarations are compiled at the start or beginning. This way,
+          if we use the variable, or call the function before its definition, then it will be
+          accessible and the code won't throw any error.
+
+'const' => Same concept as 'let' but the only thing which is different is that, once a variable
+           is declared using the 'const' keyword, then it can't be modified until the variable goes
+           out of scope and then it can be re-initialized and used again.
+
+
+'var' => Has function level scoping instead of block-level scoping.
+
+         It supports hoisting.
