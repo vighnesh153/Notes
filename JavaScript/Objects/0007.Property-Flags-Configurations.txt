@@ -1,0 +1,98 @@
+Till now, a property was a simple “key-value” pair to us. But an object property is actually a more
+flexible and powerful thing.
+
+// Returns all properties as an array
+Object.getOwnPropertyNames(object)
+
+// Returns enumerable properties as an array
+Object.keys(object)
+
+
+PROPERTY FLAGS
+	Object properties, besides a value, have three special attributes (so-called “flags”):
+		1. writable – if true, the value can be changed, otherwise it’s read-only.
+		2. enumerable – if true, then this property will be iterated over, when its parent object is
+						being iterated over its keys/properties, else, the for...in loop will skip
+						this property
+		3. configurable – if true, the property can be deleted and these attributes can be modified,
+		   				  otherwise not.
+
+		NOTE: “Non-configurable” doesn’t mean “non-writable”. The idea of configurable: false is to
+			   prevent changes to property flags and its deletion, not changes to its value.
+
+		When we create a property “the usual way”, all of them are true. But we also can change
+		them anytime.
+
+
+
+The method Object.getOwnPropertyDescriptor allows to query the full information about a property.
+	let descriptor = Object.getOwnPropertyDescriptor(obj, propertyName);
+	// It will have the following properties:
+			configurable: true
+			enumerable: true
+			value: some_value
+			writable: true
+			__proto__: Object	 	// All objects have it
+
+
+
+To change the flags, we can use Object.defineProperty:
+	Object.defineProperty(obj, propertyName, descriptor)
+	// whatever flag we supply, its value is updated as provided.
+	// Flags that are not specified, they default to false.
+	// 'value' flag should be provided while defining, or else, what is the use
+
+
+
+Making a property non-configurable is a one-way road. We cannot change it back with defineProperty.
+To be precise, non-configurability imposes several restrictions on defineProperty:
+	Can’t change configurable flag.
+	Can’t change enumerable flag.
+	Can’t change writable: false to true (the other way round works).
+	Can’t change get/set for an accessor property (but can assign them if absent).
+
+
+Object.defineProperties:
+	There’s a method Object.defineProperties(obj, descriptors) that allows to define many
+	properties at once:
+		Object.defineProperties(obj, {
+			prop1: descriptor1,
+			prop2: descriptor2
+			// ...
+		});
+
+
+FOR A SHALLOW CLONE:
+	let clone = Object.defineProperties({}, Object.getOwnPropertyDescriptors(obj));
+
+	// The following method is the normal methods. But it doesn't copy the descriptors. So, even
+	// for a shallow clone, the above method is great as it copies the descriptors as well.
+
+	for (let key in user) {
+		clone[key] = user[key]
+	}
+
+
+
+SEALING AN OBJECT GLOBALLY:
+	1. Object.preventExtensions(obj)
+		// Forbids the addition of new properties to the object.
+
+	2. Object.seal(obj)
+		// Sets configurable: false for all existing properties.
+
+	3. Object.freeze(obj)
+		// Sets configurable: false, writable: false for all existing properties.
+
+	4. Object.isExtensible(obj)
+		// Returns false if adding properties is forbidden, otherwise true.
+
+	5. Object.isSealed(obj)
+		// Returns true if adding/removing properties is forbidden, and all existing properties have
+		// configurable: false.
+
+	6. Object.isFrozen(obj)
+		// Returns true if adding/removing/changing properties is forbidden, and all current
+		// properties are configurable: false, writable: false.
+
+	NOTE: These methods are rarely used in practice. We manually set descriptors, most of the time.
