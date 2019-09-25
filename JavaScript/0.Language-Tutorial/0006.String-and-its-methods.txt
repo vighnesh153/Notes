@@ -1,0 +1,89 @@
+You can use single or double quotes to define/declare a string.
+
+Basic Methods:
+	"Hello".length
+	"Hello".toUpperCase()
+	"Hello".toLowerCase()
+
+	"Hello".indexOf("ell");
+	"Hello".lastIndexOf("l");
+	NOTE: Both indexOf(), and lastIndexOf() return -1 if the text is not found.
+	NOTE: Both methods accept a second parameter as the starting position for the search
+	NOTE: The lastIndexOf() methods searches backwards (from the end to the beginning), meaning: if
+		  the second parameter is 15, the search starts at position 15, and searches to the
+		  beginning of the string.
+
+	"Hello".search("ell");
+	NOTE: The search() method cannot take a second start position argument.
+		  The indexOf() method cannot take powerful search values (regular expressions).
+
+
+'\' => Escape character
+
+
+Code	Result
+\b		Backspace
+\f		Form Feed
+\n		New Line
+\r		Carriage Return
+\t		Horizontal Tabulator
+\v		Vertical Tabulator
+
+NOTE: The 6 escape characters above were originally designed to control typewriters, teletypes,
+	  and fax machines. They do not make any sense in HTML.
+
+
+
+Slice method:
+
+	var str = "Apple, Banana, Kiwi";
+	var res = str.slice(7, 13);
+	// outputs => Banana
+
+	NOTE: Negative indexing works
+
+	var res = str.slice(7);
+	// from 7th index to end of string
+
+
+
+The substring() Method:
+	substring() is similar to slice().
+	The difference is that substring() cannot accept negative indexes.
+
+
+The substr() Method
+	substr() is similar to slice().
+	The difference is that the second parameter specifies the length of the extracted part.
+	NOTE: If you omit the second parameter, substr() will slice out the rest of the string.
+	NOTE: Negative indexing works here
+
+
+The replace method:
+	str = "Please visit Microsoft!";
+	var n = str.replace("Microsoft", "W3Schools");
+	NOTE: By default, the replace() method is case sensitive.
+
+	NOTE: We can use regex in first argument
+	NOTE: regular expressions are written without quotes. (we can use flags to do case-insensitive search)
+
+
+The trim method:
+	The trim() method removes whitespace from both sides of a string:
+
+	var str = "       Hello World!        ";
+	alert(str.trim());
+
+
+Indexing:
+	let s = "Vighnesh";
+	// s[i]
+	// s.charAt(i)
+	// s.charCodeAt(i) 		//returns the unicode of the character at a specified index in a string
+
+
+The split method:
+	var txt = "a,b,c,d,e";   // String
+	txt.split(",");          // Split on commas
+	txt.split(" ");          // Split on spaces
+	txt.split("|");          // Split on pipe
