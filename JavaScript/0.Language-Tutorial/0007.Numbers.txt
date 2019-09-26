@@ -70,3 +70,32 @@ Base
 		myNumber.toString(16);  // returns "20"
 		myNumber.toString(8);   // returns "40"
 		myNumber.toString(2);   // returns "100000"
+
+
+
+PROPERTIES of the Number object:
+	1. Number.EPSILON
+		represents the difference between 1 and the smallest floating point number greater than 1.
+
+	2. Number.MAX_SAFE_INTEGER
+		represents the maximum safe integer in JavaScript (2^53 - 1).
+
+	3. Number.MAX_VALUE
+		represents the maximum numeric value representable in JavaScript.
+
+	4. Number.MIN_VALUE
+		represents the smallest positive numeric value representable in JavaScript.
+
+	5. Number.MIN_SAFE_INTEGER
+		represents the minimum safe integer in JavaScript (-(2^53 - 1)).
+
+	6. Number.NEGATIVE_INFINITY
+		represents the negative Infinity value
+		example: -Number.MAX_VALUE * 2
+
+	7. Number.POSITIVE_INFINITY
+		represents the positive Infinity value
+		example: Number.MAX_VALUE * 2
+
+	8. Number.NaN
+		represents Not-A-Number. Equivalent of NaN.
