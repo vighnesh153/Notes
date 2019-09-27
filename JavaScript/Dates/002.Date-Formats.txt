@@ -1,0 +1,60 @@
+JavaScript Date Input
+    There are generally 3 types of JavaScript date input formats:
+    Type	                Example
+    ISO Date	           "2015-03-25" (The International Standard)
+    Short Date	           "03/25/2015"
+    Long Date	           "Mar 25 2015" or "25 Mar 2015"
+
+
+
+NOTE: The ISO format follows a strict standard in JavaScript.
+      The other formats are not so well defined and might be browser specific.
+
+
+
+JAVASCRIPT ISO DATES:
+    ISO 8601 is the international standard for the representation of dates and times.
+    The ISO 8601 syntax (YYYY-MM-DD) is also the preferred JavaScript date format.
+
+    ISO dates can be written without specifying the day (YYYY-MM):
+        var d = new Date("2015-03");
+
+    ISO dates can be written without month and day (YYYY):
+        var d = new Date("2015");
+
+    ISO dates can be written with added hours, minutes, and seconds (YYYY-MM-DDTHH:MM:SSZ):
+        var d = new Date("2015-03-25T12:00:00Z");
+            Date and time is separated with a capital T.
+            UTC time is defined with a capital letter Z.
+            If you want to modify the time relative to UTC, remove the Z and add +HH:MM or -HH:MM instead.
+        NOTE: Omitting T or Z in a date-time string can give different results in different browsers.
+
+
+TIME ZONES:
+    When setting a date, without specifying the time zone, JavaScript will use the browser's time zone.
+    When getting a date, without specifying the time zone, the result is converted to the browser's time zone.
+
+
+JavaScript Short Dates:
+    var d = new Date("03/25/2015");
+    NOTE: In some browsers, months or days with no leading zeroes may produce an error:
+
+
+JavaScript Long Dates:
+    var d = new Date("Mar 25 2015");
+        or
+    var d = new Date("25 Mar 2015");
+        or
+    var d = new Date("March 25 2015");
+        or
+    var d = new Date("25 March 2015");
+
+    Commas are ignored. Names are case insensitive:
+    var d = new Date("JANUARY, 25, 2015");
+
+
+Date Input - Parsing Dates:
+    If you have a valid date string, you can use the Date.parse() method to convert it to milliseconds.
+    Date.parse() returns the number of milliseconds between the date and January 1, 1970:
+        let milliseconds = Date.parse("March 21, 2012");
+        let date = new Date(milliseconds);
