@@ -25,9 +25,45 @@ Length: let a = [1, 2, 3];
 
 
 
-Looping:
+Iteration:
     1. Using normal 'for' loop.
     2. Using 'for...of' loop.
+    3. ForEach:
+        var txt = "";
+        var numbers = [45, 4, 9, 16, 25];
+        numbers.forEach(myFunction);
+        function myFunction(value, index, array) {
+            txt = txt + value + "<br>";
+        }
+
+    4. Map()
+        var numbers1 = [45, 4, 9, 16, 25];
+        var numbers2 = numbers1.map(myFunction);
+        function myFunction(value, index, array) {
+            return value * 2;
+        }
+    5. Filter:
+        var numbers = [45, 4, 9, 16, 25];
+        var over18 = numbers.filter(myFunction);
+        function myFunction(value, index, array) {
+            return value > 18;
+        }
+    6. Reduce:
+        var numbers1 = [45, 4, 9, 16, 25];
+        var sum = numbers1.reduce(myFunction);
+        function myFunction(total, value, index, array) {
+            return total + value;
+        }
+    7. Every // Returns bool
+        The every() method check if all array values pass a test.
+            var numbers = [45, 4, 9, 16, 25];
+            var allOver18 = numbers.every(myFunction);
+            function myFunction(value, index, array) {
+                return value > 18;
+            }
+    8. Some // Returns bool
+        Similar to 'Every', the only difference is that if anyone returns 'true', the whole execution
+        stops and 'true' is returned.
 
 
 
