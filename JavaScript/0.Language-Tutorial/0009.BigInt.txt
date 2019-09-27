@@ -1,0 +1,80 @@
+BigInt is a built-in object that provides a way to represent whole numbers larger than 2^53 - 1,
+which is the largest number JavaScript can reliably represent with the Number primitive. BigInt can
+be used for arbitrarily large integers.
+
+NOTE: BigInt() is not used with the new operator.
+
+
+Different ways to create a BigInt:
+    const theBiggestInt = 9007199254740991n;
+
+    const alsoHuge = BigInt(9007199254740991);
+    // ↪ 9007199254740991n
+
+    const hugeString = BigInt("9007199254740991");
+    // ↪ 9007199254740991n
+
+    const hugeHex = BigInt("0x1fffffffffffff");
+    // ↪ 9007199254740991n
+
+    const hugeBin = BigInt("0b11111111111111111111111111111111111111111111111111111");
+    // ↪ 9007199254740991n
+
+
+NOTE: BigInt is similar to Number in some ways, but also differs in a few key matters — it cannot
+      be used with methods in the built-in Math object and cannot be mixed with instances of Number
+      in operations; they must be coerced to the same type. Be careful coercing values back and
+      forth, however, as the precision of a BigInt may be lost when it is coerced to a Number.
+
+NOTE: All the 'number' operations work with 'BigInt'
+
+NOTE: The division, '/', operation rounds the result to 0.
+        example: (2.5 => 2) and (-2.5 => -2)
+
+NOTE: A 'BigInt' is not strictly equal to a Number, but it is loosely so:
+        0n === 0 // ↪ false
+        0n == 0  // ↪ true
+
+NOTE: A Number and a 'BigInt' may be compared as usual:
+        1n < 2  // ↪ true
+        2n > 1  // ↪ true
+        2 > 2   // ↪ false
+        2n > 2  // ↪ false
+        2n >= 2 // ↪ true
+
+
+
+To string:
+    let a = 1231n;
+    console.log(a.toString());
+    // "1231"
+
+
+As Int N:
+    Used to wrap a number between (-2^(w-1)) to (2^(w-1) - 1).
+    // w = width, to be specified while calling the function
+
+    Example:
+    let number = 9;
+    console.log(BigInt.asIntN(4, BigInt(number)));  // w = 4
+    // Outputs: -7n
+
+    if number = 10:
+    // Output: -6n
+
+
+As Unit N:
+    Same as asIntN but the range is (0) to ((2^w) - 1)
+    // w = width, to be specified while calling the function
+
+
+
+NOTE: The operations supported on BigInts are not constant time. BigInt is therefore unsuitable
+      for use in cryptography.
+
+NOTE: Using JSON.stringify() with any BigInt value will raise a TypeError as BigInt values aren't
+      serialized in JSON by default. However, you can implement your own toJSON method if needed:
+            BigInt.prototype.toJSON = function() { return this.toString(); }
+
+            // Adding the above method to the prototype of 'BigInt' will allow it to be used in the
+            // stringify method of JSON.
