@@ -1,0 +1,55 @@
+The JavaScript Math object allows you to perform mathematical tasks on numbers.
+
+Math.PI;      // returns 3.141592653589793
+Math.E        // returns Euler's number
+Math.SQRT2    // returns the square root of 2
+Math.SQRT1_2  // returns the square root of 1/2
+Math.LN2      // returns the natural logarithm of 2
+Math.LN10     // returns the natural logarithm of 10
+Math.LOG2E    // returns base 2 logarithm of E
+Math.LOG10E   // returns base 10 logarithm of E
+
+
+Math.round(x) returns the value of x rounded to its nearest integer:
+    Math.round(4.7);    // returns 5
+    Math.round(4.4);    // returns 4
+
+
+Math.pow(x, y) returns the value of x to the power of y.
+
+
+Math.sqrt(x) returns the square root of x.
+
+
+Math.abs(x) returns the absolute (positive) value of x.
+
+
+Math.ceil(x) returns the value of x rounded up to its nearest integer.
+
+
+Math.floor(x) returns the value of x rounded down to its nearest integer.
+
+
+Math.sin(x) returns the sine (a value between -1 and 1) of the angle x (given in radians).
+
+
+Math.cos(x) returns the cosine (a value between -1 and 1) of the angle x (given in radians).
+
+
+Math.min() and Math.max() can be used to find the lowest or highest value in a list of arguments.
+
+
+Math.random() returns a random number between 0 (inclusive), and 1 (exclusive).
+
+
+RANDOM INTERGER IN RANGE:
+
+    This JavaScript function always returns a random number between min (included) and max (excluded):
+    function getRndInteger(min, max) {
+        return Math.floor(Math.random() * (max - min) ) + min;
+    }
+
+    This JavaScript function always returns a random number between min and max (both included):
+    function getRndInteger(min, max) {
+        return Math.floor(Math.random() * (max - min + 1) ) + min;
+    }
