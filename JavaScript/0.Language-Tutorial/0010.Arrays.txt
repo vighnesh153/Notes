@@ -1,0 +1,50 @@
+An array is a special variable, which can hold more than one value at a time.
+    Example: var array_name = [item1, item2, ...];
+
+
+Spaces and line breaks are not important. A declaration can span multiple lines:
+    var cars = [
+        "Saab",
+        "Volvo",
+        "BMW"
+    ];
+
+
+NOTE: Array indexes start with 0.
+      [0] is the first element. [1] is the second element.
+
+      Example:
+          var cars = ["Saab", "Volvo", "BMW"];
+          cars[0] = "Opel";
+
+
+
+
+Length: let a = [1, 2, 3];
+       console.log(a.length); // 3
+
+
+
+Looping:
+    1. Using normal 'for' loop.
+    2. Using 'for...of' loop.
+
+
+
+The Difference Between Arrays and Objects
+    In JavaScript, arrays use numbered indexes.
+    In JavaScript, objects use named indexes.
+
+
+
+Check Type:
+        var fruits = ["Banana", "Orange", "Apple", "Mango"];
+        typeof fruits;    // returns object
+
+    Instead use:
+
+        Array.isArray(fruits);   // returns true
+
+    OR:
+
+        fruits instanceof Array;    // returns true
