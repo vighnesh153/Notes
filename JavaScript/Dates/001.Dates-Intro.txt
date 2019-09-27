@@ -36,3 +36,8 @@ DISPLAY DATES IN HTML:
     d.toString()
     d.toUTCString()
     d.toDateString()
+
+
+
+Comparing Date objects:
+    comparing date objects using comparison operators (>, <, >=, <=) is supported.
