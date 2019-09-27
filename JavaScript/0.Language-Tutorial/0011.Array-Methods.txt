@@ -1,3 +1,23 @@
+Index of:
+    The indexOf() method searches an array for an element value and returns its position.
+    NOTE: Array.indexOf() returns -1 if the item is not found.
+        var fruits = ["Apple", "Orange", "Apple", "Mango"];
+        var a = fruits.indexOf("Apple");
+
+    Syntax:
+        arr.indexOf(item, start)
+            item	Required. The item to search for.
+            start	Optional. Where to start the search. Negative values will start at the given
+                    position counting from the end, and search to the end.
+
+
+
+Last Index of:
+    arr.lastIndexOf() is the same as arr.indexOf(), but returns the position of the
+    last occurrence of the specified element.
+
+
+
 Converting Arrays to Strings
     The JavaScript method toString() converts an array to a string of (comma separated) array values.
 
