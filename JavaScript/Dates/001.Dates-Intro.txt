@@ -1,0 +1,38 @@
+JavaScript DATE OBJECT lets us work with dates.
+    let d = new Date();
+
+
+JavaScript Date Output:
+    By default, JavaScript will use the browser's time zone and display a date as a full text string:
+    Fri Sep 27 2019 14:57:11 GMT+0530 (India Standard Time)
+
+
+Creating Date Objects:
+    new Date()
+    new Date(year, month, day, hours, minutes, seconds, milliseconds)
+    new Date(milliseconds)
+    new Date(date string)
+                example: let d = new Date("October 13, 2014 11:13:00");
+
+
+NOTE: JavaScript counts months from 0 to 11.
+      January is 0. December is 11.
+
+
+In the date object:
+    7 numbers specify year, month, day, hour, minute, second, and millisecond (in that order)
+    6 numbers specify year, month, day, hour, minute, second
+    5 numbers specify year, month, day, hour, and minute
+    4 numbers specify year, month, day, and hour
+    3 numbers specify year, month, and day
+    2 numbers specify year and month
+    NOTE: You cannot omit month. If you supply only one parameter it will be treated as milliseconds.
+
+
+NOTE: JavaScript stores dates as number of milliseconds since January 01, 1970, 00:00:00 UTC (Universal Time Coordinated).
+
+
+DISPLAY DATES IN HTML:
+    d.toString()
+    d.toUTCString()
+    d.toDateString()
