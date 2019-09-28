@@ -1,0 +1,18 @@
+In JavaScript, the RegExp object is a regular expression object with predefined properties and methods.
+
+
+
+Using test():
+	It searches a string for a pattern, and returns true or false, depending on the result.
+
+		var patt = /e/;
+		patt.test("The best things in life are free!");
+		// returns 'true' as there is 'e' in the string
+
+
+
+Using exec():
+	It searches a string for a specified pattern, and returns the found text as an object.
+	If no match is found, it returns an empty (null) object.
+
+		/e/.exec("The best things in life are free!");
