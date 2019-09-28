@@ -9,3 +9,6 @@ It has different values depending on where it is used:
 	In a function, in strict mode, this is undefined.
 	In an event, this refers to the element that received the event.
 	Methods like call(), and apply() can refer this to any object.
+
+
+FOR MORE DETAILED EXPLANATION => https://www.youtube.com/watch?v=NV9sHLX-jZU
