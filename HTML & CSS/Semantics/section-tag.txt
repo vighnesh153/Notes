@@ -1,0 +1,8 @@
+section:
+	This tag is used to specify a group or literally a section.
+
+For example,
+	a navbar,
+	an advertisements bar,
+	a main content,
+	etc.
