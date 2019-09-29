@@ -6,3 +6,9 @@ For example,
 	an advertisements bar,
 	a main content,
 	etc.
+
+
+NOTE: We can even use the following instead of the section tag. It is equivalent to the section tag:
+	<div class='section'>
+	</div>
+NOTE: We have to write styles for the 'section' class.
