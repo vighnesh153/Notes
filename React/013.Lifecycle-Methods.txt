@@ -4,4 +4,10 @@ code when a component mounts or unmounts.
 1. componentDidMount() { } => This method runs after the component output has
                               been rendered to the DOM.
 
-2. componentWillUnmount() { } => This method will run when the component
+2. componentWillUnmount() { } => This method will run when the component is about to unmount.
+
+
+3. componentWillMount() { } => This method is called before the component's render method is called
+                                for the first time.
+            NOTE: This is not recommended. Constructor should be used to initialize the component
+                  instead of using this method.
