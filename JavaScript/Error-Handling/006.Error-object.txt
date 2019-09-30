@@ -1,0 +1,20 @@
+JavaScript has a built in error object that provides error information when an error occurs.
+
+
+ERROR OBJECT PROPERTIES
+		PROPERTY		DESCRIPTION
+		name			Sets or returns an error name
+		message			Sets or returns an error message (a string)
+
+
+
+ERROR NAME VALUES
+	Six different values can be returned by the error name property:
+
+		ERROR NAME				DESCRIPTION
+		EvalError				An error has occurred in the eval() function
+		RangeError				A number "out of range" has occurred
+		ReferenceError			An illegal reference has occurred
+		SyntaxError				A syntax error has occurred
+		TypeError				A type error has occurred
+		URIError				An error in encodeURI() has occurred

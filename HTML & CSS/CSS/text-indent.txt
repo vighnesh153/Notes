@@ -1,0 +1,4 @@
+text-indent: 34px;
+
+It will indent the first line of a long text(which is wrapped on multiple lines on the HTML page)
+by that amount.

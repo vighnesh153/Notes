@@ -1,0 +1,7 @@
+Tags that add meaning to the document.
+
+For example,
+We have head and the body tag. They are not required but they help the programmers by providing
+meaning to the document. The body element only contains that data that is going to be displayed on
+the page. The head element contains all the information about the page, links to different documents,
+and other meta-data.

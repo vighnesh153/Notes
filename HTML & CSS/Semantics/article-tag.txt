@@ -1,0 +1,38 @@
+article:
+	This tag is used to group together things, that are related to each other.
+
+NOTE: We can even use the following instead of the article tag. It is equivalent to the article tag:
+	<div class='article'>
+	</div>
+NOTE: We have to write styles for the 'article' class.
+
+For example, lets say there is a blogs section.
+In the blogs' section, there can be many blogs.
+Each blog can be an article.
+ Each blog has a title, image, content, etc.
+
+<section class="blogs">
+
+	<article id='blog-1'>
+		<title>Blog 1</title>
+		<img src="bla.bla.bla" />
+		<p>
+			This is my first blog.
+		</p>
+	</article>
+	<article id='blog-2'>
+		<title>Blog 2</title>
+		<img src="bla.bla.bla" />
+		<p>
+			This is my second blog.
+		</p>
+	</article>
+	<article id='blog-3'>
+		<title>Blog 3</title>
+		<img src="bla.bla.bla" />
+		<p>
+			This is my third blog.
+		</p>
+	</article>
+
+</section>

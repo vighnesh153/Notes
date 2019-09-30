@@ -1,0 +1,3 @@
+The upvoted answer in this link explains it well.
+
+	https://stackoverflow.com/questions/6939864/what-is-the-difference-between-section-and-div

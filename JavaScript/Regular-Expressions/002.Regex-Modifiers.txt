@@ -1,0 +1,4 @@
+Modifier			Description
+	i			Perform case-insensitive matching
+	g			Perform a global match (find all matches rather than stopping after the first match)
+	m			Perform multiline matching
