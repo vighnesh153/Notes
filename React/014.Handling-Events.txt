@@ -1,0 +1,16 @@
+Check the following link:
+    https://reactjs.org/docs/handling-events.html
+
+
+NOTE: You have to be careful about the meaning of this in JSX callbacks. In JavaScript, class
+      methods are not bound by default. If you forget to bind this.handleClick and pass it to
+      onClick, this will be undefined when the function is actually called. This is not
+      React-specific behavior; it is a part of how functions work in JavaScript. Generally, if you
+      refer to a method without () after it, such as onClick={this.handleClick}, you should bind that method.
+
+
+Similar example, with little variant:
+    <Hello name={ this.state.name } onClick={ this.changeName.bind(this) }/>
+
+Or do the following:
+    <button onClick={(e) => this.handleClick(e)}>
