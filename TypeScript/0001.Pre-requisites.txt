@@ -1,0 +1,6 @@
+Javascript
+Object oriented programming (classes, interfaces, inheritance, polymorphism) => What and why
+
+
+Go through this full course for understanding TypeScript basics:
+https://www.youtube.com/playlist?list=PLqq-6Pq4lTTanfgsbnFzfWUhhAz3tIezU
