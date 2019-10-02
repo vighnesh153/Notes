@@ -1,0 +1,6 @@
+let a: number;
+let a: string;
+let a: boolean;
+let a: CustomClass;
+let a: number[];  // array of numbers
+let a: [number, boolean];   //tuple of number and a boolean. eg, [1, true] or [23, false], etc
