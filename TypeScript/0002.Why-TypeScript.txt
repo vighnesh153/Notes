@@ -1,0 +1,13 @@
+TypeScript, developed by Microsoft, was created to address problems with JavaScript.
+
+
+Problems with JavaScript:
+	1. No type-check.
+	2. Allows calling the function even if the number of parameters passed, doesn't match with the
+	   number of arguments accepted by the function.
+
+
+Another reasons to learn Typescript:
+	1. Angular 2+ supports TypeScript. If we just use vanilla JS in Angular, then it will be a lot
+	   of work to do.
+	2. Even React will support/integrate TypeScript.
