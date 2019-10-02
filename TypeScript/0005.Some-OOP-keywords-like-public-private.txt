@@ -1,0 +1,43 @@
+class Person {
+    public firstName: string;
+    public lastName: string;
+    public age: number;
+    private hasAadharCard: boolean = true;
+    private aadharNumber: number = 3141592653;
+	// TS doesn't allow to access private data outside the class
+
+    constructor(firstName: string, lastName: string, age: number) {
+        this.firstName = firstName;
+        this.lastName = lastName;
+        this.age = age;
+    }
+
+    displayBioData() {
+        console.log(`My name is ${this.firstName} ${this.lastName}.`);
+        console.log(`My age is ${this.age}.`);
+        if (this.hasAadharCard === true) {
+            console.log(`My aadhar number is : ${this.aadharNumber}`);
+        } else {
+            console.log("I am not fortunate enough to have an Aadhar card.");
+        }
+    }
+}
+
+class Programmer extends Person {
+    constructor(firstName: string, lastName: string, age: number) {
+        super(firstName, lastName, age);
+    }
+
+    displayBioData() {
+        console.log("I am a programmer. My biodata is private.");
+        super.displayBioData();
+    }
+}
+
+let vighnesh = new Programmer('Vighnesh', 'Raut', 21);
+vighnesh.displayBioData();
+console.log(vighnesh);
+
+
+NOTE: Polymorphism is also supported.
+	let vighnesh: Person = new Programmer(...);
