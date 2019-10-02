@@ -1,6 +1,48 @@
-let a: number;
-let a: string;
-let a: boolean;
-let a: CustomClass;
-let a: number[];  // array of numbers
-let a: [number, boolean];   //tuple of number and a boolean. eg, [1, true] or [23, false], etc
+1. let a: number;
+2. let a: string;
+3. let a: boolean;
+4. let a: CustomClass;
+5. let a: number[];  // array of numbers
+6. let a: [number, boolean];   //tuple of number and a boolean. eg, [1, true] or [23, false], etc
+
+7. function Add(a: number, b: number) {
+		return a + b;
+	}
+NOTE: When calling a function in TS, the number of arguments and their types (if specified ) have
+	  to match. If the number doesn't match, then the error is logged.
+
+8. Optional argument in function.
+	function Add(a: number, b: number, c?) {
+		return a + b;
+	}
+   NOTE: Optional arguments has to be at the end.
+
+9. Default value for the argument. Default values also should be at the end.
+	function Add(a: number, b: number, c: number = 0) {
+		return a + b;
+	}
+
+10. Default value argument along side an optional argument.
+	function Add(a: number, b: number, c: number = 0, d?: number) {
+		return a + b;
+	}
+
+11. Return type for function:
+	function Add() : number {
+		return 0;
+	}
+
+12. Implicit types:
+	let a = 12;
+	a = "hello"; // If we don't explicitly declare a variable type, but assign a value to it,
+				 // TS implicitly assumes the type of that variable to be same as the type of value assigned.
+	NOTE: This works only if the assignment is done while declaring.
+		let a;
+		a = 12;
+		a = true;
+		// this will be allowed. And 'a' will have a type 'any' which means that it can accept any data.
+
+13. Union:
+	Declare a variable that can have multiple types.
+		let a: number|string|boolean;
+	Use pipe operator to add more types
