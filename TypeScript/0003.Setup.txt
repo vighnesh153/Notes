@@ -1,0 +1,7 @@
+1. Download a code editor ( Sublime, Visual Studio Code, Atom, notepad++, etc. )
+2. Install node.
+3. Create a project folder and open the folder in both, the editor and terminal.
+4. In terminal, run => $ npm init
+5. In terminal, run => $ npm install -g typescript
+5. To compile the TS file, in the command-prompt, run => $ npx tsc file.ts
+	(Doing this will convert the TS file to file.js)
