@@ -3,5 +3,15 @@
 3. Create a project folder and open the folder in both, the editor and terminal.
 4. In terminal, run => $ npm init
 5. In terminal, run => $ npm install -g typescript
-5. To compile the TS file, in the command-prompt, run => $ npx tsc file.ts
+6. To compile the TS file, in the command-prompt, run => $ npx tsc file.ts
 	(Doing this will convert the TS file to file.js)
+
+
+
+DEVELOPMENT/PROFESSIONAL WAY:
+	1. Same till step 5 of previous method.
+	2. Create a 'tsconfig.json' file in the same folder using => $ tsc --init
+	3. The above command will generate a file that has all the supported properties. Most of them
+	   are commented. Uncomment them and specify their values as per your need.
+	4. Run 'tsc' in the terminal. It will look for the 'tsconfig.json' file and execute according
+	   to the requirements specified by the user in the 'tsconfig.json' file.
