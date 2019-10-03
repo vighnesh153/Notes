@@ -1,0 +1,14 @@
+enum Days {
+	Sunday,
+	Monday,
+	Tuesday,
+	Wednesday,
+	Thursday,
+	Friday,
+	Saturday
+}
+
+let day: Days;
+day = Days.Tuesday;
+
+More: https://www.youtube.com/watch?v=tkPzU-pYErk&list=PLqq-6Pq4lTTanfgsbnFzfWUhhAz3tIezU&index=18
