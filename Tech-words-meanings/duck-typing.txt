@@ -1,0 +1,12 @@
+Duck-typing: If it looks like a duck or quacks like a duck, then it is a duck.
+
+Dynamic languages likes Python, JS, etc. have this.
+
+
+Suppose we have a class A.
+And Class B inherits class A.
+Although, Class C doesn't inherit class A, but it defines/implements all the methods and properties
+		of class A.
+So, class C is considered an instance of class A.
+
+NOTE: This doesn't work with statically typed languages like C++, C#, etc.
