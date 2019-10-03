@@ -1,0 +1,19 @@
+class Test {
+	public firstName: string;
+	private aadharNumber: number;
+	protected speaks: boolean;
+
+	constructor(firstName: string, aadharNumber: number, speaks: boolean) {
+		this.firstName = firstName;
+		this.aadharNumber = aadharNumber;
+		this.speaks = speaks;
+	}
+}
+
+SHORTCUT:
+	class Test {
+		constructor(public firstName: string, private aadharNumber: number, protected speaks: boolean)
+		{
+			
+		}
+	}
