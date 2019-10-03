@@ -1,0 +1,14 @@
+interface IPerson {
+    firstName: string;
+    lastName: string;
+    getFullName(someVariable: string, someOtherVariable: number) : string;
+}
+
+class Programmer implements IPerson {
+    firstName: string;
+    lastName: string;
+
+    getFullName(someVariable: string, someOtherVariable: number): string {
+        return "";
+    }
+}
