@@ -10,3 +10,6 @@ Although, Class C doesn't inherit class A, but it defines/implements all the met
 So, class C is considered an instance of class A.
 
 NOTE: This doesn't work with statically typed languages like C++, C#, etc.
+
+
+This link explained it well: https://www.youtube.com/watch?v=v1ShOuVKikM&list=PLqq-6Pq4lTTanfgsbnFzfWUhhAz3tIezU&index=15
