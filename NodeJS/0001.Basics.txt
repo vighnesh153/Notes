@@ -1,0 +1,5 @@
+NodeJS is basically a library that allows us to use the V8 engine without the need of a browser.
+So, we can run JavaScript on our machine without the need of a browser.
+
+This allowed us to write scripts that run on the machine which would help us to use asynchronous JS
+on the machine which led to the rise of backend-development in NodeJS.
