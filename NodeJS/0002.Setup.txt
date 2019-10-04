@@ -1,0 +1,36 @@
+SETUP
+1. Goto NodeJS.org (google) and download its binaries based on your machine type(platform).
+2. Run the binaries.
+3. In the terminal, run 'node' to check if it is installed. It should output '>' which means it is
+   displaying a prompt to input JS expressions.
+
+
+
+To run a .js file:
+	node filename.js
+
+
+
+To initialize a node project:
+	npm init
+// npm => node package manager
+// instializes package.json file (configuration file)
+
+
+To install a package:
+	npm install package-name --save
+	// install package and add to dependencies in the package-json
+	npm i package-name --save
+	// i => shortcut for install
+
+
+	npm i package-name --save-dev
+	// install package and add to development-dependencies in the package-json
+
+
+	npm i package-name -g
+	// install globally
+
+
+	npm install
+	// installs all the packages specified in the dependencies section in package.json
