@@ -1,0 +1,15 @@
+In the package.json file, the object has a property: 'scripts'.
+It's value is an object.
+Each of that object's keys is a command and its value specifies what we want to do, when we run that command.
+
+Example:
+	{
+		"scripts": {
+			"start": "ls -la"
+		}
+	}
+
+	Now, in terminal, when I type 'npm start', 'ls -la will be run'.
+
+
+But the list of commands is predefined. All the commands available can be viewed using 'npm display'
