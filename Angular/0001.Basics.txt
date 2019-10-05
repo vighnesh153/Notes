@@ -1,0 +1,10 @@
+What is Angular?
+	A JavaScript Framework.
+	Used for building client side applications with the help of HTML, CSS, and JavaScript.
+
+
+Why Angular?
+	Expressive HTML.
+	Powerful data binding.
+	Modular by design.
+	Built-in Backend integration.
