@@ -1,0 +1,19 @@
+In a component, we export that component's class which has a decorator that takes an object as an
+argument which has a property 'selector'.
+
+
+The selector property is a CSS-style selector. Whichever HTML element matches with the selector, all
+the HTML template code and styles are inserted into and applied to it.
+
+Example:
+	selector: "server"
+	<server></server>
+
+	selector: "[server]"
+	<div server></div>
+
+	selector: ".server"
+	<div class="server"></div>
+
+
+NOTE: Id selector and pseudo-class selectors like hover, etc. don't work here.
