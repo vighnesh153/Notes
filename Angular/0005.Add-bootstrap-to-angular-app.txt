@@ -1,0 +1,15 @@
+Command:
+	npm install --save bootstrap
+
+
+In the 'angular-app/angular.json' file, register the bootstrap's files to all the components by
+adding it to the following object's property:
+	From root object follow the following properties:
+		"projects" => "angular-app-name" => "architect" => "build" => "options" => "styles". Now
+		the value of the above object properties structure will be an array.
+		Add "node_modules/bootstrap/dist/css/bootstrap.min.css" to the array.
+		NOTE: Add the above string at the beginning of the array because we want our global styles
+			  to be able to modify/override the bootstrap styles.
+
+
+Now, we can directly add bootstrap styles by adding bootstrap classes to the components.
