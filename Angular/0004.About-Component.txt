@@ -1,0 +1,29 @@
+When we run 'ng g c component-name', a new component is created under the angular-app's root component,
+which is named as 'app'.
+
+In each new created component, 4 different files will be created: (Assume the component's name to be
+'server')
+	1. server.component.html: This file should contain html code that will replace the component call.
+	2. server.component.css: This file should contain styles for the component.
+	3. server.component.spec.ts: This file should contain the tests' code of the component.
+	4. server.component.ts: This file contains a class that is exported which contains the component's
+							details. The name of the class will be 'ServerComponent'. It will have
+							a decorator as follows:
+								@Component({
+									selector: 'app-server',
+									templateUrl: './server.component.html',
+									styleUrls: ['./server.component.css']
+								})
+							self explanatory.
+							And the class should/will implement 'OnInit' interface as follows:
+								export class ServerComponent implements OnInit {
+									constructor() { }
+									ngOnInit() { }
+								}
+		NOTE: For the above code to work, we need to add the following import:
+				import { Component, OnInit } from '@angular/core';
+
+Now the component can be used as follows:
+	<app-server></app-server>
+where 'app-server' is the 'selector' property of the object passed to the decorator of the component's
+class that was exported.
