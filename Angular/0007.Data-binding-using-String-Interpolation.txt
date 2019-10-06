@@ -1,0 +1,22 @@
+In any component, we export a class from the component's typescript file. Whatever we add in that
+class, like a property or method, it will be accessible in the component's HTML file using {{ }}
+
+NOTE: Whatever that is a string or can be converted to string or evaluates to string, can be passed
+	  in {{ }}
+
+NOTE: Block statements like 'if', 'for' can't be used in it. However, ternary operator works.
+
+Example:
+	Lets say that the class that was exported has the following body signature:
+		export class ServerComponent {
+			name: string = "Vighnesh";
+			age: number = 21;
+
+			getRandomNumber() {
+				return Math.random();
+			}
+		}
+
+	In the HTML file,
+		<p>My {{ "name" }} is {{ name }} and my age is {{ age }}.</p>
+		<p>Random number: {{ getRandomNumber() }}</p>
