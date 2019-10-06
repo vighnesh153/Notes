@@ -1,0 +1,19 @@
+Command:
+	ng generate component component-name
+
+	Shortcut:
+		ng g c component-name
+
+
+When we run the above command, angular creates a component in the 'angular-app-name/src/app/'.
+
+'app' is the root component of the angular-app. And new components are created in it.
+
+After that, we need to add component's class's name in the 'angular-app-name/src/app/app.module.ts'
+file. That file has a class that is being exported at the end. That class has a decorator which takes
+in an object as an argument. That object has a property called 'declarations' and the value of that
+property is an array of components. So, append the component's class's name to that array.
+The command used above should do it automatically but if it doesn't then we can add it manually.
+
+NOTE: If the component's name is 'server', then the component's class's name will be 'ServerComponent'.
+	  It is angular's convention.
