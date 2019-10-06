@@ -1,0 +1,17 @@
+To install:
+	npm install -g @angular/cli
+
+
+
+To create an app:
+	ng new my-first-app
+
+
+
+Then, navigate to that app directory:
+	cd my-first-app
+
+
+
+To run:
+	ng serve
