@@ -1,0 +1,16 @@
+export class ServerComponent {
+  remainDisabled = true;
+
+  constructor() {
+    setTimeout(() => {
+      this.remainDisabled = false;
+    }, 3000);
+  }
+}
+
+
+<button class="btn btn-primary" [disabled]="remainDisabled">Click me!</button>
+
+
+This way, the 'disabled' attribute will be set to true or false based on the 'remainDisabled'
+property. The constructor will set the disabled property to false after 3 seconds.
