@@ -1,0 +1,16 @@
+<button (click)="executeThisFunctionOnClick()"></button>
+
+
+export class  SomeComponent {
+	executeThisFunctionOnClick() {
+		// Do something
+	}
+}
+
+
+NOTE: Whatever event we want to bind to a method, we write that event name in parenthesis in the HTML
+	  code (without quotes).
+
+Search online for different event names for angular.
+	eg.
+		onclick => click
