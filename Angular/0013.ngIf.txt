@@ -1,0 +1,10 @@
+<p *ngIf="some-expression">Data is: {{ serverInput }}</p>
+
+Syntax:
+	*ngIf="expression"
+
+NOTE: '*' indicates that this is a structural directive, which means that this directive modifies
+	  the structure of the DOM. Also, without the '*', this won't work.
+
+WORKING: If the expression evaluates to true, the element will be rendered. Else, the element will
+		 not be rendered. Two-way data binding also works here.
