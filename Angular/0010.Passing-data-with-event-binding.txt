@@ -1,0 +1,27 @@
+<input type="text" (input)="pleasePrint($event)">
+<p>Data is: {{ serverInput }}</p>
+
+
+export class ServerComponent {
+  serverInput = '';
+
+  pleasePrint(event: Event) {
+    this.serverInput = event.target.value;
+  }
+}
+
+
+NOTE: '$event' is a special variable that is assigned an event object in the HTML code.
+
+NOTE: (this.serverInput = event.target.value;) works but while transpiling, Typescript throws an
+	  error that 'value' property does not exist on type 'Event.Target'.
+	  To fix that error, we do:
+	  	this.serverInput = (<HTMLInputElement>event.target).value;
+
+	  We typecasted the generic 'HTMLElement' type object to 'HTMLInputElement'. We have to do this
+	  because not all HTMLElements have a 'value' property. So, to avoid compile time error by
+	  Typescript, we remove that error. Even if we didn't do that, at runtime we are passing event
+	  info from the 'input' type element, which has a 'value' property, so, it will work, but there
+	  will be a warning log in our logs file.
+
+	  Ref: https://stackoverflow.com/questions/44321326/property-value-does-not-exist-on-type-eventtarget-in-typescript/44321394
