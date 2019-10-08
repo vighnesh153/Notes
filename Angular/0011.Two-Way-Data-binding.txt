@@ -1,0 +1,19 @@
+<input type="text" [(ngModel)]="serverInput">
+
+
+<p>Data is: {{ serverInput }}</p>
+
+
+This 'ngModel' directive (more on directives later) binds our element to the mentioned variable(
+component's class's property), 'serverInput' in our case.
+
+Now, whenever we update our input element, it will be reflected in the 'p' tag and if the 'serverInput'
+property is updated in the component's class, then it will be reflected both, in 'input' element and in
+the 'p' element.
+
+
+
+NOTE: For the 'ngModel' directive to work, we need to :
+		import {FormsModule} from '@angular/forms';
+	  and add 'FormsModule' to the imports[] which is the property of object, passed to the decorator
+	  of our root app's component, in the app.module.ts
