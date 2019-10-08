@@ -8,3 +8,18 @@ NOTE: '*' indicates that this is a structural directive, which means that this d
 
 WORKING: If the expression evaluates to true, the element will be rendered. Else, the element will
 		 not be rendered. Two-way data binding also works here.
+
+
+
+
+
+ADDING ELSE PART:
+	1. Easiest way is to:
+		<p *ngIf="someElement"> If part</p>
+		<p *ngIf="!someElement"> If part</p>
+
+	2. Another way:
+		<p *ngIf="someElement; else someMarker">Random value is greater than 0.5</p>
+		<ng-template #someMarker>
+			<p>Random value is less than 0.5</p>
+		</ng-template>
