@@ -1,0 +1,10 @@
+Directives are instructions in the DOM.
+
+We have already used the directive.
+Example:
+	<p someCustomDirective>
+		Hello
+	</p>
+
+	In the component.ts file, we have a @Directive decorator instead of a @Component decorator
+	in which we specify the selector value to be: someCustomDirective
