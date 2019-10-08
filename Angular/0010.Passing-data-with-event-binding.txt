@@ -16,7 +16,10 @@ NOTE: '$event' is a special variable that is assigned an event object in the HTM
 NOTE: (this.serverInput = event.target.value;) works but while transpiling, Typescript throws an
 	  error that 'value' property does not exist on type 'Event.Target'.
 	  To fix that error, we do:
-	  	this.serverInput = (<HTMLInputElement>event.target).value;
+
+		this.serverInput = (<HTMLInputElement>event.target).value;
+			or
+		this.serverInput = (event.target as HTMLInputElement).value;	
 
 	  We typecasted the generic 'HTMLElement' type object to 'HTMLInputElement'. We have to do this
 	  because not all HTMLElements have a 'value' property. So, to avoid compile time error by
