@@ -1,0 +1,17 @@
+'ngStyle' is a attribute directive.
+
+<h1 [ngStyle]="{ 'background-color': 'red' }"> Hello </h1>
+
+
+NOTE: If we want to write the name of the CSS-properties in the CSS style way, we need to wrap them
+	  in quotes. If we don't want to use quotes, we need to specify them in Camel Case.
+	  	{ backgroundColor: 'red' }
+
+
+Example style:
+ {
+	'background-color': 'red',
+	'color': 'white',
+	padding: '10px',
+	width: 'fit-content'
+ }
