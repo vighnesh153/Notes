@@ -8,3 +8,13 @@ Example:
 
 	In the component.ts file, we have a @Directive decorator instead of a @Component decorator
 	in which we specify the selector value to be: someCustomDirective
+
+
+NOTE: Whenever we enclose some directive in a square bracket, then its value expression in quotes
+	  will be evaluated by Angular.
+
+	eg., <h2 [disabled]="1 === 1"> Hello </h2>
+		// Here, 1 === 1 will be evaluated and assigned to the HTML property 'disabled'.
+
+		<h2 disabled="1 === 1""> Hello </h2>
+		// Here, disabled's value won't be evaluated, but instead it will be '1 === 1'
