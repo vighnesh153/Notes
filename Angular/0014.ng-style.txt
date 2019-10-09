@@ -15,3 +15,8 @@ Example style:
 	padding: '10px',
 	width: 'fit-content'
  }
+
+
+NOTE: In this case, the expression's value will be interpreted by Angular, but it won't be assigned 
+	  to 'ngStyle' HTML property as such HTML property doesn't exist. Instead, all the keys of that
+	  object whose value is 'true', will be added to the classList of that 'h1'.
