@@ -8,7 +8,7 @@ NOTE: If we want to write the name of the CSS-properties in the CSS style way, w
 	  	{ backgroundColor: 'red' }
 
 
-Example style:
+Example style object that can be passed:
  {
 	'background-color': 'red',
 	'color': 'white',
@@ -17,6 +17,6 @@ Example style:
  }
 
 
-NOTE: In this case, the expression's value will be interpreted by Angular, but it won't be assigned 
-	  to 'ngStyle' HTML property as such HTML property doesn't exist. Instead, all the keys of that
-	  object whose value is 'true', will be added to the classList of that 'h1'.
+NOTE: In this case, the expression's value will be interpreted by Angular, but it won't be assigned
+	  to 'ngStyle' HTML property as such HTML property doesn't exist. Instead, all the keys and
+	  values will be added to the 'style' HTML property of that element separated by ';'.
