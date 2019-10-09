@@ -1,0 +1,11 @@
+ngClass is also an attribute directive. It takes a JS object with a class-name as the property or key
+	of that object, and its value being boolean.
+	NOTE: some expressions won't work as the value in this case, so it will be better if a method
+		  is called as a value or some boolean property of the component is being referred.
+
+
+Example:
+	<h2 [ngClass]="{ test: someComponentObjectPropertyOrMethodCall }"> Hello </h2>
+
+	If 'someComponentObjectPropertyOrMethodCall' returns true, then the class 'test' will be
+	added to the classList of that 'h2', else not.
