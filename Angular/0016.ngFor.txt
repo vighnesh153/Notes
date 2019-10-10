@@ -1,0 +1,9 @@
+Prefixed with '*' because it is a structural directive.
+
+
+
+In component's class,
+	topics = ['Mathematics', 'Physics', 'Computer Science']
+
+In HTML file,
+	<h1 *ngFor="let topic of topics"> {{ topic }} </h1>
