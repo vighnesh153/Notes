@@ -7,3 +7,10 @@ In component's class,
 
 In HTML file,
 	<h1 *ngFor="let topic of topics"> {{ topic }} </h1>
+
+
+
+To get the index,
+	*ngFor="let topic of topics; let i = index"
+	// Now, 'i' will hold the index value of each 'topic' in 'topics'.
+	NOTE: 'index' is a reserved word in the above context
