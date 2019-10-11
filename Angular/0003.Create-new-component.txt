@@ -17,3 +17,16 @@ The command used above should do it automatically but if it doesn't then we can 
 
 NOTE: If the component's name is 'server', then the component's class's name will be 'ServerComponent'.
 	  It is angular's convention.
+
+
+To create a component inside another folder which is in 'app' component or directory, let's say 'header',
+	ng g c header/new-component
+This will create the 'new-component' inside the header component or directory.
+NOTE: We cannot create a component outside of the 'app' component, at least as far as I know. I will
+ 	  update this 'NOTE' if it is incorrect.
+
+
+
+Creating a component also creates a 'some-component.spec.ts' file, which is a testing file. If we
+don't want that, the we can do:
+	ng g c new-component --spec false
