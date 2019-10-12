@@ -16,3 +16,22 @@ export class ServerComponent {
 
 NOTE: To make the property of the component's class available to be bound by the calling component,
 	  we need to decorate that property with '@Input()'.
+
+
+
+
+
+USING ALIAS FOR BINDING THE PROPERTY
+	<app-server [someAlias]="details"></app-server>
+
+
+	import { Input } from '@angular/core';
+	export class ServerComponent {
+	  @Input('someAlias')
+	  someVariable;
+
+	  constructor() {
+	  }
+	}
+
+	NOTE: In this case, if I use '[someVariable]' instead of '[someAlias]', it won't work.
