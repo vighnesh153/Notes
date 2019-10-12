@@ -1,0 +1,18 @@
+// Some component that is passing its variable, 'details', that is passing data to 'app-server'
+// component. The data is bound to 'someVariable' of 'app-server' component.
+<app-server [someVariable]="details"></app-server>
+
+
+// The app-server component
+import { Input } from '@angular/core';
+
+export class ServerComponent {
+  @Input()
+  someVariable;
+
+  constructor() {
+  }
+}
+
+NOTE: To make the property of the component's class available to be bound by the calling component,
+	  we need to decorate that property with '@Input()'.
