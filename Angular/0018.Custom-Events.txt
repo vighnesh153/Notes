@@ -1,0 +1,32 @@
+In the parent component:
+	HTML:
+		<app-server (someEventName)="doSomething($event.data)"></app-server>
+	TS:
+		doSomething(data: number) {
+			this.display = !this.display;
+			this.data = data;
+		}
+
+
+In the 'app-server' component:
+	TS:
+		import {Component, EventEmitter, Output} from '@angular/core';
+
+		export class ServerComponent {
+			@Output()
+			someEventName = new EventEmitter();
+			value = 0;
+
+			doThisPlease(event: Event) {
+				this.someEventName.emit({data: this.value});
+			}
+		}
+
+	HTML:
+	<label>
+		<input
+			type="number"
+			[(ngModel)]="value"
+			(change)="doThisPlease($event)"
+		>
+	</label>
