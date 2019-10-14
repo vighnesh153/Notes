@@ -1,0 +1,47 @@
+Whenever we create a component, it has a CSS file. Whatever style we add in it is only applicable
+to the component's HTML. This is not a CSS behavior as whatever we add in stylesheets, is applicable
+to all components with proper selectors. This behavior is provided by angular. It does it by adding
+a unique attribute to the HTML components and also adds it to the stylesheets.
+	EXAMPLE:
+		HTML
+			<p>Hello</p>
+
+		CSS
+			p {
+				color: blue;
+			}
+
+		is converted to
+
+		HTML
+			<p _ng_some_unique_id>Hello</p>
+
+		CSS
+			p[_ng_some_unique_id] {
+				color: blue;
+			}
+
+	Because of this, whatever style we give to component's HTML elements, it is not applied to all
+	the HTML elements of the application.
+
+
+Many browsers have in-built support for this kind of thing. It is done through 'shadow DOM'. It is
+not implemented by all browsers so it is better that we don't rely on 'shadow DOM' to achieve 'View
+Encapsulation'.
+
+MORE ON SHADOW DOM: https://glazkov.com/2011/01/14/what-the-heck-is-shadow-dom/
+
+To declare what type of view encapsulation we want to use, we go to component's TS file.
+	import { ViewEncapsulation} from '@angular/core';
+In the '@Component' decorator, we pass an object. To that object, pass a property, 'encapsulation',
+and set its value to:
+
+	ViewEncapsulation.Emulated         => Default angular's way of view encapsulation
+	ViewEncapsulation.None 			   => No view encapsulation. No attribute is added so the styles
+										  apply to the entire application
+	ViewEncapsulation.ShadowDom  	   => Achieves same effect as ViewEncapsulation.Emulated but
+										  without adding any attribute to HTML elements. But use
+										  ViewEncapsulation.Emulated because not all browsers have
+										  implemented Shadow DOM
+	ViewEncapsulation.Native 		   => Deprecated. It is old version of Shadow DOM. New versions
+	 									  are in ViewEncapsulation.ShadowDom
