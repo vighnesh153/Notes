@@ -30,3 +30,9 @@ In the 'app-server' component:
 			(change)="doThisPlease($event)"
 		>
 	</label>
+
+
+
+NOTE: We can also assign alias to custom events. In the '@Output()' decorator, pass the alias as
+	  string. Now, when we try to access/register the event in the HTML file, only the alias name
+	  exists.
