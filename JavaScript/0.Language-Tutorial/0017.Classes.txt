@@ -75,3 +75,28 @@ Getters and Setters:
 	}
 
 NOTE: even if the getter is a method, you do not use parentheses when you want to get the property value.
+
+
+
+
+
+PRIVATE PROPERTY/METHODS:
+		class Person {
+			#someProperty;
+			constructor() {
+				this.#someProperty = "Vighnesh";
+			}
+			printMyName() {
+				console.log(this.#someProperty);
+			}
+		}
+
+		const person = new Person();
+		person.printMyName();
+		console.log(person.someProperty);
+
+	In the above code, 'someProperty' is not accessible outside the class. So,
+	'console.log(person.someProperty)' will print 'undefined'.
+
+	Although, this won't work with methods, but a workaround is to use property and assign it an
+	arrow function. This way, even method can be made private through arrow functions.
