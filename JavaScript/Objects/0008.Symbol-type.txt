@@ -1,0 +1,2 @@
+Check this link:
+https://javascript.info/symbol
