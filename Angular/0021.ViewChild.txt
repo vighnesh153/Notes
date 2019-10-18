@@ -1,0 +1,37 @@
+To use a local reference from the HTML template in the TS file, we use the 'ViewChild' decorator.
+Using it, the element is bound to the property that we assigned it to.
+
+
+NOTE: 'ViewChild' decorator returns element of type 'ElementRef' to the variable. That variable will 
+				  have a property called 'nativeElement' which will point to the underlying HTML
+				  element it is bound to.
+
+
+eg:
+	HTML file
+		<input
+			type="text"
+			#someReference
+		/>
+		<button
+		  (click)="onClick()"
+		>
+		  Click Me
+		</button>
+
+	TS file
+		import {Component, ElementRef, ViewChild} from '@angular/core';
+
+		@Component({
+		  selector: 'app-server',
+		  templateUrl: './server.component.html',
+		  styleUrls: ['./server.component.css']
+		})
+		export class ServerComponent {
+			@ViewChild('someReference', { static: false })
+			input: ElementRef;
+
+			onClick() {
+				console.log(this.input.nativeElement.value + ' ' + Math.random());
+			}
+		}
