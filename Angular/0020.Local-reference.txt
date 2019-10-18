@@ -1,0 +1,27 @@
+Local reference can be applied to any HTML element. It starts with a '#'.
+
+NOTE: They can only be used in the template-HTML and not in typescript code.
+
+It basically references the element in which it is used.
+
+eg.
+	HTML file
+	<input
+		type="text"
+		#someReference
+	>
+
+	<button
+		(click)="onClick(someReference)"
+	>
+		Click Me
+	</button>
+
+
+	TS file
+
+	export class SomeComponent {
+		onClick(input: HTMLInputElement) {
+			console.log(input.value);
+		}
+	}
