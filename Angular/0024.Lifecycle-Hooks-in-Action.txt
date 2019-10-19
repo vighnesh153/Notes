@@ -1,0 +1,59 @@
+Lifecycle Hooks are nothing but Lifecycle methods of components:
+
+	Order in which these Lifecycle methods or hooks are called, the first time the component is loaded:
+		constructor  (not a Lifecycle hook but is called first)
+		ngOnChanges
+		ngOnInit
+		ngDoCheck
+		ngAfterContentInit
+		ngAfterContentChecked
+		ngAfterViewInit
+		ngAfterViewChecked
+
+
+NOTE: If we are using these hooks, it is a good practice to make the component's class, implement
+	  the respective interfaces.
+	  OnInit for ngOnInit
+	  OnChanges for ngOnChanges
+	  etc.
+
+	  To use them, they should be imported from the '@angular/core' module.
+
+
+=> 'ngOnChanges'
+	This method is called every time any change occurs to a property which is bound by @Input() decorator.
+	It takes an argument of type 'object'.
+	It has a property named the same as the input property which was bound to @Input() decorator, and
+	its value was changed. That property's value is intern an object with 3 properties:
+		1. currentValue: new value
+		2. firstChange: true if it was a first time change of the property, else false
+		3. previousValue: previous value
+
+
+=> 'ngDoCheck'
+	This method is called whenever any change occurs. Button of that component was clicked, some
+	property's value was changed, etc. Avoid putting in heavy code in this method because this method
+	will run every time a change occurs. So, just put in an important code, that needs to be executed
+	on every sort of change.
+
+
+=> 'ngAfterContentInit'
+	This method is called only once. It is called after all the 'ng-content' or child content has been
+	rendered.
+
+
+=> 'ngAfterContentChecked'
+	This method is called every time, after the 'ngDoCheck' has been called or after every change
+	detection cycle.
+
+
+=> 'ngAfterViewInit'
+	Called after every change detection cycle.
+
+
+=> 'ngAfterViewChecked'
+	Called after 'ngAfterViewInit'
+
+
+=> 'ngOnDestroy'
+	Called when the component goes out of scope or in simple words, removed from the rendering buffer.
