@@ -1,0 +1,45 @@
+ng-content
+	This is a directive but it's syntax is the same as that of a component.
+
+
+Suppose we pass some components as a child to a component.
+	<my-server>
+		<p>Hello</p>
+	</my-server>
+
+By default, the 'p' tag will be lost to avoid some errors.
+
+But if we want to allow to pass components or data to our component, we use 'ng-content'.
+
+In the 'my-server.component.html', if we use the 'ng-content' directive, it will be replaced with the
+children components or data of the 'my-server' component. In this case, 'p' tag.
+
+	eg. my-server.component.html
+			<div class="...">
+				<h1> Hello </h1>
+				<ng-content></ng-content>
+			</div>
+		will convert to
+			<div class="...">
+				<h1> Hello </h1>
+				<p>Hello</p>
+			</div>
+		at runtime.
+
+If we pass some data as a child, then it will be passed as value.
+
+eg. let's say 'name' is 'Vighnesh'
+	Then,
+		<my-server>
+			<p>Hello, {{ name }}</p>
+		</my-server>
+	will convert to
+		<div class="...">
+			<h1> Hello </h1>
+			<ng-content></ng-content>
+		</div>
+	which will then convert to
+		<div class="...">
+			<h1> Hello </h1>
+			<p>Hello, Vighnesh</p>
+		</div>
