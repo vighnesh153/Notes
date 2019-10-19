@@ -14,7 +14,7 @@ In the 'app-server' component:
 
 		export class ServerComponent {
 			@Output()
-			someEventName = new EventEmitter();
+			someEventName = new EventEmitter();    // EventEmitter<object> to specify what type of data will be emitted by this event
 			value = 0;
 
 			doThisPlease(event: Event) {
