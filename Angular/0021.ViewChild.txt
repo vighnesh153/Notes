@@ -2,7 +2,7 @@ To use a local reference from the HTML template in the TS file, we use the 'View
 Using it, the element is bound to the property that we assigned it to.
 
 
-NOTE: 'ViewChild' decorator returns element of type 'ElementRef' to the variable. That variable will 
+NOTE: 'ViewChild' decorator returns element of type 'ElementRef' to the variable. That variable will
 				  have a property called 'nativeElement' which will point to the underlying HTML
 				  element it is bound to.
 
@@ -28,7 +28,7 @@ eg:
 		  styleUrls: ['./server.component.css']
 		})
 		export class ServerComponent {
-			@ViewChild('someReference', { static: false })
+			@ViewChild('someReference', { static: false })		// static: true => if we are going to use this variable in 'ngOnInit'
 			input: ElementRef;
 
 			onClick() {
