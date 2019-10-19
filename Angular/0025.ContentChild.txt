@@ -1,0 +1,5 @@
+Same functionality as 'ViewChild'. But if we use 'ViewChild' on a reference to a element which is
+passed as a child to our component, then it won't work.
+
+To reference any element that will passed as children and rendered using 'ng-content' directive,
+to have their reference in our TS file, we use 'ContentChild'.
