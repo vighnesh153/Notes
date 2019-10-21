@@ -1,0 +1,26 @@
+Command:
+	ng generate directive directive-name
+
+	Shortcut:
+		ng g d directive-name
+
+
+This creates a directive with name = 'directive-name'.
+In the 'directive-name.directive.ts' file, the following code is found:
+	import { Directive } from '@angular/core';
+
+	@Directive({
+		selector: '[appTestDirective]'         // CSS type selector which selects all elements that
+											   // have 'appTestDirective' directive.
+	})
+	export class TestDirectiveDirective {
+		constructor() { }
+	}
+
+We also need to register this directive in the parent module in the 'declarations' property alongside
+components.
+
+To access the element that has this directive, in the constructor of the directive:
+	constructor(private elementRef: ElementRef) {
+		this.elementRef.nativeElement.style.backgroundColor = 'green';
+	}
