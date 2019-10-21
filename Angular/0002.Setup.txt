@@ -13,5 +13,15 @@ Then, navigate to that app directory:
 
 
 
-To run:
+To run development server:
 	ng serve
+
+	ng serve --o
+	// same as above, but also opens the localhost:4200 in the browser
+
+
+
+To get static files for production:
+	ng build --prod
+	// This will compile the entire angular app and build static files in the 'dist' folder in the
+	// project's root directory. Those files will be highly optimized.
