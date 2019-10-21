@@ -21,6 +21,22 @@ We also need to register this directive in the parent module in the 'declaration
 components.
 
 To access the element that has this directive, in the constructor of the directive:
-	constructor(private elementRef: ElementRef) {
+	constructor(private elementRef: ElementRef) { }
+	ngOnInit() {
 		this.elementRef.nativeElement.style.backgroundColor = 'green';
+	}
+NOTE: The above is not a good practice to access DOM elements because angular also uses service
+	  workers to get some things done. Those service workers might not have access to DOM elements.
+	  So, it is better to use the following method.
+
+Better way to access DOM elements:
+	constructor(private elementRef: ElementRef, private renderer: Renderer2) { }
+	// Renderer2 needs to be imported from '@angular/core'
+
+	ngOnInit() {
+		this.renderer.setStyle(
+			this.elementRef.nativeElement,
+			'background-color',
+			'green'
+		);
 	}
