@@ -1,0 +1,22 @@
+NOTE: Used in a directive.
+
+Its job is to bind events to HTML elements or Angular components in which the directive is used.
+It is a decorator, to which, we pass a HTML event name as a string and it is decorated around a
+method which is called when that event happens. This way, if multiple elements across different
+components and modules have same behavior on some event, then we can just add this directive to
+those elements and the behavior will be replicated without code duplication.
+
+example:
+
+	import {Directive, HostListener} from '@angular/core';
+
+	@Directive({
+	  selector: '[appTestDirective]'
+	})
+	export class TestDirectiveDirective {
+
+	  @HostListener('click')
+	  onclick(eventData: Event) {
+	    console.log('Clicked (from directive): ' + Math.random());
+	  }
+	}
