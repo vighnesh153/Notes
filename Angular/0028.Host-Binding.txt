@@ -1,0 +1,15 @@
+It binds a HTML element's DOM's property to some property of the class.
+
+
+export class SomeDirective {
+	@HostBinding('style.backgroundColor') someVariable = 'blue';
+	// In the parenthesis of 'HostBinding', we pass property name of the HTML element, the same way
+	// we would access it in JS.
+
+	@HostListener('mouseover') onclick(eventData: Event) {
+		this.someVariable = 'red';
+	}
+}
+
+// This way, if 'someVariable' changes its value, the host element's 'style.backgroundColor' property's
+// value also changes. This way we don't need to 'Rendererv2' to just modify a couple of properties.
