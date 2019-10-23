@@ -9,3 +9,7 @@ is same as
 	<ng-template [ngIf]="some_condition">
 		<div id="something"> </div>
 	</ng-template>
+
+
+NOTE: For structural directives, if we don't want to use prefix '*', then we need to use the above
+	  'ng-template' syntax to achieve the similar results.
