@@ -1,4 +1,5 @@
 It binds a HTML element's DOM's property to some property of the class.
+NOTE: 'HostBinding' should be imported from '@angular/core'
 
 
 export class SomeDirective {
