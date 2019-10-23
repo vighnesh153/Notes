@@ -1,0 +1,11 @@
+The structural directives start with '*' when used on the HTML elements or our components. It is
+because angular needs to know about them. But when we use them in 'ng-template', we don't need to
+prefix them with '*' because 'ng-template' is, by default, escaped by angular. We need to instead
+wrap it in '[]'.
+
+For example:
+	<div id="something" *ngIf="some_condition"> </div>
+is same as
+	<ng-template [ngIf]="some_condition">
+		<div id="something"> </div>
+	</ng-template>
