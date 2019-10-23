@@ -30,6 +30,11 @@ NOTE: If we are using these hooks, it is a good practice to make the component's
 		3. previousValue: previous value
 
 
+-> 'ngOnInit'
+	This method is called when all the default properties are initialized and properties, which are
+	bound to 'Input', are also initialized with the values, set/passed by the parent component.
+
+
 => 'ngDoCheck'
 	This method is called whenever any change occurs. Button of that component was clicked, some
 	property's value was changed, etc. Avoid putting in heavy code in this method because this method
