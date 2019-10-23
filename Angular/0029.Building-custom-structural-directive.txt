@@ -1,0 +1,37 @@
+Let us build our own structural directive, 'notIf' which is opposite of 'ngIf'.
+
+
+$ ng g d notIf
+
+example:
+	import {
+		Directive,
+		Input,
+		TemplateRef,
+		ViewContainerRef
+	} from '@angular/core';
+
+	@Directive({
+		selector: 'appNotIf'
+	})
+	export class NotIfDirective {
+		// 1. We use 'set' because we want this method to run whenever the value of this property
+		//	  is set/modified
+		// 2. We use the same name for the property as the selector because when we use '*appNotIf',
+		//	  it will be converted to '<ng-template [appNotIf]="condition"'></ng-template>' and the
+		//	  condition will be assigned to the 'appNotIf' because of property-binding.
+		@Input() set appNotIf(condition: boolean) {
+			if (!condition) {
+				this.viewContainerRef.createEmbeddedView(this.templateRef);
+			} else {
+				this.viewContainerRef.clear();
+			}
+		}
+		constructor(private templateRef: TemplateRef<any>, private viewContainerRef: ViewContainerRef) {
+			// templateRef: It is the reference to template, on which the directive was used on.
+			// viewContainerRef: Every component, template in the HTML is wrapped in a container that
+			// 					 is made by angular. So, we can render our template in this container
+			//					 if the condition is false and clear the container is the condition
+			//					 is true because out directive is 'notIf'
+		}
+	}
