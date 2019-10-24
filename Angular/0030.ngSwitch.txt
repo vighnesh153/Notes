@@ -1,0 +1,6 @@
+<div [ngSwitch]="somePropertyName">
+	<p *ngSwitchCase="5"> Hello </p>
+	<p *ngSwitchCase="10"> Hi </p>
+	<p *ngSwitchCase="15"> Howdy </p>
+	<p *ngSwitchDefault> Greeting </p>
+</div>
