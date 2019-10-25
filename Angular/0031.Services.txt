@@ -1,0 +1,16 @@
+Services a just classes that help us to:
+1. NOT REPEAT OURSELVES. We can have the common code sit at a central place instead of building a
+   library or npm module.
+2. Pass data amongst components by avoiding the need of event bindings and event capturing to pass
+   data from one component to its parent and then anywhere in the same fashion.
+
+
+
+Basic service:
+	export class LoggingService {
+		logStatus(status: string) {
+			console.log(status);
+		}
+	}
+
+	The name of the service should follow the convention: 'ServiceName.service.ts'
