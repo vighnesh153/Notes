@@ -1,0 +1,51 @@
+Let's say we have a component: Server
+	import { Component, Input } from '@angular/core';
+
+	@Component({
+	selector: 'app-server',
+		templateUrl: './server.component.html',
+		styleUrls: ['./server.component.css']
+	})
+	export class ServerComponent {
+	}
+
+
+To inject service, we first import the service in the component's '.ts' file:
+	import { Component, Input } from '@angular/core';
+	import { LoggingService } from '../../shared/services/Logging.service'
+	// The service is present in 'app/shared/services/Logging.service.ts'
+
+Then to use the service, there are 2 ways:
+
+One way to do is:
+	@Component({
+	selector: 'app-server',
+		templateUrl: './server.component.html',
+		styleUrls: ['./server.component.css']
+	})
+	export class ServerComponent {
+		private loggingService: LoggingService;
+		constructor() {
+			this.loggingService = new LoggingService();
+		}
+	}
+	// And then using the 'this.loggingService.logStatus("some status")' to log.
+NOTE: This way works, but this is not how it should be done.
+
+
+Proper way to do it:
+	@Component({
+	selector: 'app-server',
+		templateUrl: './server.component.html',
+		styleUrls: ['./server.component.css'],
+		providers: [ LoggingService ]
+	})
+	export class ServerComponent {
+		constructor(private loggingService: LoggingService;) {}
+	}
+NOTE: The above is angular's way of performing dependency injection. Whenever the component is
+	  initialized, then angular passes a new instance of all the service classes from the 'providers'
+	  array, passed to the component's decorator. It creates a new instance of all the services, and
+	  passes them accordingly to the component's constructor. REMEMBER: Here, the type of the
+	  variable in the constructor is important because this is how angular decides, which instance
+	  of the service belongs to which property of the component.
