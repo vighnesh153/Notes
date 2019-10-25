@@ -1,0 +1,19 @@
+import {Directive, ElementRef, HostBinding, HostListener} from '@angular/core';
+
+@Directive({
+  selector: '[appDropdown]'
+})
+export class DropdownDirective {
+  @HostBinding('class.open') isOpen = false;
+  @HostListener('document:click', ['$event']) toggleOpen(event: Event) {
+    this.isOpen = this.elRef.nativeElement.contains(event.target) ? !this.isOpen : false;
+  }
+  constructor(private elRef: ElementRef) {}
+}
+
+
+NOTE: The above code will toggle 'open' class on the HTML element on which, this directive is used.
+	  'open' class can have something like 'display: none' so that the dropdown hides and shows up
+	  based on the boolean value assigned to 'isOpen' property. The above code will toggle the
+	  dropdown, not just by clicking on the 'toggle' button, but if the user clicks anywhere outside
+	  the region, then the dropdown will close.
