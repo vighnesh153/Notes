@@ -1,0 +1,42 @@
+In the app.module.ts:
+
+	import { Routes, RouterModule } from '@angular/core';
+
+	import { HomeComponent } from 'some-path';
+	import { UsersComponent } from 'some-path';
+
+
+	const routes: Routes = {
+		path: '', component: HomeComponent,
+		path: 'users', component: UsersComponent
+	}
+	// '' -> empty route for root route
+	// 'users' -> /users
+	NOTE: Don't add the '/' at the start of the paths. Angular does it on its own and if we do it,
+		  then is there will be two '/' at the start of the route and it won't mean anything.
+
+
+	@NgModule({
+		declarations: {
+			Component1,
+			Component2,
+			Component3
+		},
+		imports: {
+			Module1,
+			Module2,
+			RouterModule.forRoot(routes)
+		},
+		providers: [],
+		bootstrap: [AppComponent]
+	})
+	export class AppModule {}
+
+
+Now, in the app.component.html, add the
+	<router-outlet></router-outlet>
+element at the location, we want other components to render when we visit other routes.
+For eg.:
+	<header></header>
+	<router-outlet></router-outlet>
+	<footer></footer>
