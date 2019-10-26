@@ -8,7 +8,8 @@ In the app.module.ts:
 
 	const routes: Routes = {
 		path: '', component: HomeComponent,
-		path: 'users', component: UsersComponent
+		path: 'users', component: UsersComponent,
+		path: 'users/:id', component: UserComponent    // Parameterised route (quite obvious) 
 	}
 	// '' -> empty route for root route
 	// 'users' -> /users
