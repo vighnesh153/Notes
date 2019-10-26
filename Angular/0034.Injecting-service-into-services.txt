@@ -1,0 +1,15 @@
+In some service's file
+
+	import { Injectable } from '@angular/core';
+
+	import { LoggingService } from './logging.service';
+
+	@Injectable()				// If this is not added, then it will throw an error
+	export class AccountService {
+		accounts = [];
+
+		constructor(private loggingService: LoggingService) {}
+	}
+
+NOTE: For this to work, the service's class should be added to the app.module's providers array in
+	  'NgModule' decorator.
