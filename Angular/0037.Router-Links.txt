@@ -12,3 +12,34 @@
 	<a routerLink="['/users', 'all']">Home</a>
 	// References to route: /users/all
 	NOTE: This can be used to capture ids' from URL.
+
+
+
+STYLING ACTIVE LINKS:
+	Suppose we have 3 links:
+		<ul>
+			<li routerLinkActive='some-active-class'>
+				<a routerLink="/">Home</a>
+			</li>
+			<li routerLinkActive='some-active-class'>
+				<a routerLink="/users">Users</a>
+			</li>
+			<li routerLinkActive='some-active-class'>
+				<a routerLink="/topics">Topics</a>
+			</li>
+		</ul>
+
+	We can use 'routerLinkActive' to bind a class to that element if it has a routerLink property
+	and its value is part of the URL. So, in the above example, if we are on '/', then 'some-active-class'
+	CSS class will be added to its property, class. But if we click on '/users', then 'users' li will
+	be active and 'home' li will also be active. This is because, by default, routerLinkActive checks
+	if the value of 'routerLink' is a part of the current URL. And '/' is a part of all URLs. So, to
+	fix this, we add 'options' object and tell angular that only add class if URL exactly matches
+	the 'routerLink' value.
+
+	<li
+		routerLinkActive='some-active-class'
+		[routerLinkActiveOptions]="{ exact: true }"
+	>
+		<a routerLink="/">Home</a>
+	</li>
