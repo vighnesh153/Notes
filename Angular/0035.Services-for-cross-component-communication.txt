@@ -1,0 +1,11 @@
+Let's say 2 components are using a service. Now communication between them is a lot easier.
+
+Add a property, named 'SomeEmitter', in the service and initialize it with an event emitter.
+
+Now, to transfer data from one component, we emit an event from that component:
+	this.serviceName.SomeEmitter.emit(data);
+
+In the other component, we capture the event:
+	this.serviceName.SomeEmitter.subscribe((data: someType) => {
+		// do something;
+	});
