@@ -1,16 +1,35 @@
-import { Router } from '@angular/router';
+	import { Router } from '@angular/router';
 
+	@Component({
+		...
+	})
+	export class SomeComponent {
+		constructor(private router: Router) {}
 
-@Component({
-	...
-})
-export class SomeComponent {
-	constructor(private router: Router) {}
-
-	onSomeMethodCall() {
-		// Some other code
-		this.router.navigate(['/users']);
-		// The 'navigate' methods only takes in array as an argument. So, if our route is
-		// '/servers/users/all', then the array we pass should be ['/servers', 'users', 'all']
+		onSomeMethodCall() {
+			this.router.navigate(['/users']);
+			// The 'navigate' methods only takes in array as an argument. So, if our route is
+			// '/servers/users/all', then the array we pass should be ['/servers', 'users', 'all']
+			NOTE: In the 'navigate' method, it is not mandatory to prefix the first element of the
+				  array with '/'. By default, 'navigate' treats the routes as absolute.
+		}
 	}
-}
+
+
+TO ADD RELATIVE PATH:
+
+	import { Router, ActivatedRoute } from '@angular/router';
+
+	@Component({
+		...
+	})
+	export class SomeComponent {
+		constructor(private router: Router,
+					private route: ActivatedRoute) {}
+
+		onSomeMethodCall() {
+			this.router.navigate(['users'], { relativeTo: this.route });
+			// Now, whatever URL we pass as an array to the 'navigate' method, its base route will
+			// be the current component's route.
+		}
+	}
