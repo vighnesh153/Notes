@@ -1,9 +1,17 @@
-In Angular, the dependency injection is hierarchical. If a component has used Dependency injection,
-then all the components we use inside it will get the same instance of the service.
+In Angular, the dependency injection is hierarchical. If a component has used Dependency injection
+for a service, then all the components we use inside it will get the same instance of the service
+unless overrided in the children's component class.
+
+Same goes with modules. If a module has used dependency injection for a service, then all the components
+of that module will get the same instance of the service unless overrided in the children's
+component class.
 
 To achieve this, in the children component's class's decorator, we shouldn't add the 'ServiceName'
 class's reference in the providers array. It should be added in the parent's component's decorator's
 providers' array. But the constructor initialization along with the type, should be there.
 
-If we add the 'ServiceName' class in the providers array of the component, that component and all the
-components used inside it as children, will get a new instance of the 'ServiceName' class.
+NOTE: In case of a module, it should be added in the decorator 'NgModule' providers array.
+
+OVERRIDING the hierarchical injection:
+	If we add the 'ServiceName' class in the providers array of the component, that component and all the
+	components used inside it as children, will get a new instance of the 'ServiceName' class.
