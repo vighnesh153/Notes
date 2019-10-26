@@ -1,0 +1,14 @@
+(Based on previous routes from previous file)
+
+	<a href="/">Home</a>
+	// Should not be used because this reloads the page and the state of the application is lost.
+
+	<a routerLink="/">Home</a>
+	// Angular's way to add a href.
+
+	<a routerLink="'/'">Home</a>
+	// Another way
+
+	<a routerLink="['/users', 'all']">Home</a>
+	// References to route: /users/all
+	NOTE: This can be used to capture ids' from URL.
