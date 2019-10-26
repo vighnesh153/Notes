@@ -15,3 +15,22 @@ NOTE: In case of a module, it should be added in the decorator 'NgModule' provid
 OVERRIDING the hierarchical injection:
 	If we add the 'ServiceName' class in the providers array of the component, that component and all the
 	components used inside it as children, will get a new instance of the 'ServiceName' class.
+
+
+NOTE: If we want a single instance of a service throughout the app, then we can either add in in the
+	  app.component.ts's providers array or in app.module.ts's providers array.
+
+
+	  NEWER SYNTAX TO MAKE APP-WIDE USAGE OF A SERVICE's INSTANCE:
+	  	Instead of adding it to the providers array in app.component.ts or app.module.ts, we can just
+		use a decorator over the service's class definition:
+
+		import { Injectable } from '@angular/core';
+
+		@Injectable({
+			providedIn: 'root'
+		})
+		// Using the above line makes it available in the entire app for a single instance of it.
+		// Advantage of using this: Services can be loaded lazily by Angular (behind the scenes)
+		// 							and redundant code can be removed automatically.
+		export class SomeService {}
