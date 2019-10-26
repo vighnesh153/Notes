@@ -14,3 +14,22 @@ export class SomeComponent {
 		// In this case, the 'id' will hold the value passed in that spot.
 	}
 }
+
+
+NOTE: If we use the above approach to get data from URL, it is fine. But if the Component's html
+	  has a link that points to itself, but with new data, it will updated in the URL when clicked
+	  on it, but the component won't be re-rendered because angular doesn't re-render a page if it's
+	  previous page was the same. So, to achieve our desired result, we take the help of an
+	  observable (discussed later). Update the 'someMethod' method with the following code:
+
+	  import { ActivatedRoute, Params } from '@angular/router'
+
+	  someMethod() {
+	      this.id = this.route.snapshot.params['id'];
+
+		  this.route.params.subscribe(
+		  	(params: Params) => {
+				this.id = params['id'];
+			}
+		  );
+	  }
