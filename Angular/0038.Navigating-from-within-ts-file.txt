@@ -1,0 +1,16 @@
+import { Router } from '@angular/router';
+
+
+@Component({
+	...
+})
+export class SomeComponent {
+	constructor(private router: Router) {}
+
+	onSomeMethodCall() {
+		// Some other code
+		this.router.navigate(['/users']);
+		// The 'navigate' methods only takes in array as an argument. So, if our route is
+		// '/servers/users/all', then the array we pass should be ['/servers', 'users', 'all']
+	}
+}
