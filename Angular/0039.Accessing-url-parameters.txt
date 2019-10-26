@@ -1,0 +1,16 @@
+import { ActivatedRoute } from '@angular/router';
+
+
+@Component({
+	...
+})
+export class SomeComponent {
+	private id: string;
+	constructor(private route: ActivatedRoute) {}
+
+	someMethod() {
+		this.id = this.route.snapshot.params['id'];
+		// if the route was: /something/:id/something_else/
+		// In this case, the 'id' will hold the value passed in that spot.
+	}
+}
