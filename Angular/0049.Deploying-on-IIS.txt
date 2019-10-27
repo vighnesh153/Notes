@@ -1,0 +1,36 @@
+1. Enable IIS on windows: https://www.itnota.com/install-iis-windows/
+
+2. Build the Angular project for production:
+	ng build --prod
+
+3. Copy all the artifacts from the dist/project-name/ to the directory which will be hosted on IIS
+
+4. Create a website in IIS and set its port number and 'path-to-directory' that will be served.
+
+5. THIS STEP IS REQUIRED TO SUPPORT DEEP LINKING EVEN IF THE LINK DOESN'T EXIST ON THE SERVER AS
+   ANGULAR SERVES ONLY SINGLE PAGE APPLICATIONS
+   Install URL re-write from here: https://www.iis.net/downloads/microsoft/url-rewrite
+   We will use this feature to make the server, serve the '/' route's content for whatever URL we type.
+   Thus, once we get access to index.html, it will then have JS that will take care of the route.
+
+6. Restart IIS. On the site, we just added, select the 'URL re-write' option and add a rule. That
+   rule should redirect/rewrite from any URL to '/'.
+
+6. ALTERNATE TO ABOVE STEP 6. After doing step 5, manually make a file in the hosted folder, named
+   web.config. Add the following contents into it.
+		<system.webServer>
+			<rewrite>
+				<rules>
+					<rule name="Angular Routes" stopProcessing="true">
+						<match url=".*" />
+						<conditions logicalGrouping="MatchAll">
+							 <add input="{REQUEST_FILENAME}" matchType="IsFile" negate="true" />
+							 <add input="{REQUEST_FILENAME}" matchType="IsDirectory" negate="true" />
+						</conditions>
+						<action type="Rewrite" url="/index.html" />
+					</rule>
+				</rules>
+			</rewrite>
+		</system.webServer>
+
+NOTE: If unsuccessful, just search on the internet for a solution.
