@@ -20,3 +20,6 @@ ngOnInit() {
 
 	NOTE: This subscription can also be unsubscribed manually.
 }
+
+NOTE: All the params values that we access from the route will be treated as string, by default.
+	  Make sure to change the types to their respective types(like int, etc.) before using the values.
