@@ -1,0 +1,11 @@
+<a
+	[routerLink]="['/servers', 5, 'edit']"
+	[queryParams]="{
+			a: 1,
+			b: 'lol'
+		}"
+	[fragment]="'someFragment'"   // refers to the id of the element to which, we want to scroll down to.
+>Some Link</a>
+
+On click of the above link, the user will be navigated to the following link:
+	/servers/5/edit?a=1&b=lol#someFragment
