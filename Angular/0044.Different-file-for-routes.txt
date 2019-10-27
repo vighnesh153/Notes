@@ -1,0 +1,25 @@
+In app-routing.module.ts(on the same level as app.module.ts),
+
+	import { NgModule } from '@angular/core';
+	import { Routes, RouterModule } from '@angular/router';
+
+
+	const routes: Routes = [
+		{ path: '', component: SomeComponent },
+		{ path: 'users', component: UsersComponent },
+		{ path: 'servers', component: ServersComponent },
+		{ path: 'not-found', component: NotFoundComponent },
+		{ path: '**', redirectTo: '/not-found' }
+	];
+
+	@NgModule({
+		imports: [
+			RouterModule.forRoot(routes);
+		],
+		exports: [
+			RouterModule
+		]
+	})
+	export class AppRoutingModule {}
+
+In the app.module.ts file, add the AppRoutingModule reference in the 'imports' property of the decorator.
