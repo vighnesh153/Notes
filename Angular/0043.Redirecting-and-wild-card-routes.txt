@@ -1,0 +1,24 @@
+Wild-card route: { path: '**', component: NotFoundComponent }
+// The above route matches all the routes
+
+NOTE: This route should be added at the end because if not, then all the routes will show
+	  not-found because this route will match it first and render the NotFoundComponent.
+
+
+'redirectTo' property of a route is used when we want to redirect to some other route from some other route.
+
+Common use-case:
+	const routes: Routes = [
+		{ path: '', component: SomeComponent },
+		{ path: 'users', component: UsersComponent },
+		{ path: 'servers', component: ServersComponent },
+		{ path: 'not-found', component: NotFoundComponent },
+		{ path: '**', redirectTo: '/not-found' },
+	];
+
+NOTE: When we want to use 'redirectTo', we should use it with property, 'pathMatch: "full"'. We do
+	  this because, if we use the same path as prefix in the 'redirectTo' path, then this route will
+	  keep capturing it as the prefix is same and keep redirecting infinitely. Even angular will throw
+	  an error. So, we add this property to the route.
+	  eg.
+	  	{ path: '', redirectTo: '/home', pathMatch: 'full' },
