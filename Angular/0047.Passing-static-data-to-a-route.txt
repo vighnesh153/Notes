@@ -1,0 +1,17 @@
+In routes:
+	{ path: 'servers', component: ServersComponent, data: { message: 'some message' } }
+
+In the ServersComponent:
+	import { Data } from '@angular/router';		// Dummy container
+
+	constructor (private route: ActivatedRoute) {}
+
+	ngOnInit() {
+		this.message = this.route.snapshot.data['message'];
+			// or
+		this.route.snapshot.data.subscribe(
+			(data: Data) => {
+				this.message = data['message'];
+			}
+		)
+	}
