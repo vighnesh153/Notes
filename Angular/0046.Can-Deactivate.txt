@@ -1,0 +1,38 @@
+Deactivate: Component will be destroyed or browser will be closed, or tab will be closed, or
+			navigating to some other link.
+
+	import { Observable } from 'rxjs/Observable';
+	import {
+		CanDeactivate,
+		ActivatedRouteSnapshot,
+		RouterStateSnapshot
+	} from '@angular/router';
+
+	export interface CanComponentDeactivate {
+		canComponentDeactivate: () => Observable<boolean> | Promise<boolean> | boolean
+	}
+
+	export class CanDeactivateGuard implements CanDeactivate<CanComponentDeactivate> {
+
+		canDeactivate (component: CanComponentDeactivate,		// Component that will be deactivated
+					   currentRoute: ActivatedRouteSnapshot,
+					   currentState: RouterStateSnapshot,
+					   nextState?: RouterStateSnapshot): Observable<boolean> | Promise<boolean> | boolean {
+				return component.canComponentDeactivate();
+		   }
+	}
+
+
+Now, we need to add this to the property: 'canDeactivate' which accepts an array of classes that
+implement 'CanDeactivate' which will intern make sure that that class implements 'canDeactivate'
+method.
+
+Add the class name of the guard in the providers array of app.module.ts.
+
+NOTE: The above guard returns the function call of component.canComponentDeactivate(). This forces
+	  the user to implement 'CanComponentDeactivate' in the Component on whose route, which he
+	  wishes to have the deactivate guard. That method should return true or false. We can also return a
+	  'confirm("Do you really want to exit?")'. If 'yes' is clicked, 'true' is returned else 'false'
+	  is returned.
+
+If all the classes of the 'canDeactivate' array return true, then the component will be deactivated.
