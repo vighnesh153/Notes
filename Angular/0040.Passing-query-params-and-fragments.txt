@@ -13,7 +13,7 @@ On click of the above link, the user will be navigated to the following link:
 
 
 
-From within the TS file:
+From within the TS file, we could do as follows to generate a link with queryParams and fragment:
 	this.router.navigate(
 		['/servers', 5, 'edit'], {
 			queryParams: {
@@ -23,3 +23,29 @@ From within the TS file:
 			fragment: 'someFragment'
 		}
 	);
+
+
+
+Query Parameters handling:
+	There is another property that we can pass to second argument of type object, to the navigate method.
+	Property name: queryParamsHandling.
+		Value: 'preserve'
+			Query Parameters of the current component will be passed on to this link. If we add new
+			parameters , they will not be considered.
+		Value: 'merge'
+			Both, the new query params and the old(current component's queryParams) will be merged
+			and passed on to this link.
+
+	eg:
+		this.router.navigate(
+			['/servers', 5, 'edit'], {
+				queryParams: {
+					a: 1,
+					b: 'lol'
+				},
+				queryParamsHandling: 'merge',
+				fragment: 'someFragment'
+			}
+		);
+		// In this above example, both the old and new query parameters will be merged and passed to
+		// this new URL
