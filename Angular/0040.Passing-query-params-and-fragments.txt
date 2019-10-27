@@ -9,3 +9,17 @@
 
 On click of the above link, the user will be navigated to the following link:
 	/servers/5/edit?a=1&b=lol#someFragment
+
+
+
+
+From within the TS file:
+	this.router.navigate(
+		['/servers', 5, 'edit'], {
+			queryParams: {
+				a: 1,
+				b: 'lol'
+			},
+			fragment: 'someFragment'
+		}
+	);
