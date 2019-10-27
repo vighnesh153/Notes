@@ -1,0 +1,30 @@
+Suppose we have the follwing routes:
+	const routes: Routes = [
+		{ path: '', component: HomeComponent },
+		{ path: 'users', component: UsersComponent },
+		{ path: 'users/:id', component: UserComponent },
+		{ path: 'servers', component: ServersComponent },
+		{ path: 'servers/:id', component: ServerComponent },
+		{ path: 'servers/:id/edit', component: EditServerComponent }
+	]
+
+These can be nested as follows:
+	const routes: Routes = [
+		{ path: '', component: HomeComponent },
+		{ path: 'users', component: UsersComponent, children: [
+			{ path: ':id', component: UserComponent }
+		] },
+		{ path: 'servers', component: ServersComponent, children: [
+			{ path: ':id', component: ServerComponent },
+			{ path: ':id/edit', component: EditServerComponent }
+		] }
+	]
+
+
+NOTE: If these routes are defined in app.module.ts, then in the app.component.html,
+	  we use <router-outlet></router-outlet> to render the specific component to that route.
+	  In the <router-outlet></router-outlet> of the app.component.html, only '/', '/uses', and '/servers'
+	  would be loaded. <router-outlet></router-outlet> for nested routes should be added to the component
+	  that has the nested routes. So, in this case, <router-outlet></router-outlet> should be added
+	  to UserComponent's and ServersComponent's HTML code so that, that <router-outlet></router-outlet>
+	  can render the component from the children route.
