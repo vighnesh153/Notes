@@ -1,6 +1,6 @@
 In any route, we can add a sibling property to 'path' and 'component', named 'canActivate', and assign
 it an array. To that array, we can pass classes, that implement 'CanActivate' and because of this,
-they will have implemented a method, 'canActivate' which returns Observable<boolean> | Promise<boolean> | boolean.
+they will have implemented a method, 'canActivate' which returns Observable<boolean> or Promise<boolean> or boolean.
 If all the classes return 'true', then the 'component' of that route is rendered. 'false' returns are
 not handled here. The class that fails to return 'true' upon calling of canActivate(), should handle
 the failing case. One way to handle failing case is to redirect to some other route.
@@ -8,7 +8,16 @@ the failing case. One way to handle failing case is to redirect to some other ro
 NOTE: When a route is hit by a user, then all these class' 'canActivate()' method is called first.
  	  So, this is sort of a middleware, that executes before rendering a component for a route.
 
+NOTE: If we add a 'canActivate' property to a route, then all its children routes will also acquire
+	  this property. There is another property, named 'canActivateChild', which behaves exactly the
+	  same way as 'canActivate' but the only difference is that, if used on a route, only its children
+	  routes will have these 'classes' run before rendering the component for that route. Also, the
+	  array assigned to 'canActivateChild' accepts classes that implement 'CanActivateChild' and have
+	  a method: 'canActivateChild', implemented by that class that returns Observable<boolean> or
+	  Promise<boolean> or boolean.
 
+
+// Below is an example of a class that can be used as a middleware.
 import {
 	CanActivate,
 	ActivatedRouteSnapshot,
