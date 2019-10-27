@@ -1,0 +1,40 @@
+If we need some data for a component, we request for it in the ngOnInit() method of the component.
+But if for some reason, we want the data before routing to the component, we use this technique.
+
+In the route, alongside 'path' and 'component', we add a 'resolve' property and pass it an object.
+Each key in that object represents some request.
+Example of the object: { server: ServerResolver }
+
+For this to work, we need to add 'ServerResolver' to the providers array in the app.module.ts
+
+
+Then, we define the service: ServerResolver
+	import { Resolve, ActivatedRouteSnapshot, RouterStateSnapshot } from '@angular/router';
+	import { Observable } from 'rxjs/Observable';
+	import { Injectable } from '@angular/core';
+
+	import { ServersService } from '../servers.service';
+
+	interface Server {
+		// some properties
+	}
+
+	@Injectable()
+	export class ServerResolver implements Resolve<Server> {
+		constructor (private serversService: ServersService) {}
+
+		resolve(route: ActivatedRouteSnapshot, state: RouterStateSnapshot) :
+							Observable<Server> | Promise<Server> | Server {
+			return this.serversService.getServer(someId);
+		}
+	}
+
+
+To access the data in the component:
+	ngOnInit() {
+		this.route.data
+				.subscribe((data: Data) => {
+					this.server = data['server'];		// same name as passes in the 'resolve'
+														// property in the route.
+				})
+	}
