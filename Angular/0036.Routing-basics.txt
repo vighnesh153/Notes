@@ -6,11 +6,11 @@ In the app.module.ts:
 	import { UsersComponent } from 'some-path';
 
 
-	const routes: Routes = {
-		path: '', component: HomeComponent,
-		path: 'users', component: UsersComponent,
-		path: 'users/:id', component: UserComponent    // Parameterised route (quite obvious) 
-	}
+	const routes: Routes = [
+		{ path: '', component: HomeComponent },
+		{ path: 'users', component: UsersComponent },
+		{ path: 'users/:id', component: UserComponent }  // Parameterised route (quite obvious)
+	]
 	// '' -> empty route for root route
 	// 'users' -> /users
 	NOTE: Don't add the '/' at the start of the paths. Angular does it on its own and if we do it,
