@@ -3,13 +3,18 @@ import { ActivatedRoute, Params } from '@angular/router'
 ngOnInit() {
 	this.a = this.route.snapshot.queryParams['a'];
 	this.b = this.route.snapshot.queryParams['b'];
-	// But this will not update this.a and this.b if we navigate to this page from within this page
+	this.fragment = this.route.snapshot.fragment;
+	// But this will not update this.a and this.b and this.fragment if we navigate to this page
+	// from within this page
+
+
 
 	// So, we use subscription
 	this.route.queryParams.subscribe(
 	  (queryParams: Params) => {
 		  this.a = params['a'];
 		  this.b = params['b'];
+		  this.fragment = this.route.snapshot.fragment;
 	  }
 	);
 
