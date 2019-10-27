@@ -8,7 +8,7 @@ export class SomeComponent {
 	private id: string;
 	constructor(private route: ActivatedRoute) {}
 
-	someMethod() {
+	ngOnInit() {
 		this.id = this.route.snapshot.params['id'];
 		// if the route was: /something/:id/something_else/
 		// In this case, the 'id' will hold the value passed in that spot.
@@ -20,11 +20,11 @@ NOTE: If we use the above approach to get data from URL, it is fine. But if the 
 	  has a link that points to itself, but with new data, it will updated in the URL when clicked
 	  on it, but the component won't be re-rendered because angular doesn't re-render a page if it's
 	  previous page was the same. So, to achieve our desired result, we take the help of an
-	  observable (discussed later). Update the 'someMethod' method with the following code:
+	  observable (discussed later). Update the 'ngOnInit' method with the following code:
 
 	  import { ActivatedRoute, Params } from '@angular/router'
 
-	  someMethod() {
+	  ngOnInit() {
 	      this.id = this.route.snapshot.params['id'];
 
 		  this.route.params.subscribe(
@@ -32,4 +32,31 @@ NOTE: If we use the above approach to get data from URL, it is fine. But if the 
 				this.id = params['id'];
 			}
 		  );
+	  }
+
+
+NOTE: Whenever we add a subscription, and if the component gets destroyed, the subscription gets destroyed
+	  by angular. But this is not the case with observables. We need to manually unsubscribe from the
+	  component on destruction. (And it is not a bad practice to unsubscribe from all subscriptions
+	  even if Angular does it for us)
+
+	  import { Subscription } from 'rxjs/Subscription';
+	  // Not implemented by angular, but angular uses this package.
+
+	  export class SomeComponent implements OnInit, OnDestroy {
+	  	  id: string;
+	  	  paramsSubscription: Subscription;
+
+		  ngOnInit() {
+		  	this.id = this.route.snapshot.params['id'];
+		  	this.paramsSubscription = this.route.params.subscribe(
+	  		  	(params: Params) => {
+	  				this.id = params['id'];
+	  			}
+	  		  );
+		  }
+
+		  ngOnDestroy() {
+		  	this.paramsSubscription.unsubscribe();
+		  }
 	  }
