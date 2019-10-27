@@ -41,3 +41,8 @@ For eg.:
 	<header></header>
 	<router-outlet></router-outlet>
 	<footer></footer>
+
+
+
+RELATIVE ROUTES:
+	We can even have relative routes. '../', etc.
