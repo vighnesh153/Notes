@@ -29,4 +29,4 @@ rule, but conventionally). To just transfer data between components, Subject sho
 conventionally).
 
 NOTE: Subject is like a custom observable. So, on component destruction, we need to unsubscribe its
-	  observer.
+	  observer or subscription.

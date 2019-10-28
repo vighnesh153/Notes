@@ -6,7 +6,7 @@ Observer: => A piece of code that keeps an eye on this stream of data. We can bi
 			 an observer using the 'subscribe' method of the observable object. That subscribe method
 			 takes a function as an argument and that function should have one argument, which will
 			 hold the value of the observable, when the observable has changed its value. The 'subscribe'
-			 method also returns a reference to the observer.
+			 method also returns a reference to the observer, aka, a Subscription.
 
 			 When the component in which, we have subscribed to an observable, gets destroyed, the
 			 observer keeps observing the observable. Again, if we come back to this component, then
