@@ -1,0 +1,28 @@
+In an observable we simply won't set an interval that spits out number at regular interval. We would
+usually make an HTTP request in that. So, many a times, that request may even fail or some error may
+occur. When that happens, we don't want to call, observer.next(). We would rather call the 'error' method.
+
+Let's modify the example from the previous file to handle error.
+
+	const customIntervalObservable = Observable.create(observer => {
+		let count = 0;
+		setInterval(() => {
+
+			// Assume, if count > 3, it is an error, just for example purposes
+			if (count > 3)
+				observer.error(new Error('Count is greater than 3!'))
+
+			observer.next(count++);
+		}, 1000);
+	});
+	// When we call the 'error' message on the observer, the observer stops observing. So, we don't
+	// need to 'unsubscribe' from the observable. However, it won't be an error if we 'unsubscribe'
+	// anyway.
+
+	this.observer = customIntervalObservable.subscribe(data => {
+		console.log(data);
+	}, error => {
+		alert(error.message);
+	});
+	// The second argument to the 'subscribe' method is also a function, that should take one argument.
+	// That function is called if 'observer.error()' is invoked by its observable.
