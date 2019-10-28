@@ -1,0 +1,29 @@
+To import:
+	import { Subject } from 'rxjs'
+
+If we are using a service just to communicate between multiple components using Event Emitters, then
+there is a better way to do it. Instead of initializing with EventEmitter, Initialize with Subject.
+
+	// this.dataTransferrer = new EventEmitter<boolean>();
+	this.dataTransferrer = new Subject<boolean>();
+	// Data to be passed around is of type boolean.
+
+
+Then instead of emitting an event, we just invoke the 'next' method.
+	// this.dataTransferrer.emit(true);
+	this.dataTransferrer.next(true);
+
+
+Then, subscribe to it in the same way as we do to events.
+
+Benefit of using Subject:
+	Subject is a type of observable, whose state is in our control. In other observables, they,
+	on their own, invoked 'next', 'error' or 'complete'. But in subject, we can invoke those methods
+	outside the observables.
+
+Also, EventEmitter should only be used for transferring data to parent component (Not a hard and fast
+rule, but conventionally). To just transfer data between components, Subject should be used (again,
+conventionally).
+
+NOTE: Subject is like a custom observable. So, on component destruction, we need to unsubscribe its
+	  observer.
