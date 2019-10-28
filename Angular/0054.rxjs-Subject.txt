@@ -21,7 +21,10 @@ Benefit of using Subject:
 	on their own, invoked 'next', 'error' or 'complete'. But in subject, we can invoke those methods
 	outside the observables.
 
-Also, EventEmitter should only be used for transferring data to parent component (Not a hard and fast
+Subject.next() does the same like EventEmitter.emit(): It emits an event.
+EventEmitter extends Subject; the implementation differences are not relevant, thus both could be
+used interchangeably.
+But, EventEmitter should only be used for transferring data to parent component (Not a hard and fast
 rule, but conventionally). To just transfer data between components, Subject should be used (again,
 conventionally).
 
