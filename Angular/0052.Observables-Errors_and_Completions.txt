@@ -26,3 +26,13 @@ Let's modify the example from the previous file to handle error.
 	});
 	// The second argument to the 'subscribe' method is also a function, that should take one argument.
 	// That function is called if 'observer.error()' is invoked by its observable.
+
+
+Similarly, we have the 'complete' method. When the observable invokes 'complete' method, the third
+argument, passed to the 'subscribe' method (which is also a function, with no arguments) of that
+observable, is invoked. After the observable has invoked the complete method on the observer, it then
+completes. The observer is also unsubscribed. We don't need to manually unsubscribe it, but there is no
+harm in doing it.
+
+NOTE: Even though, observer.error() terminates the observable, the 'complete' method is not called or
+	  invoked. Only the function, passed as second argument, is invoked.
