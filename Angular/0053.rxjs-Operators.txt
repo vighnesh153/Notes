@@ -1,0 +1,19 @@
+Operators are basically some pure functions, that can be applied to a input to transform it to some
+other form.
+
+	import { map, filter } from 'rxjs/operators'
+
+
+Usage:
+	this.observer = someObservable()
+						.pipe(
+							map(data => 'Some Data: ' + data),
+							filter(data => data.length > 10)
+						)
+						.subscribe(data => {
+							console.log(data);
+						});
+
+	NOTE: 'pipe' method can take any number of operators. Those operators are applied linearly. What
+		  I mean by that is first, the map is applied, and then filter is applied. Then, that transformed
+		  data is passed as an argument to the function, passed as an argument to 'subscribe' method.
