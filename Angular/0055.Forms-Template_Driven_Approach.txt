@@ -1,0 +1,80 @@
+NOTE: Whenever working with forms in a component, make sure that the parent module has an import:
+		import { FormsModule } from '@angular/forms';
+
+In template-driven approach, angular will create a JS object-like structure of the HTML 'form'. But
+it will not select all the form elements, by default. We need to specify which elements will be
+selected for the JS object formation of the form. We do that by specifying the 'ngModel' directive
+and a 'name' attribute to identify each one of them, individually in the JS object of the form.
+
+NOTE: The JS object representation of the form has a ton of properties. Will be discussed later.
+
+In the HTML file:
+	// When we click a button, of type 'submit' inside the form, the default HTML behavior is
+	// triggered (the default behavior can be making a request, reloading the page). So, to
+	// 'preventDefault', we add a directive in the 'form' element, named 'ngSubmit'. When we
+	// click the 'submit' type button, the 'ngSubmit' directive runs the 'onSubmit' method,
+	// defined in the component's class.
+
+	// To the 'onSubmit' method, we also pass a reference to the form itself. Now, we have assigned
+	// value to a local reference. What that will do is convert the 'form' element to 'ngForm' type,
+	// which will form the JS object representation of the form.
+
+	<form [ngSubmit]="onSubmit(#myForm)" #myForm="ngForm">
+		<input
+			type="text"
+			ngModel
+			name="username"
+		/>
+
+		<input
+			type="email"
+			ngModel
+			name="email"
+		/>
+
+		<button type="Submit">Submit</button>
+	</form>
+
+
+In the component's class (TS file):
+	import { ngForm } from '@angular/forms';
+
+	@component({
+		...
+	})
+	export class SomeComponent {
+		onSubmit(form: ngForm) {
+			console.log(form);
+		}
+		// The form here will have a lot of properties, one out of which will be 'value', that will
+		// have a value of type 'object', with properties ('username', 'email') and their values
+		// as mentioned in the form. We have ('username', 'email') properties in the 'value' property's
+		// value, because, we use 'ngModel' on two fields and those field have a name, ('username',
+		// 'email') as mentioned in the above example.
+	}
+
+
+Another way to access the form in the TS file is using the local reference. This way we don't have
+pass the form's reference to 'onSubmit' method.
+
+	HTML:
+		<form [ngSubmit]="onSubmit()" #myForm="ngForm">
+
+	TS:
+		import { ViewChild } from '@angular/core';
+
+		@component({
+			...
+		})
+		export class SomeComponent {
+			@ViewChild('myForm') someForm: ngForm;
+			// Note, we don't specify 'ElementRef' as type for the 'someForm' property. Instead, we
+			// set its type to 'ngForm'. This is because we casted it to 'ngForm' in the HTML.
+			// If we don't cast it, then it will just give a form's reference. It will not form a
+			// JS object representation of the form.
+
+			onSubmit() {
+				console.log(this.someForm);
+			}
+			// Does the same this as the previous code.
+		}
