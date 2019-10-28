@@ -1,0 +1,20 @@
+Considering the previous file, it had an 'interval' observable imported from 'rxjs'. Let us built an
+observable, similar to that.
+
+example:
+	import { Observable } from 'rxjs';
+
+	// In the component's class
+
+	ngOnInit() {
+		const customIntervalObservable = Observable.create(observer => {
+			let count = 0;
+			setInterval(() => {
+				observer.next(count++);
+			}, 1000);
+		});
+
+		this.observer = customIntervalObservable.subscribe(data => {
+			console.log(data);
+		});
+	}
