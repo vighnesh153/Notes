@@ -34,6 +34,7 @@ Example:
 			this.observer = interval(1000).subscribe(count => {
 				console.log(count);
 			});
+			// 'interval' observable emits a number every '1000' ms. Staring with 0 and increment = 1
 		}
 
 		ngOnDestroy() {
