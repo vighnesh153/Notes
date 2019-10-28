@@ -1,0 +1,42 @@
+Observable is a stream of data that can be observed.
+	eg. Angular's builtin observables: this.route.params, this.route.queryParams, this.route.fragment, etc.
+
+
+Observer: => A piece of code that keeps an eye on this stream of data. We can bind an observer to
+			 an observer using the 'subscribe' method of the observable object. That subscribe method
+			 takes a function as an argument and that function should have one argument, which will
+			 hold the value of the observable, when the observable has changed its value. The 'subscribe'
+			 method also returns a reference to the observer.
+
+			 When the component in which, we have subscribed to an observable, gets destroyed, the
+			 observer keeps observing the observable. Again, if we come back to this component, then
+			 again the observer is created to observe the observable. Now, this recently created
+			 observer is useful for us because it observes the present observable, but the one running
+			 in the background is still observing the old observable. This eats up lot of memory and
+			 is a waste of useful space as well. So, whenever we exit the component, then the observer
+			 should be freed from its duty. Builtin observables' observers are freed automatically by
+			 Angular, but if we have our own observable, then we need to free its observer, manually.
+			 To do that, we make our component implement 'OnDestroy' which would make it implement the
+			 'ngOnDestroy' method, which gets called as soon as the component gets destroyed/exited.
+
+			 In the 'ngOnDestroy' method, we can invoke the 'unsubscribe' method on the observer, returned
+			 by the 'subscribe' method. This way, the observer is freed as soon as the component is
+			 destroyed.
+
+
+Example:
+	import { interval, Subscription } from 'rxjs';
+
+	export class SomeComponent implements OnInit, OnDestroy {
+		observer: Subscription;
+
+		ngOnInit() {
+			this.observer = interval(1000).subscribe(count => {
+				console.log(count);
+			});
+		}
+
+		ngOnDestroy() {
+			this.observer.unsubscribe();
+		}
+	}
