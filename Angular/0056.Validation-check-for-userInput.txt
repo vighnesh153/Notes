@@ -1,0 +1,35 @@
+There are many form validators. One of them is 'required'. It is an angular directive. If used on
+an HTML element, then that element has to be required.
+NOTE: This 'required' directive is different than the HTML's 'required' attribute.
+
+NOTE: The local reference to the form, of type NgForm, is updated as soon as the form is updated. It
+	  doesn't wait for the 'submit' event.
+
+
+If the 'required' directive is used on an HTML element, and if the 'submit' button is clicked, the
+'onSubmit' method will be called.
+Also, the property holding the reference to the form, with type as 'NgForm', will e updated. That
+reference property of the class has a property 'valid'. It will be set to false due to the 'required'
+directive and we failed to input to that element. But this will be false even if only one element's
+validation failed. To know exactly which element's validation failed, the reference property also
+has a property, called 'controls'. This will point to an object with properties names as the element's
+names we used for our elements. (console.log(referenceProperty)) for better understanding this).
+Those keys will be of type 'FormControl' and they will hold a ton of properties, one of which will be
+'valid'. Using this property, we can get to know, exactly which element's validation failed.
+
+
+There is also another property, named 'touched'. This will hold a boolean. If that element was touched,
+or went in focus at some point of time, then it will be true. Else false.
+
+NOTE: The reference property is also sort of a FormControl. It has similar properties to the elements
+	  in the 'controls' property. The difference is that when we access a property, directly from the
+	  reference, then it considers all the selected elements (using 'NgModel'). So, in this case, if
+	  'valid' property is true, then all the elements of the form are valid. Else, at least one of
+	  them is invalid. To exactly know which one, use the controls property and iterate over all the
+	  elements and check which one was invalid.
+
+
+We also have another directive, named 'email'. If we are using 'NgSubmit', then element's validation
+won't work because that only works when the form is submitted in an HTML way. But the form's
+'preventDefault' is called. So, the input elements, with type='email' won't work. So, we also need to
+add 'email' directive to that element. This way, 'NgForm' will know if that element is valid or not.
