@@ -1,0 +1,47 @@
+In HTML code:
+	<form [formGroup]="someForm" (ngSubmit)="onSubmit()">
+		<input type="text" name="username" formControlName="myUsername" />
+
+		<input type="email" name="email" formControlName="myEmail" />
+		<select name="gender" formControlName="myGender">
+			<option
+				*ngFor="let gender of genders"
+				value="gender"
+				formControlName="myGender"
+			>{{ gender }}</option>
+		</select>
+
+		<div formArrayName="hobbies">
+			<div *ngFor="let hobbyControl of getHobbyControls(); let i = index">
+				<input type="text" [formControlName]="i">
+				// In an FormArray, the index is the formControlName of each element
+			</div>
+		</div>
+
+		<button type="button" (click)="onAddHobby()">Add hobby</button>
+		// Type need to be button else, it will trigger the 'ngSubmit'
+
+		<button type="submit">Submit</button>
+	</form>
+
+In TS code:
+	import { FormArray, FormGroup, FormControl, Validators } from '@angular/core';
+
+	ngOnInit() {
+		this.someForm = new FormGroup({
+			'userData': new FormGroup({
+				'myUsername': new FormControl(null, Validators.required),
+				'myEmail': new FormControl(null, [Validators.required, Validators.email]),
+			}),
+			'myGender': new FormControl('male'),
+			'hobbies': new FormArray([])
+		});
+	}
+	onAddHobby() {
+		const control = new FormControl(null, Validators.required);
+		(this.someForm.get('hobbies') as FormArray).push(control);
+	}
+
+	getHobbyControls() {
+		return (this.someForm.get('hobbies') as FormArray).controls;
+	}
