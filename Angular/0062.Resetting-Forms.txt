@@ -1,0 +1,20 @@
+To reset a form, we do the following:
+	export class SomeComponent {
+		@ViewChild('myForm', { static: false }) submitForm: NgForm;
+
+		onSubmit() {
+			// Do something with the form data
+
+			this.submitForm.reset();
+			// This will not only just empty all the fields, but all the validations will also be
+			// reset, like: ng-touched will be false and all. It is sort of like reloading the
+			// form component.
+
+			this.submitForm.setValue({
+				...
+			});
+			// This way, we can reset to some specific values
+			NOTE: 'setValue' doesn't reset all other properties of the form. So, reset the form entirely,
+				  first invoke 'reset' and then invoke 'setValue'.
+		}
+	}
