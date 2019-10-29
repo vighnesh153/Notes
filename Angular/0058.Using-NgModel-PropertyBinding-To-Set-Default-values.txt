@@ -1,0 +1,21 @@
+In HTML file:
+	<select
+		name="secret"
+		[ngModel]="'value2'"		// This way, we can set the default selected option
+		[ngModel]="defaultValue"		// This way, we can property binding to set default value
+	>
+		<option value="value1">Some Text 1</option>
+		<option value="value2">Some Text 2</option>
+		<option value="value3">Some Text 3</option>
+	</select>
+
+In TS file:
+	defaultValue = 'value2';
+
+It can be used with the 'input' elements as well.
+
+NOTE: We can also do two-way data binding.
+		eg.
+			[(ngModel)]="defaultValue"
+	  This way, we also get access to the element's value using the 'defaultValue' component property
+	  Also, this field will be a part of the form reference of type 'ngForm'.
