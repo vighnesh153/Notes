@@ -1,0 +1,10 @@
+this.someForm.valueChanges.subscribe(value => {
+	console.log(value);
+});
+// function is run every time the value changes
+
+
+this.someForm.statusChanges.subscribe(status => {
+	console.log(status);
+});
+// function is run every time the status changes
