@@ -1,0 +1,49 @@
+In reactive approach, we don't configure the form in the HTML. We do everything of that sort in the
+TS file.  We just sync it up with the HTML code. This approach, however is little tedious than the
+template-driven approach, but it gives us more control over the form.
+
+Example Setup:
+
+TS code:
+
+	import { Component, OnInit } from '@angular/core';
+	import { FormGroup, FormControl } from '@angular/forms';
+
+	NOTE: In the parent module, instead of importing 'FormsModule', import 'ReactiveFormsModule' from
+		  '@angular/forms' and add it to the imports.
+
+	@Component({
+		...
+	})
+	export class SomeComponent implements OnInit {
+		genders = ['male', 'female'];
+		someForm: FormGroup;
+
+		ngOnInit() {
+			this.someForm = new FormGroup({
+				'myUsername': new FormControl(null),			// Default value is null
+				'myEmail': new FormControl(null),				// Default value is null
+				'myGender': new FormControl('male') 			// Default value is 'male'
+			});
+		}
+
+		onSubmit() {
+			console.log(this.someForm);
+			// This object is exactly similar to the object of ngForm from Template-driven approach
+		}
+	}
+
+
+In HTML:
+	<form [formGroup]="someForm" (ngSubmit)="onSubmit()">
+		<input type="text" name="username" formControlName="myUsername" />
+		<input type="email" name="email" formControlName="myEmail" />
+		<select name="gender" formControlName="myGender">
+			<option
+				*ngFor="let gender of genders"
+				value="gender"
+				formControlName="myGender"
+			>{{ gender }}</option>
+		</select>
+		<button type="submit">Submit</button>
+	</form>
