@@ -1,0 +1,44 @@
+Lets say we have a form like below:
+
+	<form [ngSubmit]="onSubmit()" #myForm="ngForm">
+		<input
+			type="text"
+			ngModel
+			name="username"
+		/>
+
+		<input
+			type="email"
+			ngModel
+			name="email"
+		/>
+
+		<button type="Submit">Submit</button>
+	</form>
+
+
+And in the TS file:
+	export class SomeComponent {
+		@ViewChild('myForm') submitForm: NgForm;
+
+		onShowSuggestionsButtonClick() {
+			this.submitForm.setValue({
+				username: 'Vighnesh',
+				email: 'vighnesh.raut13@gmail.com'
+			});
+		}
+		// This will set the value of the form to be as above. The drawback of 'setValue' is that,
+		// we have to set all the values of the elements in the form.
+	}
+
+	export class SomeComponent {
+		@ViewChild('myForm') submitForm: NgForm;
+
+		onShowSuggestionsButtonClick() {
+			this.submitForm.form.patchValue({
+				username: 'Vighnesh'
+			});
+		}
+		// To resolve the drawback of 'setValue', we use 'form.patchValue'. It allows us to set only
+		// the values for elements that we want to.
+	}
