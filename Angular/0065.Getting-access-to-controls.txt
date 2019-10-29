@@ -2,7 +2,7 @@ Example 1:
 	<form [formGroup]="someForm" (ngSubmit)="onSubmit()">
 		<input type="text" name="username" formControlName="myUsername" />
 		<p
-			*nfIf="!someForm.get('username').valid && someForm.get('username').touched"
+			*ngIf="!someForm.get('username').valid && someForm.get('username').touched"
 		>
 			Please enter an valid username!
 		</p>
