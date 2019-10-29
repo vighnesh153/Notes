@@ -67,7 +67,7 @@ pass the form's reference to 'onSubmit' method.
 			...
 		})
 		export class SomeComponent {
-			@ViewChild('myForm') someForm: ngForm;
+			@ViewChild('myForm', { static: false }) someForm: ngForm;
 			// Note, we don't specify 'ElementRef' as type for the 'someForm' property. Instead, we
 			// set its type to 'ngForm'. This is because we casted it to 'ngForm' in the HTML.
 			// If we don't cast it, then it will just give a form's reference. It will not form a

@@ -28,7 +28,7 @@ To access the form data:
 	</form>
 
 	export class SomeComponent {
-		@ViewChild('myForm') submitForm: NgForm;
+		@ViewChild('myForm', { static: false }) submitForm: NgForm;
 		user = {
 			name: '',
 			email: '',

@@ -19,7 +19,7 @@ Lets say we have a form like below:
 
 And in the TS file:
 	export class SomeComponent {
-		@ViewChild('myForm') submitForm: NgForm;
+		@ViewChild('myForm', { static: false }) submitForm: NgForm;
 
 		onShowSuggestionsButtonClick() {
 			this.submitForm.setValue({
