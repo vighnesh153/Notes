@@ -1,0 +1,30 @@
+TS code:
+	this.someForm = new FormGroup({
+		'userData': new FormGroup({
+			'myUsername': new FormControl(null, Validators.required),
+			'myEmail': new FormControl(null, [Validators.required, Validators.email]),
+		}),
+		'myGender': new FormControl('male')
+	});
+
+
+HTML code:
+	<form [formGroup]="someForm" (ngSubmit)="onSubmit()">
+		<div formGroupName="userData">
+			<input type="text" name="username" formControlName="myUsername" />
+			<p *ngIf="!someForm.get('userData.username').valid && someForm.get('userData.username').touched">
+				Please enter an valid username!
+			</p>
+			<input type="email" name="email" formControlName="userData.myEmail" />
+		</div>
+
+		<select name="gender" formControlName="myGender">
+			<option
+				*ngFor="let gender of genders"
+				value="gender"
+				formControlName="myGender"
+			>{{ gender }}</option>
+		</select>
+
+		<button type="submit">Submit</button>
+	</form>
