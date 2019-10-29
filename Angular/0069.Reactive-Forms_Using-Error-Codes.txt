@@ -1,0 +1,23 @@
+Consider the following validator:
+	someValues = ['Hello', 'Hola'];
+
+	forbiddenValues(control: FormControl): {[someKey: string]: boolean} {
+		if (this.someValues.indexOf(control.value) !== -1) {
+			return { 'valueIsForbidden': true };
+		}
+		return null;
+	}
+
+	this.someForm = new FormGroup({
+		'myName': new FormControl(null, [Validator.required, this.forbiddenValues.bind(this)])
+	});
+
+
+To access the validation:
+	this.someForm.get('myName').errors['valueIsForbidden']
+	// returns true if validation failed
+	// return null if validation succeeded.
+
+	this.someForm.get('myName').errors['required']
+	// returns true if validation failed
+	// return null if validation succeeded.
