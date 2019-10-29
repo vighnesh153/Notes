@@ -1,0 +1,34 @@
+Grouping form data can be useful to accessing forms in a better way. Related data will be together.
+And not all the selected elements will be populated direectly in the ngForm's 'value' property.
+Also, in the 'control' property of 'ngForm', instead of individual FormControl elements for username
+and email, refer the following example, they will be under 'userData' FormControl.
+
+Examples of grouping:
+	secret question and answer 1,
+	secret question and answer 2,
+	username and password,
+	etc.
+
+Example:
+	<div
+		ngModelGroup="userData"
+		#userData="ngModelGroup"
+	>
+		<input
+			type="text"
+			name="username"
+			ngModel
+			required
+		>
+		<input
+			type="email"
+			name="email"
+			ngModel
+			required
+		>
+	</div>
+	<p
+		*ngIf="!userData.valid && userData.touched"
+	>
+		User Data is not vaild!
+	</p>
