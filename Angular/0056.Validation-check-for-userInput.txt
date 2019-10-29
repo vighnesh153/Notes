@@ -33,3 +33,6 @@ We also have another directive, named 'email'. If we are using 'NgSubmit', then 
 won't work because that only works when the form is submitted in an HTML way. But the form's
 'preventDefault' is called. So, the input elements, with type='email' won't work. So, we also need to
 add 'email' directive to that element. This way, 'NgForm' will know if that element is valid or not.
+
+
+TO ENABLE HTML5 VALIDATION, WE CAN ADD THE 'ngNativeValidate' directive in the 'form' element.
