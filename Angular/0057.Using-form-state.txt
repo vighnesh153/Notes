@@ -1,0 +1,40 @@
+Suppose, we have the following form:
+	<form [ngSubmit]="onSubmit(#myForm)" #myForm="ngForm">
+		<input
+			type="text"
+			ngModel
+			name="username"
+		/>
+
+		<input
+			type="email"
+			ngModel
+			name="email"
+		/>
+
+		<button type="Submit">Submit</button>
+	</form>
+
+Now, angular adds some classes to elements based on the 'myForm' value.
+If one input has 'valid' = false, then the 'form' element and that input element will get a class
+value of 'ng-invalid'.
+
+Similarly, other classes are 'ng-touched', etc.
+
+So, to display a warning below a input that was touched but no valid input was provided:
+In CSS file:
+	input.ng-invalid.ng-touched {
+		border: 1px solid red;
+	}
+
+
+To display a warning message below that 'input' element, then we do the following:
+	<input
+		type="email"
+		ngModel
+		name="email"
+		#email="ngModel"		// Note, we use 'ngModel' type to cast the input to.
+	/>
+	<p
+		*ngIf="!email.valid && email.touched"
+	>Please enter a valid email!</p>
