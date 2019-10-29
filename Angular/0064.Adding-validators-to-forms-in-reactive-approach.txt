@@ -1,0 +1,22 @@
+To add validators to fields, we add it as arguments to the 'FormControl' constructor of the fields in
+the 'FormGroup'.
+
+import { Component, OnInit } from '@angular/core';
+import { FormGroup, FormControl, Validators } from '@angular/forms';
+
+@Component({
+	...
+})
+export class SomeComponent implements OnInit {
+	genders = ['male', 'female'];
+	someForm: FormGroup;
+
+	ngOnInit() {
+		this.someForm = new FormGroup({
+			// the second argument to the FormControl cn either be a Validator or an array of Validators
+			'myUsername': new FormControl(null, Validators.required),
+			'myEmail': new FormControl(null, [Validators.required, Validators.email]),
+			'myGender': new FormControl('male')
+		});
+	}
+}
