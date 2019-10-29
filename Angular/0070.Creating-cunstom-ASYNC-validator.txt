@@ -1,0 +1,27 @@
+TS code for a Async Validator:
+	forbiddenValues(control: FormControl): Promise<{[ s: string]: boolean }> | Observable<{ [s: string]: boolean }> {
+		return new Promise((resolve, reject) => {
+			const forbiddenValuesArray = ['val1', 'val2'];
+			setTimeout(() => {
+				if (forbiddenValuesArray.indexOf(control.value) !== -1) {
+					resolve({ 'valueIsForbidden': true });
+				} else {
+					resolve(null);
+				}
+			}, 2000);
+		});
+	}
+
+
+Using the Async Validator:
+	this.someForm = new FormGroup({
+		'myName': new FormControl(null, Validator.required, this.forbiddenValues);
+	});
+
+	// The third argument to FormControl is either a Async Validator or an array of Async Validator.
+
+
+NOTE: Whenever we are using FormControl on a form element like input, select, etc., then for every
+	  change of the element, all the Validators are run against those new values. And until all the
+	  Validators are done validating, 'ng-pending' class is added to the classList of the element
+	  and removed after the validation is complete.
