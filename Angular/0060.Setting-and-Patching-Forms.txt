@@ -29,6 +29,8 @@ And in the TS file:
 		}
 		// This will set the value of the form to be as above. The drawback of 'setValue' is that,
 		// we have to set all the values of the elements in the form.
+
+		// This also works with Reactive Forms
 	}
 
 	export class SomeComponent {
@@ -41,4 +43,7 @@ And in the TS file:
 		}
 		// To resolve the drawback of 'setValue', we use 'form.patchValue'. It allows us to set only
 		// the values for elements that we want to.
+
+		// This also works with Reactive Forms, however, we don't need to use 'this.submitForm.form.patchValue'.
+		// Instead, we can just use 'this.submitForm.patchValue'
 	}

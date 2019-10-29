@@ -10,6 +10,8 @@ To reset a form, we do the following:
 			// reset, like: ng-touched will be false and all. It is sort of like reloading the
 			// form component.
 
+			// This also works with Reactive Forms
+
 			this.submitForm.setValue({
 				...
 			});
