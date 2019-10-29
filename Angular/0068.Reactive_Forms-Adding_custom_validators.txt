@@ -2,6 +2,7 @@ A validator is just a function that takes in a FormControl and returns 'null', i
 value passes, else returns an object with a single key(string) and its value. The key can be a
 message stating what failed and its value be true.
 
+NOTE: Validator should return null or nothing if the control.value passes the validation.
 
 TS code:
 
