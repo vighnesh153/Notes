@@ -1,0 +1,26 @@
+Example 1:
+	<form [formGroup]="someForm" (ngSubmit)="onSubmit()">
+		<input type="text" name="username" formControlName="myUsername" />
+		<p
+			*nfIf="!someForm.get('username').valid && someForm.get('username').touched"
+		>
+			Please enter an valid username!
+		</p>
+
+		<input type="email" name="email" formControlName="myEmail" />
+		<select name="gender" formControlName="myGender">
+			<option
+				*ngFor="let gender of genders"
+				value="gender"
+				formControlName="myGender"
+			>{{ gender }}</option>
+		</select>
+		<button type="submit">Submit</button>
+	</form>
+	<p
+		*nfIf="!someForm.valid && someForm.touched"
+	>
+		Form is invalid!
+	</p>
+NOTE: Even here, if the form or form control field is invalid, then 'ng-invalid', 'ng-touched', etc.
+	  are added to the classes. We can style them as we did before.
