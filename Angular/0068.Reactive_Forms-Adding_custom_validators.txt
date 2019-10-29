@@ -1,0 +1,26 @@
+A validator is just a function that takes in a FormControl and returns 'null', if the control's
+value passes, else returns an object with a single key(string) and its value. The key can be a
+message stating what failed and its value be true.
+
+
+TS code:
+
+	someValues = ['Hello', 'Hola'];
+
+	// Syntax for an type of an object with single key as string and its value as boolean:
+	// { [someKey: string]: boolean }
+	forbiddenValues(control: FormControl): {[someKey: string]: boolean} {
+		if (this.someValues.indexOf(control.value) !== -1) {
+			return { 'valueIsForbidden': true };
+		}
+		return null;
+		// Or just omit this statement.
+	}
+
+
+// Now in the Form Control, we can just add a reference to this function.
+	this.someForm = new FormGroup({
+		'myName': new FormControl(null, [Validator.required, this.forbiddenValues.bind(this)])
+		// We bind the 'forbiddenValues' with 'this' because that function is using 'this' and that
+		// points to the component object. So, we bind 'this' with it.
+	});
