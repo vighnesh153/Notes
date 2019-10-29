@@ -1,0 +1,46 @@
+To access the form data:
+
+	<form [ngSubmit]="onSubmit()" #myForm="ngForm">
+		<div
+			ngModelGroup="userCredentials"
+			#userCredentials="ngForm"
+		>
+			<input
+				type="text"
+				ngModel
+				name="username"
+			/>
+
+			<input
+				type="email"
+				ngModel
+				name="email"
+			/>
+		</div>
+
+		<input
+			type="number"
+			ngModel
+			name="age"
+		/>
+
+		<button type="Submit">Submit</button>
+	</form>
+
+	export class SomeComponent {
+		@ViewChild('myForm') submitForm: NgForm;
+		user = {
+			name: '',
+			email: '',
+			age: 0
+		}
+
+		onSubmit() {
+			this.user.name = this.submitForm.value.userCredentials.username;
+			this.user.email = this.submitForm.value.userCredentials.email;
+			// To get data from a Model group, we use the 'value.groupName' property inside which,
+			// our data lies.
+
+			this.user.age = +this.submitForm.value.age;
+		}
+	}
