@@ -46,3 +46,10 @@ NOTE: When calling a function in TS, the number of arguments and their types (if
 	Declare a variable that can have multiple types.
 		let a: number|string|boolean;
 	Use pipe operator to add more types
+
+
+14. Object with one key value pair. Key is someType, and value is someOtherType:
+	let a: { [key: someType]: someOtherType }
+		eg.
+			{ [key: string]: boolean }
+			// key of type string and value of type boolean.
