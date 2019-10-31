@@ -1,0 +1,79 @@
+ Pipes are used to transform the data on the TEMPLATE HTML.
+
+<p>{{ 'Hello' | uppercase }}</p>
+// HELLO
+
+// An example of parameterised pipe. There are some pipes that allow us to pass many parameters using
+// ':' seperated values to the pipe.
+<p>{{ someDateProperty | date:'fullDate' }}</p>
+// Wednesday, May 13, 1998
+
+NOTE: To learn more about builtin pipes => angular.io/api?query=pipe
+
+Chaining pipes:
+
+<p>{{ someDateProperty | date:'fullDate' | 'uppercase' }}</p>
+// WEDNESDAY, MAY 13, 1998
+NOTE: While chaining pipes, the order is important. First, the 'date' PIPE will be applied on the
+	  'someDateProperty' and then 'uppercase' will be applied. If we first apply 'uppercase', then
+	  an error will be thrown because 'uppercase' doesn't work on Date object. However, 'date' PIPE
+	  transforms the Date object into a string with date in the required format. So, 'uppercase' PIPE
+	  can be applied on it.
+
+
+CREATING CUSTOM PIPES:
+	In file shorten.pipe.ts (The file should be added to some module file's declarations array and
+	also in the exports array so that anyone importing that module can also use the pipe):
+		import { Pipe, PipeTransform } from '@angular/core';
+
+		@Pipe({
+			name: 'shorten'       // Name that will be used to choose this pipe.
+		})
+		export class ShortenPipe implements PipeTransform {
+			transform(value: any) {
+				return value.substr(0, 4);
+			}
+		}
+
+	In the TEMPLATE HTML:
+		<p>{{ 'Vighnesh' | shorten }}</p>
+		// Vigh
+
+
+
+CLI way to create a new PIPE:
+	ng generate pipe name
+		OR
+	ng g p name
+
+
+
+CUSTOM PARAMETERISED PIPE:
+	In the TS file:
+		import { Pipe, PipeTransform } from '@angular/core';
+
+		@Pipe({
+			name: 'shorten'
+		})
+		export class ShortenPipe implements PipeTransform {
+			// We can use however many arguments to the pipe's transform method. (Then, in the
+			// Template HTML, we will have to pass their values as colon seperated values to the Pipe)
+			transform(value: any, limit: number) {
+				return value.substr(0, limit);
+			}
+		}
+
+	In the TEMPLATE HTML:
+		<p>{{ 'Vighnesh' | shorten:5 }}</p>
+		// Vighn
+
+
+We can even use pipes in the *ngFor to filter out elements of the iterator using our custom pipes.
+
+
+NOTE: The pipe operator is not re-applied if the someDataProperty/data on which it is applied ,
+	  changes. However, if we are using parameterised pipes and are passing Component's class' properties
+	  as parameters, then, if the property's value changes, the pipe is re-run.
+
+To re-run the pipe whenever the data changes, we use the 'pure: false' property in the Pipe's decorator.
+By default, 'pure: true'.
