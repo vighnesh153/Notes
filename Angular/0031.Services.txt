@@ -14,3 +14,9 @@ Basic service:
 	}
 
 	The name of the service should follow the convention: 'ServiceName.service.ts'
+
+
+Service can also be generated using the following command:
+    ng generate service name
+        OR
+    ng g s name
