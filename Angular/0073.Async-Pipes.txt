@@ -1,0 +1,19 @@
+Suppose we have a property in the TS file which is a Promise:
+	someProp = new Promise((resolve, reject) => {
+		setTimeout(() => {
+			resolve('someValue');
+		}, 3000);
+	})
+	// someProp is a promise. But after 3 seconds, it will become a string.
+
+But, if in TEMPLATE HTML, if we use 'someProp', it will not display the change after 3 seconds.
+
+	<p>{{ someProp }}</p>
+	// Displays: [Object] [object]
+
+It is because angular, by default, only watches for synchronous change in 'someProp'. It doesn't
+observe the asynchronous value or type changes. So, we use the 'async' pipe to make angular watch
+for async changes, as well, of that property.
+
+	<p>{{ someProp | async }}</p>
+	// So, at first, the value displayed will be empty string and after 3 seconds, it will be someValue.
