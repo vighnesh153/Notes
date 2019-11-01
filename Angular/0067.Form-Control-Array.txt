@@ -40,6 +40,12 @@ In TS code:
 	onAddHobby() {
 		const control = new FormControl(null, Validators.required);
 		(this.someForm.get('hobbies') as FormArray).push(control);
+
+		// To remove some element at some index from Form Array:
+		// (this.someForm.get('hobbies') as FormArray).removeAt(index);
+
+		// To remove all the elements from the Form Array:
+		// (this.someForm.get('hobbies') as FormArray).clear();
 	}
 
 	getHobbyControls() {
