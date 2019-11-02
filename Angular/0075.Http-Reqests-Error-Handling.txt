@@ -1,0 +1,34 @@
+Pass a second callback as an argument to the subscribe method, which will be called whenever an error
+occurs.
+
+	Example:
+		this.http
+			.some-api-method(...)
+			.subscribe(
+				data => {
+					// Do something with data
+				},
+				error => {
+					console.log(error);
+					// Check the error object in the console for what all error data it has
+				}
+			);
+
+
+
+Another way of handling errors:
+	import { map, catchError } from 'rxjs/operators';
+	import { throwError } from 'rxjs';
+
+	this.http
+		.some-api-method(...)
+		.pipe(
+			map(data => { ... }),
+			catchError(err => {
+				// Send to analytics server or save it with the help of loggers
+
+				// throw the error again to continue propagation if required
+				return throwError(err);
+			})
+		)
+		.subscribe(...);
