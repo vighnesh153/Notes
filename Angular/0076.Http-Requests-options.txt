@@ -1,0 +1,80 @@
+SETTING HEADERS:
+	import { HttpHeaders } from '@angular/common/http';
+
+	// In some method:
+		const options = {
+			headers: new HttpHeaders({
+				'Some Header name': 'Value'
+			})
+		};
+
+		// In get method, it is the 2nd argument
+		this.http.get('SOME_URL', options)
+
+		// In post method, it is the 3rd argument
+		this.http.post('SOME_URL', data, options)
+
+
+
+SETTING QUERY PARAMETERS
+	import { HttpParams } from '@angular/common/http';
+
+	// In some method:
+		const queryParameters = new HttpParams();
+		queryParameters = queryParameters.append('a', 123);
+		queryParameters = queryParameters.append('b', 123);
+		queryParameters = queryParameters.append('c', 123);
+
+		const options = {
+			headers: ...,
+			params: queryParameters
+		};
+
+	NOTE: This is only for convenience. We can directly add the query parameters to the end of URL
+		  but it will be a tedious task.
+
+
+
+OBSERVING DIFFERENT TYPE OF RESPONSE
+	// By default, we get the body of the response converted to JS object and passed to callback in
+	// subscription. But, we can have different type of response passed to our subscription.
+
+	const options = {
+		headers: ...,
+		params: ...,
+		observe: 'response'	  // default is 'body'
+	};
+	// Now, our callback in the subscription, will get the entire response, parsed as JS object, as
+	// the argument. To get the body, we can simply do, response.body.
+
+
+	observe: 'events'
+		Events in Http are the events like, request sent, response arrived, download progress, etc.
+		// Every time some Http Event occurs, callback from the subscribe will be invoked.
+
+		import { HttpEventType } from '@angular/common/http';
+
+		SUBSCRIBE CALLBACK:
+			event => {
+				if (event.type === HttpEventType.Sent) {
+					// Do something when request was sent.
+				}
+				if (event.type === HttpEventType.Response) {
+					// Do something when response is arrived.
+				}
+			}
+
+		DIFFERENT Events:
+			HttpEventType.Sent
+			HttpEventType.Response
+			HttpEventType.DownloadProgress
+			HttpEventType.UploadProgress
+			// There are few others as well. Check the docs for more.
+
+
+
+RESPONSE TYPE:
+	const options = {
+		headers: ...,
+		responseType: 'json' 	// 'text', 'blob', etc.
+	};
