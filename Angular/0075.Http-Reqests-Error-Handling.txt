@@ -19,12 +19,13 @@ occurs.
 Another way of handling errors:
 	import { map, catchError } from 'rxjs/operators';
 	import { throwError } from 'rxjs';
+	import { HttpErrorResponse } from '@angular/common/http';
 
 	this.http
 		.some-api-method(...)
 		.pipe(
 			map(data => { ... }),
-			catchError(err => {
+			catchError((err: HttpErrorResponse) => {
 				// Send to analytics server or save it with the help of loggers
 
 				// throw the error again to continue propagation if required
