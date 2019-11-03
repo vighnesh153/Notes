@@ -27,3 +27,18 @@ tap => This function is a rxjs operator. It takes a call back that does nothing 
 take => This function is a rxjs operator. It takes a positive integer as an argument, and after
  		the subscriber has taken, that many number of values from the observable, it immediately
 		unsubscribes the subscriber from the subscription.
+
+
+exhaustMap => This function takes in callback. That callback should take the data of the subscription,
+ 			  as parameter and it returns an observable. This observable replaces the original observable.
+
+		Example:
+			this.someObservable
+				.pipe(
+					take(1),						// Operates on 'someObservable'
+					exhaustMap(data => {
+						return this.someOtherObservable;
+					}),
+					map(...),						// Operates on 'someOtherObservable'
+					tap(...)						// Operates on 'someOtherObservable'
+				)
