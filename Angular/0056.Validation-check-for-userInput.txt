@@ -36,3 +36,11 @@ add 'email' directive to that element. This way, 'NgForm' will know if that elem
 
 
 TO ENABLE HTML5 VALIDATION, WE CAN ADD THE 'ngNativeValidate' directive in the 'form' element.
+
+
+
+Common angular validators:
+	required
+	email
+	minlength="6"
+	maxlength="100"
