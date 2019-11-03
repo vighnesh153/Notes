@@ -30,3 +30,18 @@ conventionally).
 
 NOTE: Subject is like a custom observable. So, on component destruction, we need to unsubscribe its
 	  observer or subscription.
+
+
+
+BehaviorSubject:
+	It is also behaves like a Subject, but the difference is that if someone subscribes to it after
+	an event, then it still gets the latest value.
+	If one uses Subject, he will have to wait for the subject to 'next' a value if subscribed in the
+	middle.
+
+	To initialize, we initialize the constructor so that if someone subscribes to this subject,
+	it has a value to start with so that he doesn't have to wait for the subject to 'next' a value.
+
+	import { BehaviorSubject } from 'rxjs';
+	// Example
+	this.dataTransferrer = new BehaviorSubject<boolean>(null);
