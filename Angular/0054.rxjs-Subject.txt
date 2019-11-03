@@ -45,3 +45,6 @@ BehaviorSubject:
 	import { BehaviorSubject } from 'rxjs';
 	// Example
 	this.dataTransferrer = new BehaviorSubject<boolean>(null);
+
+	CAN BE USED FOR USER(IF AUTHENTICATED, THEN 'next' THE USER INFORMATION AND STORE THE LATEST
+	USER's OBJECT SO THAT NEW SUBSCRIBE TO THE USER CAN GET HIS DATA)
