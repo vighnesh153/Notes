@@ -21,4 +21,9 @@ Usage:
 
 tap => This function is a rxjs operator. It takes a call back that does nothing to data but just
 	   uses it to do something with the data. The callback passed to this function, doesn't need to
-	   return anything because it will not be considered anyway. 
+	   return anything because it will not be considered anyway.
+
+
+take => This function is a rxjs operator. It takes a positive integer as an argument, and after
+ 		the subscriber has taken, that many number of values from the observable, it immediately
+		unsubscribes the subscriber from the subscription.
