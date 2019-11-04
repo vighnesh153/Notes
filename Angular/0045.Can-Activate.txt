@@ -27,6 +27,7 @@ import {
 
 import { Observable } from 'rxjs/Observable';
 import { Injectable } from '@angular/core';
+import { UrlTree } from '@angular/router';
 
 @Injectable()
 export class AuthGuard implements CanActivate {
@@ -38,7 +39,8 @@ export class AuthGuard implements CanActivate {
 				private router: Router) {}
 
 	canActivate(route: ActivatedRouteSnapshot, state: RouterStateSnapshot) :
-									Observable<boolean> | Promise<boolean> | boolean {
+									Observable<boolean | UrlTree> |
+									Promise<boolean | UrlTree> | boolean | UrlTree {
 		return this.authService.isAuthenticated()
 				   .then(
 				   		(isAuthenticated: boolean) => {
@@ -50,3 +52,9 @@ export class AuthGuard implements CanActivate {
 				   )
 	}
 }
+
+NOTE: We can ever return a URL tree so that it is redirected to some other URL if some condition is
+	  not met.
+
+	  // Example
+	  	return this.router.createUrlTree(['/users', 'login']);
