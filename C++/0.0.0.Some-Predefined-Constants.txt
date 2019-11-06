@@ -1,2 +1,5 @@
 INT_MAX 					2147483647
 INT_MIN 					-2147483648
+__LINE__					Line number of the line at which, this constant is used
+__FILE__					Presumed name of the current source file, with full path
+__TIME__					Time at which the source file is compiled
