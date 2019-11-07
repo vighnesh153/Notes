@@ -1,0 +1,15 @@
+How does load balancer check whether a server is alive or not busy ?
+
+It uses heartbeat.
+
+Heartbeat: The load balancer has an array of server IPs of the servers which are booked for serving
+		   for a system. At regular intervals (eg. 5ms), the load balancer sends a tiny request
+		   package to all the servers whose IP is stored in the array. If the server responds with
+		   the expected response, then all good. But if the server fails to responds for 3-5 times,
+		   then the server is not expected to respond to any client request and hence, is pronounced
+		   dead. Its IP is removed from the active servers IP. After this, the server that was
+		   pronounced dead, is restarted and then the server sends a request to the load balancer
+		   saying that it is alive and ready to accept client requests. Then, the load balancer adds
+		   the IP of the server to the standby array. Again a tiny request is sent to all servers
+		   of the standby array and if for 3-5 times, they respond as expected, then their IPs are
+		   added to the active servers array and then this process repeats.
