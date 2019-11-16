@@ -1,0 +1,45 @@
+Dict comprehensions have been synced-up with dict literals so that the key is computed first and
+the value second:
+	a = { input(): input() for _ in range(12) }
+
+
+
+
+
+Dicts have guaranteed ordering since Python 3.7+
+
+
+
+
+
+Calculate Euclidean distance:
+	X = (1, 2, 3) # In 3 D
+	Y = (4, 5, 6) # In 3 D
+	D = math.dist(X, Y)
+
+	# Both X and Y should have same dimensions.
+	# There is no dimension limit
+
+
+
+
+
+Product of all values:
+	a = [3, 2, 5]
+	math.prod(a)
+	# 30
+
+	math.prod(a, start=5)
+	# 120
+	# Default start is 1.
+
+
+
+
+
+Added two new combinatoric functions math.perm() and math.comb():
+	math.perm(10, 3)	# Permutations of 10 things taken 3 at a time
+	# 720
+
+	math.comb(10, 3)    # Combinations of 10 things taken 3 at a time
+	# 120

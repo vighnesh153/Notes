@@ -1,0 +1,88 @@
+Add the 'HttpClientModule' to the imports array of the module in which we plan to use Http Requests.
+
+	import { HttpClientModule } from '@angular/common/http';
+
+
+
+Also add instance of 'HttpClient' in the constructor of the component's class for Dependency injection.
+
+	import { HttpClient } from '@angular/common/http';
+
+	export class SomeComponent {
+		constructor(private http: HttpClient) {}
+	}
+
+
+AN EXAMPLE:
+
+HTML file:
+	<button type="button" (click)="onButtonClick()">Add my name</button>
+	<hr>
+	<button type="button" (click)="fetchData()">Fetch all data</button>
+	<hr>
+	<button type="button" (click)="deleteData()">Delete all data</button>
+	<hr>
+	<p *ngIf="data.length === 0">No data available...</p>
+	<p *ngFor="let d of data">
+		id: {{ d.id }}, current:: {{ d.current }}
+	</p>
+
+
+TS file:
+	import { Component } from '@angular/core';
+	import {HttpClient} from '@angular/common/http';
+	import { map } from 'rxjs/operators';
+
+	@Component({
+		selector: 'app-root',
+		templateUrl: './app.component.html',
+		styleUrls: ['./app.component.css']
+	})
+	export class AppComponent {
+	title = 'Vighnesh';
+	count = 0;
+	data = [];
+	// The API URL. For Testing purposes, generate the test DB URL on firebaseio. Example is below:
+	private API_URL = 'https://some-project-1321sad1.firebaseio.com/data.json';
+
+	constructor(private http: HttpClient) { }
+
+	onButtonClick() {
+		this.count = Math.random();
+		const data = {
+		  current: this.title + ' ' + (this.count)
+		};
+
+	this.http
+	  .post(this.API_URL, data)
+	  .subscribe(response => {
+		console.log(response);
+	  });
+	}
+
+	fetchData() {
+		this.http
+		  .get(this.API_URL)
+		  .pipe(map(data => {
+			const arr = [];
+			for (const key in data) {
+			  if (data.hasOwnProperty(key)) {
+				arr.push({ ...data[key], id: key });
+			  }
+			}
+			return arr;
+		  }))
+		  .subscribe(response => {
+			console.log(response);
+			this.data = response;
+		  });
+	}
+
+	deleteData() {
+		this.http
+		  .delete(this.API_URL)
+		  .subscribe(() => {
+			this.fetchData();
+		  });
+		}
+	}

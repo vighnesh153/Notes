@@ -17,3 +17,28 @@ Usage:
 	NOTE: 'pipe' method can take any number of operators. Those operators are applied linearly. What
 		  I mean by that is first, the map is applied, and then filter is applied. Then, that transformed
 		  data is passed as an argument to the function, passed as an argument to 'subscribe' method.
+
+
+tap => This function is a rxjs operator. It takes a call back that does nothing to data but just
+	   uses it to do something with the data. The callback passed to this function, doesn't need to
+	   return anything because it will not be considered anyway.
+
+
+take => This function is a rxjs operator. It takes a positive integer as an argument, and after
+ 		the subscriber has taken, that many number of values from the observable, it immediately
+		unsubscribes the subscriber from the subscription.
+
+
+exhaustMap => This function takes in callback. That callback should take the data of the subscription,
+ 			  as parameter and it returns an observable. This observable replaces the original observable.
+
+		Example:
+			this.someObservable
+				.pipe(
+					take(1),						// Operates on 'someObservable'
+					exhaustMap(data => {
+						return this.someOtherObservable;
+					}),
+					map(...),						// Operates on 'someOtherObservable'
+					tap(...)						// Operates on 'someOtherObservable'
+				)

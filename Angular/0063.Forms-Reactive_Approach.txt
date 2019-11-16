@@ -38,12 +38,13 @@ In HTML:
 	<form [formGroup]="someForm" (ngSubmit)="onSubmit()">
 		<input type="text" name="username" formControlName="myUsername" />
 		<input type="email" name="email" formControlName="myEmail" />
-		<select name="gender" formControlName="myGender">
-			<option
-				*ngFor="let gender of genders"
-				value="gender"
-				formControlName="myGender"
-			>{{ gender }}</option>
-		</select>
+		<select id="gender" formControlName="myGender">
+        <option
+          *ngFor="let gender of genders"
+					[ngValue]="gender"
+        >
+          {{ gender }}
+        </option>
+      </select>
 		<button type="submit">Submit</button>
 	</form>

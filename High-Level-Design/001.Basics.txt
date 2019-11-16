@@ -1,0 +1,16 @@
+High level design of a system focusses on the cloud and devops things.
+
+Things like:
+	1. Scalability (Comes in vertical and horizontal scaling)
+	2. High response time
+	3. Consistency (Data from each DB of all the different servers are in sync. For example, if
+					server 1 served an user on day 1 and on day 2, server 2 serves him, then
+					the data that he updated on the server 1 should be retrievable from server 2 as
+					well.)
+	4. Replication (Data should be replicated so as to account for fault tolerance)
+	5. Vertical scaling (Increasing the specs of a single machine)
+	6. Horizontal scaling (Increasing the number of machines with not so high specs but together
+						they can serve a lot many requests.)
+	7. Sharding (With most huge systems, data does not fit on a single machine. In such cases,
+				sharding refers to splitting the very large database into smaller, faster and more
+				manageable parts called data shards)

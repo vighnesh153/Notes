@@ -1,0 +1,68 @@
+Interceptors provides a way to intercept HTTP requests and responses to transform or handle them
+before passing them along.
+
+eg. AuthInterceptorService, etc
+
+
+To provide for dependency injection in components, the modules provider array should be as follows:
+
+	// first import at top:
+	import { HTTP_INTERCEPTORS } from '@angular/common/http';
+	import { AuthInterceptorService } from './auth-interceptor.service';
+
+	providers: [
+		{
+			provide: HTTP_INTERCEPTORS,			// provide it as what?
+			useClass: AuthInterceptorService,
+			multi: true							// if true, multiple interceptor services can be
+												// provided under the same 'provide' name
+		},
+		{
+			provide: HTTP_INTERCEPTORS,
+			useClass: SomeOtherInterceptorService,
+			multi: true
+		}
+	]
+	NOTE: The order in which we provide the interceptor services matter. They will be executed in
+		  order. So, make sure to add the Auth Interceptor at the beginning or where it suits.
+
+
+In auth-interceptor.service.ts:
+	import {
+		HttpInterceptor,
+		HttpRequest,
+		HttpHandler
+	} from '@angular/common/http';
+
+	export class AuthInterceptorService implements HttpInterceptor {
+		intercept(request: HttpRequest, next: HttpHandler) {
+			// do something with the request
+
+
+			// To modify the request
+			// The request object is not modifiable. To modify it, we clone it and then change it.
+			const modifiedRequest = request.clone({
+				headers: request.headers.append(...),
+				url: 'new url'
+			});
+			// Then we pass the modifiedRequest object to the next.handle function instead of the
+			// previous, un-modified, request object.
+
+
+			// Let the request carry on through its journey
+			return next.handle(request);
+
+
+			// Response interceptor: (can only observe events)
+			return next.handle(request)
+					   .pipe(tap(
+					   		event => {
+								if (event.type === HttpEventType.Response) {
+									// Do something
+								}
+							}
+						))
+		}
+	}
+
+// Now the above code will run whenever any request leaves the app.

@@ -1,0 +1,10 @@
+Load balancer is a cluster of systems that serve the sole purpose of balancing the load as the name
+suggests.
+
+
+When we do horizontal scaling, there are multiple systems each with a different IP. We can't map
+a domain name (abc.com) with multiple IPs. So, we map it with the load balancer's IP.
+
+Load balancer stores an array of IPs of all the servers that are currently active. Whenever a
+request arrives, it checks which server is not busy and which server is alive. Then, it forwards the
+request to that server.

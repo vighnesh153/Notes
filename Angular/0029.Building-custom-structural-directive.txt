@@ -35,3 +35,13 @@ example:
 			//					 is true because out directive is 'notIf'
 		}
 	}
+
+
+NOTE: In some component, if in its template HTML, we are using an element that has our custom directive,
+	  then we can view that element in the component's class.
+
+	  @ViewChild(SomeDirective) element: ElementRef;
+	  // 'SomeDirective' is the class of the directive used.
+
+	  // If there are multiple elements in the HTML using the directive, then the first element will
+	  // be referenced.

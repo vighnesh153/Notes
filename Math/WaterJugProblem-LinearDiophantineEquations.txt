@@ -1,0 +1,22 @@
+If,
+	PX + QY = N,
+
+Then one of the possible solutions for (X, Y) exist, if HCF(P, Q) divides N.
+
+Assuming, HCF(P, Q) divides N, then
+	X = (P ^ -1) % Q	(modular inverse of P, modulo Q)
+	Y = (N - PX) / Q
+
+
+
+
+A simple Python Program to find the same:
+	def find_solution(P, Q, N):
+		hcf = HCF(P, Q)
+		if N % hcf != 0:
+			return None
+
+		X = pow(P, -1, Q)	# modular inverse of P, modulo Q
+		Y = (N - PX) // Q
+
+		return X, Y
