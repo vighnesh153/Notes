@@ -12,8 +12,8 @@ ngOnInit() {
 	// So, we use subscription
 	this.route.queryParams.subscribe(
 	  (queryParams: Params) => {
-		  this.a = params['a'];
-		  this.b = params['b'];
+		  this.a = queryParams['a'];	// or queryParams.a
+		  this.b = queryParams['b'];
 		  this.fragment = this.route.snapshot.fragment;
 	  }
 	);
