@@ -1,3 +1,5 @@
+# Solve a 3 by 3 sodoku. Some of the 9 elements will be given
+
 # Algorithm: Let the number of rows and columns be 3. So, available pieces are [1, 2, 3].
 #            In the board, if any cell's value is 0, then it is empty.
 #            The algorithm is to iterate over all the empty values and for each
