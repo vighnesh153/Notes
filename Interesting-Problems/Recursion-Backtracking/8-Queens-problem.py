@@ -3,15 +3,17 @@
 
 
 from typing import List, Tuple
+from copy import deepcopy
 
 
 class NQueens:
 
     def __init__(self, _number_of_queens: int):
         self._number_of_queens = _number_of_queens
+        self._solutions = []
 
     def find_all_solutions(self):
-        _solutions = []
+        self._solutions = []
 
         for column in range(self._number_of_queens):
             # initiate the board by placing 1 queen in the first row
@@ -19,10 +21,9 @@ class NQueens:
             _solution = [(0, column)]
 
             # Solve for next row
-            if self.solve(_solution, 1, self._number_of_queens - 1):
-                _solutions.append(_solution)
+            self.solve(_solution, 1, self._number_of_queens - 1)
 
-        return _solutions
+        return self._solutions
 
     def print_all_solutions_neatly(self):
         _all_solutions = self.find_all_solutions()
@@ -41,7 +42,7 @@ class NQueens:
 
     def solve(self, _solution: List[Tuple[int, int]], _row: int, _queens_remaining: int):
         if _queens_remaining == 0:
-            return True
+            self._solutions.append(deepcopy(_solution))
 
         for _col in range(0, self._number_of_queens):
             _next_queen_position = (_row, _col)
@@ -50,13 +51,10 @@ class NQueens:
             # that spot and invoke the solve() method recursively to solve for next row
             if NQueens.is_valid_solution(_solution, _next_queen_position):
                 _solution.append((_row, _col))
-                if self.solve(_solution, _row + 1, _queens_remaining - 1):
-                    return True
+                self.solve(_solution, _row + 1, _queens_remaining - 1)
 
                 # backtrack
                 _solution.pop()
-
-        return False
 
     @classmethod
     def is_valid_solution(cls, _solution: List[Tuple[int, int]], position: Tuple[int, int]):
