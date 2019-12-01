@@ -1,0 +1,53 @@
+Passing Model's data to view
+
+    const Song = Backbone.Model.extend();
+
+    const SongView = Backbone.View.extend({
+        render: function() {
+            this.$el.html(this.song.get('title'));
+
+            return this;
+        }
+    });
+
+    const song = new Song({ title: 'Call you Mine: Bebe Rexha' });
+    const songView = new SongView({ el: '#container', model: song });
+    songView.render();
+
+
+
+
+
+Passing Collection's data to view
+
+      const Song = Backbone.Model.extend();
+      const Songs = Backbone.Collection.extend({
+      model: Song
+      });
+
+      const SongView = Backbone.View.extend({
+      render: function() {
+          this.$el.html(this.model.get('title'));
+
+          return this;
+      }
+      });
+
+      const SongsView = Backbone.View.extend({
+      render: function() {
+          this.model.each(song => {
+              const songView = new SongView({ model: song });
+              this.$el.append(songView.render().$el);
+          });
+
+          return this;
+      }
+      });
+
+      const songs = new Songs([
+      new Song({ title: 'Call you Mine: Bebe Rexha' }),
+      new Song({ title: 'Portals: Avengers' }),
+      new Song({ title: 'Who do you love: Chainsmokers' })
+      ]);
+      const songsView = new SongsView({ el: '#container' , model: songs});
+      songsView.render();
