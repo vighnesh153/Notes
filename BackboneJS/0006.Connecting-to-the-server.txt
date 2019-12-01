@@ -1,0 +1,76 @@
+modelInstance.fetch();
+// Issues a 'GET' http request to the server
+
+
+modelInstance.save();
+// Issues a 'POST' http request if the object is new, else, issues a 'PUT' request.
+// Backbone identifies if an object is new by checking if it was fetched before.
+
+
+modelInstance.destroy();
+// Issues a 'DELETE' http request is to the server
+
+
+
+We specify the URL, to which the request should be made by the model instance, in
+the Model construction.
+    const Song = Backbone.Model.extend({
+        urlRoot: 'somehost.com/api/songs'
+    });
+// If we don't set the URL root, and if we make an http request to the server, then
+// we get an 'URL not defined' error (obvious).
+
+
+
+EXAMPLES:
+
+  const song = new Song({ id: 1 });
+  song.fetch();
+  // a GET request will be issued to 'somehost.com/api/songs/1'
+
+  song.set('title', 'LOL');
+  song.save();
+  // a PUT request will be issued to 'somehost.com/api/songs/1'
+
+  song.destroy();
+  // a DELETE request will be issued to 'somehost.com/api/songs/1'
+
+
+
+  const song2 = new Song();
+  song2.set('title', 'Call you mine: Bebe Rexha');
+  song2.save();
+  // a POST request will be issued to 'somehost.com/api/songs'
+
+
+
+DEFAULT ID ATTRIBUTE
+  By default, Backbone assumes that 'id' is the default unique identifier of the model.
+  To change this behaviour, we do:
+      const Song = Backbone.Model.extend({
+          idAttribute: 'songId'
+          // Now, Backbone will consider 'songId' as the unique identifier for the model instances
+      });
+
+
+HTTP CALLBACKS
+
+    modelInstance.fetch({
+      success: () => {},
+      error: () => {}
+    });
+
+    modelInstance.destroy({
+      success: () => {},
+      error: () => {}
+    });
+
+    modelInstance.save({}, {
+      success: () => {},
+      error: () => {}
+    });
+
+    NOTE: In the 'save' callback, the first argument is an update argument. But it
+          is debatable to update the modelInstance in the 'save'
+          method. We can first update it using the 'set' method, and then call
+          save method or directly update it in the 'save' method. 
