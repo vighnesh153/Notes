@@ -1,0 +1,30 @@
+NOTE: We can give event emitting and subscribing capabilities to normal JS object
+      as well. It doesn't have to be a Backbone entity to do that.
+
+Example:
+  let person = {
+      name: 'Vighnesh',
+
+      walk: function() {
+          // Publishing an event
+          this.trigger("walking", {
+              speed: 1,
+              startTime: new Date()
+          });
+      }
+  };
+
+  _extend(person, Backbone.Events);
+
+  // Subscribing to an event
+  person.on('walking', function(e) {
+      console.log('Person is walking...');
+      console.log(e);
+      // { speed: 1, startTime: SOMETIME }
+  });
+
+  // Subscribing only for one publication (Unsubscribes automatically after receiving one value)
+  person.once('walking', function() {});
+
+  // Unsubscribing from an event
+  person.off('walking');
