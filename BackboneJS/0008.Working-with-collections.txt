@@ -1,0 +1,37 @@
+The 'add' method inserts the model in a collection at the end.
+To insert at a specific index:
+  songs.add(new Song(), { at: someIndex });
+
+// Another method:
+  songs.push(new Song());
+  // is same as the following because they both push at the end.
+  songs.add(new Song());
+// However, with 'add', we can push at some index of our choice.
+
+
+
+
+Searching for a model in collection:
+
+    songs.where({ someAttribute: someValue });
+    songs.findWhere({ someAttribute: someValue });
+
+  // 'where' returns an array of all the matches. (like document.querySelectorAll)
+  // 'findWhere' returns the first match. (like document.querySelector)
+
+
+
+Filtering models from a collection:
+    // We pass a predicate to the filter method.
+
+    songs.filter(song => {
+        return song.get('name').startsWith('a');
+    });
+    // Returns an array of songs whose names start with 'a'
+
+
+Iterating over collections:
+
+    songs.each(song => {
+        // do something with the model object (song)
+    });
