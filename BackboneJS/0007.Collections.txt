@@ -36,3 +36,6 @@ songs.get('cid-value-of-the-model');
 songs.remove(songs.get('cid-value-of-the-model'));
   // OR
 songs.remove(songs.at(someIndex));
+
+ songs.pop();
+ // Removes the last model from the list of models
