@@ -1,0 +1,42 @@
+const SongsView = Backbone.View.extend({
+    initialize: function() {
+        this.model.on('add', this.onModelChange, this);
+        // 'add' event is triggered when an item is added to a collection
+
+        this.model.on('remove', this.onModelRemove, this);
+        // a 'remove' event is triggered when an item is removed from a collection
+    },
+
+    onModelChange: function(song) {
+        // The added item is also passed as an argument to the callback function
+
+        const songView = new SongView({ model: song });
+        this.$el.append(songView.render().$el);
+    },
+
+    onModelRemove: function(song) {
+        this.$el.find('#' + song.id).remove();  // JQuery removal of an element
+        // Assuming we assigned an 'id' attribute to each song's view.
+
+
+        // Also, each view has a scoped '$' property. We can use that to remove an
+        // element from DOM as well.
+        this.$('#' + song.id).remove();
+    }
+});
+
+
+const Songs = Backbone.Collection.extend({
+    model: Song
+});
+
+const songs = new Songs([
+    new Song(),
+    new Song(),
+    new Song()
+]);
+
+const songsView = new SongsView({
+    model: songs
+});
+songsView.render();
