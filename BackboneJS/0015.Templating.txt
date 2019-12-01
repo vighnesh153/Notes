@@ -1,0 +1,26 @@
+Templates allow us to dynamically load data to the HTML. Here, we are using
+underscore's templating engine. Other different engines are HandlebarsJS, MustacheJS,
+EJS, PugJS, MarkoJS, JADE language, jQuery templating, etc.
+
+    In HTML:
+          <script id="songTemplate" type="text/html">
+              <%= title  %>
+              <button>Listen</button>
+              <% if (plays > 1000) { %>
+                  <span class="popular"> Popular </span>
+              <% } %>
+          </script>
+
+
+    In JS:
+          const SongView = Backbone.View.extend({
+              render: function() {
+                  const source = $('#songTemplate').html();
+                  const template = _.template();
+                  const html = template(this.model.toJSON());
+                  
+                  this.$el.html(html);
+
+                  return this;
+              },
+          });
