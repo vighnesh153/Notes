@@ -1,0 +1,24 @@
+const Song = Backbone.Model.extend({
+    initialize: () => {},
+    validate: (attributes) => {
+        if (attributes.someAttribute === undefined) {
+            return 'someAttribute was defined.';
+        }
+    }
+});
+
+
+// When we call the 'isValid' method on a model instance, the 'validate' method
+// that we define in the model construction will be called. To it, all the
+// attributes of the model instance are passed.
+
+// If the 'validate' method returns null or an empty string, the model instance
+// is considered as valid.
+// Else, Backbone treats it as invalid.
+
+const song = new Song();
+
+song.isValid(); // Returns true or false
+
+song.validationError;  // A property that stores the message (string) returned from
+                       // the 'validate' method.
