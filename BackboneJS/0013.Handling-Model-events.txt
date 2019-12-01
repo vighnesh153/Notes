@@ -1,0 +1,17 @@
+const SongView = Backbone.View.extend({
+    initialize: function() {
+        this.model.on('change', this.onModelChange, this)
+    },
+
+    onModelChange: function() {
+        // Do something
+        // Maybe add some class:
+        this.$el.addClass('some-class');
+
+        // Or maybe render again
+        this.render();
+    },
+});
+
+
+const songView = new SongView({ model: new Song({ title: 'Something just like this: Chainsmokers-Coldplay', listeners: 123 }) });
