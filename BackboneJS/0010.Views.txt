@@ -1,0 +1,54 @@
+View is the one that:
+    1. Renders the content
+    2. Responds to the DOM events
+    3. Have a DOM element
+
+
+
+Creating a view:
+    const SongView = Backbone.View.extend({
+        render: function() {
+            this.$el.html('Hello world!');
+
+            return this;
+            // Here, 'this' is returned to allow to chain multiple methods together
+        }
+    });
+
+    const songView = new SongView({ el: '#container' });
+    songView.render();
+
+
+    In HTML:
+        <div id="container"></div>
+
+
+// In the above, el is a property that points to the HTML element, with id = "container"
+// $el gives us the JQuery object for that element.
+
+
+If we don't initialize a view with any element, it will create an empty element, div,
+and act on it. But it will be in memory only. So, to view it in HTML, we can pass the
+element to the JQuery creation method.
+
+    const songView = new SongView();
+
+    $('#container').html(songView.render().$el);
+    // This will render the songView 'div' element inside the 'div#container'
+
+
+
+To change the defaults of the view element:
+    const SongView = Backbone.View.extend({
+        tagName: 'span',
+        className: 'song',
+        id: '1234',
+        attributes: {
+            'data-genre': 'Jazz'
+        },
+
+        render: function() {
+            this.$el.html('Hello world!');
+            return this;
+        }
+    });
