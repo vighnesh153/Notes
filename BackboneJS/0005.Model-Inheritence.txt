@@ -1,0 +1,33 @@
+const Animal = Backbone.Model.extend({
+    walk: () => {
+      console.log('Animal is walking...');
+    }
+});
+
+const Cat = Animal.extend();
+
+const Dog = Animal.extend({
+    walk: () => {
+      console.log('Dog is walking...');
+    }
+});
+
+const Tiger = Animal.extend({
+    walk: () => {
+      Animal.prototype.walk.call(this);
+      console.log('Dog is walking...');
+    }
+});
+
+const cat = new Cat();
+cat.walk();
+// Animal is walking...
+
+const dog = new Dog();
+dog.walk();
+// Dog is walking...
+
+const tiger = new Tiger();
+tiger.walk();
+// Animal is walking...
+// Tiger is walking...
