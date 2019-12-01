@@ -1,0 +1,20 @@
+const Songs = Backbone.Collection.extent({
+    model: Song,
+    url: '/api/songs'
+});
+
+const songs = new Songs();
+songs.fetch(
+    {
+        data: {
+            page: 2
+        }
+    },
+    {
+        success: () => {}
+        error: () => {}
+    }
+);
+
+// The data attribute in the first argument to the fetch, takes in an object
+// of key-value pairs which is then passed to to the GET request as query parameters
