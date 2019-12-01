@@ -1,0 +1,19 @@
+A model is how some data object is going to be represented.
+
+Creating a model:
+  const Song = Backbone.Model.extend({
+    initialize: () => {
+        console.log('====================================');
+        console.log('New song is created...');
+        console.log('====================================');
+    }
+  });
+
+  // To the extend method, we pass the configuration object.
+
+  // initialize is s callable property. This property is invoked whenever
+  // a new instance of the model is created. It is basically a constructor.
+
+
+To create an instance of the model, we use the new keyword.
+const song = new Song();
