@@ -1,0 +1,38 @@
+Collections: As the name suggests, collections is a Backbone feature that is used
+             to group a list/group of a particular model.
+
+
+Creating Collections:
+
+  const Song = Backbone.Model.extend();
+
+  const Songs = Backbone.Collection.extend({
+      model: Song
+  });
+
+  const songs = new Songs([
+      new Song({ title: 'Song 1' }),
+      new Song({ title: 'Song 2' }),
+      new Song({ title: 'Song 3' })
+  ]);
+
+  // Another way to add a song. 'add' method is provided by 'underscore.js'
+  songs.add(new Song({ title: 'Song 4' }));
+
+
+// The collections object will have a 'length' property that stores the number
+// of models in its list of model. It also has a property 'models'. It is an
+// array that has all the models that were added to the collection.
+
+// To access a model at some index, we do
+songs.at(0);
+// instead of: songs.models[0];
+
+
+// Another way to access a model from a collection is to do:
+songs.get('cid-value-of-the-model');
+
+// To remove a model from a collection:
+songs.remove(songs.get('cid-value-of-the-model'));
+  // OR
+songs.remove(songs.at(someIndex));
