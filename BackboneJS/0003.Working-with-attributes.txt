@@ -1,0 +1,57 @@
+In JS, we can directly set the attributes of any object by assigning to it.
+eg.,
+  const person = {};
+  person.name = 'Vighnesh';
+
+
+In backbone, the attributes as stored using hash. So, directly setting them is not
+recommended. So, we use the set method.
+
+
+3 ways to set attributes in Backbone:
+    // During initialization
+    const song = new Song({
+      description: 'some description'
+    });
+
+
+    // Using the set method
+    song.set('name', 'Test 153');
+
+
+    // Setting multiple attributes by passing them as key-value pairs in the form
+    // of an object
+    song.set({
+      'year_of_release': 1998
+    });
+
+
+
+To get the value of an attribute, we use the 'get' method:
+  song.get('name');
+
+
+
+To remove an attribute, we use the 'unset' method:
+  song.unset('name');
+
+
+To remove all the attributes from a model, we use the 'clear' method:
+  song.clear();
+
+
+To check if an attribute exists on a model, we use the 'has' method:
+  song.has('title'); // returns true or false.
+
+
+To set the defaults, we set them in the Model construction.
+    const Song = Backbone.Model.extend({
+        initialize: () => {},
+        defaults: {
+            someAttribute: 'someValue',
+            someAttribute: 'someValue',
+            someAttribute: 'someValue'
+        }
+    });
+    // Now, if we don't set the values of the attributes while instantiating
+    // the model, the above values will be set.
