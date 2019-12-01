@@ -17,3 +17,8 @@ Creating a model:
 
 To create an instance of the model, we use the new keyword.
 const song = new Song();
+
+
+
+// To convert to JSON string:
+car.toJSON();
