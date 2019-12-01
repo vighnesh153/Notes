@@ -1,0 +1,24 @@
+const Song = Backbone.Model.extend();
+const SongView = Backbone.View.extend({
+    events: {
+        'click': 'onClick',
+        'click .bookmark': 'onClickBookmark'
+        // JQuery selector
+    },
+
+    onClick: function() {
+        console.log('Clicked on song...');
+    },
+    onClickBookmark: function(e) {
+        e.stopPropagation();
+        console.log('Clicked on Bookmark...');
+    },
+
+    render: function() {
+        this.$el.html(this.model.get('title') + '<button class="bookmark">Bookmark</button>');
+        return this;
+    }
+});
+
+const songView = new SongView({ model: new Song({ title: 'Call you mine: Bebe Rexha' }) });
+$('#container').html(songView.render().$el);
