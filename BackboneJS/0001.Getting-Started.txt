@@ -1,0 +1,10 @@
+Download 4 js library files: (Or a CDN would also work)
+  Jquery
+  UnderscoreJS
+  Backbone
+  Modernizr
+
+Order of imports or references in the HTML file:
+  In the head section, import Modernizr.
+  In the body section, at the end, import Jquery, UnderscoreJS, Backbone in order.
+  After all these imports, we can add our JS files at the end after backbone.
