@@ -22,3 +22,13 @@ const song = new Song();
 
 // To convert to JSON string:
 car.toJSON();
+
+
+
+Any model object has 2 ids associated with it.
+    one is 'id'. It is the that is used to sync up with the server. It is the same
+    id that is used to store the model object in the server.
+
+    second is the 'cid', which stands for client Id. It is a temporary id, that is
+    assigned by backbone to a model object. It is done so that models, in the client
+    side, are identified with an id which is different from that of the server.
