@@ -1,0 +1,24 @@
+const bus = _.extend({}, Backbone.Events);
+// Acts like a service in Angular
+
+// Pass this to every view during initialization that will need to communicate
+// with other views.
+const someView1 = new SomeView1({ model: someModel1, bus: bus });
+const someView1 = new SomeView1({ model: someModel1, bus: bus });
+
+
+const SomeView1 = Backbone.View.extend({
+    initialize: function(options) {
+        this.bus = bus;
+    }
+});
+
+const SomeView2 = Backbone.View.extend({
+    initialize: function(options) {
+        this.bus = bus;
+    }
+});
+
+
+// Now, one view can trigger an event and the other can subscribe to it. For the syntax
+// check the previous file (Binding and triggering custom events).
