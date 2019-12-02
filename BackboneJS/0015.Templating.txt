@@ -16,9 +16,9 @@ EJS, PugJS, MarkoJS, JADE language, jQuery templating, etc.
           const SongView = Backbone.View.extend({
               render: function() {
                   const source = $('#songTemplate').html();
-                  const template = _.template();
+                  const template = _.template(source);
                   const html = template(this.model.toJSON());
-                  
+
                   this.$el.html(html);
 
                   return this;
