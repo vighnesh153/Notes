@@ -1,0 +1,54 @@
+const AlbumsView = new Backbone.View.extend({
+    render: function() {
+        this.$el.html('ALBUMS VIEW');
+
+        return this;
+    }
+});
+
+
+const AppRouter = Backbone.Router.extend({
+    routes: {
+        'album': 'viewAlbums',
+        'albums/:albumId': 'viewAlbumById',
+        '*other': 'defaultRoute'
+        // Route with a splat
+    },
+
+    defaultRoute: function() {
+
+    },
+
+    viewAlbumById: function(albumId) {
+
+    },
+
+    viewAlbums: function() {
+        const view = new AlbumsView({ el: '#container' });
+        view.render();
+    }
+});
+
+const router = new AppRouter();
+Backbone.history.start();
+
+const NavView = Backbone.View.extend({
+    events: {
+        'click': 'onClick'
+    },
+
+    onClick: function(e) {
+        const $li = $(e.target);
+        router.navigate($li.attr('data-url'), { trigger: true });
+    }
+});
+
+const navView = new NavView({ el: '#nav' });
+
+
+IN HTML,
+        <div id='nav'>
+            <li data-url="albums">View Albums</li>
+            <li data-url="albums/123">View Album 123</li>
+            <li data-url="some-random-link">Something not so usual</li>
+        </div>
