@@ -52,3 +52,8 @@ IN HTML,
             <li data-url="albums/123">View Album 123</li>
             <li data-url="some-random-link">Something not so usual</li>
         </div>
+
+In the URL, the routes will be shown as:
+    /#albums
+    /#albums/123
+    /#some-random-link
