@@ -1,0 +1,36 @@
+SUITES
+    describe(“suite name”, function(){
+
+    });
+
+
+SPECS
+    it(“spec name”, function(){
+
+    });
+
+
+EXPECTATIONS
+    expect(value).toBe(true);
+    expect(value).not.toBe(true);
+    expect(actualObject).toEqual(expectedObject);
+    expect(value).toBeDefined();
+    expect(value).toBeUndefined();
+    expect(value).toBeNull();
+    expect(value).toBeTruthy();
+    expect(value).tobeFalsy();
+    expect(array).toContain(“element”)
+    expect(value).toBeLessThan(5);
+    expect(value).toBeGreaterThan(5);
+    expect(function(){ … }).toThrow();
+
+
+SETUP AND TEAR DOWN
+    beforeEach(function(){ … });
+    afterEach(function(){ … });
+
+
+SPIES
+    spyOn(window, “confirm”)
+    spyOn(window, “confirm”).and.returnValue(true);
+    spyOn(window, “confirm”).and.callFake(function(){});
