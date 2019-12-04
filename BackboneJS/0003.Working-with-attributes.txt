@@ -29,9 +29,9 @@ recommended. So, we use the set method.
 
 To get the value of an attribute, we use the 'get' method:
   song.get('name');
-NOTE: If we 'get' a value that has a script tag in it, it will get executed if showed on browser. So,
-      we use the song.escape('name') method to get the escaped value from the store before directly
-      showing it to the screen.
+NOTE: If we 'get' a value that has a script or even any HTML tag in it, it will get executed if
+      showed on browser. So, we use the song.escape('name') method to get the escaped value from
+      the store before directly showing it to the screen.
 
 
 
