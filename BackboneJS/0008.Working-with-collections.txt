@@ -9,6 +9,12 @@ To insert at a specific index:
 // However, with 'add', we can push at some index of our choice.
 
 
+NOTE: After every 'add' call, we should also invoke the 'save' method if we want
+      to sync it with server. A shortcut for the following:
+                    songs.add(new Song());
+                    songs.save();
+      is:
+                    songs.create(new Song());
 
 
 Searching for a model in collection:

@@ -5,6 +5,7 @@ modelInstance.fetch();
 modelInstance.save();
 // Issues a 'POST' http request if the object is new, else, issues a 'PUT' request.
 // Backbone identifies if an object is new by checking if it was fetched before.
+// The save method won't be initiated if the model's instance is invalid.
 
 
 modelInstance.destroy();
@@ -73,4 +74,4 @@ HTTP CALLBACKS
     NOTE: In the 'save' callback, the first argument is an update argument. But it
           is debatable to update the modelInstance in the 'save'
           method. We can first update it using the 'set' method, and then call
-          save method or directly update it in the 'save' method. 
+          save method or directly update it in the 'save' method.
