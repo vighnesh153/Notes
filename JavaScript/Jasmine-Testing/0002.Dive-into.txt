@@ -1,0 +1,59 @@
+// 'describe' is used to create a suite of tests.
+describe('Calculator', function() {
+    let calculator;
+
+    // Is run before all the specs
+    beforeEach(function() {
+        calculator = new Calculator();
+    });
+
+    // Is run after all the specs
+    afterEach(function() {
+        // Do something
+    });
+
+    // We can nest suites
+    describe('add', function() {
+
+        // 'it' is used to create a to create a spec/test
+        it('should throw error is both arguments are not provided', function() {
+            expect(() => calculator.add(2)).toThrow();
+        });
+
+        it('should be able to add 2 numbers', function() {
+            const result = calculator.add(2, 3);
+
+            expect(result).toEqual(5);
+        });
+
+        it('should be called with the right number of arguments', function() {
+            spyOn(calculator, 'add');
+            // create a mock
+
+            const result = calculator.add(5, 2);
+
+            expect(result).toBeUndefined();
+            expect(calculator.add).toHaveBeenCalled();
+            expect(calculator.add).toHaveBeenCalledWith(5, 2);
+        });
+
+        it('should be called with the right number of arguments, mock return value', function() {
+            spyOn(calculator, 'add').and.returnValue(7);
+            // create a mock
+
+            const result = calculator.add(5, 2);
+
+            expect(result).toEqual(7);
+        });
+
+        it('should be called with the right number of arguments, mock throw error', function() {
+            spyOn(calculator, 'add').and.throwError('some error');
+            // create a mock
+
+            expect(() => {
+                const result = calculator.add(5, 2);
+            }).toThrowError('some error');
+        });
+
+    });
+});
