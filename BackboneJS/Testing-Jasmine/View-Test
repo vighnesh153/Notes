@@ -1,0 +1,63 @@
+describe('Tweet', function() {
+
+    let model;
+    let view;
+
+    beforeEach(function() {
+        model = new Tweet();
+        view = new TweetView();
+        view.render();
+    });
+
+    it('tag name should be li', function() {
+        expect(view.tagName).toEqual('li');
+    });
+
+    it('class name should be tweet', function() {
+        expect(view.className).toEqual('tweet');
+    });
+
+    it('should refresh when model state changes', function() {
+        // Some state change logic
+        model.set('body', 'UPDATED');
+
+        expect(view.$el).toContainText('UPDATED');
+    });
+
+    describe('when clicking delete', function() {
+
+        it('should display a confirmation box', function() {
+            spyOn(window, 'confirm');
+
+            // Simulate a click
+            view.$('#delete').click();
+
+            expect(window.confirm).toHaveBeenCalled();
+        });
+
+        it('should destroy the model if the user confirms', function() {
+            spyOn(window, 'confirm');
+            spyOn(model, 'destroy');
+
+            view.$('#delete').click();
+
+            expect(model.destroy).toHaveBeenCalled();
+        });
+
+    });
+
+    describe('when clicking expand-tweet', function() {
+
+        it('should load the details, from the server, if successful', function() {
+            spyOn(model, 'fetch').and.callFake(function(options) {
+                options.success();
+            });
+
+            view.$('#expand-tweet').click();
+
+            expect(view.$('.details')).toBeDefined();
+        });
+
+    });
+
+});
