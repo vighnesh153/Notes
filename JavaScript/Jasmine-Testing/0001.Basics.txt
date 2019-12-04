@@ -1,0 +1,24 @@
+Either install Jasmine in the respective project using Node, Python, Rails, etc.
+        https://github.com/jasmine/jasmine#installation
+
+
+Or install Jasmine standalone on the machine:
+        Download from here: https://github.com/jasmine/jasmine/releases
+
+
+Setup:
+    1. Create a Jasmine directory in your project - mkdir my-project/jasmine
+    2. Move the dist to your project directory -
+                mv jasmine/dist/jasmine-standalone-{#.#.#}.zip my-project/jasmine
+    3. Change directory - cd my-project/jasmine
+    4. Unzip the dist - unzip jasmine-standalone-{#.#.#}.zip
+
+
+
+Add the following to your HTML file:
+    <link rel="shortcut icon" type="image/png" href="jasmine/lib/jasmine-{#.#.#}/jasmine_favicon.png">
+    <link rel="stylesheet" type="text/css" href="jasmine/lib/jasmine-{#.#.#}/jasmine.css">
+
+    <script type="text/javascript" src="jasmine/lib/jasmine-{#.#.#}/jasmine.js"></script>
+    <script type="text/javascript" src="jasmine/lib/jasmine-{#.#.#}/jasmine-html.js"></script>
+    <script type="text/javascript" src="jasmine/lib/jasmine-{#.#.#}/boot.js"></script>
