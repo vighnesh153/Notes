@@ -14,7 +14,7 @@ Example:
       }
   };
 
-  _extend(person, Backbone.Events);
+  _.extend(person, Backbone.Events);
 
   // Subscribing to an event
   person.on('walking', function(e) {

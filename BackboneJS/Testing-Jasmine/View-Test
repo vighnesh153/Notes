@@ -1,3 +1,6 @@
+// Requirement jQuery, jasmine, jasmine-jQuery
+
+
 describe('Tweet', function() {
 
     let model;
