@@ -1,0 +1,11 @@
+Angular Modules (different from JS module):
+  Modules are used to bundle up Components, Directives, Services together for Angular.
+  Angular won't detect anything which is not bundled in a module.
+
+  NOTE: AppModule is the root module.
+
+  1. Angular analyses NgModules to understand our application and its features.
+  2. Angular modules define all building blocks our app uses. (Components, Directives, Services, etc)
+  3. An Angular app requires at least one module (AppModule), but it may also be split up into
+      multiple modules.
+  4. Core Angular Features are included in Angular modules to load them only when needed.
