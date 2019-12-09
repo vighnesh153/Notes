@@ -1,0 +1,43 @@
+It is the idea that we load components only when we need them.
+
+Let's say we have a route: '/planner'. Now, when we are on the root route '/',
+we don't need the components from the 'PlannerModule'. We can download them when
+we need them. So, for this to happen, we do:
+
+  { path: 'planner', loadChildren: '@modules/planner/planner.module#PlannerModule' }
+
+This way, the components of the planner module are loaded only when we visit the
+'/planner' route.
+
+
+Angular 8+ lazy loading syntax:
+
+  { path: 'planner', loadChildren: () => import('@modules/planner/planner.module').then(m => m.PlannerModule) }
+
+NOTE: In Angular 8/9 or even some more versions, the first syntax will work, but after that,
+      the support for the first syntax will be removed. (The second syntax also gives better IDE support.)
+
+
+PRE-LOADING Lazy Loaded code:
+
+  When we use load children, angular builds separate bundles of the modules and loads
+  them when the specific route is hit. If we didn't do lazy loading, any route
+  would download all the bundles of the app and won't show a page until all of them
+  are loaded because all the modules will be bundled in a single file. But, now, after
+  lazy loading, if we hit a route, it will only load files that are required for that
+  route. Then, if we navigate to other routes, then, the bundles required on that
+  route are downloaded. But, we can download other bundles ahead of time.
+
+  In:
+
+  import { PreLoadAllModules } from '@angular/router';
+
+    RouterModule.forRoot(appRoutes, { preloadingStrategy: PreLoadAllModules })
+    // Default is 'NoPreloading'
+
+
+  This way, no matter which route we visit, modules/bundles of other routes will be
+  loaded in the background and the bundle for the current route will be loaded first and displayed
+  and won't wait for the other bundles as they are separate. In the no-preloading case,
+  all the modules were in the single bundle, hence it waited for the entire bundle to
+  download and display the content of current page.
