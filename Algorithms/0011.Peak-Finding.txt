@@ -26,7 +26,21 @@ right and left neighbors is available/applicable. (e.g., top-left element will h
 bottom neighbor so just check with it.)
 
 
-Task: Find a (not all) peak in the 1-D array.
+Task: Find a (not all) peak in a 2-D array.
 1. Brute-Force way: Iterate over all elements until a peak is found.
-	Worst-case => O(n)
-	Average-case => O(n)
+	Worst-case => O(m * n)
+			m -> number of rows
+			n -> number of columns
+2. Efficient way (Bisection search on either rows or columns):
+			Lets choose rows. Go to the middle-most row, then find the global max in that
+			row. Let the index of that global max be j.
+
+			if arr[row][j] < arr[row - 1][j]:
+				recursively search on the upper half (all rows above current row ) of the array.
+			elif arr[row][j] < arr[row + 1][j]:
+					recursively search on the lower half (all rows below current row ) of the array.
+			else:
+				return arr[row][j]  # as it is a peak
+		Complexity:
+				Worst Case: O(n log m) or O (m log n) depending on if we choose to bisect arr on
+										rows or columns.
