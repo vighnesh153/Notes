@@ -1,0 +1,5 @@
+The following medium article should suffice
+    https://medium.com/@nickfane/introduction-to-worker-services-in-net-core-3-0-4bb3fc631225
+
+A YouTube tutorial for the day you are feeling like not reading:
+    https://www.youtube.com/watch?v=3Hmjj1y-4Hc
