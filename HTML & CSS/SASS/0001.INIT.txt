@@ -5,3 +5,5 @@ Installation:
 To watch files for changes and compiling:
     sass --watch fileName.scss:fileName.css
 // This will convert 'fileName.scss' to 'fileName.css' whenever we save a change to it.
+
+In the HTML file, we add the link to 'fileName.css'.
