@@ -1,0 +1,10 @@
+1. Should start with '$'
+2. Should be in kebab-case.
+
+
+Example:
+    $some-color: #f1e451;
+
+    h1 {
+        color: $some-color;
+    }
