@@ -1,0 +1,19 @@
+<div class="parent">
+    <div class="child">
+    </div>
+</div>
+
+
+CSS way:
+    .parent .child {
+
+    }
+
+SCSS way:
+    .parent {
+
+        .child {
+
+        }
+        
+    }
