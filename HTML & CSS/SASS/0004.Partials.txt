@@ -1,0 +1,16 @@
+It is a way of moving common styles to a file.
+The name of the file should start with an underscore and it is a common practice to
+store all the partial files in a directory named 'partials'.
+
+In 'partials/_fileName.scss', write all the common/required styles.
+
+To import it in some other file,
+    @import './partials/fileName';
+NOTE: While importing, we don't add the underscore and the extension of the 'partial' file.
+// The above line will be replaced with the content of 'partials/_fileName.scss' file.
+
+NOTE: The import statement can be added at any line. There is no rule that it should be added
+      at the top.
+
+We don't include the SCSS files in the HTML. These files are meant to be included in other
+SCSS files.
