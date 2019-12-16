@@ -14,7 +14,7 @@ In app-routing.module.ts(on the same level as app.module.ts),
 
 	@NgModule({
 		imports: [
-			RouterModule.forRoot(routes);
+			RouterModule.forRoot(routes)
 		],
 		exports: [
 			RouterModule
