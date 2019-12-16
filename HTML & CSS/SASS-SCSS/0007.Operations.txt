@@ -17,9 +17,6 @@ $buttonPadding = 5px;
 .light-button {
     @extend .button;
 
-    background-color: $buttonBackground * 1.5;
-    // Muliplying the color with a value > 1, lightens it. So, it is easier for us to give hover
-    // color by multiplying it with some value > 1 instead of searching for the perfect hover color
-    // on some color selector. Muliplying a constant, k, to a color will multiply 'k' to 'R' value,
-    // 'G' value and 'B' value individually to change the shade of the color.
+    background-color: lighten($buttonBackground, 50%);
+    // Similarly, darken, and many more functions exist.
 }
