@@ -30,9 +30,9 @@ PRE-LOADING Lazy Loaded code:
 
   In:
 
-  import { PreLoadAllModules } from '@angular/router';
+  import { PreloadAllModules } from '@angular/router';
 
-    RouterModule.forRoot(appRoutes, { preloadingStrategy: PreLoadAllModules })
+    RouterModule.forRoot(appRoutes, { preloadingStrategy: PreloadAllModules })
     // Default is 'NoPreloading'
 
 
