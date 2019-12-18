@@ -1,0 +1,230 @@
+To find:
+    private static void Main(string[] args)
+    {
+        foreach(var category in PerformanceCounterCategory.GetCategories())
+        {
+            System.Console.WriteLine(category.CategoryName);
+        }
+    }
+
+// List of names already found
+    Peer Name Resolution Protocol
+    Storage QoS Filter - Volume
+    ServiceModelOperation 3.0.0.0
+    VFP Port Total Outbound Network Traffic
+    RemoteFX Software
+    IPv4
+    BitLocker
+    IPsec IKEv2 IPv4
+    GPU Adapter Memory
+    RemoteFX Synth3D VSP VM Transport Channel
+    Hyper-V Replica VM
+    Cache
+    Intel Storage Counters
+    ASP.NET
+    Terminal Services
+    Hyper-V Dynamic Memory Integration Service
+    Windows Time Service
+    NBT Connection
+    Database ==> TableClasses
+    VFP Port Average Outbound Network Traffic
+    IPHTTPS Global
+    .NET CLR Data
+    .NET CLR Interop
+    UDPv6
+    VFP Port Total Inbound Network Traffic
+    ServiceModelService 4.0.0.0
+    Thermal Zone Information
+    Database ==> Instances
+    RemoteFX Synth3D VSC VM Device
+    HTTP Service
+    Windows Media Player Metadata
+    RAS Port
+    Node.js
+    USB
+    RemoteFX Synth3D VSP VM Device
+    Pacer Flow
+    AppV Client Streamed Data Percentage
+    Hyper-V Virtual Switch
+    WFP Reauthentication
+    Windows Workflow Foundation
+    Telephony
+    Hyper-V VM Vid Driver
+    IPHTTPS Session
+    ServiceModelEndpoint 3.0.0.0
+    IPv6
+    WFP
+    Database ==> Databases
+    ICMPv6
+    WFPv4
+    Job Object
+    RemoteFX Graphics
+    WFPv6
+    Fax Service
+    Per Processor Network Activity Cycles
+    SMB Direct Connection
+    .NET Data Provider for SqlServer
+    TCPv4
+    WSMan Quota Statistics
+    Hyper-V Virtual Machine Bus
+    Hyper-V Worker Virtual Processor
+    .NET CLR Loading
+    PacketDirect Queue Depth
+    Microsoft Winsock BSP
+    Hyper-V VM Remoting
+    PacketDirect Transmit Counters
+    Objects
+    Hyper-V Hypervisor Partition
+    Generic IKEv1, AuthIP, and IKEv2
+    .NET CLR Security
+    WinNAT ICMP
+    ASP.NET v2.0.50727
+    RemoteFX Root GPU Management
+    MSDTC Bridge 3.0.0.0
+    Network Interface
+    Web Service
+    LogicalDisk
+    Pacer Pipe
+    Storage Spaces Write Cache
+    Teredo Relay
+    PacketDirect Receive Counters
+    Per Processor Network Interface Card Activity
+    VFP Port Total Inbound Dropped Network Packets
+    GPU Process Memory
+    Hyper-V Dynamic Memory Balancer
+    ASP.NET Apps v2.0.50727
+    PhysicalDisk
+    Hyper-V Virtual Switch Processor
+    .NET CLR Jit
+    Hyper-V Hypervisor Virtual Processor
+    IPsec Driver
+    Hyper-V Legacy Network Adapter
+    ServiceModelService 3.0.0.0
+    Job Object Details
+    Hyper-V Hypervisor Root Virtual Processor
+    Netlogon
+    Teredo Client
+    ICMP
+    Hyper-V Hypervisor
+    Hyper-V Virtual Network Adapter Drop Reasons
+    WinNAT Instance
+    PowerShell Workflow
+    XHCI TransferRing
+    Active Server Pages
+    .NET Data Provider for Oracle
+    Thread
+    .NET CLR Remoting
+    IPsec IKEv1 IPv4
+    Authorization Manager Applications
+    Process
+    .NET CLR Networking
+    Hyper-V Virtual Machine Health Summary
+    SMB Server
+    RemoteFX Network
+    Hyper-V Virtual IDE Controller (Emulated)
+    ServiceModelOperation 4.0.0.0
+    IPsec IKEv2 IPv6
+    VFP Port Total Outbound Dropped Network Packets
+    Redirector
+    Hyper-V Hypervisor Logical Processor
+    Hyper-V Virtual Network Adapter
+    ASP.NET Applications
+    HTTP Service Request Queues
+    Teredo Server
+    Memory
+    IPsec Connections
+    WorkflowServiceHost 4.0.0.0
+    Synchronization
+    XHCI CommonBuffer
+    XHCI Interrupter
+    Browser
+    Hyper-V VM Vid Numa Node
+    SMB Server Sessions
+    Print Queue
+    IPsec AuthIP IPv4
+    Network QoS Policy
+    SMSvcHost 4.0.0.0
+    .NET Memory Cache 4.0
+    SynchronizationNuma
+    Paging File
+    VFP QoS Queue Average Inbound Network Traffic
+    ServiceModelEndpoint 4.0.0.0
+    RemoteFX Synth3D VSP
+    RAS Total
+    Storage Spaces Tier
+    IPsec AuthIP IPv6
+    Hyper-V VM IO APIC
+    APP_POOL_WAS
+    Client Side Caching
+    ASP.NET v4.0.30319
+    Hyper-V Configuration
+    Offline Files
+    Storage QoS Filter - Flow
+    ASP.NET Apps v4.0.30319
+    ReFS
+    Terminal Services Session
+    Hyper-V Dynamic Memory VM
+    Search Indexer
+    ReadyBoost Cache
+    RAS
+    Network Adapter
+    Hyper-V VM Virtual Device Pipe IO
+    TCPIP Performance Diagnostics (Per-CPU)
+    Distributed Routing Table
+    Hyper-V Virtual SMB
+    Hyper-V VM Vid Partition
+    .NET CLR Memory
+    VFP Port Average Inbound Network Traffic
+    Physical Network Interface Card Activity
+    VFP QoS Queue Total Outbound Network Traffic
+    Database
+    .NET CLR Networking 4.0.0.0
+    VFP QoS Queue Average Outbound Network Traffic
+    TCPIP Performance Diagnostics
+    WinNAT TCP
+    Processor
+    Hyper-V VM Save, Snapshot, and Restore
+    Hyper-V Virtual Machine Bus Pipes
+    GPU Engine
+    Hyper-V Virtual Storage Device
+    PacketDirect Receive Filters
+    Storage Spaces Virtual Disk
+    FileSystem Disk Activity
+    Processor Information
+    ASP.NET State Service
+    RemoteFX Synth3D VSC VM Transport Channel
+    WinNAT
+    VFP QoS Queue Total Inbound Network Traffic
+    TCPv6
+    SMB Server Shares
+    Hyper-V Virtual Machine Bus Provider Pipes
+    Web Service Cache
+    .NET CLR Exceptions
+    WinNAT UDP
+    GPU Non Local Adapter Memory
+    W3SVC_W3WP
+    UDPv4
+    WF (System.Workflow) 4.0.0.0
+    Power Meter
+    .NET CLR LocksAndThreads
+    Hyper-V Virtual Switch Port
+    IPsec IKEv1 IPv6
+    Hyper-V Hypervisor Root Partition
+    BranchCache
+    Event Tracing for Windows Session
+    PacketDirect EC Utilization
+    Event Tracing for Windows
+    HTTP Service Url Groups
+    MSDTC Bridge 4.0.0.0
+    WFP Classify
+    Hyper-V VM worker Process Memory Manager
+    WAS_W3WP
+    DNS64 Global
+    System
+    GPU Local Adapter Memory
+    Hyper-V VM Live Migration
+    Energy Meter
+    SMSvcHost 3.0.0.0
+    Network Virtualization
+    Hyper-V Virtual Network Adapter VRSS
+    NUMA Node Memory
