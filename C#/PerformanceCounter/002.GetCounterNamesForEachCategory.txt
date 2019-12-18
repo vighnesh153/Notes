@@ -1,0 +1,11 @@
+To find:
+    private static void Main(string[] args)
+    {
+        var categoryName = "Memory";
+        var perfCounter = new PerformanceCounterCategory(categoryName);
+
+        foreach (var item in perfCounter.GetCounters())
+        {
+            System.Console.WriteLine(item.CounterName);
+        }
+    }
