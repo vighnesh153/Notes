@@ -1,0 +1,8 @@
+Preparation:
+    1. Use angular environment files for safe to store key-values.
+    NOTE: DON'T PUSH SECRET KEYS OR PAID KEYS IN THE ANGULAR ENVIRONMENT FILES AS THEY MIGHT
+          GET EXPOSED.
+    2. Polish and test the code.
+    3. Run 'ng build --prod'
+    4. Deploy the artifacts on the static server which is capable of serving static HTML, CSS and JS
+       files. Either use the ready-made servers or we can make a server of our own.
