@@ -24,4 +24,8 @@ To run development server:
 To get static files for production:
 	ng build --prod
 	// This will compile the entire angular app and build static files in the 'dist' folder in the
-	// project's root directory. Those files will be highly optimized.
+	// project's root directory. Those files will be highly optimized. It uses Ahead-of-time compilation.
+	// It compiles all the angular, TS files into pure static HTML and JS files. It also removes the
+	// angular compiler from the files. In the 'ng serve', an angular compiler is added to the JS files
+	// and a development server to serve the app and provide debug tools. But 'ng build --prod' removes
+	// all of it. It is very much optimized. We should use this for deployment.
