@@ -1,0 +1,4 @@
+It should be done with caution.
+
+It is recommended that we provide it app-wide and not lazy-load by either providing in AppComponent
+providers array or use @Injectable({ providedIn: 'root' })
