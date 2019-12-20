@@ -1,3 +1,6 @@
+Introduction to service workers (theoretical):
+    https://developers.google.com/web/fundamentals/primers/service-workers
+
 TO MAKE WORKER SERVICE HOSTABLE on Windows or Linux:
     https://levelup.gitconnected.com/net-core-worker-service-as-windows-service-or-linux-daemons-a9579a540b77
 
@@ -34,13 +37,32 @@ For logging to file:
             {
                 // The following line is to inject the appsettings values
                 services.AddSingleton(GetDbInfoOptions(hostContext));
+
+                // The instance will be injected in the worker. We can access it as follows in the
+                // constructor of the Worker
+                // public Worker(ILogger<Worker> logger, WorkerOptions options)
+                // {
+                //     // We can make a private field of type 'WorkerOptions'.
+                //     this.options = options;
+                // }
+
                 services.AddHostedService<Worker>();
             });
 
         // To inject appsettings files values in the Worker as 'WorkerOptions' class which is created
-        // by us.
+        // by us. All the properties of the WorkerOptions class should match the field values in
+        // the section of the json file. If it doesn't, then it will give an error while parsing the
+        // appsettings values in the WorkerOptions class.
         public static WorkerOptions GetDbInfoOptions(HostBuilderContext hostBuilderContext) =>
             hostBuilderContext
                 .Configuration
-                .GetSection("DbInfo")       // Section name in the JSON file
+                .GetSection("Section-name")       // Section name in the JSON file
                 .Get<WorkerOptions>();
+
+        // Suppose, the appsettings file is as follows. Then section refers to the following parts
+        // of the file.
+        // {
+        //     "section-1": {},
+        //     "section_2": {}
+        //     // and so on
+        // }
