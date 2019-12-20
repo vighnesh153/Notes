@@ -1,5 +1,46 @@
+TO MAKE WORKER SERVICE HOSTABLE on Windows or Linux:
+    https://levelup.gitconnected.com/net-core-worker-service-as-windows-service-or-linux-daemons-a9579a540b77
+
 The following medium article should suffice
     https://medium.com/@nickfane/introduction-to-worker-services-in-net-core-3-0-4bb3fc631225
 
 A YouTube tutorial for the day you are feeling like not reading:
     https://www.youtube.com/watch?v=3Hmjj1y-4Hc
+
+
+For logging to file:
+    Extensions required to log the data to the file:
+        Serilog
+        Serilog.AspNetCore
+        Serilog.Extensions.Logging
+
+
+    LoggerConfiguration:
+        Log.Logger = new LoggerConfiguration()
+            .MinimumLevel.Debug()
+            .MinimumLevel.Override("Microsoft", Serilog.Events.LogEventLevel.Warning)
+            .Enrich.FromLogContext()
+            .WriteTo.File(@"C:\Logs\system_monitor_logs.txt")
+            .CreateLogger();
+
+
+    For Dependency Injection:
+        Host.CreateDefaultBuilder(args)
+            .ConfigureLogging(logging =>
+            {
+                logging.AddSerilog();
+            })
+            .ConfigureServices((hostContext, services) =>
+            {
+                // The following line is to inject the appsettings values
+                services.AddSingleton(GetDbInfoOptions(hostContext));
+                services.AddHostedService<Worker>();
+            });
+
+        // To inject appsettings files values in the Worker as 'WorkerOptions' class which is created
+        // by us.
+        public static WorkerOptions GetDbInfoOptions(HostBuilderContext hostBuilderContext) =>
+            hostBuilderContext
+                .Configuration
+                .GetSection("DbInfo")       // Section name in the JSON file
+                .Get<WorkerOptions>();
