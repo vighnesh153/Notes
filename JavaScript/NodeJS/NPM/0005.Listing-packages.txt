@@ -1,0 +1,15 @@
+To list the locally installed packages:
+  npm list
+  // This will list all the packages along with their dependencies and dependencies of dependencies and so on.
+
+
+  npm list --depth 1
+  // This will list all the locally installed packages along with their dependencies.
+
+
+  npm list --depth 0
+  // This will only list the locally installed packages without their dependencies.
+
+
+To list globally installed packages:
+  npm list --global true --depth 0
