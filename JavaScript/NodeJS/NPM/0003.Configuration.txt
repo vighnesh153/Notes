@@ -1,0 +1,17 @@
+To configure default 'author name' across the machine:
+  npm config set init-author-name "Vighnesh Raut"
+
+
+To configure the default 'license' across the machine:
+  npm config set init-license "GPL"
+
+
+
+
+To get the default value that is set:
+  npm config get init-author-name
+
+
+
+To delete a default configuration value:
+  npm config delete init-author-name
