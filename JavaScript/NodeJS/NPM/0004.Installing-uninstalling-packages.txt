@@ -1,0 +1,27 @@
+To install a package locally:
+  npm install package-name
+  npm install package-name --save     // to add entry in the dependencies dictionary in package.json
+  npm i package-name --save           // We can use 'i' as a shorthand
+  npm i package-name --save-dev       // to add an entry in the devDependencies dictionary in the package.json
+
+
+To install package globally:
+  npm i --global package-name
+  npm i -g package-name
+
+
+
+To uninstall package locally:
+  npm uninstall package-name
+  npm uninstall package-name  --save          // to remove entry from the package.json
+  npm uninstall package-name  --save-dev      // to remove entry of a dev-dependency from the package.json
+
+
+To uninstall global package:
+  npm uninstall -g package-name
+
+
+
+Aliases:
+  install: i
+  uninstall: remove, rm, un
