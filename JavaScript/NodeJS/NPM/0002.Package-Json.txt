@@ -1,0 +1,10 @@
+'package.json' is a file that stores all the information about the node package.
+If a directory contains package.json, then it is a package.
+
+We can configure many things inside it.
+
+To create a npm package:
+  1. Create a target directory.
+  2. Then 'cd' into it.
+  3. Then run: npm init (Following all the questions, it will create a package.json in the directory with
+                      selected options)
