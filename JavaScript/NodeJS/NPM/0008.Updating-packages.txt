@@ -1,0 +1,14 @@
+To update a local package:
+  npm update --save package-name
+
+
+To update all the dev-dependencies locally:
+  npm update --dev --save-dev
+
+
+To update all the packages locally:
+  npm update
+
+
+To update all the global packages:
+  npm update -g
