@@ -1,9 +1,10 @@
 To install a package locally:
   npm install package-name
   npm install package-name --save     // to add entry in the dependencies dictionary in package.json
-  npm i package-name --save           // We can use 'i' as a shorthand
+  npm i package-name -S               // We can use 'i' as a shorthand for 'install' and '-S' as shorthand for '--save'
   npm i package-name --save-dev       // to add an entry in the devDependencies dictionary in the package.json
-
+  // shorthand for '--save-dev' is '-D'
+  
 
 To install package globally:
   npm i --global package-name
