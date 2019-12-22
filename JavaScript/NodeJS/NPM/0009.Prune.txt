@@ -1,0 +1,6 @@
+If our node_modules directory has some packages that are not in the package.json
+and we don't even need them, then we run:
+  npm prune
+
+
+The above command will remove all the extraneous packages that are not needed.
