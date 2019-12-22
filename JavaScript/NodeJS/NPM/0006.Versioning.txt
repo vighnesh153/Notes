@@ -1,0 +1,20 @@
+Format:
+  major.minor.patch
+
+
+To install a specific package:
+  npm i --save package-name@4.15.2
+  // This will install the exact package
+
+
+  npm i --save package-name@4.15
+  // This will install the package with major version: 4, minor version: 15 and patch version: latest
+
+
+  npm i --save package-name@4
+  // Install package with major version: 4, and minor and patch version as latest.
+
+
+To get the ultimate latest version:
+  npm i --save package-name@latest
+  // But the '@latest' can be omitted as it is enabled by default
