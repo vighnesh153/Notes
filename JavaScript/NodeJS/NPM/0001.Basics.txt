@@ -1,0 +1,14 @@
+INSTALLATION:
+  Just install nodeJs and npm will come with it.
+
+
+To check the version:
+  npm -v
+
+
+For help:
+  npm help
+
+
+Help for a specific command:
+  npm <command-name> -h
