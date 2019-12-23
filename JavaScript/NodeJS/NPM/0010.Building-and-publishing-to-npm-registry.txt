@@ -1,0 +1,37 @@
+1. Clone the boiler codes from the following repo:
+  https://github.com/rv-npm/boiler-plate
+
+2. 'cd' into it and remove the '.git' directory from the project.
+
+3. Modify the 'package.json' file to configure every key-value in it.
+NOTE: Be sure to verify/modify all the values else, it won't be configured properly.
+
+4. Modify license if required.
+
+5. Create a empty Github repo in your Github account.
+
+6. Initialise git in the project that was cloned earlier and connect it with the
+   Github remote.
+
+7. Commit all the files as 'initial' commit and push everything on the remote master.
+
+8. Run 'npm install' in the project.
+
+// Choose any CI provider. In this, I am using TravisCI.
+9. Create a TravisCI account and connect it the Github repo to it.
+    Go to this page: https://travis-ci.com/account/repositories for more info on how to connect.
+
+10. In the settings of the Github repo, add a protection-rule to the branch you
+    want to protect from direct merges.
+
+    Make sure to add/select the following in the protection-rules:
+      Check: Required status checks to pass before merging. In that, check 'Travis CI - pull request'.
+      Check: Include administrators: Enforce all configured restrictions above for administrators.
+
+    Then, save changes.
+
+Now, CI is setup and you can start building your npm package.
+
+
+Coverage:
+  // Choose any 'Code-Coverage through tests' provider. In this, I am using Coveralls (https://coveralls.io/).
