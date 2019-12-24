@@ -14,6 +14,7 @@ NOTE: Be sure to verify/modify all the values else, it won't be configured prope
    Github remote.
 
 7. Commit all the files as 'initial' commit and push everything on the remote master.
+    (We do this initial push for setting up the repo in TravisCI and coveralls)
 
 8. Run 'npm install' in the project.
 
@@ -35,3 +36,6 @@ Now, CI is setup and you can start building your npm package.
 
 Coverage:
   // Choose any 'Code-Coverage through tests' provider. In this, I am using Coveralls (https://coveralls.io/).
+  1. On the coveralls website, turn on the coveralls for the desired Github repo.
+  2. Now, every call to TravisCI should trigger this coverage statistics.
+  3. Also, change the coverage badge in the README.md file to point to the proper repo.
