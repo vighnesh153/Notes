@@ -1,0 +1,18 @@
+If current version is a.b.c, then the npm version updates it in the following way:
+
+Command:
+  npm version patch
+  // Increments the 'c' value
+
+
+  npm version minor
+  // Increments the 'b' value
+
+
+  npm version major
+  // Increments the 'a' value
+
+
+NOTE: The 'npm version xxx' also adds a version to the git commits. So, if we view it
+      on Github, then we can see in the releases section that the current commit is tagged
+      as a new version.
