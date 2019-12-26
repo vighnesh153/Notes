@@ -36,9 +36,24 @@
 #                 self.queen_positions.pop()
 #
 #
-# n_queens = NQueens(4)
-# n_queens.generate_solutions()
-# print len(n_queens.solutions)
+# def solver(n):
+#     n_queens = NQueens(n)
+#     n_queens.generate_solutions()
+#
+#     solution_list = []
+#
+#     for solution in n_queens.solutions:
+#         board = [['.'] * n for _ in xrange(n)]
+#
+#         for position in solution:
+#             board[position[0]][position[1]] = 'Q'
+#
+#         solution_list.append([''.join(row) for row in board])
+#
+#     return solution_list
+#
+#
+# solver(10)
 
 
 
@@ -94,7 +109,7 @@ class NQueens:
             # try every column value for the specified row and if that is a valid spot, use
             # that spot and invoke the solve() method recursively to solve for next row
             if NQueens.is_valid_solution(_solution, _next_queen_position):
-                _solution.append((_row, _col))
+                _solution.append(_next_queen_position)
                 self.solve(_solution, _row + 1, _queens_remaining - 1)
 
                 # backtrack
