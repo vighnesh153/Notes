@@ -1,3 +1,47 @@
+# SHORT SOLUTION
+
+# from copy import deepcopy
+#
+# class NQueens:
+#
+#     def __init__(self, number_of_queens):
+#         self.number_of_queens = number_of_queens
+#         self.solutions = []
+#         self.queen_positions = []
+#
+#     def is_queen_position_valid(self, q_x, q_y):
+#
+#         for i, j in self.queen_positions:
+#             if i == q_x:
+#                 return False
+#             if j == q_y:
+#                 return False
+#             if abs(i - q_x) == abs(j - q_y):
+#                 return False
+#
+#         return True
+#
+#     def generate_solutions(self, row=0, number_of_queens=None):
+#         if number_of_queens is None:
+#             number_of_queens = self.number_of_queens
+#
+#         if number_of_queens == 0:
+#             self.solutions.append(deepcopy(self.queen_positions))
+#             return
+#
+#         for col in range(self.number_of_queens):
+#             if self.is_queen_position_valid(row, col):
+#                 self.queen_positions.append((row, col))
+#                 self.generate_solutions(row + 1, number_of_queens - 1)
+#                 self.queen_positions.pop()
+#
+#
+# n_queens = NQueens(4)
+# n_queens.generate_solutions()
+# print len(n_queens.solutions)
+
+
+
 # Find and print all possible ways in which, one can place n-queen on a N by N
 # board
 
