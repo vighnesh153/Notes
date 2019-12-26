@@ -1,0 +1,26 @@
+const http = require('http');
+const server = http.createServer();
+server.listen(8088);
+
+// We have created a simple server that listens on port '8088'. But it does nothing. Not even respond
+// to anything.
+
+
+Although, the 'createServer' method also accepts a function that takes 2 arguments: one to which the
+        request information will passed, and the other, to help us build our response. Response to the
+        request will be sent by the server using the 'response' object whose values we modify to build
+        our desired response.
+
+        const server = http.createServer((request, response) => {
+
+            // 'writeHead' for modifying headers
+            response.writeHead(200, { 'Content': 'text/plain'});
+
+            // 'write' for setting the body
+            response.write('Hello, Vighnesh!');
+
+            // To end the response construction
+            response.end();
+        });
+        // The above function accepts all the requests and sends a response as '200 OK' and body as
+        // body, 'Hello, Vighnesh!'.
