@@ -17,7 +17,7 @@ To initialize a node project:
 // instializes package.json file (configuration file)
 
 
-To install a package:
+To install a package: (MORE ABOUT PACKAGES IN THE NPM-PACKAGES DIRECTORY)
 	npm install package-name --save
 	// install package and add to dependencies in the package-json
 	npm i package-name --save
