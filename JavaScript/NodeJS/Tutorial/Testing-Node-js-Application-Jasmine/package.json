@@ -1,0 +1,14 @@
+{
+  "name": "tuts-node",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "jasmine-node spec/greet.spec.js"
+  },
+  "author": "Vighnesh Raut",
+  "license": "ISC",
+  "devDependencies": {
+    "jasmine-node": "^3.0.0"
+  }
+}
