@@ -26,16 +26,24 @@ NOTE: Be sure to verify/modify all the values else, it won't be configured prope
     want to protect from direct merges.
 
     Make sure to add/select the following in the protection-rules:
-      Check: Required status checks to pass before merging. In that, check 'Travis CI - pull request'.
+      1. Check require pull requests review before merging.
+          Select the 'Require review from the code owners' check.
+      2. Check: Required status checks to pass before merging. In that, check 'Travis CI - pull request'.
       NOTE: Required status won't appear until we make one. For eg., for pull request to appear
             in the required status for protection rule, we first need to merge a pull request in
             the repo.
-
-      Check: Include administrators: Enforce all configured restrictions above for administrators.
+      3. Check: Include administrators: Enforce all configured restrictions above for administrators.
 
     Then, save changes.
 
 Now, CI is setup and you can start building your npm package.
+
+11. In the 'Projects' tab of the repository, make a new 'Automated kanban board project' and name it 'features'.
+    Similarly, make a new 'Automated kanban board project' and name it 'bugs'.
+    Then, whatever features are to be added, add them to the TODO of the 'features' board and same for the 'bugs'.
+    To add them to the boards, first create an issue of it in the 'issues' tab and then, to that issue, assign the
+    relevant board to it. Also, make sure to label it with appropriate labels and also add an 'Assignee' to the
+    issue.
 
 
 Coverage:
@@ -46,5 +54,5 @@ Coverage:
 
   NOTE: Don't forget to add the coveralls status in the branch protection rule to ensure this check
         as well before merging.
-  NOTE: Also, make sure to set the required coverage percent to pass, in the repo settings on coveralls. 
+  NOTE: Also, make sure to set the required coverage percent to pass, in the repo settings on coveralls.
         Recommended value is 100%.
