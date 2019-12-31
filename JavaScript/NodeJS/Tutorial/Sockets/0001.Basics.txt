@@ -1,0 +1,17 @@
+What are sockets?
+    Imagine a socket in real life. It is something to which insert a plug of some kind.
+    For example, socket on the wall we use to plug our phone charger that connects our
+    phone to the housing circuitry.
+
+    Similar to the real life sockets, sockets are used to connect a client to the server.
+    There are 2 different protocols:
+        1. Http protocol: A client requests something from the server and the server responds
+                          the client with the appropriate response and then the connection is
+                          closed.
+        2. Web socket protocol: It is an enhancement to the Http protocol. Unlike http protocol,
+                                the web socket protocol keeps the connection with the server alive.
+                                Common use cases => Online multiplayer games, chat applications, etc.
+                                We can also use this to keep the client in-sync with the server instead
+                                of sending multiple requests after every interval, we can keep the client
+                                connected to the server until the client wishes to terminate the
+                                connection. 
