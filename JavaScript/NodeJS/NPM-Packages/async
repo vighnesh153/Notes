@@ -1,0 +1,35 @@
+To install:
+    npm i -S async
+
+
+Usage:
+    const request = require('request');
+    const async = require('async');
+
+    const someMethod1 = callback => {
+        request.get('SOME_URL', (error, response, body) => {
+            const result = JSON.parse(body);
+            callback(error, result.value);
+        });
+    };
+
+    const someMethod2 = callback => {
+        request.get('SOME_OTHER_URL', (error, response, body) => {
+            const result = JSON.parse(body);
+            callback(error, result.value);
+        });
+    };
+
+    async.parallel([someMethod1, someMethod2], (error, results) => {
+        results.forEach(result => console.log(result));
+    });
+
+    // Internal working: async.parallel keeps an array of bools of size N, where N is the number
+    // of methods passed as elements of the array(to be run parallelly), all initialized to false.
+    // Then, async.parallel passes an internal method as callback to each method provided.
+    // What that internal callback method does is that whenever it is called, it sets the boolean
+    // array's value to be true at position 'i' where 'i' corresponds to the position of the method
+    // invoking the callback. Everytime, it also checks if all values of the boolean array are true.
+    // If all are 'true', then it executes the callback that we passed to async.parallel and it passes
+    // arguments as we passed. First is the error and second is the array of results that it got from
+    // the individual methods that were run in parallel. 
