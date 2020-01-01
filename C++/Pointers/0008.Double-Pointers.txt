@@ -1,0 +1,10 @@
+int main() {
+  int a = 10;
+  int* p = &a;
+  // We use a 'int*' because we want to know what type of data it is pointing to.
+  // So, if we try to dereference it, we will get that my data is in 4 bytes starting from
+  // the p's value which is a address.
+
+  // To store a pointer to a pointer, we append a * as usual to the syntax.
+  int** pP = &p;
+}
