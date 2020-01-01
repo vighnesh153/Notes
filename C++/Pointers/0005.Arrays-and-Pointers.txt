@@ -1,0 +1,24 @@
+int main() {
+    int a[3];
+    // 3 * sizeof(int) bytes of contiguous memory is allocated for the array 'a'.
+
+    // 'a' also behaves like address of a[0].
+    cout << a << endl;
+    cout << &a[0] << endl;
+    // The above outputs will be same.
+
+    // So, we can access 0th element by the following ways:
+    cout << a[0] << endl;
+    cout << *a << endl;
+
+    // To access ith element, we have the similar following ways:
+    cout << a[i] << endl;
+    cout << *(a + i) << endl;
+
+    // Compiler behind the scenes, converts a[i] to *(a + i).
+    // In fact, we can even use i[a] to get the ith element of the array 'a'.
+    cout << 0[a] << endl;
+    cout << 1[a] << endl;
+    cout << 2[a] << endl;
+    // But as you can see, it is confusing syntax and is not recommended.
+}
