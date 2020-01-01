@@ -1,0 +1,23 @@
+// A	void	pointer	is	a	generic	pointer,	it	has	no	associated	type	with	it.	A	void
+// pointer	can	hold	address	of	any	type	and	can	be	typcasted	to	any	type. Void
+// pointer	is	declared	normally	the	way	we	do	for	pointers.
+void	*ptr;
+// This	statement	will	create	a	void	pointer.
+
+//Example:
+void *v;
+int *i;
+
+int ivar;
+char chvar;
+float fvar;
+
+i	= &ivar; //valid
+i	= &chvar; //invalid
+i	= &fvar; //invalid
+
+v	= &ivar; //	valid
+v	= &chvar; //valid
+v	= &fvar; //	valid
+
+// Thus	we	can	use	void	pointer	to	store	address	of	any	variable.
