@@ -1,0 +1,25 @@
+int main() {
+  int i = 10;
+  int* p = &i;
+
+  cout << p << endl;
+  p = p + 1; // or p++;
+  cout << p << endl;
+  // 'p' initially pointed to the address of first byte of 'a';
+  // When we add 1 to it, it will point to the 4th byte from the first byte of 'a'.
+  // It is because, cpp knows that intially 'p' points to the  address of first byte of 'a'.
+  // And the next 3 byte locations still belong to 'a' because 'a' is 4 bytes.
+  // Hence, p++ will increment the hex value of 'p' by 4.
+
+  // Similarly, p-- will decrement the hex value of 'p' by 4.
+
+  // Also, size of any type of pointer like int*, char*, double*, etc., will be
+  // 8 bytes on a 64-bit machine and 4 bytes on a 32-bit machine. It is because
+  // address of any variable type will always be in hex, and for that, we only need
+  // 8 bytes to store the hex value.
+
+  // But it is important to know that which type of variable, the pointer is pointing
+  // to. If we do ptr++, then if the pointer is interger type, then on 64-bit machine,
+  // ptr will 4 ahead. But if ptr is of char type, then ptr + 1 will be just 2 values
+  // ahead.
+}
