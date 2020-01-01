@@ -20,7 +20,7 @@ Now, if we do something like:
 So, to avoid these type of problems, if we don't want to initialise the pointer
 to point to address of some variable at the time of pointer's declaration, we should
 do the following always:
-  int* p = 0;
+  int* p = 0; or // int *p = nullptr;
   // This will create a NULL pointer. A pointer that points to a address that
   // doesn't exist in system's memory.
 
