@@ -1,0 +1,39 @@
+int main() {
+    char c[] = "abc";
+
+    cout << c << endl;
+    // Prints: abc
+
+    cout << &c << endl;
+    // Prints: address of c
+
+    cout << c + 1 << endl;
+    // Prints: bc
+
+    // When printing a character array, if we print the array, we get the entire
+    // character array until the last character wich is null.
+    // If we print c + 1, it will start from 1st character of the array and print
+    // till end.
+
+
+
+    char ch = 'a';
+    char* pC = &ch;
+
+    cout << ch << endl;
+    // Prints: a
+
+    cout << pC << endl;
+    // Prints: aSOME_GARBAGE_UNTIL_IT_FINDS_NULL
+
+
+
+    char str[] = "abcde";
+    // Here, str is the temporary memory location that was created to store "abcde".
+    // recommended way to store character array instead of the following.
+
+    char* pStr = "abcde";
+    // But here, pStr is pointing to the temporary memory location that was created to store "abcde".
+    // So, sometimes error may be thrown when modifying the char using this pStr.
+    // So, we should not use this method to create and access/modify the char array.
+}
