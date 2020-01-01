@@ -22,4 +22,6 @@ int main() {
   // to. If we do ptr++, then if the pointer is interger type, then on 64-bit machine,
   // ptr will 4 ahead. But if ptr is of char type, then ptr + 1 will be just 2 values
   // ahead.
+
+  // NOTE: Pointer arithmetic is and should only be used with arrays or iterables.
 }
