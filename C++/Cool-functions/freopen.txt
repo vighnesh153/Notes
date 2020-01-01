@@ -1,0 +1,18 @@
+using namespace std;
+
+int main() {
+  freopen("input.txt", "r", stdin);
+  freopen("output.txt", "w", stdout);
+
+  // Now, when we take input using stdin (eg. cin) then input will come from
+  // the "input.txt" file.
+  int a;
+  cin >> a;
+
+  // And when we take input using stdout (eg cout) then output will go to the
+  // the "output.txt" file.
+}
+
+
+// For more information on the 'freopen' function, check out the link:
+// http://www.cplusplus.com/reference/cstdio/freopen/
