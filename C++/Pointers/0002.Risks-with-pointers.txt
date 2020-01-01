@@ -1,0 +1,30 @@
+Suppose we have a following piece of code:
+  int* p;
+  cout << p;
+  // prints some garbage address.
+
+  cout << *p;
+  // prints the integer value that is present at address 'p'.
+
+
+Now, if we do something like:
+  *p = SOME_RANDOM_INTEGER;
+// It will modify the value that is present at address 'p'.
+// But it is possible that the address is not within the program's memory's scope.
+// So, there is a high possibility that we are accessing and modifying values at
+// address of our system's memory. This is dangerous because that address may be a
+// critical address. Maybe it is read-only but we just changed its value. Maybe it was
+// a critical address whose value we just changed.
+
+
+So, to avoid these type of problems, if we don't want to initialise the pointer
+to point to address of some variable at the time of pointer's declaration, we should
+do the following always:
+  int* p = 0;
+  // This will create a NULL pointer. A pointer that points to a address that
+  // doesn't exist in system's memory.
+
+  cout << *p;
+  // Segmentation fault.
+  // If we access the NULL pointer's value, it throws segmentation fault. So, we
+  // need to initialise it before using it.
