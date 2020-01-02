@@ -1,0 +1,8 @@
+If services are required application-wide, then they can be provided in the AppModule's provider
+array or in the Eagerly loaded module or using 'provided' in 'root' injectable. But if they can be
+accessed application-wide, then we should use 'provided' in 'root' injectable.
+
+
+If we add a service in the providers array of a lazy-loaded module, then the module will get a
+separate instance of the service and all its children will get the same instance. This should only be
+done if we want a service to be scoped to a particular module.
