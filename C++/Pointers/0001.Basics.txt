@@ -1,0 +1,40 @@
+To get address of some variable:
+
+  int i;
+  cout << &i;
+  // Some hex value
+
+
+
+
+To store address of some variable, we use pointers. Pointers are the ones that
+store address of other variables. To store address of int variable, we use int pointer,
+for float variable, we use float pointer, etc.
+
+  int i;
+  int* pI = &i;
+  cout << pI;
+  // Some hex value
+
+  float f;
+  float* pF = &f;
+  cout << pF;
+  // Some hex value
+
+  double d;
+  double* pD = &d;
+  cout << pD;
+  // Some hex value
+
+
+
+To get the value from a address, we use pointer dereferencing:
+
+  int i = 10;
+  int* pI = &i;
+
+  cout << pI;
+  // Some hex value which is address of 'i'
+
+  cout << *pI;
+  // 10

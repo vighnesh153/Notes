@@ -1,0 +1,24 @@
+int main() {
+    int a = 10;
+    int &c = a;
+    // Now, address of 'c' is same as address of 'a'.
+    // Behind the scenes, &c = &a happens.
+
+    cout << a << endl; // 10
+    c++;
+    cout << a << endl; // 11
+}
+
+
+Example:
+  // We can use the same concept to pass values by reference to a function
+  void testFunction(int &something) {
+      something++;
+  }
+
+  int main() {
+      int a = 10;
+      cout << a << endl;  // 10
+      testFunction(a);
+      cout << a << endl;  // 11
+  }

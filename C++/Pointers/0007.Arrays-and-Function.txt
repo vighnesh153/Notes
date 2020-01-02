@@ -1,0 +1,26 @@
+// We add const before pointer declaration in a function so that we don't accidentally
+// change the reference to some other variable's address.
+// Another alternative would be:
+// int sum(const int a[], int size) {
+int sum(const int* a, int size) {
+  int s = 0;
+
+  for (int i = 0; i < size; i++) {
+    s += a[i];
+  }
+
+  return s;
+}
+
+int main() {
+  int a[5] = {1, 2, 3, 4, 5};
+  cout << sum(a, 5) << endl;
+  // Outputs: 15
+  // When we access 'a' like the above, in the 'sum' function, it is basically passing
+  // the address of 'a' to the 'sum' function. So, in the definition of 'sum' function,
+  // we accept the array with a pointer.
+
+  // Because of this property, we can even pass a part of an array to the 'sum' function.
+  cout << sum(a + 2, 3) << endl;
+  // Outputs: 12
+}
