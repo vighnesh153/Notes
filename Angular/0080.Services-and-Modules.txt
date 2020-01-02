@@ -6,3 +6,11 @@ accessed application-wide, then we should use 'provided' in 'root' injectable.
 If we add a service in the providers array of a lazy-loaded module, then the module will get a
 separate instance of the service and all its children will get the same instance. This should only be
 done if we want a service to be scoped to a particular module.
+
+
+If we add a service in the providers of a shared module, then whichever module imports the shared
+module, the shared module will use a different instance for all the different imports. It is
+obviously because, when we import a module, it is initialized again. So, adding service to the
+providers of a shared module should only be done, if we need the shared module to use different
+instances of the service when the shared module is used in a different module by importing the
+shared module. 
