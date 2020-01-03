@@ -1,0 +1,58 @@
+// Difference between static and dynamic memory allocation:
+// Static memory allocation: automatically garbage collected
+// Dynamic memory allocation: manual freeing is required using the 'delete' keyword
+
+
+{
+    // STATIC ALLOCATION
+    int a;
+    // Created on stack because memory requirement known before hand
+}
+
+{
+    // STATIC ALLOCATION
+    int a[10];
+    // Created on stack because memory requirement known before hand
+}
+
+
+{
+    // STATIC ALLOCATION
+    int n;
+    cin >> n;
+    int a[n];
+    // In-valid because memory requirement not known before hand (may work in some
+    // implementations)
+}
+
+
+{
+    // DYNAMIC ALLOCATION
+    int* a = new int;
+    // 'a' is created on heap.
+    // Memory address of the preserved memory is returned
+
+    *a = 10;
+
+
+    // After usage is complete
+    delete a;
+    // It will clear the reference of memory address of 'new int' in 'a'. The variable
+    // 'a' still exists and will continue to exist until it goes out of scope.
+    // It basically marks the memory for garbage collection.
+    // But if we did not 'delete' it, then even ater going out of scope, the variable
+    // 'a' would still have the memory reserved on the stack for the address of
+    // 'new int'.
+}
+
+{
+    // DYNAMIC ALLOCATION
+    int n;
+    cin >> n;
+
+    int* arr = new int[n];
+    // Valid
+
+    // Marking for garbage collection
+    delete[] arr;
+}
