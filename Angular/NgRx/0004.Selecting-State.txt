@@ -9,6 +9,13 @@ In the component, where you want to use the store, inject it in the constructor 
 
         ngOnInit() {
             this.someObservable = this.store.select('someReducerName');
+
+            // OR
+
+            // Don't forget to unsubscribe
+            this.store.select('someReducerName').subscribe(item => {
+                // Do something.
+            });
         }
 
 In the HTML,
