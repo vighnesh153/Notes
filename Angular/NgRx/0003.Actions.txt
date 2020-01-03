@@ -1,0 +1,22 @@
+// Each component that will want to change the state will create its own actions.
+//
+// Name: component-name/store/component-name.actions.ts
+import { Action } from '@ngrx/store';
+import { SomeType } from '@models/SomeType.model';
+
+export const SOME_ACTION = 'SOME_ACTION';
+export const SOME_ACTION_2 = 'SOME_ACTION_2';
+
+export class SomeAction implements Action {
+    readonly type = SOME_ACTION;
+
+    constructor(public payload: SomeType) {}
+}
+
+export class SomeAction2 implements Action {
+    readonly type = SOME_ACTION_2;
+
+    constructor(public payload: SomeType) {}
+}
+
+export type ComponentNameActions = SomeAction | SomeAction2;

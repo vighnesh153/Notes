@@ -1,0 +1,18 @@
+Steps:
+    1. Generate dist (production build) files using `ng build --prod`.
+    2. Install firebase-cli:
+        sudo npm i -g firebase-tools
+    3. Login in to firebase on the system using the following command (firebase account is required):
+        firebase login
+    4. From within the angular project, run the following command:
+        firebase init
+        // Select hosting and continue
+    5. Choose the firebase project that you want to connect the angular project with (you need to
+       create a firebase project first on the online firebase console)
+    6. Select the directory that should be hosted. In this case, it will be,
+        dist/<project-name>
+    7. Select 'yes' for 'configure as a single page app' so that all the routes will render the
+       index.html page.
+    8. Select 'no' for 'existing index.html should be overwritten'.
+    9. Finally, run `firebase deploy` (it will also print a URL where the project is hosted. We can
+       configure the URL to be our own from within the firebase project on google firebase console.)

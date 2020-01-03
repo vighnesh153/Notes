@@ -6,6 +6,8 @@ Usage:
     const request = require('request');
     const async = require('async');
 
+
+1. Async => Parallel
     const someMethod1 = callback => {
         request.get('SOME_URL', (error, response, body) => {
             const result = JSON.parse(body);
@@ -32,4 +34,65 @@ Usage:
     // invoking the callback. Everytime, it also checks if all values of the boolean array are true.
     // If all are 'true', then it executes the callback that we passed to async.parallel and it passes
     // arguments as we passed. First is the error and second is the array of results that it got from
-    // the individual methods that were run in parallel. 
+    // the individual methods that were run in parallel.
+
+
+2. Async => Series
+    const someMethod1 = callback => {
+        request.get('SOME_URL', (error, response, body) => {
+            const result = JSON.parse(body);
+            callback(null);
+        });
+    };
+
+    const someMethod2 = callback => {
+        request.get('SOME_OTHER_URL', (error, response, body) => {
+            const result = JSON.parse(body);
+            callback(null);
+        });
+    };
+
+    async.series([someMethod1, someMethod2], (error, results) => {
+        results.forEach(result => console.log(result));
+    });
+
+    // Only difference between 'async.parallel' and 'async.series' is that in 'async.series', the next
+    // method is executed only when the previous method is done executing. In case that one of the
+    // series steps passes a non-null value to its callback as the first parameter, the series is
+    // immediately stopped, and the final callback is triggered with the results that have been
+    // collected to far, and the err parameter set to the error value passed by the failing step.
+
+
+3. Async => Waterfall
+    const someMethod1 = callback => {
+        request.get('SOME_URL', (error, response, body) => {
+            const result = JSON.parse(body);
+            callback(null, 'SOME_VALUE1');
+        });
+    };
+
+    const someMethod2 = (someParam1, callback) => {
+        request.get('SOME_OTHER_URL', (error, response, body) => {
+            const result = JSON.parse(body);
+            callback(null, 'SOME_VALUE1', 'SOME_VALUE2');
+        });
+    };
+
+    const someMethod3 = (someParam1, someParam2, callback) => {
+        request.get('SOME_OTHER_URL', (error, response, body) => {
+            const result = JSON.parse(body);
+            callback(null, 'SOME_VALUE1', 'SOME_VALUE2', 'SOME_VALUE3', 'SOME_VALUE4');
+        });
+    };
+
+    async.waterfall([someMethod1, someMethod2], (error, someParam1, someParam2, someParam3, someParam4) => {
+        console.log(someParam1, someParam2, someParam3, someParam4);
+    });
+
+    // async.waterfall is similar to async.series, as it executes all steps in series, but it also
+    // enables us to access the results of a previous step in the step that follows
+
+
+
+FOR MORE INFO:
+    Check: https://caolan.github.io/async/v3/

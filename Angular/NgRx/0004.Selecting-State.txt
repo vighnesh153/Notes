@@ -1,0 +1,22 @@
+In the component, where you want to use the store, inject it in the constructor of the component:
+    import { Store } from '@ngrx/store';
+
+    // In the class,
+        someObservable: Observable<typeOfTheStateWhichIsReturnedByTheReducer>;
+
+        ctor(private store: Store<{ someReducerName: typeOfTheStateWhichIsReturnedByTheReducer }>)
+        // Create an Interface/Model for the entire Store, and that can be used above instead
+
+        ngOnInit() {
+            this.someObservable = this.store.select('someReducerName');
+
+            // OR
+
+            // Don't forget to unsubscribe
+            this.store.select('someReducerName').subscribe(item => {
+                // Do something.
+            });
+        }
+
+In the HTML,
+    *ngFor="let item of (someObservable | async).somePropertyOfTheStateEmittedByObservable"
