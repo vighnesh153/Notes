@@ -1,0 +1,18 @@
+NgRx helps with state management for bigger angular applications.
+
+Handling state with services in smaller to medium size apps is cool, but as app gets bigger and
+bigger, it can become difficult to maintain state because it will be hard to find particular
+information from the large pool of services.
+
+'rxjs' solves small part of the problem by providing 'Subjects' and 'BehaviorSubjects', and it is
+also pretty good, even in bigger apps, but it requires that the app is structured well from the start.
+
+Issues with 'rxjs':
+    1. State can be updated anywhere.
+    2. State is (possibly) mutable.
+
+NgRx solves these problems:
+    NgRx -> Angular's implementation of Redux
+
+Here, all the information is stored in a single object called the store and it is the single source
+of truth as it manages the entire application state.
