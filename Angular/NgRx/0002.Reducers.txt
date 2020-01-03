@@ -16,5 +16,9 @@
                     ...state,
                     someKey: [ ...state.someKey, action.payload ]
                 };
+
+            // Default statement is mandate for the initial getState
+            default:
+                return state;
         }
     }
