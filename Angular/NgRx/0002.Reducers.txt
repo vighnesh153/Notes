@@ -8,7 +8,10 @@
         // data
     };
 
-    export function componentNameReducer(state=intialState, action: ComponentNameActions.SomeAction) {
+    export function componentNameReducer(
+        state = intialState,
+        action: ComponentNameActions.ComponentNameActions
+    ) {
         switch (action.type) {
             case ComponentNameActions.SOME_ACTION:
                 // Do something
@@ -16,6 +19,12 @@
                     ...state,
                     someKey: [ ...state.someKey, action.payload ]
                 };
+            case ComponentNameActions.SOME_ACTION_2:
+                // Do something
+                return {
+                    ...state,
+                    someKey: [ ...state.someKey, action.payload ]
+                }
 
             // Default statement is mandate for the initial getState
             default:
