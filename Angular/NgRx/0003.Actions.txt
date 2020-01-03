@@ -8,5 +8,6 @@ export const SOME_ACTION = 'Some Action';
 
 export class SomeAction implements Action {
     readonly type = SOME_ACTION;
-    payload: SomeType;
+
+    constructor(public payload: SomeType) {}
 }
