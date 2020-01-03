@@ -16,3 +16,17 @@ NgRx solves these problems:
 
 Here, all the information is stored in a single object called the store and it is the single source
 of truth as it manages the entire application state.
+
+Installation:
+    1. npm i -S @ngrx/store
+
+
+Setup:
+    // In the AppModule,
+        import { StoreModule } from '@ngrx/store';
+        import { componentNameReducer } from './component-name/store/component-name.reducer';
+
+        // and in the 'imports' array, add
+        StoreModule.forRoot({
+            someReducerName: componentNameReducer
+        })
