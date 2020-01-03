@@ -1,0 +1,33 @@
+int main() {
+    int i = 65;
+    char c = i;
+
+    cout << c << endl;
+    // Outputs: A
+
+    int* p = &i;
+    char* pc = (char *)p;
+
+    cout << p << endl;
+    // Outputs: 0x7ffeeb665a6c
+
+    cout << pc << endl;
+    // Outputs: A  (Because Intel machines are little endian so bytes are stored in reverse order)
+    // So, int = 4 bytes, so 'i' is stored as follows '65 0 0 0' and when we explicitly cast int* to
+    // char*, the char* points to '65' and hence it after de-referencing, we get 'A'
+
+    cout << *p << endl;
+    // Outputs: 65
+
+    cout << *pc << endl;
+    // Outputs: A
+
+    cout << *(pc + 1) << endl;
+    // Outputs: blank
+
+    cout << *(pc + 2) << endl;
+    // Outputs: blank
+
+    cout << *(pc + 3) << endl;
+    // Outputs: blank
+}
