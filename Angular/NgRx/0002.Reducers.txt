@@ -1,0 +1,20 @@
+// Each component that will want to change the state will create its own reducer.
+//
+// Name: component-name/store/component-name.reducer.ts
+
+    import * as ComponentNameActions from './component-name.action.ts';
+
+    const intialState = {
+        // data
+    };
+
+    export function componentNameReducer(state=intialState, action: ComponentNameActions.SomeAction) {
+        switch (action.type) {
+            case ComponentNameActions.SOME_ACTION:
+                // Do something
+                return {
+                    ...state,
+                    someKey: [ ...state.someKey, action.payload ]
+                };
+        }
+    }
