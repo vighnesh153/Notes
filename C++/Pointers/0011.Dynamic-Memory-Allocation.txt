@@ -75,6 +75,8 @@
       }
     }
 
+    NOTE: In this, we can have a 2-D array where each row has different number of columns.
+
     // Mark each row(1-D array) for garbage collection
     for (int i = 0; i < rows; i++) {
       delete [] p[i];
