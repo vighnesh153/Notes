@@ -56,3 +56,30 @@
     // Marking for garbage collection
     delete[] arr;
 }
+
+{
+    // 2-D Array
+
+    // Doesn't work
+    new int[10][20];
+
+    // So, we store an array of pointers where each pointer will point to a
+    // dynamic 1-D array
+    int rows, cols;
+    cin >> rows >> cols;
+    int**p = new int*[rows];
+    for (int i = 0; i < rows; i++) {
+      p[i] = new int[cols];
+      for (int j = 0; j < cols; j++) {
+        cin >> p[i][j];
+      }
+    }
+
+    // Mark each row(1-D array) for garbage collection
+    for (int i = 0; i < rows; i++) {
+      delete [] p[i];
+    }
+    // Then mark the array of pointers for garbage collection
+    delete [] p;
+
+}
