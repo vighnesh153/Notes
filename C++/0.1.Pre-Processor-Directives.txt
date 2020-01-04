@@ -27,9 +27,14 @@ Commonly used pre-processor directives:
 2. #define
 
 		It is used to define a macro. Whatever we define using it, it substitutes directly where it
-		is used.
+		is used. As at compile time, the macro will substitute the value of macro where it is
+		used, so it doesn't take extra memory. So, we can also use macros to define constants
+		instead of making a global constant.
+
 		For example:
 			#define INTEGER int
+			#define PI 3.14
+
 			INTEGER main() {}
 
 			will be converted to:
