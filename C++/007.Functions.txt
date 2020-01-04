@@ -8,7 +8,7 @@ Function defined freely. It doesn't have an enclosing class.
 
 
 FUNCTION OVERLOADING:
-Functions with same name but different number parameters and/or if both have
+Functions with same name but different number of parameters and/or if both have
 same number of parameters but different types corresponding
 
 
@@ -33,3 +33,6 @@ performance. But this can be done only with really small functions. If we use in
 functions, it won't work.
 
 Syntax: inline int add(int a, int b) return a + b;
+
+
+NOTE: C++ also supports default parameters.
