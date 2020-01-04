@@ -10,7 +10,7 @@ int main() {
   int arr[] = { 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 1, 2, 3, 4, 5, 6, 7, 8, 10 };
 
   // NOTE:
-  // In C++, set is implemented using a balanced binary search tree. So, searching
+  // In C++, set is implemented using a balanced binary search tree. So, searching, erasing, inserting
   // for an element is log(N)
 
   for (int i = 0; i < 10; ++i) {
