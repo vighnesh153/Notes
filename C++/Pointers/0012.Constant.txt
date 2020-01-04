@@ -1,0 +1,68 @@
+int main() {
+    {
+        // Constant integer declaration
+        const int x = 10;
+        int const y = 11;
+    }
+
+
+    {
+        int i = 10;
+        const int &j = i;
+        i++;
+
+        cout << j;
+        // Outputs: 11
+    }
+
+    {
+        // Invalid, because of obvious reasons
+        const int i = 10;
+        int &j = i;
+    }
+
+    {
+        // Concept useful when passing args to functions
+        int j = 10;
+
+        int const *p = &j;
+        // or
+        const int  *p = &j;
+
+        // Invalid because content at address 'p' can't be changed
+        (*p)++;
+
+        // it works
+        j++;
+    }
+
+    {
+        // Concept useful when passing args to functions
+        int j = 10;
+        int const &p = j;
+
+        // Invalid because content at address 'p' can't be changed
+        p++;
+
+        // it works
+        j++;
+    }
+
+    {
+        int j = 10;
+        int k = 11;
+
+        int * const p = &j;
+        (*p)++; // valid
+        *p = &k;  // invalid
+    }
+
+    {
+        int j = 10;
+        int k = 11;
+
+        const int * const p = &j;
+        (*p)++; // invalid
+        *p = &k;  // invalid
+    }
+}
