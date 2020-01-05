@@ -4,8 +4,8 @@
 import { Action } from '@ngrx/store';
 import { SomeType } from '@models/SomeType.model';
 
-export const SOME_ACTION = 'SOME_ACTION';
-export const SOME_ACTION_2 = 'SOME_ACTION_2';
+export const SOME_ACTION = '[Component Name] Some Action';    // Convention to avoid similar actionsNames in other components' actions
+export const SOME_ACTION_2 = '[Component Name] Some Action 2';
 
 export class SomeAction implements Action {
     readonly type = SOME_ACTION;
