@@ -4,12 +4,16 @@
 
     import * as ComponentNameActions from './component-name.action.ts';
 
-    const intialState = {
+    export interface State {
+      ...
+    }
+
+    const intialState: State = {
         // data
     };
 
     export function componentNameReducer(
-        state = intialState,
+        state: State = intialState,
         action: ComponentNameActions.ComponentNameActions
     ) {
         switch (action.type) {
