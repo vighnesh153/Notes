@@ -1,1 +1,9 @@
-this.store.dispatch(someComponentNameActionInstance);
+import { SomeAction } from "../../component-name/component-name.actions";
+
+
+// NEW SYNTAX
+this.store.dispatch(SomeAction(some_payload));
+
+
+// OLD SYNTAX
+this.store.dispatch(new SomeAction(some_payload));
