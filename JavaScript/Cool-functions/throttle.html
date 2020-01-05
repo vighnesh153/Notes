@@ -1,0 +1,23 @@
+<button id="lol">Click me</button>
+
+<script>
+    function throttle(callback, delay) {
+        let shouldExecute = true;
+        return function(...args) {
+            if (shouldExecute) {
+                callback(...args);
+                shouldExecute = false;
+                setTimeout(() => shouldExecute = true, delay);
+            }
+        }
+    }
+
+    const clickCallback = event => {
+        console.log(event);
+        console.log(new Date().toTimeString());
+    };
+
+    lol.addEventListener('click', throttle(clickCallback, 1000));
+    // No matter how many times the button is clicked, the callback function
+    // will execute only once every 1 second (1000 milliseconds).
+</script>
