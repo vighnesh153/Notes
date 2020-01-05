@@ -1,0 +1,13 @@
+// Good for viewing the routing information in the Redux dev tools.
+
+
+Installation:
+  1. npm i -D @ngrx/router-store
+
+
+Setup:
+  In the app.module.ts,
+    import { StoreRouterConnectionModule } from '@ngrx/router-store';
+
+  In the imports array:
+    StoreRouterConnectionModule.forRoot()
