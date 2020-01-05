@@ -1,0 +1,27 @@
+<button id="lol">Click me</button>
+
+<script>
+    function debounce(callback, delay) {
+        let debounceTimeout;
+
+        return function(...args) {
+            if (debounceTimeout) {
+                clearTimeout(debounceTimeout);
+                debounceTimeout = undefined;
+            }
+            debounceTimeout = setTimeout(() => {
+                callback(...args);
+            }, delay);
+        };
+    }
+
+    const clickCallback = event => {
+        console.log(event);
+        console.log(new Date().toTimeString());
+    };
+    lol.addEventListener('click', debounce(clickCallback, 2000));
+    // No matter how many times the button is clicked, the function will
+    // execute only after a certain delay after the last click.
+    // Can be used for autosave where we don't save after every change but after
+    // change occurred and user is inactive for a while.
+</script>
