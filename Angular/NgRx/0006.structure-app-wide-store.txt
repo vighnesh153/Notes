@@ -1,0 +1,30 @@
+Create a new directory 'store' which is sibling to the app-component.
+
+In it, create a new file 'app.reducer.ts', and in it, do:
+
+  import { ActionReducerMap } from '@ngrx/store';
+
+  import * as fromComponentName1 from './fromComponentName1/store/component-name.reducer';
+  import * as fromComponentName2 from './fromComponentName2/store/component-name.reducer';
+  import * as fromComponentName3 from './fromComponentName3/store/component-name.reducer';
+
+
+  export interface AppState {
+    someName1: fromComponentName1.State;
+    someName2: fromComponentName2.State;
+    someName3: fromComponentName3.State;
+  }
+
+  export const appReducers: ActionReducerMap<AppState> = {
+    someName1: fromComponentName1.componentNameReducer;
+    someName2: fromComponentName2.componentNameReducer;
+    someName3: fromComponentName3.componentNameReducer;
+  }
+
+
+In the app.module.ts,
+  import * as fromApp "./store/app.reducer";
+
+
+  in the imports array:
+    StoreModule.forRoot(fromApp.appReducers)
