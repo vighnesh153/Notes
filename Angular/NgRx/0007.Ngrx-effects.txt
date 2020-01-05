@@ -1,0 +1,88 @@
+Reducers should not be used to do asynchronous tasks.
+We can definitely use Angular Services to handle HTTP requests and let redux
+handle the store/state of the application. But if we prefer not to use the
+Angular services for the HTTP requests, so we can use the ngrx effects package.
+
+Installation:
+  npm i -S @ngrx/effects
+
+
+Creating the effects file.
+In the components' directory, in the store directory,
+create a file named 'component-name.effects.ts'.
+
+// Whenever we dispatch some action, we it gets directed to the reducer to
+// do something accordingly. But we can only do synchronous tasks in the
+// reducer. So, if we return state in a callback, the reducer won't wait and
+// will return undefined. So, we use effects to do asynchronous tasks. When a
+// action is dispatched, 'effects' also get to know about it. Now, we can
+// required tasks for a particular action (like some http request) and when
+// the task is complete, we can dispatch another action so that the reducer
+// can react to the data from the task.
+
+  import { Actions, ofType, Effect } from '@ngrx/effects';
+  import { switchMap, catchError, map } from 'rxjs/operators';
+  import { of } from 'rxjs';
+
+  import { Router } from '@angular/router';
+  import { Injectable } from '@angular/core';
+  import { HttpClient } from '@angular/common/http';
+
+  import * as ComponentNameActions from './component-name.actions';
+
+  @Injectable()
+  export class ComponentNameEffects {
+
+    // Now, only dispatching the specified actions(in the 'ofType') will trigger this effect
+    // We pass multiple actions when we want to trigger the same effect
+    // for all the specified actions. Else, we can create different effect
+    // for other actions.
+    @Effect()
+    someEffect = this.actions$.pipe(
+      ofType(ComponentNameActions.SOME_ACTION),
+      switchMap((someAction: ComponentNameActions.SomeAction) => {
+      console.log(someAction.type);
+      console.log(someAction.payload);
+        return this.http
+              .get(...)
+              // We need to catch error here because if the httpCall throws an error,
+              // the this entire chain of effect will stop working and next time,
+              // triggering of this effect will not work.
+              .pipe(
+                    map(responseDate => {
+                      return new SomeAction(...);
+                    }),
+                    catchError(error => {
+                      return of(new SomeAction(...);
+                    })
+              );
+      });
+    );
+
+    @Effect({ dispatch: false })
+    someOtherEffect = this.actions$
+        .pipe(
+          ofType(ComponentNameActions.SOME_ACTION_2)
+          .tap(() => {
+            this.router.navigate(SOME_ROUTE);
+          })
+        );
+
+    constructor(
+        private actions$: Actions,
+        private http: HttpClient,
+        private router: Router
+    ) {
+
+    }
+  }
+
+
+Then, in the app.module,
+
+  import { EffectsModule } from '@ngrx/effects';
+
+  // in the imports array, after injecting the StoreModule,
+  EffectsModule.forRoot([
+    ComponentNameEffects
+  ])
