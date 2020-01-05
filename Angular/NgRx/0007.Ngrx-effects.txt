@@ -17,7 +17,7 @@ create a file named 'component-name.effects.ts'.
 // will return undefined. So, we use effects to do asynchronous tasks. When a
 // action is dispatched, 'effects' also get to know about it. Now, we can
 // required tasks for a particular action (like some http request) and when
-// the task is complete, we can dispatch another action so that the reducer
+// the task is complete, we dispatch another action so that the reducer
 // can react to the data from the task.
 
   import { Actions, ofType, Effect } from '@ngrx/effects';
