@@ -20,6 +20,38 @@ create a file named 'component-name.effects.ts'.
 // the task is complete, we dispatch another action so that the reducer
 // can react to the data from the task.
 
+
+
+// NEW SYNTAX
+    import { createEffect } from '@ngrx/store';
+
+    someEffect = createEffect(() =>
+        this.actions$.pipe(
+          ofType(ComponentNameActions.SOME_ACTION),
+          switchMap((someAction: ComponentNameActions.SomeAction) => {
+              console.log(someAction.type);
+              console.log(someAction.payload);
+              return this.http
+                    .get(...)
+                    // We need to catch error here because if the httpCall throws an error,
+                    // the this entire chain of effect will stop working and next time,
+                    // triggering of this effect will not work.
+                    .pipe(
+                        map(responseDate => {
+                          return new SomeAction(...);
+                        }),
+                        catchError(error => {
+                          return of(new SomeAction(...));
+                        })
+                    );
+          });
+        );
+    );
+
+
+
+
+// OLD SYNTAX
   import { Actions, ofType, Effect } from '@ngrx/effects';
   import { switchMap, catchError, map } from 'rxjs/operators';
   import { of } from 'rxjs';
@@ -41,21 +73,21 @@ create a file named 'component-name.effects.ts'.
     someEffect = this.actions$.pipe(
       ofType(ComponentNameActions.SOME_ACTION),
       switchMap((someAction: ComponentNameActions.SomeAction) => {
-      console.log(someAction.type);
-      console.log(someAction.payload);
-        return this.http
-              .get(...)
-              // We need to catch error here because if the httpCall throws an error,
-              // the this entire chain of effect will stop working and next time,
-              // triggering of this effect will not work.
-              .pipe(
-                    map(responseDate => {
-                      return new SomeAction(...);
-                    }),
-                    catchError(error => {
-                      return of(new SomeAction(...);
-                    })
-              );
+          console.log(someAction.type);
+          console.log(someAction.payload);
+          return this.http
+                .get(...)
+                // We need to catch error here because if the httpCall throws an error,
+                // the this entire chain of effect will stop working and next time,
+                // triggering of this effect will not work.
+                .pipe(
+                      map(responseDate => {
+                        return new SomeAction(...);
+                      }),
+                      catchError(error => {
+                        return of(new SomeAction(...));
+                      })
+                );
       });
     );
 
