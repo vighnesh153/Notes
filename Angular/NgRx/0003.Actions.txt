@@ -1,3 +1,16 @@
+// NEW SYNTAX
+import {createAction, props} from '@ngrx/store';
+
+export const loginStart = createAction('[Auth] Login Start', props<{ email: string; password: string }>());
+export const signupStart = createAction('[Auth] Signup Start', props<{ email: string; password: string }>());
+export const authenticateSuccess = createAction('[Auth] Authenticate Success', props<{ email: string; userId: string; token: string; expirationDate: Date; redirect: boolean }>());
+// Can use model instead if stating the TYPE manually
+
+
+
+
+// OLD SYNTAX
+
 // Each component that will want to change the state will create its own actions.
 //
 // Name: component-name/store/component-name.actions.ts
