@@ -1,0 +1,13 @@
+Install:
+  1. Redux dev tools extension on a browser
+  2. npm i -D @ngrx/store-devtools
+
+
+Setup:
+  In app.module,
+    import { StoreDevToolsModule } from '@ngrx/store-devtools';
+    import { environment } from '@environments/environment';
+
+    // In the imports array,
+    StoreDevToolsModule.instrument({ logOnly: environment.production })
+    // 'production' is false in development environment but true in production environment
