@@ -1,0 +1,58 @@
+import {
+  Component,
+  ComponentFactoryResolver,
+  ViewChild,
+  OnDestroy,
+  OnInit
+} from '@angular/core';
+import { PlaceholderDirective } from '../shared/placeholder/placeholder.directive';
+import { AlertComponent } from 'app/shared/components/alert/alert.component';
+
+
+class SomeComponent {
+  @ViewChild(PlaceholderDirective, { static: false }) alertHost: PlaceholderDirective;
+
+  constructor(private componentFactoryResolver: ComponentFactoryResolver) {}
+
+  private showErrorAlert(message: string) {
+    const alertCmpFactory = this.componentFactoryResolver.resolveComponentFactory(
+      AlertComponent
+    );
+    const hostViewContainerRef = this.alertHost.viewContainerRef;
+    hostViewContainerRef.clear();
+
+    const componentRef = hostViewContainerRef.createComponent(alertCmpFactory);
+
+    // setting 'message' input property of the alert component
+    componentRef.instance.message = message;
+
+    // adding a subscription to the output property 'close' which is a event emitter
+    componentRef.instance.close
+    .pipe(take(1))
+    .subscribe(() => {
+      hostViewContainerRef.clear();
+    });
+  }
+}
+
+
+// In the SomeComponent.component.html, add the following somewhere
+<ng-template appPlaceholder></ng-template>
+
+
+
+// Add the AlertComponent to the entryComponents array in the app.module's @NgModule's object
+@NgModule({
+  entryComponents: [AlertComponent]
+})
+class AppComponent {}
+
+// Create a placeholder-directive and add it to the declarations array of the app.component
+import { Directive, ViewContainerRef } from '@angular/core';
+
+@Directive({
+  selector: '[appPlaceholder]'
+})
+export class PlaceholderDirective {
+  constructor(public viewContainerRef: ViewContainerRef) {}
+}
