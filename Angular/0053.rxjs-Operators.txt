@@ -29,6 +29,18 @@ take => This function is a rxjs operator. It takes a positive integer as an argu
 		unsubscribes the subscriber from the subscription.
 
 
+withLatestFrom => This operator takes 1 value from the source observable (like Redux store)
+					provided as an argument to it and then passes the data as an array from
+					both the sources.
+
+					const example = source.pipe(
+					  withLatestFrom(secondSource),
+					  map(([first, second]) => {
+					    return `First Source (5s): ${first} Second Source (1s): ${second}`;
+					  })
+					);
+
+
 exhaustMap => This function takes in callback. That callback should take the data of the subscription,
  			  as parameter and it returns an observable. This observable replaces the original observable.
 
