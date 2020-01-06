@@ -16,3 +16,6 @@ Steps:
     8. Select 'no' for 'existing index.html should be overwritten'.
     9. Finally, run `firebase deploy` (it will also print a URL where the project is hosted. We can
        configure the URL to be our own from within the firebase project on google firebase console.)
+
+NOTE: Angular universal can be deployed using 'Firebase Hosting'. For that, we need to look at
+      'Firebase cloud functions'.
