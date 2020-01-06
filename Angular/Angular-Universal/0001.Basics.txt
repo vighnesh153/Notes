@@ -3,4 +3,10 @@ user actions. Angular Universal executes on the server, generating static applic
 later get bootstrapped on the client. This means that the application generally renders more
 quickly, giving users a chance to view the application layout before it becomes fully interactive.
 
+You typically use Angular Universal to pre-render Angular pages on the server. Once the app then
+runs on the client, it's a normal SPA again.
+Server-side rendering (SSR) can make sense because of SEO considerations
+(crawler should see what your users see) or because you want to deliver a finished page to your
+users (rather than creating the page in the browser).
+
 More info. here: https://angular.io/guide/universal
