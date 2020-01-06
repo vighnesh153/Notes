@@ -21,6 +21,10 @@ int main() {
   for (set<int>::iterator it = s.begin(); it != s.end(); ++it) {
     cout << *it << endl;
   }
+  // alternatively
+  for (const auto & it : s) {
+      cout << it << endl;
+  }
 
   // Check for existence of an element
   if (s.find(19) == s.end()) {
