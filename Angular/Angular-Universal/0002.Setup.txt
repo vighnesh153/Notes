@@ -1,0 +1,77 @@
+In the command-line,
+    1. ng add @nguniversal/express-engine --clientProject <project-name>
+    // project-name can be found in the angular.json file under the property: 'projects'
+
+    2. npm i -S @nguniversal/module-map-ngfactory-loader
+
+    3. In the app.module.ts,
+        import { ModuleMapLoaderModule } from '@nguniversal/module-map-ngfactory-loader';
+        // then add it to the 'imports' array.
+
+    4. As we are rendering things on the server, some of the api's won't be available on the server,
+       like the localStorage. So, to not break that, we do the following in that component which uses
+       those api's.
+
+       import { Inject, PLATFORM_ID } from '@angular/core';
+       import { isPlatformBrowser } from '@angular/common';
+
+       // Then, in the constructor of the class:
+       constructor(@Inject(PLATFORM_ID) private platformId) {}
+
+
+       // Then, in the method that uses the browser API, we do as follows:
+       if (isPlatformBrowser(this.platformId)) {
+            // make the call because this block will be executed only if the code is run on browser.
+       }
+
+    5. To build the app from production:
+        Use: `npm run build:ssr` instead of `npm build --prod`
+        // The above command will build for production but along with that, it will also bind some
+        // other settings.
+
+
+
+
+//// OTHER WAY OF ENABLING SERVER-SIDE RENDERING OF THE ANGULAR APPLICATION (using NestJS)
+A progressive Node.js framework for building efficient, reliable and scalable server-side applications.
+
+    Installation:
+        1. ng add @nestjs/ng-universal
+            // enter the name of the project (Can be found in the angular.json file under the
+            property: 'projects') when prompted.
+
+        2. npm i -S @nguniversal/module-map-ngfactory-loader
+
+        3. In the app.module.ts,
+            import { ModuleMapLoaderModule } from '@nguniversal/module-map-ngfactory-loader';
+            // then add it to the 'imports' array.
+
+        4. As we are rendering things on the server, some of the api's won't be available on the server,
+           like the localStorage. So, to not break that, we do the following in that component which uses
+           those api's.
+
+           import { Inject, PLATFORM_ID } from '@angular/core';
+           import { isPlatformBrowser } from '@angular/common';
+
+           // Then, in the constructor of the class:
+           constructor(@Inject(PLATFORM_ID) private platformId) {}
+
+
+           // Then, in the method that uses the browser API, we do as follows:
+           if (isPlatformBrowser(this.platformId)) {
+                // make the call because this block will be executed only if the code is run on browser.
+           }
+
+        5. To build the app from production:
+           Use: `npm run build:ssr` instead of `npm build --prod`
+           // The above command will build for production but along with that, it will also bind some
+           // other settings.
+
+
+Now, the dist files will no longer be static. We are rendering some part on the server.
+The reason for this is, that you're using Node.js to pre-render pages on the server and those
+Hosts don't support Node.js.
+So, for that, we will need `NodeJs` installed on the host server. Install node js on the host.
+To these hosts, you need to upload your dist/ folder along with the package.json file.
+On the web server, you then have to ensure that npm install is executed, followed by npm serve:ssr
+from within the dist/<project-name> folder.
