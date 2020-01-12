@@ -1,0 +1,16 @@
+const express = require('express');
+const app = express();
+
+// .use() allows us to apply middleware.
+// It takes a function that can accept 3 arguments: request, response and next.
+// request and response are the usual arguments but next is the callback.
+// When we are done with the processing of the middleware, we should invoke 'next'.
+// If we don't, then the next applied middleware won't be executed.
+// So, if we are not sending a response from within the middleware, then
+// we should invoke the 'next' function.
+app.use((request, response, next) => {
+    // Do something
+    next();  // Basically, the next middleware function that we added, is passed
+             // passed as 'next'. So, we are the ones who indirectly invoke the next
+             // middleware.
+});
