@@ -1,0 +1,23 @@
+Installation:
+  npm i -D nodemon
+
+
+Usage:
+  nodemon app.js
+  // Nodemon is a utility that will monitor for any changes in your source and
+  // automatically restart your server. Perfect for development. Just use 'nodemon'
+  // instead of 'node' to run your code, and now your process will automatically
+  // restart when your code changes.
+
+
+
+But this won't restart the debugger if we make changes to the file while debugging.
+So, for that to work, we open the '.vs/launch.json' and in the object, we add the
+following properties:
+  "restart": true,
+  "runtimeExecutable": "nodemon"
+  "console": "integratedTerminal"
+// This works for 'VsCode'. Check 'nodemon' docs for other IDEs.
+// But then, we would need to intall 'nodemon' globally for it to work.
+
+MORE INFO FOR VS-CODE DEBUGGING: https://code.visualstudio.com/docs/nodejs/nodejs-debugging
