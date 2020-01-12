@@ -1,0 +1,10 @@
+const express = require('express');
+const app = express();
+
+// This middleware will run for routes that start with '/'.
+app.use('/', (request, response, next) => {
+    // Do something
+    next();
+});
+
+app.listen(4200);
