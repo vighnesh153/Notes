@@ -21,6 +21,11 @@ Although, the 'createServer' method also accepts a function that takes 2 argumen
 
             // To end the response construction
             response.end();
+
+            // This will make all the process that are listening to stop once
+            // this line is hit. It will shut down our application. Not used
+            // often but it is good to know.
+            process.exit();
         });
         // The above function accepts all the requests and sends a response as '200 OK' and body as
         // body, 'Hello, Vighnesh!'.
