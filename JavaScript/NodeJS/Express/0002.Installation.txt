@@ -1,0 +1,7 @@
+Installation:
+  npm i -S express
+
+
+Usage:
+  const express = require('express');
+  const app = express();
