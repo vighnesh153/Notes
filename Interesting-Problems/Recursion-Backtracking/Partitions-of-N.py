@@ -1,0 +1,44 @@
+partitions = dict()
+NOT_FOUND = 'Partition Not Computed'
+
+
+def get_partitions(n, blacklist=None):
+    if n == 0:
+        return [],
+    if n == 1:
+        return [1],
+
+    if blacklist is None:
+        blacklist = set()
+
+    if partitions.get(n, NOT_FOUND) != NOT_FOUND:
+        return partitions[n]
+
+    all_parts_of_n = set()
+    for i in range(1, n + 1):
+        if i in blacklist:
+            continue
+
+        partitions_considering_i = get_partitions(n - i, blacklist)
+        if len(partitions_considering_i) != 0:
+            for partition in partitions_considering_i:
+                all_parts_of_n.add(tuple(sorted([i, *partition])))
+
+        blacklist.add(i)
+        partitions_not_considering_i = get_partitions(n, blacklist)
+        if len(partitions_not_considering_i) != 0:
+            for partition in partitions_not_considering_i:
+                all_parts_of_n.add(tuple(sorted(partition)))
+        blacklist.remove(i)
+
+    partitions[n] = all_parts_of_n
+    return all_parts_of_n
+
+
+with open("file.txt", "w") as file:
+    parts = get_partitions(int(input()))
+    for part in sorted(parts):
+        print(part, file=file)
+
+    # Count of partitions
+    print(len(parts))
