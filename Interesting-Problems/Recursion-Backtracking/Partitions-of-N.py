@@ -19,16 +19,12 @@ def get_partitions(n, blacklist=None):
         if i in blacklist:
             continue
 
-        partitions_considering_i = get_partitions(n - i, blacklist)
-        if len(partitions_considering_i) != 0:
-            for partition in partitions_considering_i:
-                all_parts_of_n.add(tuple(sorted([i, *partition])))
+        for partition in get_partitions(n - i, blacklist):
+            all_parts_of_n.add(tuple(sorted([i, *partition])))
 
         blacklist.add(i)
-        partitions_not_considering_i = get_partitions(n, blacklist)
-        if len(partitions_not_considering_i) != 0:
-            for partition in partitions_not_considering_i:
-                all_parts_of_n.add(tuple(sorted(partition)))
+        for partition in get_partitions(n, blacklist):
+            all_parts_of_n.add(tuple(sorted(partition)))
         blacklist.remove(i)
 
     partitions[n] = all_parts_of_n
