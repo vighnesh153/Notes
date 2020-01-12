@@ -16,3 +16,11 @@ app.use((request, response, next) => {
 });
 
 app.listen(4200);
+
+
+NOTE: Now, express provides 2 widely used response building methods.
+    res.send('<h1>Hello</h1>');
+    // It also sets the content-type to text/html by default (if it is not set by us).
+
+    res.render('file');
+    // Discussed later (in how to use templates)
