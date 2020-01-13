@@ -1,0 +1,28 @@
+We can extract the common prefixes of routes in route files.
+
+in 'routes/file1.js':
+  const express = require('express');
+  const router = express.Router();
+
+  // '/users/login'
+  router.get('/login', (req, res, next) => {
+    // Do something
+  });
+
+  // '/users/signup'
+  router.get('/signup', (req, res, next) => {
+    // Do something
+  });
+
+  module.exports = router;
+
+
+in the main index.js/server.js file:
+  const express = require('express');
+  const app = express();
+
+  const file1Routes = require('./router/file1');
+
+  app.use('/users', file1Routes);
+
+  app.listen(SOME_PORT);
