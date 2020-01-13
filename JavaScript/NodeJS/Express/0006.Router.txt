@@ -1,0 +1,34 @@
+To structure our code, we won't add all the routes in single file. We instead
+create a 'routes' folder and inside it, we create separate files for routes
+belonging to separate features.
+
+in 'routes/file1.js':
+  const express = require('express');
+  const router = express.Router();
+
+  router.use((req, res, next) => {
+    // Some middleware.
+  });
+
+  router.get('/add-something', (req, res, next) => {
+    // Do something
+  });
+
+  module.exports = router;
+
+
+in the main index.js/server.js file:
+  const express = require('express');
+  const app = express();
+
+  const file1Routes = require('./router/file1');
+  const file2Routes = require('./router/file2');
+
+  app.use(file1Routes);
+  app.use(file2Routes);
+
+  app.all('*', (request, response, next) => {
+    request.status(404).send('<h1>Page not found</h1>');
+  });
+
+  app.listen(SOME_PORT);
