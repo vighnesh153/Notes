@@ -1,0 +1,26 @@
+const express = require('express');
+const app = express();
+
+// The request is obtained in bytes and
+// express parses out the request information but not the body.
+// So, to parse the body, we need a package called 'body-parser'.
+// Installation: npm i -S body-parser
+const bodyParser = require('body-parser');
+app.use(bodyParser.urlencoded({ extended: false }));
+// 'bodyParser.urlencoded()' returns a middleware where inside, it parses out
+// request body and then passes on the request information to the next middleware.
+// It doesn't parse all kinds of 'body' like JSON, XML, etc. but it parses out information
+// like form data, query parameters, etc.
+// what does 'extended' mean then?
+// check answer by 'Andrew Lam Yat Weng':
+// https://stackoverflow.com/questions/29960764/what-does-extended-mean-in-express-4-0
+
+app.use('/add-something', (request, response, next) => {
+    console.log(request.body);
+    // prints undefined if 'app.use(bodyParser.urlencoded({ extended: false }));'
+    // is not used. Else, prints the parsed object form of the request body and query parameters.
+
+    next();
+});
+
+app.listen(4200);
