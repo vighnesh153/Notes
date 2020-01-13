@@ -7,4 +7,17 @@ app.use('/', (request, response, next) => {
     next();
 });
 
+// To apply a middleware for all get requests:
+app.get((req, res, next) => {
+  // Do something.
+});
+
+// To apply a middleware for get request at route '/about' requests:
+app.get('/about', (req, res, next) => {
+  // Do something.
+});
+
+// Similarly, we have different verbs like, 'get', 'post', 'put', 'delete', 'patch, etc.
+NOTE: When using path in the above verbs, they accept only exact paths and not the prefixes.
+
 app.listen(4200);
