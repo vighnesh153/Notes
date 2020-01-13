@@ -1,0 +1,36 @@
+Create a 'views' directory in the root of the application. Can be named anything
+but conventionally, 'views' because of the MVC. Create HTML files in the 'views'
+directory and write HTML code in it.
+
+To serve from '/routes/someRoute.js':
+    const path = require('path');
+    const router = require('express').Router();
+
+    router.get('/', (req, res, next) => {
+      res.sendFile(path.join(__dirname, '..', 'views', 'index.html'));
+    });
+
+__dirname -> directory of the current file. in the above example, '/users/vraut/......../project-name/routes'
+Then we go one level down, ie. to the project directory and then in 'views' directory
+then finally get the 'index.html' file. We use 'path.join' so that this path works on all OS
+
+
+
+BETTER WAY OF GETTING THE ROOTDIR:
+  Create a separate directory named 'util'. In that, create a file 'root-dir.js'.
+  In that, do the following:
+
+    module.exports = require.main.path;
+    // require.main contains all the meta information of the main file.
+    // A main file is a file that is the entry point of the application and is
+    // run directly from the CLI.
+
+
+  Then in the routes files,
+      const path = require('path');
+      const router = require('express').Router();
+      const rootDir = require('root-dir');
+
+      router.get('/', (req, res, next) => {
+        res.sendFile(path.join(rootDir, 'views', 'index.html'));
+      });
