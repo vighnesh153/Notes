@@ -20,4 +20,12 @@ app.get('/about', (req, res, next) => {
 // Similarly, we have different verbs like, 'get', 'post', 'put', 'delete', 'patch, etc.
 NOTE: When using path in the above verbs, they accept only exact paths and not the prefixes.
 
+app.all('/about', (request, response, next) => {
+  // Accepts all different type of request(methods) on the '/about' route. (Exact route)
+});
+
+app.all('*', (request, response, next) => {
+  // accepts all type of request on all type of URLs.
+});
+
 app.listen(4200);
