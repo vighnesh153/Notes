@@ -1,0 +1,11 @@
+We store all the dynamic HTML files or the templates inside the views directory.
+But if we decide to store them in some other directory, then we need to tell express
+to look for the templates in that directory. We do that by setting value to a
+special configuration value.
+
+Let's say, we store all the templates in a 'public_templates' directory. Then,
+we do as follows to tell express to use templates from that directory.
+  app.set('views', 'public_templates');
+  // By default, the value of 'views' in configuration is 'views'.
+  // So, if we store the templates in 'views' directory, we don't need to configure
+  // in express as it is already configured, by default.
