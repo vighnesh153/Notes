@@ -1,0 +1,28 @@
+Static files:
+    Files, whose contents won't be modified or affected by our code. Files like
+    CSS, Front-End JS, Images, etc. don't change after they are deployed.
+
+    Also, usually they are safe to be made available to public without any fear
+    of compromising the security of app.
+
+    So, to serve such files, we create a directory named 'public' in the root of
+    the application. Can be named anything but convention is 'public'. Then we
+    store all the static files in that directory in whatever structure we like.
+    For example, all static CSS in 'public/css' and all static images in 'public/images'
+    and all frontend JS in 'public/js', etc.
+
+    Then, we need to tell express that this folder is static and any request
+    to access these files should be granted. To do that, we do the following in
+    app.js:
+
+          app.use(express.static('public'));
+
+    The above line will register the directory as static files container.
+
+    Now, if I request a file like: '/css/style.css', then express will look in all
+    the registered static files containers, in our case 'public', and then return
+    the first matched file's content as response.
+
+    So, in the HTML, we can use the styles as follows:
+
+        <link rel="stylesheet" href="/css/styles.css">
