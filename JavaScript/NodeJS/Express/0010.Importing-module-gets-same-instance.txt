@@ -1,0 +1,22 @@
+// Some 'module.js'
+  const obj = {};
+  module.exports = obj;
+
+
+// In 'file1.js':
+  const myModule = require('./module');
+  myModule.a = 123;
+
+
+// In 'file2.js':
+  const myModule = require('./module');
+  console.log(myModule.a);
+  // Outputs: 123
+
+
+// This happens because when a module is loaded onto a file, it gets cached by node.
+// So, next time if we load the same module in some other file, then the file is not
+// re-executed and the cached result of the module's import (from the first file)
+// is returned so that the execution time is faster. Thus, all the files importing
+// the same module gets the same instance of the module. This should, however,
+// not be used to share data as it is a bad practice.
