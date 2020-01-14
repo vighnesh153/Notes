@@ -1,0 +1,5 @@
+app.get('/', function(req, res) {
+    res.render('index', { data1: value1, data2: value2 });
+    // No need to specify the extension of the template as view engine automatically
+    // understands it.
+});
