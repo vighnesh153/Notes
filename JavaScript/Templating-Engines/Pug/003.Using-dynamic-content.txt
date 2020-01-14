@@ -1,0 +1,16 @@
+Suppose the data passed was:
+    { data1: value1, data2: value2, someArr: [{ k1: v1 }, { k2: v2 }] },
+then, to use it:
+
+    li #{data1}
+    li #{data2}
+
+    each obj in someArr
+      li #{obj.k1}: #{obj.k2}
+
+
+    if someArr.length > 0
+        each obj in someArr
+            li #{obj.k1}: #{obj.k2}
+    else
+        h1 No values in someArr
