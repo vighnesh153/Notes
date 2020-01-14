@@ -1,0 +1,9 @@
+To install in Node:
+  npm i -S pug
+
+
+Usage in Node:
+  app.set('view engine', 'pug');
+  // The 'view engine' key is a special key that sets the view engine for the templates.
+  // Pug package binds itself with the express app because of the above line.
+  // We don't need to add any imports for it to work.
