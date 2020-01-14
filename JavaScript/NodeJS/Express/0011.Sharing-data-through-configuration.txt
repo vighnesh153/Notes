@@ -1,0 +1,10 @@
+const express = require('express');
+const app = express();
+
+// To set the value
+app.set('my-app-name', 'some-app');
+
+
+// To retrieve the value
+app.get('my-app-name');
+// some-app
