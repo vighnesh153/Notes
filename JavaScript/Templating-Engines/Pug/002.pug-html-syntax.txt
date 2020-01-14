@@ -1,0 +1,5 @@
+index.pug:
+  body
+      h1.header Hello
+      div.main
+          button.btn.btn-primary(type="button", onclick="someFunc()") Click me
