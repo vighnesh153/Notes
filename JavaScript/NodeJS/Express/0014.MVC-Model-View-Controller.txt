@@ -1,0 +1,47 @@
+It is pattern that follows the Separation-of-Concerns philosophy.
+
+MVC?
+	Models	(Responsible to represent the data)
+	Views	(What the user sees)
+	Controllers		(Connection point between views and models and it does some in-between logic)
+					(In express or node, a Controller is basically a piece of code that is run
+					when we visit a specific route. We also call it middleware.)
+
+
+
+'Views' are already discussed in the templates and templating-engines section.
+
+
+Controller:
+	We create a separate directory named 'controllers'. In that, we add files
+	that may have one or many controller functions (middleware functions).
+	In the routes, we can import the functions from the controllers files, and
+	add their reference for each route instead of defining a function, then and
+	there in the route.
+
+
+
+Models:
+	We create a separate directory named 'models'. In that, we add files that
+	point to a single model. We now use this model to create an object of that type
+	and what not. Very useful for APIs as well because the response body for each
+	route is specific and having a model safeguards us from forgetting a key.
+	Models also makes it easier to set some default value in the model's class.
+
+	Example:
+		Product.js
+			module.exports = class Product {
+
+				constructor(title, price) {
+					this.title = title;
+					this.price = price;
+				}
+
+				save() {
+					// make an API call or something
+				}
+
+				delete() {
+					// make an API call or something
+				}
+			}
