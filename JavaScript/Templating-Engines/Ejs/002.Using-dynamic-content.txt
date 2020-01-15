@@ -1,5 +1,6 @@
 To just substitute a value:
 	<%= someKey %>
+	// Here, if we output HTML or any code, it will be escaped to prevent Cross Site Scripting
 
 
 For if-else statements:
@@ -14,3 +15,10 @@ Looping:
 	<% for (let item of items) { %>
 		<h1> item.someKey </h1>
 	<% } %>
+
+
+
+To output raw text:
+	<%- someKey %>
+	// Here, if we output some HTML, it will be rendered as HTML, or as is.
+	// Use this concept in Partials
