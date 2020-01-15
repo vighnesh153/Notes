@@ -1,0 +1,20 @@
+Handlebars uses normal HTML unlike PUG.
+
+
+// To substitute value:
+	<h1> {{ someKey }} </h1>
+
+
+// If-else
+NOTE: We can not run JS logic in handlebars. We can only use variables to substitute or use booleans in if-else
+{{#if someBoolean }}
+	<h1> Hello </h1>
+{{ else }}
+	<h1> Ok, Bye! </h1>
+{{/if}}
+
+
+// looping: within the 'each' block, 'this' refers to element of the array being iterated over
+{{#each someArr }}
+	<h1> {{ this.someKey }} </h1>
+{{/each}}
