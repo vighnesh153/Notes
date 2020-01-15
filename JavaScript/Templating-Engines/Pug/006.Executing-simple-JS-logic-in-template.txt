@@ -1,0 +1,4 @@
+
+h1(class=(Math.random() > 0.5 ? 'active' : 'inactive'))
+
+// Parenthesis is used to execute JS code.
