@@ -6,5 +6,7 @@ To install in Node (and to use with express):
 Set-up:
     const expressHandlebars = require('express-handlebars');
 
+    // whatever name we give here, we need to use that as the extension for
+    // the template files.
     app.engine('handlebars', expressHandlebars());
     app.set('view engine', 'handlebars');
