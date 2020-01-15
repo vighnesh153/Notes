@@ -1,0 +1,6 @@
+To install in Node:
+  npm i -S ejs
+
+
+Setup:
+    app.set('view engine', 'ejs');
