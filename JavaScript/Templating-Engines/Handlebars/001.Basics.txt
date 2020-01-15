@@ -1,0 +1,10 @@
+To install in Node (and to use with express):
+  npm i -S express-handlebars
+
+
+
+Set-up:
+    const expressHandlebars = require('express-handlebars');
+
+    app.engine('handlebars', expressHandlebars());
+    app.set('view engine', 'handlebars');
