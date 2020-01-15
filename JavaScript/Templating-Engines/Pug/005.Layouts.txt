@@ -1,0 +1,29 @@
+Extracting out common code from the templates. Just like 'partials' in ejs.
+
+In the views, create a directory named 'layouts' and create a pug file in it.
+  File: layouts/main.pug
+
+      html
+          link(type="stylesheet", href="styles.css")
+          block additionalStyles
+      body
+          block dynamicContent
+
+
+
+
+To make use of the layout:
+
+    extends layout/main.pug
+
+    block additionalStyles
+        link(type="stylesheet", href="styles1.css")
+        link(type="stylesheet", href="styles2.css")
+
+    block dynamicContent
+        h1 Hello
+        p I am a dynamic content
+
+
+
+The lines in the file will be injected in the respective blocks
