@@ -3,3 +3,6 @@ app.get('/', function(req, res) {
     // No need to specify the extension of the template as view engine automatically
     // understands it.
 });
+
+
+// Refer to templating engines in: Notes/JavaScript/Templating-engines
