@@ -1,0 +1,16 @@
+To just substitute a value:
+	<%= someKey %>
+
+
+For if-else statements:
+	<% if (someArr.length > 0) { %>
+		<h1> Array not empty! </h1>
+	<% } else { %>
+		<h1> Array is empty! </h1>
+	<% } %>
+
+
+Looping:
+	<% for (let item of items) { %>
+		<h1> item.someKey </h1>
+	<% } %>
