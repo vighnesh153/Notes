@@ -1,0 +1,25 @@
+app.engine('handlebars', expressHandlebars({
+	layoutsDir: 'views/layouts',		// this is by default 'views/layouts'
+	defaultLayout: 'main-layout',		// Now, we need to have a default layout named 'main-layout' in 'views/layouts'
+										// It is also a mandate to set this value if we wish to use layouts in the application
+	extname: 'handlebars',				// Extension of the handlebars layout
+}));
+
+// Now, all the pages will use this default layout. To disable this for a particular page,
+// send a 'layout: false' along with other data to the render function which will make it not
+// Use the default layout.
+
+
+
+In the layout file,
+
+	1. for class:
+		<h1 class="{{#if displayClass}}someClass{{/if}}"> Hello </h1>
+
+	2. For placeholder:
+		{{{ somePlaceholder }}}
+		NOTE: We can only have one placeholder for a layout in handlebars
+
+		In the file, in which we are planning to use the layout with placeholder,
+		we only add that HTML in the file that needs to be injected in the placeholder
+		of the layout
