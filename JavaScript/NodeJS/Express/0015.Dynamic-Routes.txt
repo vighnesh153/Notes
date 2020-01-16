@@ -1,0 +1,18 @@
+Accessing Route Params in the middleware:
+	app.get('/users/:userId', (req, res) => {
+		const userId = req.params.userId;
+		// Do something with it.
+	});
+
+
+
+Accessing from the request body:
+	req.body.paramName
+
+
+
+
+Accessing Query Params:
+		?a=123&b=456
+	const a = req.query.a;	// 123
+	const b = req.query.b;  // 456
