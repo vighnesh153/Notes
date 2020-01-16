@@ -2,7 +2,7 @@ We store all those to-be-included (like navbar, footer, etc) templates in 'views
 
 
 To use another template in the current file:
-	<%- include('includes/header.ejs') %>
+	<%- include('./includes/header.ejs') %>
 NOTE: 'include' keyword acts the same way it acts in C++. It copy-pastes the content
 		of the file, it is including, at its location. (It basically replaces itself
 		with the content of the file)
