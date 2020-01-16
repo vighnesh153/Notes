@@ -6,3 +6,7 @@ To use another template in the current file:
 NOTE: 'include' keyword acts the same way it acts in C++. It copy-pastes the content
 		of the file, it is including, at its location. (It basically replaces itself
 		with the content of the file)
+
+
+Passing data to the partials:
+	<%- include('./includes/header.ejs'), { title: someKey.someTitle } %>
