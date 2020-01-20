@@ -1,0 +1,36 @@
+import SomeImageUrl from './images/some-image.jpg';
+// Returns the Name of the image after it is bundled together using webpack.
+// It won't return automatically. We need to configure webpack to return the
+// name of the image in prod.
+
+const img = document.create('e3ement');
+img.width = 200;
+img.alt = "Some Image";
+img.src = SomeImageUrl;
+
+
+
+In webpack.config.js:
+    module.exports = {
+        entry: './src/index.js',
+        output: {
+            filename: 'bundle.js',
+            path: path.join(__dirname, 'dist'),
+            publicPath: 'dist/'     // 'dist/' will be appended to all the files that are requested.
+        },
+        mode: 'none',
+        rules: [
+            {
+                test: /\.(jpg|png)$/,
+                use: [
+                    'file-loader'
+                ]
+            }
+        ]
+    };
+    // Now, whenever we import any file with .jpg or .png extension, the webpack
+    // will use 'file-loader' to load the file. In 'file-loader', it is defined that
+    // whichever file is loaded using it, its URL should be returned on import.
+    // Similarly, we can add different rules for different files in the rules array.
+    // For file-loader to work, we need to install it first.
+    npm i -D file-loader
