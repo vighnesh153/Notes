@@ -1,0 +1,21 @@
+Installation:
+    npm i -D webpack webpack-cli
+
+
+Basic configuration:
+    In 'webpack.config.js',
+
+        const path = require('path');
+
+        module.exports = {
+            entry: './src/index.js',
+            output: {
+                filename: 'bundle.js',
+                path: path.join(__dirname, 'dist')
+            },
+            mode: 'none'
+        };
+
+
+In package.json, add a script:
+    "build:webpack": "webpack"
