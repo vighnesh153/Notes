@@ -11,6 +11,30 @@ Two popular ways to add JavaScript:
     1. In script tag (<script></script>)
     2. In external .js file, whose path is fed to 'src' attribute of the 'script' tag.
 
+        When adding external scripts, scripts can either be placed before closing the body tag, as they
+        block the HTML parsing when they are being downloaded if placed before other HTML elements. Also,
+        some HTML elements may not be available if the script is downloaded before parsing them.
+
+        Another place where they can be added is before the end of the head tag. But if placed here,
+        question arises that the further HTML won't be parsed until the JS has been loaded and maybe
+        the JS also uses elements from HTML for DOM manipulation. So, to fix this, we add an attribute
+        named 'defer' to the 'script' element like so: <script src="*.js" defer></script>.
+        What this does is that as soon as the DOM parser reaches the 'script' tag, it downloads the
+        JS file and doesn't wait for the file to be downloaded. It continues parsing the rest of the
+        HTML. Also, if downloading the file is complete before the completion of parsing of HTML,
+        it waits for the parsing to complete and then executes the content of the file. This is little
+        better than adding script to the end of the 'body' tag because here, we don't wait to download
+        the JS file until the parsing of the HTML elements is complete.
+
+        Another attribute is 'async'. It is similar to 'defer' but with only difference is that as soon
+        as the file is downloaded, the file starts execution and doesn't wait for the parsing of the
+        HTML elements to complete. It also doesn't wait for other scripts to be downloaded. This might
+        cause a problem if our scripts are dependent on other and if they download before their dependencies,
+        then it may cause an error. So, we should not use 'async' on application scripts. Instead we
+        should use defer. And 'async' can be used on vendor scripts like JQuery, fonts, bootstrap, etc.
+        as they don't have any dependencies. We can use 'async' in our application scripts but we have
+        to make sure that those scripts don't have any dependencies.
+
 
 External JavaScript Advantages:
     Placing scripts in external files has some advantages:
