@@ -1,0 +1,9 @@
+When an animation starts, angular triggers an event '@someTriggerName.start'
+and when the animation ends, angular triggers an event '@someTriggerName.done'.
+
+<div
+	(@someTriggerName.start)="animationStarted(@event)"
+	(@someTriggerName.done)="animationEnded(@event)"
+>
+	Hello
+</div>
