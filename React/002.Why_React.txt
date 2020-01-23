@@ -18,7 +18,7 @@ NOTE: In practice, most React apps only call ReactDOM.render() once. Such
       type of code gets encapsulated into stateful components.
 
 Other alternatives:
-Angular		// Boring
-Vue			// Boring
+Angular		// Quite better in my opinion
+Vue         // Boring
 Backbone	// Not much popular
 Ember		// Not much popular
