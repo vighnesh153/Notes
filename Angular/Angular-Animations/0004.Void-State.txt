@@ -1,0 +1,13 @@
+'void' state is a special state that is provided by angular. We can, but should not,
+override it. It is the state of the element when it is not been added to the DOM or when
+it is removed from the DOM.
+
+	transition('void => first-state', [
+		style({
+			...					// We need to add this because the void state doesn't have a style
+		}),						// So, we add a style that will be immediately applied as the transition begins
+		animate(300)			// and then will transition for 300 ms to styles of 'first-state'
+	]),
+	transition('* => void', [
+		...
+	])
