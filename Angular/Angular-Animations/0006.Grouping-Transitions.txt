@@ -1,0 +1,14 @@
+import {
+	animate,
+	group,
+	transition
+} from '@angular/animations';
+
+// To make multiple animations synchronously, we use 'group'.
+
+transition('* => void', [
+	group([
+		animate(...),
+		animate(...)
+	])
+])
