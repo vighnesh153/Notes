@@ -1,0 +1,24 @@
+import {
+	animate,
+	keyframes
+} from '@angular/animations';
+
+
+animate(1000, keyframes([
+	style({
+		transform: 'translateX(-100px)',
+		offset: 0							// offset tells until this time, this style should be transitioned to
+	}),										// In this case, until 0 * 1000
+	style({
+		transform: 'translateX(-50px)',
+		offset: 0.3							// In this case, until 0.3 * 1000
+	}),
+	style({
+		transform: 'translateX(-20px)',
+		offset: 0.8							// In this case, until 0.8 * 1000
+	}),
+	style({
+		transform: 'translateX(0)',
+		offset: 1							// In this case, until 1 * 1000
+	}),
+]))
