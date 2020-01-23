@@ -1,0 +1,13 @@
+Installation:
+	npm i -S @angular/animations
+
+
+Setup:
+	Add the following in any module that needs the animations package.
+
+		import { BrowserAnimationsModule } from '@angular/platform-browser/animations'
+
+		Then, add the 'BrowserAnimationsModule' in the 'imports' array in the module
+		configuration object passed to the 'NgModule' decorator.
+
+		To use, import 'trigger', 'state', 'style' from @angular/animations
