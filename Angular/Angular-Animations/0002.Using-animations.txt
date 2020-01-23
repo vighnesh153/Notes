@@ -42,7 +42,7 @@ Using animations in components.
 
 
 In the HTML, to apply an animation to an element,
-	<div [@divState]="variableToStoreComponentState">
+	<div [@someTriggerName]="variableToStoreComponentState">
 		Hello
 	</div>
 	<button (click)="onSomeEvent()">Click to change state</button>
