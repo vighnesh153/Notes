@@ -1,0 +1,48 @@
+Animations are basically just transitions from one style state to another.
+
+Using animations in components.
+
+	import {
+		trigger,
+		state,
+		style,
+		transition,
+		animate
+	} from '@angular/animations';
+
+
+	@Component({
+		selector: 'app-bla-bla-bla',
+		templateUrl: './app-bla-bla-bla.component.html',
+		animations: [
+			trigger('someTriggerName', [
+				state('first-state', style(
+					backgroundColor: 'red',
+					'border-left': '1px solid blue',
+					transform: 'translateX(0)'
+				)),
+				state('second-state', style(
+					backgroundColor: 'blue',
+					'border-right': '1px solid blue',
+					transform: 'translateX(100)'
+				)),
+				transition('first-state => second-state', animate(300)),	// 300 ms delay
+				transition('second-state => first-state', animate(1000)),	// 1000 ms delay
+			])
+		]
+	})
+	export class BlaBlaBlaComponent {
+		variableToStoreComponentState = 'first-state';
+
+		onSomeEvent() {
+			this.variableToStoreComponentState = this.variableToStoreComponentState === 'first-state' ?
+						'second-state' : 'first-state';
+		}
+	}
+
+
+In the HTML, to apply an animation to an element,
+	<div [@divState]="variableToStoreComponentState">
+		Hello
+	</div>
+	<button (click)="onSomeEvent()">Click to change state</button>
