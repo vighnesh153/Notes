@@ -1,0 +1,21 @@
+If we need to use same transition from one state to another, then we can use 2 headed arrows:
+	transition('first-state <=> second-state', animate(300))
+
+A wild-card state:
+	transition('first-state <=> *', animate(300))
+
+
+Transition phases:
+
+	// The following styles will be applied when the transition is happening
+	transition('first-state <=> second-state', [
+		style({
+			...								// This block will be applied immediately
+		}),									// as we start the transition
+		animate(1000, style({
+			...								// This block will be applied over the duration of 1000 ms
+		}),
+		animate(500)						// This block will be applied when we are switching from and to
+	])										// the transition and end states
+
+	// We can add multiple transitions styles and animate in the array.
