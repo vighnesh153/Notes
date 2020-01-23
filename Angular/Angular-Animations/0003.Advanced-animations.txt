@@ -19,3 +19,7 @@ Transition phases:
 	])										// the transition and end states
 
 	// We can add multiple transitions styles and animate in the array.
+
+
+NOTE: 'animate' happens synchronously. If we add multiple 'animate', they will
+	  happen one after the other.
