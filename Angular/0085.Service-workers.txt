@@ -1,0 +1,57 @@
+Installation:
+	ng add @angular/pwa
+	// provides a pre-configured service worker.
+
+	It adds the following to the AppModule.
+		import { ServiceWorkerModule } from '@angular/service-worker';
+
+		// and adds the following to the imports array.
+		ServiceWorkerModule.register('/ngsw-worker.js', { enabled: environment.production })
+		// the 'ngsw-worker.js' will be created during the prod build of the app and, thus,
+		// will be available in the dist folder. This is something that we don't want to
+		// do manually.
+
+
+	// Following is the sample 'ngsw-config.json' file:
+	{
+	  "index": "/index.html",
+	  "assetGroups": [{
+	    "name": "app",
+	    "installMode": "prefetch",
+	    "resources": {
+	      "files": [
+	        "/favicon.ico",
+	        "/index.html",
+	        "/*.css",
+	        "/*.js"
+	      ],
+	      "urls": [
+	        "https://fonts.googleapis.com/css?family=Oswald:300,700",
+	        "https://fonts.gstatic.com/**"
+	      ]
+	    }
+	  }, {
+	    "name": "assets",
+	    "installMode": "lazy",
+	    "updateMode": "prefetch",
+	    "resources": {
+	      "files": [
+	        "/assets/**"
+	      ]
+	    }
+	  }],
+	  "dataGroups": [
+	    {
+	      "name": "posts",
+	      "urls": [
+	        "https://jsonplaceholder.typicode.com/posts"
+	      ],
+	      "cacheConfig": {
+	        "maxSize": 5,
+	        "maxAge": "6h",
+	        "timeout": "10s",
+	        "strategy": "freshness"
+	      }
+	    }
+	  ]
+	}
