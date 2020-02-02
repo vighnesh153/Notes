@@ -1,0 +1,5 @@
+from sys import setrecursionlimit
+
+# Default is around 900-1000
+setrecursionlimit(11000)
+# now, our recursive call stack's height can go to 11000.
