@@ -1,0 +1,6 @@
+app.post('/logout', (req, res, next) => {
+	req.session.destroy(() => {
+		res.redirect('/');
+	});
+});
+// This will delete the sessions from the DB as well.
