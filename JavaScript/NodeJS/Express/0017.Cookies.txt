@@ -1,0 +1,44 @@
+Cookies are small files which are stored on a user's computer. They are
+designed to hold a modest amount of data specific to a particular client and
+website, and can be accessed either by the web server or the client computer.
+
+
+To set a cookie:
+	In the middleware,
+		(req, res, next) => {
+			res.setHeader("Set-Cookie", "key=value");
+			res.render('home');
+		}
+
+Now, the cookie will be saved on the user's browser. Every time the user makes any
+request, the cookie will be automatically added to the request information.
+
+
+To access the cookie:
+	In the middleware,
+		(request, response, next) => {
+			const all_cookies = req.get('Cookie');
+			// console log all_cookies do some string manipulation to access specific
+			// cookies' value.
+		}
+
+
+To set the age of the cookie:
+	res.setHeader("Set-Cookie", "key=value; Max-Age=10");
+	// In seconds
+	// If not set, then the cookie will expire after the browser is closed.
+
+
+To domain where the cookie should be sent:
+	res.setHeader("Set-Cookie", "key=value; Domain=www.google.com");
+
+
+To make sure that the cookie is set only when the page is accessed by HTTPS:
+	res.setHeader("Set-Cookie", "key=value; Secure");
+
+
+To avoid usage of cookies in the client-side Javascript, we do the following:
+	res.setHeader("Set-Cookie", "key=value: HttpOnly");
+	// Now, client-side JS can't access or modify the cookies. This way, we can
+	// prevent cross-site scripting of cookies. However, the client will still be
+	// able to modify the cookie manually through the dev tools.
