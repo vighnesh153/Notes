@@ -47,6 +47,9 @@ NOTE: User to session maps are handled by express.
 To set values in the session:
 	(request, response, next) => {
 		req.session.someKey = someValue;
+		req.session.save(() => {
+			res.redirect("/");
+		});
 	}
 
 To access it:
