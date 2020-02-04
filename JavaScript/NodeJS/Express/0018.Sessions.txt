@@ -1,0 +1,56 @@
+Session is basically cookies that are stored in the backend. We store all the
+sensitive information in the backend DB and then just send the encrypted ID of the
+session on the client side to store it as a cookie.
+
+
+Using session:
+	Installation:
+		npm i -S express-session
+
+	Setup:
+		const session = require('express-session');
+
+		app.use(session({
+			secret: 'any-secret',  		// 'secret' is used to sign the hash of
+										// the ID that will be sent to the client
+
+			name: 'sessionId', 			// Name of the cookie that will be sent to the client
+
+			resave: false,				// By doing this, we don't save the cookie
+										// on every request but only when something
+										// changes in the cookie.
+
+			saveUninitialized: false,   // By doing this, the cookie will not be saved
+										// if it was not initialized on the backend.
+
+			cookie: {
+				maxAge: 10, 			// Optional. (Default, clears out on browser exit)
+				secure: true, 			// Ensures the browser only sends the cookie over HTTPS.
+				httpOnly: true, 		// Ensures the cookie is sent only over HTTP(S), not client JavaScript,
+										// helping to protect against cross-site scripting attacks.
+
+				domain: 'example.com',  // indicates the domain of the cookie; use it to compare
+										// against the domain of the server in which the URL is being requested.
+										// If they match, then check the path attribute next.
+
+				path: 'api/users',  	// indicates the path of the cookie; use it to compare against
+										// the request path. If this and domain match, then send the cookie in the request.
+			}
+		}));
+
+NOTE: User to session maps are handled by express.
+// By default, the sessions are stored in-memory. Commonly, sessions are stored in
+// Redis so that if different servers are serving the same user alternatively, then
+// we have a centralized session store for the same. We just need to configure Redis
+// in the express-session configuration (check docs).
+
+To set values in the session:
+	(request, response, next) => {
+		req.session.someKey = someValue;
+	}
+
+To access it:
+	(request, response, next) => {
+		// But the key should be set else throws.
+		console.log(req.session.someKey);
+	}
