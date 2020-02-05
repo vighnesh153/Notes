@@ -1,0 +1,23 @@
+Installation:
+	npm i -S connect-flash
+
+
+Setup:
+	const flash = require('connect-flash');
+
+	app.use(flash());
+
+
+	// To flash a message
+	In the middleware:
+		req.flash('key', 'value');
+			// Example: req.flash('error', 'Invalid email or password');
+
+	// To access the flash message
+	In the middleware:
+		res.render('home', {
+			message: req.flash('key');		// Example: res.flash('error');
+		});
+	NOTE: As soon as we access the flash message, it is removed from the array.
+		  And the next time we try to access it, it will not be there. Just like
+		  one time PUB-SUB.
