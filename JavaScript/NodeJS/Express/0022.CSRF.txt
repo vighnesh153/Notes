@@ -1,0 +1,58 @@
+CSRF -> Cross-Site Request Forgery.
+
+Here, the users are presented with a page that is a look-alike of application's
+page, but it is hosted by different server. When the user tries to visit our site,
+they are taken to the phishing page where the user can enter the data and then, the
+hacker can use it and maybe even pass the request to our server after its purpose is
+complete so that no one knows that the hacker sniffed the data or manipulated it.
+
+To avoid this, we add a CSRF token so that we only process requests that are coming
+from our views. This way Cross Site Requests are not served as they won't have the
+CSRF token.
+
+
+Installation:
+	npm i -S csurf
+
+
+Setup:
+	const csrf = require('csurf');
+
+	const csrfProtection = csrf();
+
+	app.use(csrfProtection);
+
+
+
+To send a CSRF token to the client, in the object passed to render or send file,
+or a API response, we can pass it as a value so that it will be embedded in the view or response.
+
+	req.render('home', {
+		products: products,
+		pageTitle: 'Some Title',
+
+		csrfToken: req.csrfToken()		// This method is added to the request by
+										// the csrfProtection middleware. The request.csrfToken()
+										// generates a new csrf token as a string. It is
+										// then passed to the client under any name, 'csrfToken'
+										// in this case.
+	});
+
+	NOTE: Adding the csrf token on every route manually will be cumbersome. So, to
+		  have it available on all routes as a local variable, we use a middleware
+		  where we set the value to the locals property of response, then it will
+		  be available as a local variable in the views or response.
+
+		  app.use((req, res, next) => {
+		  		res.locals.csrfToken = req.csrfToken();
+				next();
+		  });
+
+		  This way, we don't have to add it to every request.
+		  Here, we can add 
+
+
+On the view (all views that has forms):
+	<input type="hidden" name="_csrf" value="<%= csrfToken %>" />
+	// The name has to be '_csrf' as this is the name that the csrfProtection middleware
+	// will look for. The check for valid csrf token will be done on every request that has form data.
