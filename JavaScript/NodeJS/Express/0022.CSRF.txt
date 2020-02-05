@@ -11,6 +11,10 @@ from our views. This way Cross Site Requests are not served as they won't have t
 CSRF token.
 
 
+More info on CSRF attacks:
+	https://www.acunetix.com/websitesecurity/csrf-attacks/
+
+
 Installation:
 	npm i -S csurf
 
@@ -49,7 +53,7 @@ or a API response, we can pass it as a value so that it will be embedded in the 
 		  });
 
 		  This way, we don't have to add it to every request.
-		  Here, we can add 
+		  Here, we can add
 
 
 On the view (all views that has forms):
