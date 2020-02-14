@@ -29,3 +29,6 @@ Usage:
 	}).then(someCallback);
 
 NOTE: Learn more about SendGrid on its docs.
+
+NODEMAILER: https://nodemailer.com/about/
+SENDGRID: https://sendgrid.com/docs/
