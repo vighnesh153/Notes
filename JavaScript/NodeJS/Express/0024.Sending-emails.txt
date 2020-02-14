@@ -1,0 +1,31 @@
+Creating our own mail server is a very complicated task and there can be many
+security, scalability and many other issues. So, we use a third party mail server.
+
+Popular examples are SendGrid, AWS SES, etc.
+
+
+Installation:
+	npm i -S nodemailer							// To handle mail related tasks
+	npm i -S nodemailer-sendgrid-transport		// To integrate SendGrid with nodemailer.
+
+
+Setup:
+	const nodemailer = require('nodemailer');
+	const sendgridTransport = require('nodemailer-sendgrid-transport');
+
+	const transporter = nodemailer.createTransport(sendgridTransport({
+		auth: {
+			api_key: 'YOUR_SENDGRID_API_KEY'
+		}
+	}));
+
+
+Usage:
+	transporter.sendMail({
+		to: 'TO_EMAIL',
+		from: 'FROM_EMAIL',
+		subject: 'SUBJECT',
+		html: '<h1>Hello</h1>'
+	}).then(someCallback);
+
+NOTE: Learn more about SendGrid on its docs.
