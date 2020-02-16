@@ -10,7 +10,7 @@ Assuming, HCF(P, Q) divides N, then
 
 
 
-A simple Python Program to find the same:
+A simple Python Program to find the same (works in PYTHON 3.8+):
 	def find_solution(P, Q, N):
 		hcf = HCF(P, Q)
 		if N % hcf != 0:
