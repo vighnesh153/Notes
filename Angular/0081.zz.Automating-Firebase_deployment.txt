@@ -1,0 +1,6 @@
+Installation:
+	ng add @angular/fire
+
+Follow the steps from 'Firebase hosting' file which is just previous to this.
+Then, doing 'ng deploy' will deploy the application with configurations specified in
+'angular.json' file and upload it to the firebase server specified in 'firebase.json'.
