@@ -1,0 +1,2 @@
+Check 'Proof using residue classes' section:
+https://brilliant.org/wiki/eulers-theorem/
