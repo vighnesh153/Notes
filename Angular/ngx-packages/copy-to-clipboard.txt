@@ -1,0 +1,15 @@
+Installation:
+	npm install ngx-clipboard --save
+
+
+Open your module file e.g app.module.ts and update imports array
+	import { ClipboardModule } from 'ngx-clipboard';
+	imports: [
+	...
+	    ClipboardModule,
+	...
+	]
+
+
+# Different ways to copy:
+	https://github.com/maxisam/ngx-clipboard#copy-source
