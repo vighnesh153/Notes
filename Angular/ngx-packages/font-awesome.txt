@@ -1,0 +1,2 @@
+Check this API:
+	https://www.npmjs.com/package/@fortawesome/angular-fontawesome
