@@ -24,7 +24,7 @@ def solve(count_of_nodes, connections, src):
 
         visited[source] = True
         distance[source] = min(distance[source], dist)
-        for child in graph[source]:
+        for child in graph.get(source, dict()):
             if not visited[child]:
                 heappush(h, (graph[source][child] + dist, child))
 
