@@ -16,7 +16,8 @@ class Person extends Component {
 
         // state should only be modified by using 'setState' method which was
         // inherited from 'Component'. If we try to modify the state using the
-        // above procedure, then it won't work. Use the below procedure:
+        // above procedure, then it won't work. I mean, it will work but react
+        // won't know about it, so the DOM won't be updated. Use the below procedure instead:
 
         this.setState(
             {
