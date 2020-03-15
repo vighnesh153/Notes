@@ -1,11 +1,10 @@
 Best way:
 
 1. Install Node.js
-2. Run => $npm install -g create-react-app
-3. To create a template app => $create-react-app app-name
+2. Run => npx create-react-app app-name
 // all letters in the app-name should have lower-case letters.
-4. Then =>  $cd app-name
-5. Then to start the project => $npm start
+3. Then =>  $cd app-name
+4. Then to start the project => $npm start
 
 
 
