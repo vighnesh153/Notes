@@ -9,7 +9,9 @@ For example:
             <div>
                 <h1>Name: { props.name }</h1>
                 <p>Age: { props.age }</p>
-                <p>Children: {props.children} </p>
+                <div className="children">
+                    { props.children }
+                </div>
             </div>
         );
     }
