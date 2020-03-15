@@ -14,3 +14,19 @@ Similar example, with little variant:
 
 Or do the following:
     <button onClick={(e) => this.handleClick(e)}>
+
+
+DIFFERENT TYPES OF SUPPORTED EVENTS:
+    https://reactjs.org/docs/events.html#supported-events
+
+
+NOTE:
+    To avoid conflicts with the 'this' keyword in the handling of the events, use arrow functions:
+
+        someEventHandler = (e) => {
+            // Handle event
+        };
+
+        <button onClick={this.handleClick}>
+
+     This way, we can also access 'this' in the event handler without any worries.
