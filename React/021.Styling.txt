@@ -1,0 +1,18 @@
+To style, either write style in a CSS file and import it in the JS file and give
+appropriate class names to the elements.
+NOTE: This way, the styles are not scoped to the component importing them. So,
+      they will be applied to all the elements in the Application which match the
+      selectors in the stylesheet. We can use BEM convention to tackle this issue.
+
+
+Or, create a style object and use it as follows:
+(But this way is a but difficult like creating a hover effect and so on.
+ So, it is recommended to use CSS files)
+	const style = {
+		backgroundColor: 'red',
+		border: '1px solid blue'
+	};
+
+	<button
+		style={ style }
+	>Click Me</button>
