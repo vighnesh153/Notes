@@ -14,6 +14,9 @@ Similar example, with little variant:
 
 Or do the following:
     <button onClick={(e) => this.handleClick(e)}>
+    NOTE: Using this pattern will be inefficient as it will be called many times.
+          So, use either the '.bind' pattern as shown in the previous snippet,
+          or, use the below snippet.
 
 
 DIFFERENT TYPES OF SUPPORTED EVENTS:
