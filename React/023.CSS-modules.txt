@@ -1,0 +1,32 @@
+We use CSS modules so that they are scoped to the components in the files importing them.
+To make a CSS file as a module, save it as '.module.css' instead of just '.css'.
+
+// Importing CSS files as modules automatically adds some hash value in the class name.
+// So, they are basically unique.
+// I hate React. Angular is so so so better.
+
+
+if the file is: Person.module.css:
+	.Red {
+		background-color: red;
+	}
+
+	.Red:hover {
+		background-color: blue;
+	}
+
+
+In the component's file:
+	import classes from 'Person.module.css';
+
+		// In the render method:
+		const pickedClasses = [];
+		pickedClasses.push(classes.SomeClass);
+		pickedClasses.push(classes.SomeOtherClass);
+
+		return (
+			<div>
+				<button className={ classes.Red } >Click Me</button>
+				<button className={ pickedClasses.join(' ') } >Click Me</button>
+			</div>
+		);
