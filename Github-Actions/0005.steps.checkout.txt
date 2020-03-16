@@ -1,0 +1,19 @@
+name: Build and Deploy
+
+on:
+  push:
+    branches:
+      - master
+
+jobs:
+  build-and-deploy:
+
+    runs-on: ubuntu-latest
+    steps:
+
+      - name: Checkout       ## Any name
+        uses: actions/checkout@master
+
+
+
+NOTE: This step will basically check out the current repository, branch 'master'
