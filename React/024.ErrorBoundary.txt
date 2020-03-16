@@ -1,0 +1,27 @@
+It is a type of higher order components that wraps other components.
+When the other components or children of an ErrorBoundary component throw an error,
+we catch it in the ErrorBoundary component by implementing 'componentDidCatch' method
+in the ErrorBoundary component.
+
+In the render of the ErrorBoundary component,
+	componentDidCatch = (err) => {
+		this.setState({ hasError: true, msg: err.message });
+	}
+
+	render() {
+		if (this.state.hasError) {
+			return // some custom HTML elements that say to user that some error occurred
+		} else {
+			// If no error occurred, then render the inner component.
+			return this.props.children;
+		}
+	}
+// This only works in Production build/mode.
+
+
+We should not use it everywhere. Only at places where it is extremely difficult
+to handle errors and it is easier to let errors occur and display respective content
+to the user. Common use case could be when making the HTTP request and it fails.
+
+More on Error-Boundaries:
+https://reactjs.org/docs/error-boundaries.html
