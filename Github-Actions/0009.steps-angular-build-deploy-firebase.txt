@@ -1,0 +1,33 @@
+Pre-requisites:
+	1. Have a firebase account and firebase project set-up
+	2. Generate a firebase hosting token and add it to the 'Secrets' of the
+	   repository under the name 'FIREBASE_TOKEN'
+	3. Use the following workflow (configure it as required)
+
+
+
+
+name: Deploying to Firebase
+
+on:
+  push:
+    branches:
+      - master
+
+jobs:
+  firebase-deploy:
+
+    runs-on: ubuntu-latest
+
+    steps:
+    - uses: actions/checkout@master
+    - uses: actions/setup-node@master
+      with:
+        node-version: '10.x'
+    - run: npm install
+    - run: npm run ng build --prod
+    - uses: w9jds/firebase-action@master
+      with:
+        args: deploy --only hosting
+      env:
+        FIREBASE_TOKEN: ${{ secrets.FIREBASE_TOKEN }}
