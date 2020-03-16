@@ -1,0 +1,20 @@
+To create a workflow, in the repository, at the root, create a '.github' directory.
+In the '.github' directory, create another directory named 'workflows'.
+
+Now, whatever workflow we want to add, we add inside that folder.
+
+Workflow file is a yaml file:
+	name-of-workflow.yml
+	// Name of the file doesn't matter. You can keep it consistent with what you
+	// want to do in it.
+
+Creating a workflow:
+	1. new file: first-workflow.yml
+
+Inside the workflow (typically):
+	1. Give a name
+	2. Event type
+	3. Jobs
+
+To give a name:
+	name: Any thing you want (should match with what the workflow is doing, typically)
