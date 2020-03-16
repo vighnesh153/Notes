@@ -4,9 +4,7 @@
 1. React
 2. NodeJS
 3. JavaScript, the tricky part
-
-## Immediate Next
-1. Github Actions
+4. Github Actions
 
 ## Todo:
 1. Flutter
