@@ -1,0 +1,24 @@
+There are multiple events based on which, you would like to trigger the workflow.
+To do that:
+
+
+on:
+	push:
+		branches:
+			- master
+			- develop
+
+
+
+Options for event are:
+	push, pull_request, commit_comment, fork, package, etc.
+
+
+Next level Options for push, pull_request:
+	branches, branches-ignore, tags, etc
+
+
+Next level Options for branches, branches-ignore are list of branch names.
+
+
+Usually, I use these. When I use other events later, might add about them then.
