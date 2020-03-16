@@ -12,7 +12,49 @@ Or, create a style object and use it as follows:
 		backgroundColor: 'red',
 		border: '1px solid blue'
 	};
+    // The style applied here will be scoped to this button as it is an inline style.
 
 	<button
 		style={ style }
 	>Click Me</button>
+
+
+It is very difficult to set pseudo-selectors styles in the Inline styles. To solve this,
+there is a package 'radium'.
+
+    Setup:
+        npm i --save radium
+
+    Usage:
+        import Radium from 'radium';
+
+        // And in the styles object (we can now use the pseudo-selectors)
+        const style = {
+            backgroundColor: 'red',
+            ':hover': {
+                // hover properties
+            }
+        };
+
+        To use it in a Component, we need to export the component as follows:
+        export default Radium(Person);  // instead of 'export default Person;'
+
+
+
+Radium also provides a way to use media queries:
+    const style = {
+        '@media screen and (max-width: 1000px)': {
+
+        }
+    };
+
+    // For this to work, we need to wrap the App component of the application
+    // with the following:
+    import { StyleRoot } from 'radium';
+
+    // in the AppComponent's render()
+    return (
+        <StyleRoot>
+            <div class="app-root"></div>
+        </StyleRoot>
+    );
