@@ -1,0 +1,65 @@
+The following contains the steps to continuous deploy to github pages on push on master branch.
+
+The below approach uses SSH to checkout the repository. For this to work, we need to do the following:
+	1. In the Unix-based terminal, run => ssk-keygen
+		(just use defaults for all questions)
+	2. cd .ssh
+	3. cat id_rsa.pub
+		(Copy the output and goto the repository settings and add it in the 'Deploy Keys'
+		section with the title as 'GH_PAGES_DEPLOY_KEY'. Check the 'Allow write access' and add key)
+	4. cat id_rsa
+		(Copy the output and goto the repository settings and add it in the 'Secrets'
+		section with the key-name as 'GH_PAGES_DEPLOY_KEY' and add the secret.)
+
+
+Following the above and below steps will deploy the prod files on Github Pages
+and enable the Github Pages hosting for that repository. Check in the settings
+for the URL (It is easier to guess if you have hosted even manually hosted something on Github Pages).
+
+
+
+
+name: Build and Deploy
+
+on:
+  push:
+    branches:
+      - master
+
+jobs:
+  build-and-deploy:
+
+    runs-on: ubuntu-latest
+    steps:
+
+      - name: Install SSH Client
+        uses: webfactory/ssh-agent@v0.2.0
+        with:
+          ssh-private-key: ${{ secrets.GH_PAGES_DEPLOY_KEY }}
+
+      - name: Checkout
+        uses: actions/checkout@master
+
+      - name: Setup Node
+        uses: actions/setup-node@master
+        with:
+          node-version: '10.x'
+
+      - name: Install dependencies
+        run: npm install
+      - name: Global install Angular CLI for ease of use
+        run: npm i -g @angular/cli
+
+      - name: Build for production
+        run: ng build --prod --base-href /project-name/
+
+      - name: 404 redirect file
+        run: cp dist/project-name/index.html dist/project-name/404.html
+
+      - name: Deploy
+        uses: JamesIves/github-pages-deploy-action@releases/v3
+        with:
+          SSH: true
+          BRANCH: gh-pages
+          FOLDER: dist/project-name  # folder to be deployed
+          CLEAN: true
