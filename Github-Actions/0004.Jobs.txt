@@ -1,0 +1,53 @@
+Creating jobs is the main part of the workflow. Check out the following example to
+create jobs:
+
+
+
+name: Test workflow
+
+on:
+	push:
+		branches:
+			- master
+
+jobs:
+	name of the job:
+		runs-on: ubuntu-latest
+		steps:
+			- step1
+				...
+			- step2
+				...
+			- step3
+				...
+			- step4
+				...
+
+	another job:
+		runs-on: macos
+		steps:
+			- step1
+				...
+			- step2
+				...
+			- step3
+				...
+			- step4
+				...
+
+	another another job:
+		runs-on: windows
+		steps:
+			- step1
+				...
+			- step2
+				...
+			- step3
+				...
+			- step4
+				...
+
+
+## other options for 'runs-on':
+	x86, x64, linux, macos, ARM32, windows, ubuntu-latest, ubuntu-18.04,
+	ubuntu-16.04, macos-latest, self-hosted, windows-latest
