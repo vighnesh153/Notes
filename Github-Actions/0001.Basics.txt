@@ -1,0 +1,1 @@
+Github actions are used to manage workflows. It is similar to other CI/CD service providers.
