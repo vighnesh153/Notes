@@ -1,0 +1,7 @@
+Flutter is a tool that allows us to build NATIVE CROSS-PLATFORM applications
+with ONE PROGRAMMING LANGUAGE and codebase.
+
+
+Flutter Architecture:
+	1. UI as code (Build a Widget Tree)
+	2. Everything in Flutter is a Widget. (Consider widget as a component)
