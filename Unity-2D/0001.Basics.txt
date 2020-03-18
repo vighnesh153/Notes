@@ -1,0 +1,29 @@
+// Do the initial setup (pretty standard)
+
+
+// SOME BASE SNIPPETS
+
+1. Debug.Log("Hello, World!");
+
+2. print("Hello, World!"); 		// Both, 'print' and 'Debug.Log' do similar things,
+								// but using 'Debug.Log' gives more control (Discussed later).
+
+3.  // Start is called before the first frame update
+    // Used for initialization
+    void Start()
+    {
+        int max = 100;
+        int min = 10;
+
+        Debug.Log($"The max value is: {max}");
+        Debug.Log($"The min value is: " + min);
+    }
+
+    // Update is called once per frame
+    void Update()
+    {
+        if (Input.GetKeyDown(KeyCode.UpArrow))
+        {
+            Debug.Log("Up Arrow was pressed!");
+        }
+    }
