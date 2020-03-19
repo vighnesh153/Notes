@@ -1,0 +1,48 @@
+class MyApp extends StatelessWidget {
+  Widget build(BuildContext context) {
+    return new MaterialApp(
+        home: new Scaffold(
+            appBar: new AppBar(
+                title: new Text('RV'),
+            ),
+            body: new Text('This is the body of the application'),
+        )
+    );
+  }
+}
+
+
+class MyApp extends StatelessWidget {
+  void answerQuestion(int value) {
+    print('$value chosen!');
+  }
+
+  Widget build(BuildContext context) {
+    return new MaterialApp(
+        home: new Scaffold(
+            appBar: new AppBar(
+                title: new Text('RV'),
+            ),
+            body: new Column(
+              children: <Widget>[
+                Text('The question?'),
+                RaisedButton(
+                  child: Text('Answer 1'),
+                  onPressed: () {
+                    answerQuestion(1);
+                  },
+                ),
+                RaisedButton(
+                  child: Text('Answer 2'),
+                  onPressed: () => answerQuestion(2),
+                ),
+                RaisedButton(
+                  child: Text('Answer 3'),
+                  onPressed: () => answerQuestion(3),
+                ),
+              ],
+            ),
+        )
+    );
+  }
+}
