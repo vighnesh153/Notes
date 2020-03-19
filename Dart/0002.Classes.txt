@@ -1,0 +1,16 @@
+class Person {
+	String name;
+	int age;
+
+	Person(String name, int age) {
+    this.name = name;
+    this.age = age;
+  }
+}
+
+void main() {
+  var p1 = new Person('vighnesh', 21);		// One way of instantiating
+  var p2 = Person('vighnesh153', 21);		// Other way (Pythonic)
+  print(p1.name);
+  print(p2.age);
+}
