@@ -1,0 +1,36 @@
+// void main() {}
+// is the entry point of any dart application. And also, it sits in 'main.dart' file.
+
+
+// If no type is provided for functions or parameters, 'dynamic' type is assumed for them.
+// But this is a bad practice and 'dynamic' types should be avoided.
+
+
+// Function overloading is not supported
+
+
+// Datatypes: int, double, String, bool
+
+
+// Type inference (just like C#):
+// var a = add(1, 2);
+
+
+Snippets:
+	1.  void main() {
+		  for (int i = 0; i < 5; i++) {
+		    print('hello ${i + 1}');
+		  }
+		  main2();
+
+		  String a = 'Hello, vighnesh!';
+		  String b = "Hello, vighnesh153!";
+  		  print(a);
+		  print(b)
+		}
+
+		main2() {
+		  for (dynamic i = 5; i < 15; i++) {
+		    print("hello ${i + 1}");
+		  }
+		}
