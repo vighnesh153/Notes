@@ -6,7 +6,7 @@
 // But this is a bad practice and 'dynamic' types should be avoided.
 
 
-// Function overloading is not supported
+// Function overloading is not supported, yet
 
 
 // Datatypes: int, double, String, bool
@@ -14,6 +14,25 @@
 
 // Type inference (just like C#):
 // var a = add(1, 2);
+
+
+// named arguments are supported
+void test(int a, int b, String c, {int d, String e = "Hello"}) {}
+// 'args' in curly braces are named arguments and are, hence, optional
+// To make them required,
+{ @required int d };	// 'required' keyword is understood in dart
+
+
+// Shortcut property assignment
+class Person {
+	String name;
+	int age;
+
+	Person({ this.name, this.age = 30 });
+}
+
+
+// Arrow functions are supported
 
 
 Snippets:
