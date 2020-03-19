@@ -1,0 +1,11 @@
+void add(int a) {
+
+}
+
+void add (int a) => print('a');
+
+// passing anonymous functions' pointer (2nd way doesn't have an 'arrow'):
+	appFunc: () => doSomething();
+	appFunc: () {
+		doSomething();
+	}
