@@ -1,0 +1,13 @@
+flutter doctor
+
+
+flutter devices
+
+
+flutter create my_first_app		// spaces and hyphens should not be used in app name
+
+
+flutter run
+
+
+pubspec.yaml	// Managing external packages. just like package.json
