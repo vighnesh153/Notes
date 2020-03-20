@@ -1,0 +1,10 @@
+final -> runtime constant
+const -> compile-time constant
+
+
+var a = const [];
+// the list can't be modifies
+
+
+const a = [];
+// its values is implicitly const
