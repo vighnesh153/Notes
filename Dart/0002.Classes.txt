@@ -3,9 +3,18 @@ class Person {
 	int age;
 
 	Person(String name, int age) {
-    this.name = name;
-    this.age = age;
-  }
+    	this.name = name;
+    	this.age = age;
+  	}
+
+	// different constructors
+	Person.veryOld(this.name) {
+		age = 90;
+	}
+
+	Person.baby(this.name) {
+		age = 2;
+	}
 }
 
 void main() {
@@ -13,4 +22,8 @@ void main() {
   var p2 = Person('vighnesh153', 21);		// Other way (Pythonic)
   print(p1.name);
   print(p2.age);
+
+  var p3 = Person.baby('some baby name');
+  print(p3.name);  // some baby name
+  print(p3.age);   // 2
 }
