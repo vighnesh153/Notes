@@ -1,0 +1,9 @@
+// Public
+class Person {
+
+}
+
+// Private: Can't be used in other files when imported
+class _Man {
+
+}
