@@ -1,0 +1,54 @@
+import 'package:flutter/material.dart';
+
+void main() => runApp(new MyApp());
+
+class MyApp extends StatefulWidget {
+  @override
+  State<StatefulWidget> createState() {
+    return new MyAppState();
+  }
+}
+
+class MyAppState extends State<MyApp> {
+  var questionIndex = 0;
+
+  void answerQuestion(int value) {
+    // We use setState to update the state because this will call the build method again.
+    setState(() {
+      questionIndex++;
+      questionIndex %= 2;
+    });
+    print('$value chosen!');
+  }
+
+  Widget build(BuildContext context) {
+    var questions = ['What is your name?', 'What is your age?'];
+
+    return new MaterialApp(
+        home: new Scaffold(
+            appBar: new AppBar(
+                title: new Text('RV'),
+            ),
+            body: new Column(
+              children: <Widget>[
+                Text(questions[questionIndex]), // or questions.elementAt(0)
+                RaisedButton(
+                  child: Text('Answer 1'),
+                  onPressed: () {
+                    answerQuestion(1);
+                  },
+                ),
+                RaisedButton(
+                  child: Text('Answer 2'),
+                  onPressed: () => answerQuestion(2),
+                ),
+                RaisedButton(
+                  child: Text('Answer 3'),
+                  onPressed: () => answerQuestion(3),
+                ),
+              ],
+            ),
+        )
+    );
+  }
+}
