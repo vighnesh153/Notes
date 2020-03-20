@@ -1,0 +1,13 @@
+import 'package:flutter/material.dart';
+
+class Question extends StatelessWidget {
+  // 'final' keyword should be added to tell flutter that this property won't and can't change.
+  final String question;
+
+  Question(this.question);
+
+  @override
+  Widget build(BuildContext context) {
+    return Text(question);
+  }
+}
