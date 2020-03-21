@@ -9,7 +9,7 @@
 // Function overloading is not supported, yet
 
 
-// Datatypes: int, double, String, bool
+// Datatypes: int, double, String, bool, DateTime
 
 
 // Type inference (just like C#):
@@ -46,6 +46,8 @@ Snippets:
 		  String b = "Hello, vighnesh153!";
   		  print(a);
 		  print(b)
+
+		  DateTime date = DateTime.now();
 		}
 
 		main2() {
