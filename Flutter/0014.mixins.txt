@@ -1,0 +1,10 @@
+Mixins are the classes that we, kind of inherit. Kind of inherit in the sense that
+we don't have to inherit or implement all the methods of the class.
+
+Dart only supports single class inheritance. Hence, if we want to inherit from
+multiple classes, we use mixins.
+
+
+class Derieved extends Base1 with Base2 {
+
+}
