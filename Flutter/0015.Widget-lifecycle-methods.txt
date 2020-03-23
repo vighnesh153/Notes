@@ -1,0 +1,22 @@
+Widget Life cycle methods:
+
+
+	@override
+	void initState() {
+		super.initState();
+		// Runs when the state instance is created
+	}
+
+	@override
+	void didUpdateWidget(MyHomePage oldWidget) {
+		super.didUpdateWidget(oldWidget);
+		// Runs when the state instance is updated. 'widget' property will
+		// hold the updated value of the widget, and 'oldWidget' will hold the
+		// previous value of the 'widget' before getting updated.
+	}
+
+	@override
+	void dispose() {
+		super.dispose();
+		// just like 'ngOnDestroy()'
+	}
