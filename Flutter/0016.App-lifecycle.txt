@@ -1,0 +1,45 @@
+Lifecycle state name:					When is it hit?
+
+	inactive							App is inactive,
+	 									no user input
+										received. 'inactive'
+										means loses focus.
+
+	paused								App not visible
+										to user, running in
+										background
+
+	resumed								App is (again)
+										visible and is
+										responding to
+										user input
+
+	suspending							App is about to
+										be suspended(exited)
+
+
+
+To listen to these states we mixin with 'WidgetsBindingObserver'
+
+class _SomeClassState extends State<SomeClass> with WidgetsBindingObserver {
+
+	@override
+	void didChangeAppLifecycleState(AppLifecycleState state) {
+		// 'state' will be the new state, the app transitioned to.
+	}
+
+	@override
+	void initState() {
+		super.initState();
+		WidgetsBinding.instance.addObserver(this);		// Add listener to the AppLifecycle State changes
+	}
+
+	@override
+	dispose() {
+		super.dispose();
+
+		// Remove listener to the AppLifecycle State to avoid memory leaks
+		WidgetsBinding.instance.removeObserver(this);
+	}
+
+}
