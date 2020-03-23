@@ -1,0 +1,49 @@
+When we have a list of widgets that we going to render, either in Row() or Column(),
+each of that widget, if stateful, need to have a Key property.
+
+Why is key needed?
+	Suppose we have the following list:
+		Widget_1			State_1
+		Widget_2			State_2
+		Widget_3			State_3
+		Widget_4			State_4
+
+	Now, if we remove Widget_3, before updating the Element tree, the following is done:
+		Widget_1			State_1
+		Widget_2			State_2
+		Widget_4			State_3
+							State_4
+
+	As the Widget_3 got removed, Widget_4 took its place. Now, when the element tree
+	is going to be updated, it does Python's zip-like mapping of states and widgets in the list.
+	(The mapping is zip-like but also keeps type of the Widget in consideration. So, if Widget_3
+	and Widget_4 would have been of different type, or instances of different widgets, then this
+	mis-match would not have happened)
+	So, it sees that State_4 has no corresponding Widget, so it removes it and now the mapping is:
+
+		Widget_1			State_1
+		Widget_2			State_2
+		Widget_4			State_3
+
+	But it is incorrect. So, we should have a Key property on the Stateful Widget in List,
+	so that flutter has a unique property to map the widget and its corresponding state.
+
+
+class SomeStatefulWidget extends StatefulWidget {
+	const SomeStatefulWidget({
+		Key key
+	}): super(key: key);
+}
+
+someList.map(item => SomeStatefulWidget(
+						key: UniqueKey()
+					));
+					// UniqueKey() should only be used when creating an item.
+					// If we directly add the UniqueKey in the build method, then
+					// new key will be generated to every build execution and will re-build
+					// the entire sub-tree for this reason.
+
+					// Another way:
+						key: ValueKey(item.id);
+						// if we have 'id' on each item in the list, which we
+						// should have. Or some custom identifier
