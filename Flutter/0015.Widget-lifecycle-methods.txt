@@ -4,7 +4,8 @@ Widget Life cycle methods:
 	@override
 	void initState() {
 		super.initState();
-		// Runs when the state instance is created
+		// Runs when the state instance is created. Or when 'createState()' is invoked, 
+		// this method runs.
 	}
 
 	@override
