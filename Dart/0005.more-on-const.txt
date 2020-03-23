@@ -1,0 +1,21 @@
+const constructor:
+	class Test {
+		final String a;
+
+		const Test({this.a});
+	}
+
+
+	void main() {
+		final ok = Test(a: 'Dart');
+		print(ok.a);
+		ok.a = 'lol';	// invalid as instances of classes with const constructors, can't be modified!
+		// Also, the properties of classes with const constructors should be final.
+		// the const constructor don't have a body and their values are assigned using the 'this.' syntax in the constructor.
+	}
+
+
+It is a good practice to do the following, in FLUTTER, in most constant Widgets like mostly 'Text' etc.:
+	final obj = const Test(a: 'Some string');
+	// here we mark instance of 'Test' to be constant. So, in the build cycles, this
+	// object won't be re-created or re-built.
