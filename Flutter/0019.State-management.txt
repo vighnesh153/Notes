@@ -1,0 +1,8 @@
+We do state management in Flutter by using the 'provider' package.
+
+We basically attach the store to some widget, and then all the descendants of
+that widget will have access to that store. So, it is usually a good idea
+to attach the store at the main app so every widget has access to that store. Just
+like in Angular, we provide 'Angular Services' in root.
+
+Package: https://pub.dev/packages/provider
