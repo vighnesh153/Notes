@@ -1,0 +1,7 @@
+var urlPattern = r"(https?|ftp)://([-A-Z0-9.]+)(/[-A-Z0-9+&@#/%=~_|!:,.;]*)?(\?[A-Z0-9+&@#/%=~_|!:‌​,.;]*)?";
+var result = new RegExp(urlPattern, caseSensitive: false).firstMatch('https://www.google.com');
+
+
+Check out more on Regular expressions:
+	https://www.youtube.com/playlist?list=PL55RiY5tL51ryV3MhCbH8bLl7O_RZGUUE
+(this series is about regular expressions in JavaScript but Dart follows the exact same specification)
