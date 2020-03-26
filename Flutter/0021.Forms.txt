@@ -1,1 +1,2 @@
-Checkout about forms in 'Examples/0004.Shop-App/0004.Forms-version'
+Checkout about forms in 'Examples/0004.Shop-App/0004.Forms-version'.
+In that, check the 'lib/screens/edit_product_screen.dart'.
