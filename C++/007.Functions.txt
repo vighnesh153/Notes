@@ -25,6 +25,13 @@ Making a function static means that other source files will not be able to acces
 
 Syntax:  static int add(int a, int b) return a + b;
 
+	However, if we make a function, static, in a header file, then if we include that header file
+	in other CPP files, then, the function will be accessible in those files and also, it will
+	be scoped to those files. What it means is that even if we include the header file in multiple
+	CPP files, the each of the CPP file will have their own function which was declared as static
+	in the header file. But, if we make it non-static, then there will be linking error as
+	there will be multiple definitions of the function in all the CPP files including it.
+
 
 INLINE FUNCTIONS
 Functions that are just one line or two, can be marked as inline. What this does it when we call the
