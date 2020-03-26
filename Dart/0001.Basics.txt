@@ -12,6 +12,11 @@
 // Datatypes: int, double, String, bool, DateTime
 
 
+// Parsing:
+	double.parse(str);
+	double.tryParse(str);	// returns 'null' if parsing failed
+
+
 // Type inference (just like C#):
 // var a = add(1, 2);
 
