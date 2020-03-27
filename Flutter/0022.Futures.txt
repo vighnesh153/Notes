@@ -1,0 +1,43 @@
+void main() {
+	var myFuture = new Future<String>(() {
+		return 'Hello';
+	});
+	print('This runs first!');
+	myFuture.then((result) => print(result));
+	print('This also runs before the future is done!');
+}
+
+
+Output:
+	This runs first!
+	This also runs before the future is done!
+	Hello
+
+This is because, 'then' executes stuff in the nextTick, ie. after all the current
+synchronous code is done execution. Just like in JS.
+
+NOTE: Even though if a Future (eg Future<void>) resolves to void,
+      we still have to pass a function to the then block
+ 	  that expect an argument, which will be null anyway.
+
+
+We can also chain multiple 'then' blocks as each 'then' block returns a new Future.
+
+
+Future()
+	.then(successCallback, onError: (error, stackTrace) {...})
+	.then(successCallback, onError: (error, stackTrace) {...})
+	.then(successCallback, onError: (error, stackTrace) {...})
+	.then(successCallback, onError: (error, stackTrace) {...})
+	.catchError((error, stackTrace) {})
+	.then(successCallback, onError: (error, stackTrace) {...})
+	.then(successCallback, onError: (error, stackTrace) {...})
+	.then(successCallback, onError: (error, stackTrace) {...})
+	.catchError((error, stackTrace) {})
+
+
+// 'onError' function that is passed as an argument to the 'then' block executes if the 'Future' from
+// the previous 'then' block causes an error. 'catchError' is executed if Future returned
+// by any of the previous 'then' block, causes an error.
+
+// Promises from JavaScript hai bhai. Samajh jaa.
