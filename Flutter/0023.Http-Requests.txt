@@ -1,0 +1,41 @@
+Package:
+	https://pub.dev/packages/http
+
+
+Importing:
+	import 'package:http/http.dart' as http;
+
+
+POST Request:
+	final url = URL + DB_NAME;
+	http
+		.post(url,
+			body: json.encode({
+			  'title': product.title,
+			  'description': product.description,
+			  'imageUrl': product.imageUrl,
+			  'price': product.price,
+			  'isFavourite': product.isFavourite,
+			}))
+		.then(
+	  (response) {
+		final responseBody = json.decode(response.body);
+		// firebase returns a JSON as body with 1 property: 'name' and the value
+		// is 'ID' of the entry on the DB.
+
+		final newProduct = Product(
+			id: responseBody['name'],
+			price: product.price,
+			title: product.title,
+			description: product.description,
+			imageUrl: product.imageUrl);
+
+		_items.add(newProduct);
+		notifyListeners();
+	  },
+	);
+
+GET Request:
+	final url = 'bla bla bla';
+	http.get(url).then();
+	or use await
