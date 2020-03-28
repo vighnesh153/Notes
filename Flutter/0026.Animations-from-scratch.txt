@@ -26,7 +26,8 @@ class SomeState extends State<SomeWidget> with SingleTickerProviderStateMixin {
 			)
 		);
 
-		// just to re-draw the screen every frame
+		// just to re-draw the screen every frame. We can avoid this
+		// by using AnimatedBuilder
 		_heightAnimation.addListener(() => setState(() {}));
 	}
 

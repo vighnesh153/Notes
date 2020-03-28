@@ -1,0 +1,11 @@
+AnimatedBuilder(
+	animation: _heightAnimation,
+	builder: (ctx, child) => {
+		return GroupedWidget()
+	},
+	child: SomeChild
+)
+
+
+// Now, we don't have to setup a listener to show animation every frame
+// like we did in the previous file.
