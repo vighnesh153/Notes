@@ -1,0 +1,8 @@
+AnimatedContainer(
+	duration: Duration(milliseconds: 300),
+	curve: Curves.easeIn,
+	height: ...? 320 : 260,
+	child: ,
+)
+
+// For the above, we don't need any animation controller or anything extra.
