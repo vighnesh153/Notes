@@ -1,0 +1,3 @@
+extern int a;
+// It is just to tell the compiler that the symbol 'a' is a global variable
+// which is defined in some other file and can be found during the linking stage.
