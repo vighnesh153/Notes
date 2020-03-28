@@ -1,0 +1,51 @@
+In the stateful widget:
+
+class SomeState extends State<SomeWidget> with SingleTickerProviderStateMixin {
+	AnimationController _animationController;
+	Animation<Size> _heightAnimation;
+
+	@override
+	void initState() {
+		super.initState();
+
+		_animationController = AnimationController(
+
+			// takes in a widget object which when rendered, should take care of animations
+			vsync: this,
+
+			duration: Duration(milliseconds: 300)
+		);
+
+		_heightAnimation = Tween<Size>(
+			begin: Size(double.infinity, 260),
+			end: Size(double.infinity, 320),
+		).animate(
+			CurvedAnimation(
+				parent: _animationController,
+				curve: Curves.linear,
+			)
+		);
+
+		// just to re-draw the screen every frame
+		_heightAnimation.addListener(() => setState(() {}));
+	}
+
+	@override
+	void dispose() {
+		super.dispose();
+		_animationController.dispose();
+	}
+
+
+	// To access the height in every frame:
+	_heightAnimation.value.height
+
+
+
+	// To start the animation:
+	_animationController.forward();
+
+
+	// To play animation in reverse order:
+	_animationController.reverse();
+}
