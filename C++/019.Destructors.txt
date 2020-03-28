@@ -1,0 +1,28 @@
+Use cases:
+	To clean up dynamically allocated memory
+
+
+class Entity {
+public:
+    Entity() {
+        log("Entity instance created!")
+    }
+
+    void Print() {
+        log("Doing some processing and/or operations!")
+    }
+
+    ~Entity() {
+        log("Entity instance destroyed!")
+    }
+};
+
+int main() {
+    Entity e;
+    e.Print();
+}
+
+Output:
+	Entity instance created!
+	Doing some processing and/or operations!
+	Entity instance destroyed!
