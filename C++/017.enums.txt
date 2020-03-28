@@ -1,0 +1,35 @@
+enum Example {
+    A, B, C
+};
+
+enum Other: char {
+    D, E, F
+};
+
+int main() {
+    Example value = A;
+    Other value2 = D;
+}
+
+
+================================================================================
+// Enums not have their own namespace
+
+class Example {
+public:
+    enum SomeEnum {
+        one, two, three
+    };
+
+    SomeEnum someEnum;
+};
+
+int main() {
+    Example e{};
+    e.someEnum = Example::two;
+}
+
+// Common convention is to prefix the enum values with their name: example:
+enum SomeEnum {
+	SomeEnumOne, SomeEnumTwo, SomeEnumThree
+};
