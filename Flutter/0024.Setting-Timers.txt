@@ -1,0 +1,11 @@
+import 'dart:async';
+
+
+final timeToCall = someDate.difference(someOtherDate).inSeconds;
+Timer timer = Timer(Duration(seconds: timeToCall), () {});
+
+
+// To cancel a timer:
+if (timer != null) {
+	timer.cancel();
+}
