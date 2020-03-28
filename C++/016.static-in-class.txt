@@ -1,0 +1,48 @@
+struct Entity
+{
+    static int x, y;
+
+    void print() {
+        cout << x << ", " << y << endl;
+        x++;
+        y++;
+    }
+};
+
+int Entity::x;		// need this otherwise we will get linking error
+int Entity::y;
+
+int main() {
+    Entity::x = 1;
+    Entity::y = 1;
+
+    Entity e;
+    E.print();
+    Entity e1;
+    e1.print();
+}
+
+
+================================================================================
+
+
+struct Entity
+{
+    static int x, y;
+    static void print() {
+        cout << x << ", " << y << endl;
+        x++;
+        y++;
+    }
+};
+
+int Entity::x;
+int Entity::y;
+
+int main() {
+    Entity::x = 1;
+    Entity::y = 1;
+
+    Entity::print();
+    Entity::print();
+}
