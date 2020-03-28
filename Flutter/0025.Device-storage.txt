@@ -1,0 +1,42 @@
+Package:
+	https://pub.dev/packages/shared_preferences
+
+
+Example use cases:
+	To store auth tokens for auto-login
+	For local storage.
+
+
+
+Usage:
+	import 'package:shared_preferences/shared_preferences.dart';
+
+
+	final preferences = await SharedPreferences.getInstance();
+
+	final objData = json.encode({
+		//...
+	});
+
+	preferences.setString(key, objData);		// key, value
+
+
+
+
+	/// For getting:
+	Future<bool> tryAutoLogin() async {
+		final preferences = await SharedPreferences.getInstance();
+
+		if (preferences.containsKey(someKey)) {
+			return false;
+		}
+
+		final data = preferences.getString(key);
+		final mapped = json.decode(data);
+	}
+
+
+
+	// For clearing:
+	preferences.remove(specificKey);		// delete only specific key
+	preferences.clear(); 	// delete all data
