@@ -1,0 +1,26 @@
+class Entity {
+public:
+    float X, Y;
+
+    void Move(float xAmount, float yAmount) {
+        X += xAmount;
+        Y += yAmount;
+    }
+};
+
+class Player : public Entity {
+public:
+    const char* Name;
+
+    void PrintName() {
+        log(Name)
+    }
+};
+
+int main() {
+    log(sizeof(Player))
+
+    Player player{};
+    player.PrintName();
+    player.Move(5, 5);
+}
