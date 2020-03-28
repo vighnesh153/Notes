@@ -1,0 +1,27 @@
+static int a;
+static void PrintPrint() {}
+
+The above will be scoped to the file in which they are defined in. In simple words,
+no other file will be able to access them even if they appear to be global in the file in
+which they are defined in.
+
+
+
+
+Local Static: 'static' inside of a function:
+	void ok() {
+		static int a = 0;
+		cout << a++ << endl;
+	}
+
+	int main() {
+		ok();	// 0
+		ok();	// 1
+		ok();	// 2
+
+		cout << a << endl;	// Error. undefined symbol 'a'
+	}
+
+	// static variable declared inside of a function, doesn't go out of scope
+	// even if the function's execution is terminated. It basically means that,
+	// the variable is made global in the file, and is scoped to this function.
