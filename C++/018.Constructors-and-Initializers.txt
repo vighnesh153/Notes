@@ -1,0 +1,55 @@
+class Entity {
+public:
+    float X, Y;
+
+    void Print() {
+        cout << X << ", " << Y << endl;
+    }
+};
+
+int main() {
+    // Garbage value printed   (not recommended initializer)
+    Entity e1;
+    cout << e1.X << endl;
+    e1.Print();
+
+    // initializes all the fields with their defaults (works in clang. no idea
+    // if this works with other compilers. will update this after testing)
+    Entity e2{};
+    cout << e2.X << endl;
+    e2.Print();
+}
+
+
+================================================================================
+
+
+class Entity {
+public:
+    float X, Y;
+
+    Entity(float x, float y) : X(x), Y(y) {}
+};
+
+int main() {
+    Entity e(10.0f, 10.5f);
+    log(e.X)
+    log(e.Y)
+}
+
+
+================================================================================
+
+
+// Two ways to not allowing to instantiate a class (later one is preferred):
+
+class Entity {
+private:
+    Entity() {}
+};
+
+class Entity {
+public:
+    Entity() = delete;
+	// Now, the default constructor is deleted
+};
