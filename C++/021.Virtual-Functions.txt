@@ -1,0 +1,84 @@
+// Without using 'virtual' functions, the following happens:
+
+
+#define log(x) cout << x << endl;
+
+using namespace std;
+
+class Entity {
+public:
+    string GetName() {
+        return "Entity";
+    }
+};
+
+class Player : public Entity {
+private:
+    string m_Name;
+public:
+    Player(const string& name) : m_Name(name) {}
+
+    string GetName() {
+        return m_Name;
+    }
+};
+
+int main() {
+    Entity* e = new Entity();
+    log(e->GetName())
+    // Entity
+
+    Player* p = new Player("vighnesh153");
+    log(p->GetName())
+    // vighnesh153
+
+    Entity* entity = p;
+    log(entity->GetName())
+    // Expected 'vighnesh153' but got 'Entity'
+    // Happens because methods were hidden instead of overriding
+}
+
+
+================================================================================
+
+
+// To allow overriding of functions we need to make this function, virtual
+
+
+#define log(x) cout << x << endl;
+
+using namespace std;
+
+class Entity {
+public:
+    virtual string GetName() {
+        return "Entity";
+    }
+};
+
+class Player : public Entity {
+private:
+    string m_Name;
+public:
+    Player(const string& name) : m_Name(name) {}
+
+	// The 'override' keyword is not required, but it makes it easier to read
+	// the code and maintain.
+    string GetName() override {
+        return m_Name;
+    }
+};
+
+int main() {
+    Entity* e = new Entity();
+    log(e->GetName())
+    // Entity
+
+    Player* p = new Player("vighnesh153");
+    log(p->GetName())
+    // vighnesh153
+
+    Entity* entity = p;
+    log(entity->GetName())
+    // vighnesh153
+}
