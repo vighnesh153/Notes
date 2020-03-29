@@ -1,0 +1,30 @@
+We know all the caveats of using the traditional arrays.
+Stack allocated and on Heap allocated. But from C++ 11, we have a better way of
+handling arrays. They have a lot of checks and they can also be used in the
+foreach loop.
+
+Examples:
+
+#include <iostream>
+#include <array>
+
+#define log(x) cout << x << endl;
+
+using namespace std;
+
+int main() {
+    array<int, 5> myArray{};
+    for(auto item: myArray) {
+        log(item)
+    }
+}
+
+================================================================================
+
+int main() {
+    array<int, 5> myArray{};
+    for (int i = 0; i < myArray.size(); i++) {
+        myArray[i] = i;
+        log(myArray[i])
+    }
+}
