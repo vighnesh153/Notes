@@ -1,0 +1,56 @@
+Package:
+	image_picker: ^0.6.4
+
+
+Importing:
+	import 'package:image_picker/image_picker.dart';
+
+
+Usage:
+	File _storedImage;
+
+	Future<void> _takePicture() async {
+		final imageFile = await ImagePicker.pickImage(
+		    source: ImageSource.camera,	// ImageSource.gallery to choose from the gallery
+		    maxWidth: 600,
+		);
+
+		setState(() {
+		  _storedImage = imageFile;
+		});
+	}
+
+
+
+Example Display:
+	Row(
+	  children: <Widget>[
+		Container(
+		  width: 150,
+		  height: 100,
+		  decoration: BoxDecoration(border: Border.all(width: 1, color: Colors.grey)),
+		  child: _storedImage != null
+			  ? Image.file(
+				  _storedImage,
+				  fit: BoxFit.cover,
+				  width: double.infinity,
+				)
+			  : Text(
+				  'No image chosen',
+				  textAlign: TextAlign.center,
+				),
+		  alignment: Alignment.center,
+		),
+		SizedBox(
+		  width: 10,
+		),
+		Expanded(
+		  child: FlatButton.icon(
+			icon: Icon(Icons.add_a_photo),
+			label: Text('Take Picture'),
+			onPressed: _takePicture,
+			textColor: Theme.of(context).primaryColor,
+		  ),
+		),
+	  ],
+	);
