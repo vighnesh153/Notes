@@ -1,0 +1,13 @@
+Package:
+	https://pub.dev/packages/location
+
+
+Usage:
+	import 'package:location/location.dart';
+
+	Future<void> _getCurrentUserLocation() async {
+		final locationData = await Location().getLocation();
+
+		print(locationData.latitude);
+		print(locationData.longitude);
+	}
