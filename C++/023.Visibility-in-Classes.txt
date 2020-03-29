@@ -1,0 +1,10 @@
+Visibility in data members and member funtions:
+	private: only the class can access that entity
+	public: anyone can access that entity
+	protected: only the class and class extending it can access it.
+
+
+Visibility in Inheritance:
+	private: all the public and protected members of the base class become private in derived class.
+	public: all the public and protected members of the base class will stay the same in the derived class.
+	protected: all the public and protected members of the base class will become protected in the derived class.
