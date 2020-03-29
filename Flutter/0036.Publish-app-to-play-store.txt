@@ -1,0 +1,52 @@
+Steps:
+	1. Test and optimize code
+	2. Set Application Name and Identifier
+	3. Prepare third party services for production (eg, API keys)\
+	4. Add App Icons and Splash Screens
+	5. Publish
+
+
+
+Preparing the Code:
+	Optimize the build method calls and break big widgets into smaller ones
+	to avoid re-building a big widget sub-tree for a small change.
+
+
+
+App configuration:
+	1. Android: Go to AndroidManifest.xml
+	2. in the <application> tag, 'android:label' property is the name of the app
+	3. Add '<uses-permission android:name="android.permission.INTERNET"/>' above the
+		<application> tag
+	4. In the <manifest> tag, set the value of 'package' property to a unique identifier.
+		Something like, com.vighnesh153.android.app.app_name.
+		// If you change it, change it in Debug/AndroidManifest.xml and in
+		// main/java/com/example/app_name/MainActivity.java, update the import accordingly.
+		// And also update it in the 'build.gradle' file.
+
+
+Adding icons and splash screens (screen that is shown when the app is loading when starting):
+
+	Package: (NOTE: ADD IT TO THE dev_dependencies and not dependencies)
+		https://pub.dev/packages/flutter_launcher_icons
+		// using this package, we only need to provide a base icon and it will create and configure
+		// for all screen sizes and devices and android versions.
+
+		flutter_icons:
+		  android: true
+		  ios: true
+		  image_path: "assets/....."
+		  adaptive_icon_background: "#191919"		// in new versions, transparent images have a background color
+		  adaptive_icon_foreground: "assets/....."	// check in readme of the package to know what this does
+
+	Run:
+		flutter pub get
+		flutter pub run flutter_launcher_icons:main
+
+Search online to see how to configure splash screen for flutter.
+
+
+
+
+Publishing:
+	More details: https://flutter.dev/docs/deployment/android
