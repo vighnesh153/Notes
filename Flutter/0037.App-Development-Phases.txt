@@ -1,0 +1,8 @@
+App Development Phases:
+	1. Idea
+	2. Plan
+	3. Sketch and Modelling
+	4. Develop and Test 	(Iterative phase)
+	5. Optimize
+	6. Publish
+	7. Maintenance
