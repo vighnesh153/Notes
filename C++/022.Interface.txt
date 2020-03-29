@@ -1,0 +1,12 @@
+C++ doesn't have interface keyword. However, we can use abstract classes
+to create interface (pure virtual functions).
+
+Interfaces share the same definition and uses in every language. So, won't go
+into much details. Instead, just the syntax.
+
+
+class Entity {
+public:
+    virtual string GetName() = 0;
+    virtual string GetClassName() = 0;
+};
