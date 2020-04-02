@@ -3,3 +3,71 @@ Classification: Creational
     Encapsulates object construction.
     Multistep construction process.
     Implementations can vary (without letting the developer know)
+
+    Simple to understand pros:
+    1. No need to remember the position of arguments to pass to the constructor.
+    2. If new properties are added to the class, then there won't be any modification
+        to the constructor and there won't be any addition of new constructors for
+        initializing the new values and keeping the old constructors to maintain
+        backwards compatibility.
+
+
+eg.
+
+class LeopardInfo:
+    def __init__(self):
+        self._color = None
+        self._name = None
+        self._gender = None
+
+    def build(self):
+        return Leopard(self)
+
+    def get_name(self):
+        return self._name
+
+    def set_name(self, value):
+        self._name = value
+        return self
+
+    def get_color(self):
+        return self._color
+
+    def set_color(self, value):
+        self._color = value
+        return self
+
+    def get_gender(self):
+        return self._gender
+
+    def set_gender(self, value):
+        self._gender = value
+        return self
+
+
+class Leopard:
+    def __init__(self, constructor_obj: LeopardInfo):
+        self.name = constructor_obj.get_name()
+        self.color = constructor_obj.get_color()
+        self.gender = constructor_obj.get_gender()
+
+    def __str__(self):
+        return f'name: {self.name}'
+
+    @staticmethod
+    def builder():
+        return LeopardInfo()
+
+
+# One way to instantiate Leopard:
+leopard_info = LeopardInfo()
+leopard_info.set_name('ramesh')
+leopard_info.set_color('yellow')
+leopard_info.set_gender('male')
+ramesh = Leopard(leopard_info)
+
+# Builder way to instantiate Leopard:
+suresh = Leopard.builder().set_name('suresh').set_color('white').set_gender('female').build()
+
+print(ramesh)
+print(suresh)
