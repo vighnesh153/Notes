@@ -1,6 +1,26 @@
 Classification: Creational
-    Ensures a class only has one instance
-    Useful to control access to limited
-                resource (like device access, buffer pools, Web/DB connection pools)
-    Helps to provide a global point of access
-    Lazy instantiation
+    1. Ensures a class only has one instance
+    2. Useful to control access to limited
+                resource (like device access, buffer pools, Web/DB connection pools, logging, etc.)
+    3. Helps to provide a global point of access
+    4. Lazy instantiation
+
+
+NOTE: The following implementation is not thread-safe. Refer respective language
+      guides to make it thread-safe.
+
+In C#:
+public class SingletonExample {
+    private static SingletonExample instance = null;
+
+    public static SingletonExample GetInstance() {
+        if (instance == null) {
+            instance = new SingletonExample();
+        }
+        return instance;
+    }
+
+    private SingletonExample() {
+        System.Console.WriteLine("Constructor of a singleton class should be private.");
+    }
+}
