@@ -27,7 +27,7 @@ class CartItem extends StatelessWidget {
         Provider.of<Cart>(context, listen: false).removeItem(productId);
       },
       confirmDismiss: (direction) {
-        return showDialog(
+        return showDialog<Null>(
           context: context,
           // AlertDialog returns a Future whose value is
           // boolean. And builder expects a function that returns a Future.
