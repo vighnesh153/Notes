@@ -16,8 +16,9 @@ Preparing the Code:
 App configuration:
 	1. Android: Go to AndroidManifest.xml
 	2. in the <application> tag, 'android:label' property is the name of the app
-	3. Add '<uses-permission android:name="android.permission.INTERNET"/>' above the
-		<application> tag
+	3. Do this step only if your app needs internet: Add
+		'<uses-permission android:name="android.permission.INTERNET"/>' above the
+		<application> tag.
 	4. In the <manifest> tag, set the value of 'package' property to a unique identifier.
 		Something like, com.vighnesh153.android.app.app_name.
 		// If you change it, change it in Debug/AndroidManifest.xml and in
