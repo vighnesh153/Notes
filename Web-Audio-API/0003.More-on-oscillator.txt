@@ -11,3 +11,9 @@ Change types:
     // oscillator.type = 'square';
     // oscillator.type = 'triangle';
     // oscillator.type = 'sawtooth';
+
+oscillator.onended = () => {};
+// the above will be invoked when the stop is called.
+
+NOTE: We can call 'start' and 'stop' on an oscillator object only once. We need to
+	  create a new oscillator object if we need to play sound more than once.
