@@ -1,0 +1,13 @@
+Default type of oscillator is a 'sine' oscillator.
+
+Each type produces a different kind of sound because of obvious reasons
+(If not obvious, then draw the different waves. Check out the attached image).
+
+Change types:
+	const audioContext = new AudioContext();
+    const oscillator = audioContext.createOscillator();
+
+	// oscillator.type = 'sine';
+    // oscillator.type = 'square';
+    // oscillator.type = 'triangle';
+    // oscillator.type = 'sawtooth';
