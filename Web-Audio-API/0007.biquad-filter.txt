@@ -1,0 +1,21 @@
+const audioContext = new AudioContext();
+
+const oscillator = audioContext.createOscillator();
+oscillator.type = 'sawtooth';
+
+// Default cut-off frequency is 350Hz and default filter
+// type is 'lowpass'.
+const filter = audioContext.createBiquadFilter();
+filter.type = 'highpass';       // change the type of filter, total 8 exist.
+filter.frequency.value = 100;   // change the cut-off frequency
+
+oscillator.connect(filter);
+filter.connect(audioContext.destination);
+
+// oscillator.start(0);
+// oscillator.stop(3);
+
+
+// Q-value. For each filter, its definition will be slightly different
+// It can be used to enhance a sound in a mix of sounds
+filter.Q.value = 20;
