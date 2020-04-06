@@ -1,0 +1,12 @@
+Detuning:
+	Going out of tune.
+
+	Units:
+		cent => 1 octave / 1200
+
+		Examples:
+		1. wave with freq = 200 and detune = 1200 is same as wave with freq = 400 and detune 0
+			because 1 octave is doubling of the frequency.
+
+Change the detune value:
+	oscillator.detune.value = 21;
