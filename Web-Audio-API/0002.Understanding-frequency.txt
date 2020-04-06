@@ -1,0 +1,17 @@
+const audioContext = new (AudioContext || webkitAudioContext)();
+
+const oscillator = audioContext.createOscillator();
+
+// Attach the oscillator to the audio output device of the system.
+oscillator.connect(audioContext.destination);
+
+// We can play with the values. Default is 440.
+oscillator.frequency.value = 440;
+// Higher number means high pitch
+
+// Definition:
+//      Octave: doubling the frequency value or halving it.
+
+// To hear the sound that has the frequency, as set above
+oscillator.start(0);    // start at 0th second
+oscillator.stop(1);     // stop at 1st second
