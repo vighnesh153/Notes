@@ -1,7 +1,6 @@
 # Notes
 
 ## In Progress:
-0. Hotfix: Web Audio API
 0. Angular Security Masterclass
 0. NodeJS
 0. JavaScript, the tricky part
