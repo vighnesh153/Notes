@@ -1,0 +1,19 @@
+<video src="secrets/test.mp4" width="300" controls></video>
+
+<script>
+	const audioContext = new AudioContext();
+
+	const oscillator = audioContext.createOscillator();
+	const amplitude = audioContext.createGain();
+
+	oscillator.frequency.value = 10;
+	oscillator.connect(amplitude.gain);
+	oscillator.start(0);
+
+	const videoElement = document.querySelector('video');
+
+	const mediaElement = audioContext.createMediaElementSource(videoElement);
+
+	mediaElement.connect(amplitude);
+	amplitude.connect(audioContext.destination);
+</script>
