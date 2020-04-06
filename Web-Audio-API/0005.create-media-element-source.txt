@@ -1,0 +1,17 @@
+const audioContext = new AudioContext();
+
+// works with audio element as well
+const videoElement = document.querySelector('video');
+
+const mediaElement = audioContext.createMediaElementSource(videoElement);
+
+// little muffled sound
+const filter = audioContext.createBiquadFilter();
+
+// cut-off value. Above this value, there will be no effect.
+filter.frequency.value = 250;
+
+// now, media element's output will go to filter and then
+// filter's output will go to audioContext.destination.
+mediaElement.connect(filter);
+filter.connect(audioContext.destination);
