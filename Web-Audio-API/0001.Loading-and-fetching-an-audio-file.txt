@@ -1,0 +1,27 @@
+<input type="file" onchange="handleFile(this.files)">
+<script>
+	const audioContext = new AudioContext();
+    let audio;
+
+    const handleFile = (files) => {
+        if (files.length === 0) {
+            console.log('No file chosen.');
+            return;
+        }
+
+        const chosenFile = files[0];
+        chosenFile
+            .arrayBuffer()
+            .then(arrayBuffer => audioContext.decodeAudioData(arrayBuffer))
+            .then(decodedAudio => audio = decodedAudio);
+    };
+
+    const playback = () => {
+        const playSound = audioContext.createBufferSource();
+        playSound.buffer = audio;
+        playSound.connect(audioContext.destination);
+        playSound.start(audioContext.currentTime);
+    };
+
+    window.addEventListener('mousedown', playback);
+</script>
