@@ -8,5 +8,13 @@ Detuning:
 		1. wave with freq = 200 and detune = 1200 is same as wave with freq = 400 and detune 0
 			because 1 octave is doubling of the frequency.
 
+Formula:
+	if freq = 200 and detune = 100,
+	then the computedOscillatedFrequency will be 200 * Math.pow(2, 100 / 1200);
+
+	In more general terms:
+		if frequency = f and detune = d,
+		then computedOscillatedFrequency = f * Math.pow(2, d / 1200);
+
 Change the detune value:
 	oscillator.detune.value = 21;
