@@ -1,10 +1,11 @@
 # Notes
 
 ## In Progress:
-1. Angular Security Masterclass
-2. NodeJS
-3. JavaScript, the tricky part
-4. Advanced C++
+0. Hotfix: Web Audio API
+0. Angular Security Masterclass
+0. NodeJS
+0. JavaScript, the tricky part
+0. Advanced C++
 
 ## Stalled:
 1. React
