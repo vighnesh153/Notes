@@ -1,0 +1,11 @@
+What is a Probability Distribution?
+	Probability distributions allow you to represent the probability of an event
+	using a mathematical equation. Like any mathematical equation:
+		probability distributions can be visualized using a graph especially in 2-dimensional cases.
+		probability distributions can be worked with using algebra, linear algebra and calculus.
+
+	These distributions make it much easier to understand and summarize the probability of a
+	system whether that system be a coin flip experiment or the location of a self-driving car.
+
+NOTE: In a continuous distribution, the probability of every event is 0. But we can
+	  definitely define some probability for a range or an interval in the distribution space.
