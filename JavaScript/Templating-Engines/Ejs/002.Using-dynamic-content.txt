@@ -13,12 +13,13 @@ For if-else statements:
 
 Looping:
 	<% for (let item of items) { %>
-		<h1> item.someKey </h1>
+		<h1> <%= item.someKey %> </h1>
 	<% } %>
 
 
 
 To output raw text:
+	// Escape the text using '-' instead of '='
 	<%- someKey %>
-	// Here, if we output some HTML, it will be rendered as HTML, or as is.
+	// Here, if we output some HTML, it will be rendered as HTML syntax, or as is.
 	// Use this concept in Partials
