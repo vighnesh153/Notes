@@ -5,4 +5,16 @@ void Update()
 	{
 		Debug.Log("Up Arrow was pressed!");
 	}
+
+
+	// ANOTHER WAY TO PROCESS INPUT
+	float horizontalInput = Input.GetAxis("Horizontal");
+	// Value is between -1 and 1. If left/right arrow or
+	// a/d keys are pressed, then horizontalInput will be 0.
+	// If right key is pressed, it will be over 0 and <= 1.
+	// If left key is pressed, it will be under 0 and >= -1.
+	// To see these values:  go to
+		Project Settings => Input => Axes
+	// There we can find all sorts of values that are made available
+	// on key presses.
 }
