@@ -1,0 +1,5 @@
+float turnSpeed = 20;
+float horizontalInput = Input.GetAxis("Horizontal");
+
+this.transform.Rotate(Vector3.up, turnSpeed * horizontalInput * Time.deltaTime);
+// Vector3.up is same as new Vector3(0, 1, 0);
