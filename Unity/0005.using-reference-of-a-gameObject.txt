@@ -1,0 +1,28 @@
+using System.Collections;
+using System.Collections.Generic;
+using UnityEngine;
+
+public class FollowPlayer : MonoBehaviour
+{
+	// To have this value point to the game object, in the inspector,
+	// we drag the desired GameObject from the hierarchy window to the
+	// value of the below property.
+    public GameObject player;
+
+	private Vector3 offsetFromPlayer = new Vector3(0.19f, 4.77f, -5.32f);
+
+    void Start()
+    {
+
+    }
+
+	// We use LateUpdate to update the following after all the updates
+	// in the other scripts are done.
+    void LateUpdate()
+    {
+		// This example is used to make the camera follow the player-car
+
+		// Offset from the position of the player
+		this.transform.position = player.transform.position + offsetFromPlayer;
+    }
+}
