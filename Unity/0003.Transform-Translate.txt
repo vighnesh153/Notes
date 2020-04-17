@@ -1,0 +1,36 @@
+// Update is called once per frame
+void Update()
+{
+    // Move the vehicle forward
+    this.transform.Translate(0, 0, 1);
+	// This will add the values provided above to
+	// the current position of the GameObject, this
+	// script is connected to.
+	// In this example, we are adding 1 to the 'z'
+	// coordinate of the connected GameObject.
+
+
+	// We can also pass the Vector3 object.
+	this.transform.Translate(new Vector3(0, 0, 1));
+
+
+	// Or as follows:
+	this.transform.Translate(Vector3.forward);
+	// Vector3.forward is shorthand for new Vector3(0, 0, 1)
+	// and is a lot cleaner.
+
+
+	this.transform.Translate(Vector3.forward * Time.deltaTime);
+	// Time.deltaTime is the fractional time in which each frame is rendered.
+	// For eg. if our machine has X Hz refresh rate, then Time.deltaTime
+	// will be (1 / X). This is very handy because now no matter what the
+	// refresh rate of the machine is, the above will have a magnitude such that
+	// the state will be same on all machines at each second.
+	// For eg. If a machine has 100 fps, then the change in z position each frame will
+	// be (1 / 100) and if the machine has 60 fps, then the change in z position each frame
+	// will be (1 / 60). So, after 1 second, machine 1 would have travelled (1 / 100) * 100
+	// distance and machine 2 would have travelled (1 / 60) * 60 which is same on both machines.
+
+	// We can also multiply it by a factor to increase its speed.
+	this.transform.Translate(Vector3.forward * Time.deltaTime * 20);
+}
