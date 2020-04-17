@@ -1,0 +1,5 @@
+// If we use the public access modifier, then it will be
+// visible in the Unity Inspector under the attached
+// Script component
+public float speed = 15;
+// Now, the speed variable will be available to be updated in the Inspector window.
