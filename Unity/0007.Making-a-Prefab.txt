@@ -1,0 +1,11 @@
+Prefab => Prefabricated object or in simple words, Preconfigured game objects.
+
+Let us say, I have a game object to which I have attached a script, changed some transformations,
+and other configurations. If I want to have the same object with same configurations somewhere else
+or in some other scene, I create a prefab of it. Now, if I have instantiated that prefab, thousands of times,
+and I want to make changes to all, I just need to change any one of them and all will get the same settings.
+
+
+
+To create a prefab, create a prefabs directory in the Assets directory, just to keep things organized,
+and then drag the game object from the hierarchy window to the prefab directory in the project window.
