@@ -9,3 +9,14 @@ and I want to make changes to all, I just need to change any one of them and all
 
 To create a prefab, create a prefabs directory in the Assets directory, just to keep things organized,
 and then drag the game object from the hierarchy window to the prefab directory in the project window.
+
+
+
+Ways to make changes to all instances of the prefab:
+	1. Select the prefab from the 'PROJECT' window and make changes in the inspector window.
+
+	2. Make changes in the inspector window of the instances in hierarchy. But this will not
+	   apply the changes to all the instances. To apply the changes made to one instance to all
+	   others, in the inspector window of the modified instance, there will be a 'overrides'
+	   dropdown like button. Click that and it will ask if we want to revert all changes or apply
+	   them to all the instances. 
