@@ -1,0 +1,13 @@
+private float startDelay = 2f;
+private float spawnInterval = 2.2f;
+
+private void Start()
+{
+	InvokeRepeating("SpawnRandomAnimal", startDelay, spawnInterval);
+   	//				 Name-of-method		Start-delay 	Call-after-every-seconds
+}
+
+void SpawnRandomAnimal()
+{
+	// Do something
+}
