@@ -1,0 +1,2 @@
+float seconds = Time.time;
+// it is the time in seconds since the start of the game. 
