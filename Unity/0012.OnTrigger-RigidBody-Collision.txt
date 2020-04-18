@@ -1,0 +1,14 @@
+using UnityEngine;
+
+public class DetectCollisions : MonoBehaviour
+{
+	// Is run if the game-object attached to this script
+	// is rigid body and is-trigger is checked and it collides
+	// with other object, that is a collider
+    private void OnTriggerEnter(Collider other)
+    {
+		// Maybe destroy both the game objects on collision
+        Destroy(gameObject);
+        Destroy(other.gameObject);
+    }
+}
