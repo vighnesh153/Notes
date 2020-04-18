@@ -1,0 +1,2 @@
+Invoke("SpawnRandomBall", 5f);
+// The above will invoke the method named 'SpawnRandomBall' after 5 seconds
