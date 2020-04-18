@@ -1,0 +1,12 @@
+private float topBound = 30;
+
+void Update()
+{
+	// If it goes out of bounds, destroy. gameObject is a variable
+	// that holds reference of itself in the actual game.
+    if (transform.position.z > topBound)
+    {
+        Destroy(gameObject);
+		// other overload: Destroy(gameObject, 10); => second argument is time
+    }
+}
