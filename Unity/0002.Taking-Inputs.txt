@@ -1,6 +1,15 @@
 // Update is called once per frame
 void Update()
 {
+
+	// GetKey => returns true if the key is in pressed mode.
+	// GetKeyDown => returns true only for the first time, key was down even when it is in pressed mode
+	// GetKeyDown => the moment, key is up or released
+	// NOTE: Some keyboards are not English or some keys don't exists on some
+	// 		 keyboards. So, in that case, the following won't work. In that sceenario,
+	// 		 we use GetButton() and specify buttons like 'jump', 'right', look up docs for more.
+	// 		 These buttons are and can be pre-mapped to common keys. For eg. up can be mapped to 'W' and
+	// 		 'Up Arrow', etc.
 	if (Input.GetKeyDown(KeyCode.UpArrow))
 	{
 		Debug.Log("Up Arrow was pressed!");
