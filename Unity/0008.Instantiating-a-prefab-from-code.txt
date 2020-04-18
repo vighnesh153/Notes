@@ -1,0 +1,14 @@
+// To this, we assign or drag the prefab from the 'PROJECT' window to the variable in the script in
+// Inspector window.
+public GameObject projectilePrefab;
+
+void Update()
+{
+    if (Input.GetKeyDown(KeyCode.Space))
+	{
+		// This is one overload. To check others, use visual studio or docs
+		Instantiate(projectilePrefab, transform.position, projectilePrefab.transform.rotation);
+		// This will Instantiate the prefab at the position of the object in which it is being
+		// instantiated and with the rotation, same as that of the configured prefab.
+	}
+}
