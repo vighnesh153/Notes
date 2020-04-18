@@ -1,0 +1,8 @@
+// Random is available in UnityEngine namespace
+
+var animalIndex = Random.Range(0, animalPrefabs.Length);
+// integer. exclusive of the last number like Python ignores last number in range
+
+
+var animalIndex = Random.Range(0f, 20f);
+// float is not exclusive of last number
