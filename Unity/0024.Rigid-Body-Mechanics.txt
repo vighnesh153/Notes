@@ -1,0 +1,9 @@
+private Rigidbody playerRigidBody;
+
+playerRigidBody = GetComponent<Rigidbody>();
+
+
+float horizontalInput = Input.GetAxis("Horizontal");
+float verticalInput = Input.GetAxis("Vertical");
+playerRigidBody.AddForce(Vector3.forward * speeed * verticalInput);
+playerRigidBody.AddForce(Vector3.right * speeed * horizontalInput);
