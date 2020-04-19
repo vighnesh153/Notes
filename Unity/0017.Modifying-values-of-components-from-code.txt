@@ -1,0 +1,12 @@
+private Rigidbody playerRigidBody;
+
+void Start()
+{
+	// The component to which this script is attached to, also has a Rigidbody component.
+	// So, we can play with physics
+
+    playerRigidBody = this.GetComponent<Rigidbody>();
+	playerRigidBody.AddForce(Vector3.up * 10, ForceMode.Impulse);
+    // ForceMode.Impulse applies force immediately. If second argument
+    // is not provided, then the force is applied overtime.
+}
