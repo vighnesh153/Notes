@@ -1,0 +1,14 @@
+// Script's name whose values we wish to know: PlayerController
+private PlayerController playerControllerScript;
+
+// Start is called before the first frame update
+void Start()
+{
+    playerControllerScript =
+	   GameObject.Find("Player").GetComponent<PlayerController>();
+	   // Name of the GameObject in the hierarchy to which that script is attached.
+	   // Of that GameObject, we get the script component we desire
+
+	// Now, playerControllerScript will point to the PlayerController's object
+	// and we can access all the public values it has.
+}
