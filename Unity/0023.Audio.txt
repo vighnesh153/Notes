@@ -1,0 +1,29 @@
+Add a audio source component to any game object. And to that attach the audio file.
+
+Usually, the main camera has the audio listener(place from where the audio will be heard in the 3D
+world). If we add the audio source component to the camera, there will be no feel like the sound is
+coming from a distance. Sometime, that is what we want. But in FPS shooter games, we want to hear
+the enemies coming close to us. So, we add the audio source to the enemies and audio listener to the
+player.
+
+
+NOTE:
+// For background music, we don't need to play with the audio in the script. We can just
+// add an audio source and play the audio on loop in the inspector itself.
+
+
+To play audio from the script:
+
+	// Add clips to the following in the inspector
+	public AudioClip jumpSound;
+	public AudioClip crashSound;
+
+	// Add the empty audio source component in the inspector
+	private AudioSource playerAudio;
+
+	// Get the audio source component's reference
+	playerAudio = GetComponent<AudioSource>();
+
+	// To play the audio once:
+	playerAudio.PlayOneShot(jumpSound, 1f);
+    //						   Clip,  volume
