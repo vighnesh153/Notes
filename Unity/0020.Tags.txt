@@ -1,0 +1,13 @@
+Tags are a way to identify game objects in the scripts. To give a tag to
+a prefab, on the top in the inspector window of the prefab, assign an
+existing tag or create one and assign it to prefab.
+
+Example usage in script:
+	private void OnCollisionEnter(Collision collision)
+	{
+		if (collision.gameObject.CompareTag("Ground")) {
+			isOnGround = true;
+		} else if (collision.gameObject.CompareTag("Obstacle")) {
+			gameOver = true;
+		}
+	}
