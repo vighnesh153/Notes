@@ -1,0 +1,6 @@
+public ParticleSystem explosionParticle;
+public ParticleSystem dirtParticle;
+
+To play or stop:
+	explosionParticle.Play();
+	dirtParticle.Stop();
