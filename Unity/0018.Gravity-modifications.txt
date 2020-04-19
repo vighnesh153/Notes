@@ -1,0 +1,6 @@
+public float gravityModifier;
+
+void Start()
+{
+    Physics.gravity *= gravityModifier;
+}
