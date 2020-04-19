@@ -1,0 +1,14 @@
+When 2 colliders collides with a collider, a method is called
+
+private void OnCollisionEnter(Collision collision)
+{
+
+}
+
+NOTE: Difference between OnTriggerEnter and OnCollisionEnter is that
+	  if we set the OnTrigger of the body to true, then we have just marked a zone
+	  to that body. Think of it as a ghost. It exists and it has a zone (outer walls
+	  using the collider) but we can pass through it. As soon as we start passing
+	  through it, OnTriggerEnter is called. OnCollisionEnter is called when the body is a
+	  solid body and elastic collision is there. So if a body bounces of, it has collided.
+	  So, OnCollisionEnter is called.
