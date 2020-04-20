@@ -1,4 +1,14 @@
-// Update is called once per frame
+// Mouse input:
+// When a mouse event occurs on a gameobject, the following methods get called for respective events.
+
+private void OnMouseDown() {}
+private void OnMouseUp() {}
+private void OnMouseEnter() {}
+private void OnMouseExit() {}
+private void OnMouseDrag() {}
+
+
+
 void Update()
 {
 
