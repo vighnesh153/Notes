@@ -1,0 +1,4 @@
+FindObjectsOfType<EnemyController>()
+// Returns EnemyController[].
+// Can be used to know the objects that are in the game, even those
+// that are spawned using Instantiate() method.
