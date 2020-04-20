@@ -1,0 +1,5 @@
+targetRb = GetComponent<Rigidbody>();
+
+targetRb.AddForce(Vector3.up * Random.Range(12, 16), ForceMode.Impulse);
+var torque = new Vector3(Random.Range(-10, 10), Random.Range(-10, 10), Random.Range(-10, 10));
+targetRb.AddTorque(torque, ForceMode.Impulse);
