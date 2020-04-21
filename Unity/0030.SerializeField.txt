@@ -1,0 +1,3 @@
+[SerializeField] private float speed;
+// This tells Unity that I want to edit this in the Unity Inspector without making
+// it public so that no other class can edit it.
