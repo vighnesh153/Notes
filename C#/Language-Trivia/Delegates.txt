@@ -1,0 +1,20 @@
+using System;
+
+namespace CSharp_Tuts
+{
+    public delegate void TextOutputHandler(string text);
+
+    class Program
+    {
+        static void Log(string data)
+        {
+            Console.WriteLine(data);
+        }
+
+        static void Main(string[] args)
+        {
+            TextOutputHandler output = Log;
+            output("I am Awesome!");
+        }
+    }
+}
