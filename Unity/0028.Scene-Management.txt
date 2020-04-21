@@ -1,0 +1,12 @@
+using UnityEngine.SceneManagement;
+
+
+public void RestartGame()
+{
+	// Name of the scene
+	SceneManager.LoadScene("Prototype 5");
+
+	// Or, to just reload the current scene, we can use the following
+	// instead of resetting all the variables
+    SceneManager.LoadScene(SceneManager.GetActiveScene().name);
+}
