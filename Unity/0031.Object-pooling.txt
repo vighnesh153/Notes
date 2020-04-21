@@ -1,0 +1,8 @@
+If we have objects that are instantiating a lot of times, it can be a performance hit.
+
+To avoid that, we can in the beginning create a pool of max number of objects that will be
+in the screen at a time. Store the instances of them in a queue.
+
+Remove them from queue when they need to be used and when they are not needed, we can push them
+back into the Queue so that they are back in pool to be used later. Remember to reset properties
+before or after pushing/popping from the queue.
