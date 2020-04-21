@@ -17,6 +17,9 @@ Event listener:
 	method from the drop down. It is quite intuitive to attach the method. Observe the GUI carefully.
 
 
+To Add a listener Programatically:
+	restartButton.onClick.AddListener(MethodName);
+
 To hold reference of button in the Script to enable and disable it:
 
 	using UnityEngine.UI;
