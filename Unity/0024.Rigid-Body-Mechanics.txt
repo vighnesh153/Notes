@@ -7,3 +7,10 @@ float horizontalInput = Input.GetAxis("Horizontal");
 float verticalInput = Input.GetAxis("Vertical");
 playerRigidBody.AddForce(Vector3.forward * speeed * verticalInput);
 playerRigidBody.AddForce(Vector3.right * speeed * horizontalInput);
+
+
+playerRigidBody.AddRelativeForce(Vector3.forward * speed * horizontalInput);
+// Difference between AddForce and AddRelativeForce is that AddForce applies force
+// in the global coordinate system. Which means that if I rotate a vehicle 90 degrees
+// and AddForce(Vector3.forward), the force will still be applied in the Z-axis.
+// But AddRelativeForce takes into account the body's rotation.
