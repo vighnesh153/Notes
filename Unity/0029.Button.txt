@@ -1,0 +1,26 @@
+Add a button in the hierarchy by right-clicking and going to UI=> Button.
+If a canvas already exists, then add it to it by right clicking on the canvas,
+else, a new canvas will be automatically created while adding the button.
+
+
+Change the text:
+	The button GameObject will have a Text GameObject as a child. To modify the
+	text of the button, we have to modify the text in it. Add text style as required.
+
+
+Event listener:
+	At the bottom of the button in inspector, there will be a ButtonScript already attached to
+	the button. There, you can find 'On Click()' list. Click the add sign next to it and to
+	it, attach the GameObject from the hierarchy (usually the GameManager) that has the method which
+	is supposed to be executed on Click. After attaching the game object, we need to select the
+	script component of that game object which has the functionality of OnClick and select that
+	method from the drop down. It is quite intuitive to attach the method. Observe the GUI carefully.
+
+
+To hold reference of button in the Script to enable and disable it:
+
+	using UnityEngine.UI;
+
+	public Button restartButton;
+
+	restartButton.gameObject.SetActive(true);	// to enable. false to disable
