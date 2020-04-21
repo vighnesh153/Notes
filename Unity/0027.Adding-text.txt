@@ -1,0 +1,17 @@
+In the hierarchy, right click and add UI=>Text-TextMeshPro object.
+
+That will create a 'canvas' game object in the hierarchy and add the text element to it.
+
+
+using TMPro;
+
+// To the following, attach the Text GameObject in the inspector
+public TextMeshProUGUI scoreText;
+
+private int score;
+
+void Start()
+{
+    score = 0;
+    scoreText.text = $"Score: {score}";
+}
