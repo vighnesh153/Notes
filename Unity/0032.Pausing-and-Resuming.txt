@@ -1,0 +1,1 @@
+We can set Time.timeScale to 0 when paused and to 1 when resumed.
