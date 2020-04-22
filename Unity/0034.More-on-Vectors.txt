@@ -5,3 +5,13 @@ this.transform.LookAt(some_vector);
 
 float distance = Vector3.Distance(vector_1, vector_2);
 // Euclidean distance between head points of 2 Vectors
+
+
+
+float inDegrees = Vector3.Angle(vector_1, vector_2);
+// Angle between 2 vectors
+
+
+
+Debug.DrawRay(vector_1, vector_2)
+// Helpful Debug trick: Draws ray between the heads of the 2 vectors in the Scene view
