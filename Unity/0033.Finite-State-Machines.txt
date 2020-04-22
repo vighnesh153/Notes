@@ -1,0 +1,7 @@
+Finite State Machine:
+	1. A list of possible states.
+	2. The conditions for transitioning between those states.
+	3. Initial state.
+
+
+This is a cool pattern and can solve many problems. Implementation is quite simple.
