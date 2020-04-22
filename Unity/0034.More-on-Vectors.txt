@@ -1,2 +1,7 @@
 this.transform.LookAt(some_vector);
 // Make the local forward of 'this' to point at 'some_vector';
+
+
+
+float distance = Vector3.Distance(vector_1, vector_2);
+// Euclidean distance between head points of 2 Vectors
