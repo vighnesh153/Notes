@@ -13,5 +13,12 @@ float inDegrees = Vector3.Angle(vector_1, vector_2);
 
 
 
-Debug.DrawRay(vector_1, vector_2)
+float duration = 2;
+Debug.DrawRay(vector_1, vector_2, Color.red, duration);
 // Helpful Debug trick: Draws ray between the heads of the 2 vectors in the Scene view
+
+
+
+
+vector_1.magnitude;
+// Length of the vector
