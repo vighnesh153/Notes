@@ -1,0 +1,2 @@
+this.transform.LookAt(some_vector);
+// Make the local forward of 'this' to point at 'some_vector';
