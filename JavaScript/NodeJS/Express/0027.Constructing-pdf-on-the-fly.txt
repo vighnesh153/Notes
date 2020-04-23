@@ -1,0 +1,4 @@
+Check out 'pdfkit' npm package. It uses CoffeeScript in the documentation,
+but should be quite easy to follow.
+
+Or check Max's video of course NodeJs the complete guide.
