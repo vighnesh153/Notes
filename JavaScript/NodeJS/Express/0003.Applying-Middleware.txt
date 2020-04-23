@@ -23,6 +23,27 @@ app.use(middleware1, middleware2, middleware3, ...);    // directly add middlewa
 app.use([middleware1, middleware2], middleware3,  [middleware4, middleware5],...); // add arrays of middlewares
 
 
+// Error handling middlewares
+app.use(
+    (req, res, next)=> {
+        // Next should be used in the async callback to call the trigger the execution of
+        // the next error handling middleware
+        next(someError);
+
+        // To execute error handling middleware outside of async callback, we can use 'next'
+        // or directly 'throw errorObject'.
+    },
+    (error, req, res, next) => {
+        // Error handling middleware. It is called when we pass error to 'next'
+        // It can act as a global error catching mechanism for all middlewares
+        // We can also define multiple error handling middlewares and to call that
+        // we again pass error object to 'next'
+        next(error);
+    },
+    (error, req, res, next) => {}
+);
+
+
 NOTE: Now, express provides some widely used response methods.
     res.send('<h1>Hello</h1>');
     // It also sets the content-type to text/html by default (if it is not set by us).
