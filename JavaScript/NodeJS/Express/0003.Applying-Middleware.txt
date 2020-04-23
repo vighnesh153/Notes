@@ -18,6 +18,11 @@ app.use((request, response, next) => {
 app.listen(4200);
 
 
+// Adding more middlewares
+app.use(middleware1, middleware2, middleware3, ...);    // directly add middlewares
+app.use([middleware1, middleware2], middleware3,  [middleware4, middleware5],...); // add arrays of middlewares
+
+
 NOTE: Now, express provides some widely used response methods.
     res.send('<h1>Hello</h1>');
     // It also sets the content-type to text/html by default (if it is not set by us).
