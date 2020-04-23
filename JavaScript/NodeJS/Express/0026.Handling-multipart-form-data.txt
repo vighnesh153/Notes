@@ -1,0 +1,52 @@
+Installation:
+	npm i multer
+
+
+
+Usage:
+	const multer = require('multer');
+
+	// More advanced configuration
+	const config = multer.diskStorage({
+	destination: (req, file, callback) => {
+		// first arg is error
+		callback(null, './uploads/')
+		// Also, make sure to create the directory manually.
+	},
+	filename: (req, file, callback) => {
+		// for unique names, we prefixed with date
+		callback(null, new Date().toISOString() + '-' + file.originalname);
+	},
+	});
+
+	const fileFilter = (req, file, callback) => {
+		if (file.mimeType === 'image/png' ||
+			file.mimeType === 'image/jpg' ||
+			file.mimeType === 'image/jpeg') {
+			callback(null, true);
+		} else {
+			callback(null, false);
+		}
+	};
+	app.use(multer({
+		storage: config,
+		fileFilter: fileFilter
+	}).single('myImage'))
+
+
+	app.post('/', (req, res, next) => {
+		// logs meta information about the file
+		console.log(req.file);
+		// If multer rejects the file to be uploaded, req.file will be
+		// undefined
+		res.send('<h1>Uploaded!</h1>');
+	});
+
+	app.get('/', (req, res, next) => {
+		res.send(`
+			<form action="/" method="post" enctype="multipart/form-data">
+			<input type="file" name="myImage">
+			<button type="submit">Submit</button>
+			</form>
+		`);
+	});
