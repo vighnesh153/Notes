@@ -1,0 +1,1 @@
+Check out Razorpay, Stripe, etc for payments handling.
