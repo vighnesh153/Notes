@@ -1,0 +1,12 @@
+const crypto = require('crypto');
+
+const size = 32;
+crypto.randomBytes(size, (err, buffer) => {
+    if (err) {
+        console.log("Error occurred!");
+        return;
+    }
+
+    // Buffer has hex values
+    const token = buffer.toString('hex');
+});
