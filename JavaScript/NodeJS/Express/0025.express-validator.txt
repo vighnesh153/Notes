@@ -1,0 +1,82 @@
+Installation:
+	npm i express-validator
+
+More on express validators: https://express-validator.github.io/docs/
+
+
+Usage:
+	const expressValidator = require('express-validator/check');
+
+	app.post('/some-route',
+		// should be in the req.body, or header, or cookie, etc.
+		expressValidator.check('field1').isEmail(),
+
+		expressValidator.check('field2').isAlpha().withMessage('Some custom message'),
+
+		expressValidator.check('field3')
+			.isEmail()
+			.withMessage('Some custom message')
+			.custom((value, {req}) => {
+				if (value === 'test@test.com') {
+					throw new Error('This email is forbidden.');
+					// Now the above message will be shown
+
+					// If we return false, then the default or custom
+					// message will be in the errors array
+				}
+				return true;
+				// Return true to indicate that the value is valid
+			})
+			.withMessage('Some other custom message'),
+
+		expressValidator.check('field', 'Same error message for all instead of adding multiple withMessage'),
+
+		// checks for 'field' only in body
+		expressValidator.body('field').isEmail(),
+
+		expressValidator.body('confirmPassword')
+			.custom((value, {req}) => {
+				if (value !== req.body.password) {
+					throw new Error('Passwords have to match!');
+				}
+				return true;
+			}),
+
+
+		// ExpressValidator waits for the promises to fulfil.
+		// If the promise resolves, it treats the value as valid,
+		// else, it adds an error entry to the errors array with
+		// the rejection message.
+		expressValidator.body('field')
+			.custom((value, {req}) => {
+				// Custom asynchronous validation
+				return SomeAsynchronousOperation
+					.then(v => {
+						// if something fails
+						return Promise.reject(
+							'Some error message'
+						);
+					});
+			}),
+
+
+		// Sanitizers
+		expressValidator.body('field')
+			.isEmail()
+			.normalizeEmail(),
+		expressValidator.body('password')
+			.isEmail()
+			.trim(),
+
+
+		(req, res, next) => {
+			const errors = expressValidator.validationResult(req);
+			if (errors.isEmpty() === false) {
+				const allErrors = errors.array();
+				// It is an array of errors where each item is result of
+				// validation by expressValidator.check('field1'),
+				// expressValidator.check('field2'),
+				// expressValidator.check('field3'), etc.
+			}
+		}
+	);
