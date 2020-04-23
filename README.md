@@ -1,6 +1,7 @@
 # Notes
 
 ## In Progress:
+1. NodeJS
 1. Unity
 1. Advanced C++
 
