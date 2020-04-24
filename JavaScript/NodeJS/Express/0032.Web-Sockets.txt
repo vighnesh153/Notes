@@ -1,0 +1,77 @@
+Web-sockets protocol is an extended version of Http protocol.
+It allows the client and server to have real-time communication with the each other.
+
+
+Installation:
+	npm i socket.io
+	npm i --save-dev @types/socket.io
+
+
+Usage: Server side
+	// create a file: socket.js
+	{
+		let io;
+		module.exports = {
+			init: httpServer => {
+				io = require('socket.io')(httpServer);
+				return io;
+			},
+			getIO: () => {
+				if (!io) {
+					throw new Error('Socket.io not initialized!');
+				}
+				return io;
+			}
+		};
+	}
+
+	// In the index.js file:
+	{
+		const express = require('express');
+		const app = express();
+
+		const server = app.listen(8080, () => {
+			console.log('Listening on: 8080');
+		});
+
+		// Configuration
+		const io = require('./socket')
+		io.init(server);
+		io.getIO().on('connection', socket => {
+			// new connection
+			console.log('Client connected!');
+		});
+	}
+
+	// In other files where we want to use it:
+	const io = require('./socket');
+
+	const payload = {};     // Data we want to emit
+	// Emit sends to all connected clients
+	io.getIO().emit('EVENT_NAME', payload);
+
+	// Receive data from client
+	io.getIO().on('CLIENT_EVENT', data => {
+		// do something with the data
+	});
+
+
+
+Usage: Client side
+	Setup: npm i socket.io-client
+
+	import openSocket from 'socket.io-client';
+
+
+	// URL of the server, we want to establish connection with.
+	const socket = openSocket('http://localhost:8080')
+	// The above line will establish a connection with the server
+
+	// receive event/data from server
+	socket.on('EVENT_NAME', payload => {
+		// do something with the payloadso
+	});
+
+	// emit event/data from client
+	const payload = {};
+	socket.emit('CLIENT_EVENT', payload);
