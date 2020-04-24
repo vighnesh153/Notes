@@ -1,0 +1,10 @@
+It adds some security headers to the response. Check the docs to see what
+headers it adds.
+
+Installation:
+	npm i helmet
+
+Usage:
+	const helmet = require('helmet');
+
+	app.use(helmet());
