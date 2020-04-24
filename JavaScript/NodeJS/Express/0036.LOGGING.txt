@@ -1,0 +1,19 @@
+Installation:
+	npm i morgan
+
+
+Usage:
+	const morgan = require('morgan');
+	const fs = require('fs');
+	const path = require('path');
+
+	const accessLogStream = fs.createWriteStream(
+		path.join(__dirname, 'access.log'),
+		{ flags: 'a' }		// to append to the file
+	);
+
+	// check the official docs to do advanced logging
+	app.use(morgan('combined', { stream: accessLogStream }));
+
+
+MORE ON LOGGING: https://blog.risingstack.com/node-js-logging-tutorial/
