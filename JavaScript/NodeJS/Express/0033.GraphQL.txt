@@ -1,0 +1,75 @@
+GraphQL is similar to REST API but it is more flexible in querying.
+Here, we just query the data that we need. We don't REQUEST all the data and parse
+out the needed one. This will be problematic on mobile devices because we are
+requesting 'not required' data and that will lead to loss of bandwidth for the client.
+
+NOTE: In GraphQL, we use the POST http method to get the data.
+
+NOTE: THE GRAPHQL SECTION IS STILL YET TO BE WATCHED. GOT BORED AND SKIPPED IT.
+	  COURSE NAME: NODEJS - THE COMPLETE GUIDE
+
+Installation:
+	npm i graphql express-graphql
+	// express-graphql to parse incoming graphql requests
+
+
+Usage:
+	// In ./graphql/schema.js
+	{
+		const { buildSchema } = require('graphql')
+
+		module.exports = buildSchema(`
+			type TestData {
+				text: String!
+				views: Int!
+			}
+
+			type RootQuery {
+				hello: TestData!
+			}
+
+			schema {
+				query: RootQuery
+			}
+		`);
+		// ! for required
+	}
+
+
+	// In ./graphql/resolvers.js
+	{
+		module.exports = {
+			hello: () => {
+				return {
+					test: 'Hello World!',
+					views: 123
+				};
+			}
+		}
+	}
+
+
+	const express = require('express');
+	const app = express();
+
+	const graphqlHttp = require('express-graphql');
+
+	const graphqlSchema = require('./graphql/schema');
+	const graphqlResolver = require('./graphql/resolvers');
+
+	app.use('/graphql', graphqlHttp({
+		schema: graphqlSchema,
+		rootValue: graphqlResolver
+	}));
+
+
+	// In postman:
+	// In the JSON body of POST request
+	// {
+	//      "query": "{
+	//          hello {
+	//              text
+	//              views
+	//          }
+	//      }"
+	// }
