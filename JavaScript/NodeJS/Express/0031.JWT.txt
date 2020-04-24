@@ -1,0 +1,40 @@
+Installation:
+	npm i jsonwebtoken
+
+
+Usage:
+	const jwt = require('jsonwebtoken');
+
+	const createToken = () => {
+		const data = {
+			userId: 'USER_ID'
+		};
+		const token = jwt.sign(
+			data,
+			'SECRET_KEY',
+			{ expiresIn: '1h' }
+		);
+		res.status(200).json({
+			token: token
+		});
+	}
+
+	const validateTokenMiddleware = (req, res, next) => {
+		const token = req.get('Authorization');
+		// If token was provided as value of 'Authorization' header
+
+		let decodedToken;
+		try {
+			decodedToken = jwt.verify(token, 'SECRET_KEY');
+		} catch (e) {
+			throw e;
+		}
+
+		if (!decodedToken) {
+			const error = new Error('Not authenticated.');
+			error.statusCode = 401;
+			throw error;
+		}
+		req.userId = decodedToken.userId;
+		next();
+	}
