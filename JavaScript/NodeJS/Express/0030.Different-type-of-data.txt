@@ -1,0 +1,6 @@
+For sending images or non-JSON data to the API, we can't use application/json header
+in the front-end. We need to use the 'FormData' class provided by the browser JS.
+We create a new instance of that and append data to it and send that instance as
+body of the payload.
+
+Check docs of respective front-end frameworks to do specific tweeks.
