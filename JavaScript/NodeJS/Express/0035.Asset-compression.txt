@@ -1,0 +1,17 @@
+It is the technique of reducing the size of the assets by zipping it.
+And browsers are capable of de-compressing the compressed assets. So we don't
+have to do any magic coding to achieve optimized assets.
+
+FOR ADVANCED CONFIGURATION, CHECK THE DOCS OF 'express compression'
+
+
+FOLLOWING IS THE BASIC STANDARDIZED SETUP
+
+Installation:
+	npm i compression
+
+
+Usage:
+	const compression = require('compression');
+
+	app.use(compression());
