@@ -1,6 +1,8 @@
 const express = require('express');
 const app = express();
 
+// Default content-type is 'x-www-form-urlencoded'. So, for that, we use urlencoded bodyParser
+
 // The request is obtained in bytes and
 // express parses out the request information but not the body.
 // So, to parse the body, we need a package called 'body-parser'.
