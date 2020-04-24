@@ -1,0 +1,35 @@
+const express = require('express');
+const bodyParser = require('body-parser');
+
+const app = express();
+
+// APIs usually receive data in request body as JSON.
+// To parse, Content-Type = application/json, we use JSON bodyParser.
+app.use(bodyParser.json());
+
+
+// CORS configuration. If not done, CORS error will be thrown for different origins.
+app.use((req, res, next) => {
+    res.setHeader('Access-Control-Allow-Origin', '*');
+    res.setHeader('Access-Control-Allow-Methods',
+        'GET, POST, PUT, PATCH, DELETE');
+    res.setHeader('Access-Control-Allow-Headers',
+        'Content-Type, Authorization');
+    next();
+});
+
+
+app.get('/posts', (req, res, next) => {
+    res.status(200).json({
+        posts: [
+            {
+                title: 'First Post',
+                content: 'This is the first post.'
+            }
+        ]
+    });
+});
+
+app.listen(8080, () => {
+    console.log('Listening on: 8080');
+});
