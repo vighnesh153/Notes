@@ -1,7 +1,7 @@
 # Notes
 
 ## In Progress:
-1. Unity
+1. Linear Algebra
 1. Advanced C++
 
 ## Stalled:
