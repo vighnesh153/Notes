@@ -1,0 +1,3 @@
+Command:
+	firebase functions:config:get
+	// lists all the configuration of the firebase functions
