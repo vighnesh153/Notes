@@ -12,7 +12,6 @@
 ## Todo:
 1. Advanced C++
 1. Spring
-1. AWS Serverless APIs and Apps
 1. Webpack
 1. Flask API development
 1. Angular Security Masterclass
