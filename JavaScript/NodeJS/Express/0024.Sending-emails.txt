@@ -4,31 +4,23 @@ security, scalability and many other issues. So, we use a third party mail serve
 Popular examples are SendGrid, AWS SES, etc.
 
 
+Following example uses SendGrid email service for sending emails
+
 Installation:
-	npm i -S nodemailer							// To handle mail related tasks
-	npm i -S nodemailer-sendgrid-transport		// To integrate SendGrid with nodemailer.
-
-
-Setup:
-	const nodemailer = require('nodemailer');
-	const sendgridTransport = require('nodemailer-sendgrid-transport');
-
-	const transporter = nodemailer.createTransport(sendgridTransport({
-		auth: {
-			api_key: 'YOUR_SENDGRID_API_KEY'
-		}
-	}));
+	npm i -S @sendgrid/mail
 
 
 Usage:
-	transporter.sendMail({
-		to: 'TO_EMAIL',
-		from: 'FROM_EMAIL',
-		subject: 'SUBJECT',
-		html: '<h1>Hello</h1>'
-	}).then(someCallback);
+	const sgMail = require('@sendgrid/mail');
 
-NOTE: Learn more about SendGrid on its docs.
-
-NODEMAILER: https://nodemailer.com/about/
-SENDGRID: https://sendgrid.com/docs/
+	sgMail.setApiKey(process.env.SENDGRID_API_KEY);
+	const msg = {
+		to: 'vighnesh.raut13@gmail.com',
+		from: 'support@vighnesh153.com',
+		subject: 'Sending with Twilio SendGrid is Fun',
+		text: 'and easy to do anywhere, even with Node.js',
+		html: '<strong>and easy to do anywhere, even with Node.js</strong>',
+	};
+	sgMail.send(msg).then(_ => {
+		console.log("Sent.")
+	});
