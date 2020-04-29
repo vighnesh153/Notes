@@ -23,3 +23,6 @@
 1. OpenGL
 1. GraphQL Section in NodeJS: The Complete Guide Udemy
 1. AI, ML stuff (to be decided)
+
+## If needed, start learning here:
+1. JavaFX : Watch the JavaFX section in Tim Buchalka's course
