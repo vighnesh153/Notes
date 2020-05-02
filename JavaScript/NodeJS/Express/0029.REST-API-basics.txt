@@ -18,6 +18,9 @@ app.use((req, res, next) => {
     next();
 });
 
+// Advanced CORS middleware and its configuration
+https://expressjs.com/en/resources/middleware/cors.html
+
 
 app.get('/posts', (req, res, next) => {
     res.status(200).json({
