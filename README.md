@@ -1,7 +1,6 @@
 # Notes
 
 ## In Progress:
-* Java
 * Precalculus
 * Linear Algebra
 
