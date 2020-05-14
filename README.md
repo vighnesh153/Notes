@@ -8,7 +8,6 @@
 ## Todo:
 * Advanced C++
 * Spring
-* Webpack
 * Angular Security Masterclass
 * JavaScript, the tricky part
 * Advanced CSS
