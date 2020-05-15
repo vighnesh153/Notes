@@ -1,7 +1,7 @@
 const path = require('path');
 const common = require('./webpack.common');
 const merge = require('webpack-merge');
-const CleanWebpackPlugin = require('clean-webpack-plugin');     // clears dist before building
+const { CleanWebpackPlugin } = require('clean-webpack-plugin');     // clears dist before building
 const MiniCssExtractPlugin = require('mini-css-extract-plugin');    // extracts css into files from commonJs
 const OptimizeCssAssetsPlugin = require("optimize-css-assets-webpack-plugin");  // minification of css
 
