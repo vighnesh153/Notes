@@ -1,0 +1,7 @@
+To auto generate an express API application:
+
+	mkdir app-name
+	cd app-name
+	npx express-generator --no-view --git --force
+
+	// More info on flags: https://expressjs.com/en/starter/generator.html
