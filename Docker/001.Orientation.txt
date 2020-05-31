@@ -17,5 +17,8 @@ docker image ls
 
 ## List Docker containers (running, all, all in quiet mode)
 docker container ls
-docker container ls --all
-docker container ls -aq
+docker container ls -a
+
+## Managing containers
+docker start <CONTAINER_ID>
+docker stop <CONTAINER_ID>			// 'stop' is generous stopping, while 'kill' will terminate immediately.
