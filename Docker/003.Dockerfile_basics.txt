@@ -27,3 +27,9 @@ FROM alpine
 
 # step 3: Set default commands
 CMD [ "mongod" ]
+
+
+
+# Docker ignore
+# Create a .dockerignore file in the same directory to add files and directories to that.
+# These files won't be considered by docker for any purpose.
