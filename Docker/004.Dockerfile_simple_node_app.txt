@@ -1,0 +1,31 @@
+FROM node:10-alpine
+
+
+# set the working directory to /usr/node-app. If the dir doesn't exist, it is created.
+WORKDIR /usr/node-app
+
+# source destination
+# First one refers to the project dir, and second one
+# points to the Working Dir set in above command.
+COPY ./package.json ./
+
+RUN npm install
+
+# We copy the package.json from the project first so that,
+# we can use the cached version of the containers that already contain
+# the node modules installed. Why do that? Suppose, there is some change in
+# our source code, then if we run `npm install` after all copying all the files,
+# it won't used the cached version. But in this case, we were fine with the cached
+# container that has the installed node modules. So, we use this pattern. This is
+# done, just to save the time consumed while building a new version of the image.
+
+COPY ./ ./
+
+CMD [ "npm", "start" ]
+
+
+
+
+# To build image, 'docker build -t username/app-name:tag .'
+# To fire up the image and container: docker run -p 8153:3000 username/app-name
+# First port is local machine port, and the second port is from inside the container.
