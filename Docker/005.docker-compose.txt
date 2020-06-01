@@ -1,0 +1,15 @@
+# Create a file named: docker-compose.yml
+
+version: "3"
+
+services:
+    mymongo:
+        image: "mongo"  # pull from hub
+
+    mynode:
+        build: .        # build the current directory
+        ports:
+            - "8000:8000"
+
+
+# To run, docker-compose up --build
