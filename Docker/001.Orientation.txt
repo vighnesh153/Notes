@@ -1,5 +1,8 @@
 ## Check if docker is running by executing `docker` in the terminal.
 
+## Start a busybox instance. busybox has all the basic Linux commands.
+docker run -it --rm busybox
+
 ## List Docker CLI commands
 docker
 docker container --help
