@@ -1,13 +1,17 @@
 # Notes
 
 ## In Progress:
-* Precalculus
-* Linear Algebra
-
-## Todo:
-* Advanced C++
 * Spring
 * Angular Security Masterclass
+
+* React: Watch Maximillian's React course
+* GraphQL: https://www.howtographql.com/ and watch the "GraphQL" section in Maximillian's NodeJS course
+* Go lang
+
+## Todo:
+* Precalculus
+* Linear Algebra
+* Advanced C++
 * JavaScript, the tricky part
 * Advanced CSS
 
@@ -22,8 +26,6 @@
 * Java Regex: Watch the "Regular Expressions" section in Tim Buchalka's course
 * JDBC: Watch the "Databases" section in Tim Buchalka's course
 * Basic Java Network Programming: Watch the "Network Programming" section in Tim Buchalka's course
-* GraphQL: https://www.howtographql.com/ and watch the "GraphQL" section in Maximillian's NodeJS course
 * OpenGL: Check out Cherno's youtube playlist
 * JavaFX: Watch the "JavaFX" section in Tim Buchalka's course
 * java.nio: Watch the "Basic Input & Output including java.util" section in Tim Buchalka's course
-* React: Watch Maximillian's React course
