@@ -3,10 +3,12 @@ designed to hold a modest amount of data specific to a particular client and
 website, and can be accessed either by the web server or the client computer.
 
 
+Detailed info: https://expressjs.com/en/5x/api.html#res.cookie
+
 To set a cookie:
 	In the middleware,
 		(req, res, next) => {
-			res.setHeader("Set-Cookie", "key=value");
+			res.cookie('cookie-name', 'cookie-value');
 			res.render('home');
 		}
 
@@ -15,32 +17,41 @@ request, the cookie will be automatically added to the request information.
 
 
 To access the cookie:
+	var cookieParser = require('cookie-parser');
+	app.use(cookieParser());
+
 	In the middleware,
 		(request, response, next) => {
-			const all_cookies = req.get('Cookie');
-			// console log all_cookies do some string manipulation to access specific
-			// cookies' value.
+			const cookies = req.cookies;
+			// object of cookies. keys are the name of the cookies and their corresponding values
+			// are the cookie-values
 		}
 
 
 To set the age of the cookie:
-	res.setHeader("Set-Cookie", "key=value; Max-Age=10");
-	// In seconds
+	res.cookie('cookie-name', 'cookie-value', { maxAge: 1000 });
+	// In milliseconds
 	// If not set, then the cookie will expire after the browser is closed.
 
 
 To domain where the cookie should be sent:
-	res.setHeader("Set-Cookie", "key=value; Domain=www.google.com");
+	res.cookie('cookie-name', 'cookie-value', { domain: 'www.my-domain.com' });
 	NOTE: indicates the domain of the cookie; use it to compare against the
 		  domain of the server in which the URL is being requested. If they match,
 		  then check the path attribute next.
 
 
-To make sure that the browser only sends the cookie over HTTPS.
-	res.setHeader("Set-Cookie", "key=value; Secure");
+Marks the cookie to be used with HTTPS only.
+	res.cookie('cookie-name', 'cookie-value', { secure: true });
 
 
 To avoid usage of cookies in the client-side Javascript, we do the following:
-	res.setHeader("Set-Cookie", "key=value: HttpOnly");
+	res.cookie('cookie-name', 'cookie-value', { httpOnly: true });
 	// Ensures the cookie is sent only over HTTP(S), not client JavaScript,
 	// helping to protect against cross-site scripting attacks.
+
+
+To clear the cookie:
+	res.clearCookie('name');
+	// NOTE: make sure to pass all the options that were passed while creating the cookie, otherwise
+	//       the web browsers and other compliant clients won't clear the cookie.
