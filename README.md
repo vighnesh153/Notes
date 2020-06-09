@@ -2,7 +2,6 @@
 
 ## In Progress:
 * Spring
-* Angular Security Masterclass
 
 * React: Watch Maximillian's React course
 * GraphQL: https://www.howtographql.com/ and watch the "GraphQL" section in Maximillian's NodeJS course
