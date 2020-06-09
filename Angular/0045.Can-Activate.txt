@@ -53,8 +53,21 @@ export class AuthGuard implements CanActivate {
 	}
 }
 
-NOTE: We can ever return a URL tree so that it is redirected to some other URL if some condition is
-	  not met.
+NOTE: We can even return a URL tree so that it is redirected to some other URL if some condition is
+	  not met. This is the newer and recommended way to navigate the user to some other route by returning
+	  the URL tree of the route instead of manually routing to that url as done above. Why? if there
+	  are multiple guards, the guards run parallely (of course, not of different threads). If multiple guards fail
+	  and they try to navigate the users away manually, it won't be predictable which guard's navigation will be
+	  considered. If at some instance, guard one gets the http response (if it made any request) first, and it
+	  decides to navigate away the user based on the response, it will navigate it first. Same thing with other guards.
+	  So, to make the route guard navigation away, we return the URL trees from the guards. Before navigating the
+	  user away, it first waits to resolve all the guards. Some of the guards returned the URL tree. To choose
+	  the order of the URL tree, the one whose Guard appears before the Guards of other URL trees is chosen. So,
+	  the array in which we provide the Guards, the order matters. Pass the guards in such an order that, the
+	  left most guard has the highest priority of navigating the user away.
+
+	  A child route guard is processed iff its parent has no canActivate guards or, all the canActivate guards
+	  resolved to true.
 
 	  // Example
 	  	return this.router.createUrlTree(['/users', 'login']);
