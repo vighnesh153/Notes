@@ -9,6 +9,8 @@
 * Go lang
 
 ## Todo:
+* Learn DevOps: The complete Kubernetes Course. https://www.udemy.com/course/learn-devops-the-complete-kubernetes-course/
+* Angular with Angular Material, Angularfire, NgRx : https://www.udemy.com/course/angular-full-app-with-angular-material-angularfire-ngrx/
 * Precalculus
 * Linear Algebra
 * Advanced C++
