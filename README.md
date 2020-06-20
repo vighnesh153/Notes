@@ -4,7 +4,6 @@
 * Spring
 
 * React: Watch Maximillian's React course
-* GraphQL: https://www.howtographql.com/ and watch the "GraphQL" section in Maximillian's NodeJS course
 * Go lang
 
 ## Todo:
