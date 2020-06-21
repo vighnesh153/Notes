@@ -1,0 +1,19 @@
+Format:
+  // In the src dir.
+  run: go fmt ./...
+  // It will format all the .go files in the directory and sub-directories recursively.
+
+To run a file:
+  go run file.go
+  // builds and stores the artifact in a temp dir and runs it.
+
+
+To build project (inside the project directory):
+  go build
+  // makes a single executable file for the entire project (cool right?)
+
+
+To install project in the bin directory, run:
+  go install *.go     // from within the project directory
+  // It will install the project as a single executable in the bin directory in
+  // the go workspace.
