@@ -19,6 +19,14 @@ func main() {
 	println(z)							// 100
 	fmt.Printf("%T\n", z)		// int
 
+	const myString string = "some string"
+	// declaring a constant
+
+	const (
+		aaaaa = 100
+		bbbbb = true
+	)
+
 	a := "I am a string"
 	println(a)
 	fmt.Printf("%T\n", a)		// string
