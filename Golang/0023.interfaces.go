@@ -11,9 +11,11 @@ type geometry interface {
 }
 
 type rect struct {
+	name string
 	width, height float64
 }
 type circle struct {
+	name string
 	radius float64
 }
 
@@ -35,11 +37,18 @@ func measure(g geometry) {
 	fmt.Println(g)
 	fmt.Println(g.area())
 	fmt.Println(g.perim())
+
+	switch g.(type) {
+	case circle:
+		println("I am a", g.(circle).name)
+	case rect:
+		println("I am a", g.(rect).name)
+	}
 }
 
 func main() {
-	r := rect{width: 3, height: 4}
-	c := circle{radius: 5}
+	r := rect{width: 3, height: 4, name: "rectangle"}
+	c := circle{radius: 5, name: "circle"}
 
 	measure(r)
 	measure(c)
