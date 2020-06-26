@@ -14,6 +14,7 @@
 * Advanced C++
 * JavaScript, the tricky part
 * Advanced CSS
+* Angular GraphQL requests
 
 ## In Future
 * Web components with Stencil.js
