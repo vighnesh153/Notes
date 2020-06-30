@@ -26,4 +26,5 @@ augtool> print   /files/practice/dummy.json
 ### and set its value
 ```
 augtool> set   /path/to/key   "new-value"
+augtool> save
 ```
