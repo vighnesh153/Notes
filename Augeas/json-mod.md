@@ -1,3 +1,6 @@
+### To learn more about it:
+http://lucasmatt.com/2015/06/01/2015-06-01-augeas-the-missing-manual/
+
 ### install augeas
 
 
