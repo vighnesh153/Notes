@@ -18,10 +18,13 @@
 ## In Future
 * NativeScript
 * Web components with Stencil.js
-* AI, ML
 * Flask API development (Pre-requisite: AI, ML. Because if not for using AI/ML on the web, why learn Flask)
 
 # If needed, start learning here:
+* Machine Learning, Data Science, Artificial Intelligence
+    - https://medium.com/fully-understood/how-to-learn-machine-learning-from-scratch-and-for-free-5753fa2170dd
+    - https://www.coursera.org/learn/machine-learning
+    - https://machinelearningmastery.com/start-here/
 * Java More on Lambda Expressions: Watch the "Lambda Expressions" section in Tim Buchalka's course
 * Java Regex: Watch the "Regular Expressions" section in Tim Buchalka's course
 * JDBC: Watch the "Databases" section in Tim Buchalka's course
