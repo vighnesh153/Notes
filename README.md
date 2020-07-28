@@ -4,8 +4,6 @@
 * Spring
 * Advanced Calculus
 
-* React: Watch Maximillian's React course
-
 ## Todo:
 * Learn DevOps: The complete Kubernetes Course. https://www.udemy.com/course/learn-devops-the-complete-kubernetes-course/
 * Angular with Angular Material, Angularfire, NgRx : https://www.udemy.com/course/angular-full-app-with-angular-material-angularfire-ngrx/
@@ -17,9 +15,11 @@
 * Angular GraphQL requests
 
 ## In Future
+* React Native
+* Storybook
 * NativeScript
 * Web components with Stencil.js
-* Flask API development (Pre-requisite: AI, ML. Because if not for using AI/ML on the web, why learn Flask)
+* Django/Flask API development
 
 # If needed, start learning here:
 * Machine Learning, Data Science, Artificial Intelligence
