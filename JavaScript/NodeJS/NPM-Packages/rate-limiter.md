@@ -5,3 +5,7 @@ https://www.npmjs.com/package/express-rate-limit
 ```js
 app.set('trust proxy', 1);
 ```
+
+
+##### Also, check this out
+https://www.npmjs.com/package/express-slow-down
