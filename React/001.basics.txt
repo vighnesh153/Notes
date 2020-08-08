@@ -1,6 +1,0 @@
-A Javascript library to build responsive User Interfaces.
-
-A React component is an individual HTML element which is kept separate to make maintainable
-applications.
-
-Individual components are combined to make an app.
