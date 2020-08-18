@@ -1,5 +1,0 @@
-1. Run "gedit ~/.bashrc"
-
-2. Edit this line to 'export PATH="/path/to/dir:$PATH"'
-
-3. Run "source ~/.bashrc"

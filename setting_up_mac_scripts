@@ -1,4 +1,0 @@
-SET UP SUBLIME COMMAND FOR MAC (SUBLIME TEXT EDITOR 3)
-1. ln -s "/Applications/Sublime Text.app/Contents/SharedSupport/bin/subl" /usr/local/bin/sublime
-2. gedit ~/.bash_profile
-3. add /usr/local/bin to path
