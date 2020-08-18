@@ -6,6 +6,7 @@
     - Level 2: https://www.youtube.com/playlist?list=PLqq-6Pq4lTTbXZY_elyGv7IkKrfkSrX5e
     - Level 3: https://www.youtube.com/playlist?list=PLqq-6Pq4lTTaoaVoQVfRJPqvNTCjcTvJB
 * Advanced Calculus
+* MongoDB
 
 ## Todo:
 * Learn DevOps: The complete Kubernetes Course. https://www.udemy.com/course/learn-devops-the-complete-kubernetes-course/
@@ -16,6 +17,7 @@
 * JavaScript, the tricky part
 * Advanced CSS
 * Angular GraphQL requests
+* Prisma: https://www.prisma.io/
 
 ## In Future
 * React Native
