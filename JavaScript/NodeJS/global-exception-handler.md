@@ -8,3 +8,9 @@ process.on('uncaughtException', (error)  => {
     process.exit(1); // exit application
 })
 ```
+
+```js
+process.on('unhandledRejection', (error) => {
+    // when promise rejection is not handled
+});
+```
