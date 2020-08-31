@@ -118,3 +118,31 @@ axios.interceptors.response.use(
     }
 );
 ```
+
+##### Removing interceptors
+```js
+const myInterceptor = axios.interceptors.request.use(() => {});
+axios.interceptors.request.eject(myInterceptor);
+```
+
+##### Global config
+```js
+axios.defaults.baseURL = 'some-url';
+axios.defaults.headers.common['Authorization'] = 'AUTH-TOKEN';
+axios.defaults.headers.post['Content-Type'] = 'application/json';       // only for post request
+```
+
+
+```js
+import {default as axios} from 'axios';
+
+const authInstance = axios.create({
+    baseURL: 'auth service url';
+});
+
+authInstance.defaults.headers.common['Authorization'] = 'AUTH-TOKEN';
+
+// we can even add interceptors here.
+
+export default authInstance;
+```
