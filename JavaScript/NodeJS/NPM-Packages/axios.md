@@ -93,3 +93,28 @@ axios({
     response.data.pipe(fs.createWriteStream('ada_lovelace.jpg'))
   });
 ```
+
+## Interceptors
+Should be done at the beginning before making any requests, else, the middleware won't
+be registered. In react, define it in `index.js` so that it is always registered first.
+```js
+axios.interceptors.request.use(
+    request => {
+        console.log(request);
+        return request;
+    }, error => {
+        console.log(error);
+        return Promise.reject(error);
+    }
+);
+
+axios.interceptors.response.use(
+    response => {
+        console.log(response);
+        return response;
+    }, error => {
+        console.log(error);
+        return Promise.reject(error);
+    }
+);
+```
